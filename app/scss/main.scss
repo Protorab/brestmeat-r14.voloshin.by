@@ -1,6 +1,7 @@
 @import "../../node_modules/swiper/swiper.scss";
 @import "./vendor/_normalize";
 @import "./_mixin";
+@import "./fonts";
 @import "./_config";
 @import "./keyframes";
 @import "./_menu";
@@ -10,8 +11,3 @@
 @import "./_header";
 @import "./_footer";
 @import "./_article";
-
-.logo {
-  @include adaptive(width, 100, 50, 0);
-  @include adaptive(height, 100, 50, 0);
-}

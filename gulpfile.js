@@ -16,7 +16,7 @@ const cleanCss = require("gulp-clean-css");
 const pug = require("gulp-pug");
 const bssi = require("browsersync-ssi");
 const ssi = require("ssi");
-const distFolder = "dist"; //project folder name
+const distFolder = "brestmeat-r14.voloshin.by"; //project folder name
 const appFolder = "app"; //work folder name
 
 // path to folder

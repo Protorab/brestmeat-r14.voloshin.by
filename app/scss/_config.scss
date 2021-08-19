@@ -1,10 +1,10 @@
 // USER VARIABLES SECTION
-$accent: #5bd2f3; // Accent Color
-$accentSecond: #e7552b; // Accent Second Color
-$accentThird: #f0a21a; // Accent Third Color
-$mainColor: #1b556f; // Body Background Color
+$accent: #e50613; // Accent Color
+$accentSecond: #36353b; // Accent Second Color
+$accentThird: #ececec; // Accent Third Color
+$mainColor: #fffefe; // Body Background Color
 $fontSize: 10px; // Body Font Size
-$textColor: #eaf2f5; // Text Color
+$textColor: #141414; // Text Color
 $textSecondColor: #b0b1b1; // Text Color
 $lineHeight: 1.65; // Document Line Height
 $userFont: Roboto, sans-serif; // User Font Family
@@ -12,16 +12,6 @@ $systemFont: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Fon
 $maxWidth: 1920;
 $maxWidthContainer: 1300;
 
-// FONTS LOAD SECTION
-@include font("Roboto", normal, 400, "../fonts/roboto-regular-webfont.woff2");
-@include font("Roboto", italic, 400, "../fonts/roboto-italic-webfont.woff2");
-@include font("Roboto", normal, 700, "../fonts/roboto-bold-webfont.woff2");
-@include font(
-  "Roboto",
-  italic,
-  700,
-  "../fonts/roboto-bolditalic-webfont.woff2"
-);
 // ZEROING SECTION
 * {
   margin: 0;
@@ -176,8 +166,9 @@ section,
 }
 
 .wrapper {
-  max-width: 1650px;
-  width: calc(100% - 80px);
+  max-width: 1450px;
+  // @include adaptive(max-width, 1300, 1300, 0);
+  width: calc(100% - 166px);
   margin: 0 auto;
   position: relative;
   display: flex;
@@ -197,18 +188,6 @@ section,
     width: calc(100% - 30px);
   }
 }
-
-// .schema-org {
-//   position: absolute;
-//   visibility: hidden;
-//   opacity: 0;
-//   overflow: hidden;
-//   width: 0;
-//   height: 0;
-//   z-index: -9999;
-//   left: 0;
-//   top: 0;
-// }
 
 .img {
   //.img--full
