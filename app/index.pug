@@ -1,0 +1,26 @@
+doctype html
+html(lang="ru")
+
+  //head start
+  include ./includes/mixins/head
+  +head("Главная")
+  //head end
+
+  body
+    
+    //header start
+    include ./includes/parts/main/header
+    //header end
+
+    //page-main start
+    main.main.page-main 
+      .wrapper
+    //page-main end
+    
+    //footer start
+    include ./includes/parts/main/footer
+    //footer end
+
+    include ./includes/parts/other/modal__form.pug
+    include ./includes/parts/other/modal__img.pug
+    include ./includes/parts/other/scripts.pug
