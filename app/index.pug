@@ -6,21 +6,28 @@ html(lang="ru")
   +head("ОАО Брестский мясокомбинат  - производитель и поставщик колбасных изделий, мясных полуфабрикатов из Республики Беларусь")
   //head end
 
-  body
-    
+  body.--fixed.__loading
+    //preloader start
+    include ./includes/parts/other/preloader
+    //preloader end
+
     //header start
     include ./includes/parts/main/header
     //header end
 
     //page-main start
-    main.main.page-main 
+    main.main.page-main.mt__nan
+      //top-slider start
+      include ./includes/parts/other/top-slider
+      //top-slider end
+
       .wrapper
     //page-main end
     
     //footer start
     include ./includes/parts/main/footer
     //footer end
-
+    include ./includes/parts/other/modal__search.pug
     include ./includes/parts/other/modal__form.pug
     include ./includes/parts/other/modal__img.pug
     include ./includes/parts/other/scripts.pug

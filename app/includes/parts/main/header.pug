@@ -1,18 +1,14 @@
-header.header
+header#header.header.lock-padding
   .wrapper.header-wrapper
-    a.menu__burger(
-      href="#",
-      role="button",
-      aria-label="Бургер меню",
-      tabindex="0") 
-      span
-      span
-      span
+    //header-logo start
     a.logo.header-logo(href="#")
       include ./../../mixins/img-NL
       +img(
         "./img/logo.svg",
         "ОАО Брестский мясокомбинат  - производитель и поставщик колбасных изделий, мясных полуфабрикатов из Республики Беларусь")
+    //header-logo end
+
+    //menu start
     include ./../../mixins/menu.pug
     +menu([
             ["Каталог","page-catalog.html"],
@@ -22,4 +18,73 @@ header.header
             ["Карьера","page-career.html"],
             ["Контакты","page-contact.html"]
           ])
-    
+    //menu end
+    .header-icons
+      //menu-burger start
+      button.menu-burger.header-icon(
+        aria-label="Бургер меню",
+        tabindex="0") 
+        span
+        span
+        span
+      //menu-burger end
+
+      //icon-search start
+      a.header-icon.show-modal.icon-search(
+        href="#modal__search",
+        role="button",
+        aria-label="Открыть поиск",
+        tabindex="0") 
+        i.header-icon__image.header-icon__image--search
+          include ./../../mixins/img-NL
+          +img(
+            "./img/icons/icon-search.svg",
+            "Поиск")
+      //icon-search end
+
+      //icon-blind start
+      a.header-icon.icon-blind(
+        href="page-blind.html",
+        role="button",
+        aria-label="Версия для слабовидящих",
+        tabindex="0") 
+        i.header-icon__image.header-icon__image--blind
+          include ./../../mixins/img-NL
+          +img(
+            "./img/icons/icon-blind.svg",
+            "Версия для слабовидящих")
+      //icon-blind end
+
+      //icon-lang start
+      include ./../../mixins/select
+      +select(
+        "lang-selector",
+        "lang-selector",
+        "En",
+        "",
+        [
+          ["En"],
+          ["By"],
+          ["Ru"]
+        ],
+        "lang-selector")
+      //icon-lang end
+  //mobile menu start
+  include ./../../mixins/menu.pug
+  +menu([
+          ["Каталог","page-catalog.html"],
+          ["Рецепты","page-recipe.html"],
+          ["О компании","page-about.html"],
+          ["Партнерам","page-partner.html"],
+          ["Карьера","page-career.html"],
+          ["Контакты","page-contact.html"],
+          ["Советы","page-advice.html"],
+          ["Пресс-центр","page-press-center.html"],
+          ["Отзывы","page-reviews.html"],
+          ["Фирменная торговля","page-brand-trade.html"],
+          ["Вакансии","page-vacancy.html"],
+
+        ],"mobile")
+    //mobile menu end
+
+//- Советы, Пресс-центр, отзывы, фирменная торговля, Вакансии и возможно еще пару, но я позже о них скажу

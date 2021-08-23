@@ -5,7 +5,7 @@ import inputmask from "inputmask";
 import attrClear from "./functions/attrClear";
 
 // import modalWindow functions
-import { modalClose } from "./functions/modalWindow";
+import { modalClose, bodyLock } from "./functions/modalWindow";
 
 // import modalWindow init functions
 import modalWindowInit from "./functions/modalWindowInit";
@@ -17,7 +17,7 @@ import btnsFunc from "./functions/btns";
 import observer from "./functions/lazyLoading";
 
 // import customSelectFunc functions
-// import customSelectFunc from "./functions/customSelect";
+import customSelectFunc from "./functions/customSelect";
 
 // import tabsChange functions
 // import tabsChange from "./functions/tabsChange";
@@ -31,41 +31,77 @@ import lazyBg from "./functions/lazyBg";
 // import ytPlayer function
 // import ytPlayer from "./functions/youtubePlayer";
 
+// swiperJsSliders
+import swiperJsSliders from "./functions/swiperJsSliders";
+
 // import menuDropdown function
 // import menuDropdown from "./functions/menuDropdown";
 // import showVisible
 import showVisible from "./functions/showVisible";
 
+//setMarginTop function
+import setMarginTop from "./functions/setMarginTop";
 document.addEventListener("DOMContentLoaded", () => {
   // variable start
   const phoneInput = document.querySelectorAll("input[type=tel]");
   const images = document.querySelectorAll("img");
   const phoneLink = document.querySelectorAll("a[href^='tel']");
-  const burgerMenu = document.querySelector(".menu__burger");
-  const menu = document.querySelector(".menu-nav");
+  const burgerMenus = document.querySelectorAll(".menu-burger");
+  const menu = document.querySelector(".menu-nav--mobile");
   const modalCloseIcons = document.querySelectorAll(".close__modal");
   const body = document.querySelector("body");
+  const main = document.querySelector(".main");
   const breadcrumb = document.querySelector(".breadcrumb");
   const lazyImages = document.querySelectorAll(
     "img[data-lazy-src],source[data-lazy-srcset] "
   );
   const animateItems = document.querySelectorAll(".animate");
+  const copyrightYear = document.querySelectorAll(".current-year");
+  const preloaderProgress = document.querySelector(".preloader__progress");
 
   // variable end
 
-  // function call start
   // ytPlayer();
   lazyBg();
   modalWindowInit();
   btnsFunc();
   showVisible();
+  swiperJsSliders();
   window.onscroll = showVisible;
   // menuDropdown();
-  // customSelectFunc();
+  customSelectFunc();
   // collapsibleFunc();
   // tabsChange();
   // function call end
+  setTimeout(() => {
+    let body = document.querySelector("body");
+    body.classList.add("__loading");
+    body.classList.add("--fixed");
+    for (let i = 0; i < 100; i++) {
+      preloaderProgress.value++;
+    }
+    window.setTimeout(function () {
+      body.classList.add("__load");
+      body.classList.remove("__loading");
+      body.classList.remove("--fixed");
+    }, 700);
+  }, 100);
+  const setMainMarginTop = () => {
+    if (main) {
+      !main.classList.contains("mt__nan")
+        ? setMarginTop("#header", ".main")
+        : "";
+    }
+  };
+  setMainMarginTop();
 
+  if (copyrightYear.length > 0) {
+    const year = new Date().getFullYear();
+    copyrightYear.forEach((item) => {
+      item.innerHTML = year;
+    });
+    copyrightYear.innerHTML = year;
+  }
   //animate not scroll items
   if (animateItems.length > 0) {
     animateItems.forEach((item) => {
@@ -142,12 +178,28 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //  burgerMenu function
-  if (burgerMenu) {
-    burgerMenu.addEventListener("click", function (e) {
-      this.classList.toggle("--clicked");
-      body.classList.toggle("--fixed");
-      menu.classList.toggle("--show");
-      e.preventDefault;
+  if (burgerMenus) {
+    burgerMenus.forEach((burgerMenu) => {
+      burgerMenu.addEventListener("click", function (e) {
+        e.preventDefault;
+
+        const clickedBurgerMenus = document.querySelectorAll(".menu-burger");
+        clickedBurgerMenus.forEach((element) => {
+          element.classList.contains("--clicked")
+            ? element.classList.remove("--clicked")
+            : element.classList.add("--clicked");
+        });
+        // burgerMenu.classList.toggle("--clicked");
+        body.classList.toggle("--fixed");
+        menu.classList.toggle("--show");
+      });
     });
   }
+  window.onresize = function () {
+    setMainMarginTop();
+
+    setTimeout(() => {
+      setMainMarginTop();
+    }, 1000);
+  };
 });

@@ -1,0 +1,23 @@
+.top-slider.swiper-container
+  //.top-slides start
+  .top-slides.swiper-wrapper 
+    include ./../../mixins/top-slide
+    +top-slide(
+      "./img/top-slide__image.jpg",
+      "слайд 1")
+    +top-slide(
+      "./img/top-slide__image.jpg",
+      "слайд 2")
+    +top-slide(
+      "./img/top-slide__image.jpg",
+      "слайд 3")
+    +top-slide(
+      "./img/top-slide__image.jpg",
+      "слайд 4")
+    +top-slide(
+      "./img/top-slide__image.jpg",
+      "слайд 5")
+  //.top-slides end
+  //.top-slider__pagination start
+  .top-slider__pagination.slider-pagination
+  //.top-slider__pagination end

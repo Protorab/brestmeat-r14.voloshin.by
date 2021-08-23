@@ -1,0 +1,19 @@
+mixin social-links(socialItems,addClass)
+  ul.social-links(class=`${addClass ? `social-links--${addClass}`: ""} `)
+    each socialItem, idx in socialItems
+      - var count = idx+1
+      - var title = socialItem[0]
+      - var link = socialItem[1]
+      - var imgPath = socialItem[2]
+
+      li.social-item(
+        class=`${addClass ? `social-links__item--${addClass}`: ""}`)
+        a.social-link(
+          itemprop="url",
+          href=`${link}`,
+          target="_blank", 
+          rel="noopener noreferrer",
+          class=`${addClass ? `social-links__item--${addClass}`: ""}`)
+          include ./img-NL
+          +img(imgPath,title,"social-icon")
+

@@ -1,8 +1,77 @@
 footer.footer
-  .wrapper.footer-wrapper
-    a.logo.header-logo(href="#")
-      include ./../../mixins/img-NL
-      +img(
-        "./img/logo.svg",
-        "ОАО Брестский мясокомбинат  - производитель и поставщик колбасных изделий, мясных полуфабрикатов из Республики Беларусь")
+  .footer-wrapper.footer-wrapper--top
+    .footer-coll
+      a.logo.footer-logo(href="#")
+        include ./../../mixins/img-NL
+        +img(
+          "./img/logo.svg",
+          "ОАО Брестский мясокомбинат  - производитель и поставщик колбасных изделий, мясных полуфабрикатов из Республики Беларусь")
+      .footer-info
+        p ОАО "Брестский мясокомбинат"
+        p УНП 200020262
+    include ./../../mixins/footer-menu
+    +footer-menu([
+            ["Каталог","page-catalog.html"],
+            ["Рецепты","page-recipe.html"],
+            ["О компании","page-about.html"],
+            ["Партнерам","page-partner.html"],
+            ["Карьера","page-career.html"],
+            ["Контакты","page-contact.html"]
+          ])
+    +footer-menu([
+            ["Оплата услуг ЕРИП","page-payment.html"],
+            ["Консолидированная финансовая отчетность","page-reporting.html"],
+            ["Информация для владельцев акции","page-info-sharer.html"],
+            ["Политика в области качества","page-quality-policy.html"],
+            ["Тендеры","page-tender.html"]
+          ])
+    .footer-coll.footer-contact
+      h5.footer-contact__title Контакты
+      dl.footer-contact__group
+        dt.footer-contact__group-title Адрес
+        dd.footer-contact__group-content  224034, г. Брест, ул. Писателя Смирнова, 4 
+      dl.footer-contact__group
+        dt.footer-contact__group-title Телефоны
+        dd.footer-contact__group-content  
+          a(href="tel:+375 (212) 61-45-98") +375 (212) 61-45-98 (Приемная)
+      include ./../../mixins/social-links
+      +social-links([
+            [
+              "facebook",
+              "https://www.facebook.com/",
+              "./img/icons/icon-fb--red.svg"],
+            [
+              "vkontakte",
+              "https://vk.com/",
+              "./img/icons/icon-vk--red.svg"],
+            [
+              "instagram",
+              "https://www.instagram.com/",
+              "./img/icons/icon-inst--red.svg"],
+            [
+              "twitter",
+              "https://twitter.com/",
+              "./img/icons/icon-twitter--red.svg"],
+            [
+              "Телефон",
+              "tel:+375-29-123-45-67",
+              "./img/icons/icon-phone--red.svg"],
+            [
+              "ok",
+              "https://ok.ru/",
+              "./img/icons/icon-ok--red.svg"
+            ]
+
+          ],
+          "footer")
+  .footer-wrapper.footer-wrapper--bottom
+    .copyright
+      p ©Copyright OAO «Брестский мясокомбинат», 2014-<span class="current-year"></span>
+    a.developer-link(
+      href="https://voloshin.by/", 
+      target="_blank", 
+      rel="noopener noreferrer")
+        span.developer-link__title Разработка сайта
+        i.developer-link__image
+          include ./../../elements/dev__logo
 

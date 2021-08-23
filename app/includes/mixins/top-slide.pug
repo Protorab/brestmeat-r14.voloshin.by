@@ -1,0 +1,50 @@
+mixin top-slide(imgPath,title)
+  //.top-slide start
+  .top-slide.swiper-slide(
+    data-swiper-parallax-y="-300%",
+    data-swiper-parallax-opacity="0",
+    data-swiper-parallax-duration="0")
+    //.top-slide picture start
+    picture.top-slide__picture(
+      data-swiper-parallax="80%",
+      data-swiper-parallax-duration="0") 
+      source(
+        srcset=`${imgPath}`,
+        media="(max-width: 1920px)")
+      source(
+        srcset=`${imgPath}`,
+        media="(max-width: 1920px)")
+      source(
+        srcset=`${imgPath}`,
+        media="(max-width: 1920px)")
+      source(
+        srcset=`${imgPath}`,
+        media="(max-width: 1920px)")
+      source(
+        srcset=`${imgPath}`,
+        media="(max-width: 1920px)")
+      source(
+        srcset=`${imgPath}`,
+        media="(max-width: 1920px)")
+      source(
+        srcset=`${imgPath}`,
+        media="(max-width: 1920px)")
+      source(
+        srcset=`${imgPath}`,
+        media="(max-width: 1920px)")
+      source(
+        srcset=`${imgPath}`,
+        media="(max-width: 1920px)")
+      img.img--full.img--center.top-slide__image(
+        src!=`${imgPath}`, 
+        alt!=`${title}`,
+        title!=`${title}`,
+        draggable="false",
+        loading="lazy",
+        data-swiper-parallax="-70%",
+        data-swiper-parallax-opacity="0",
+        data-swiper-parallax-duration="0")
+    //.top-slide picture end
+
+  //.top-slide end
+  
