@@ -2,7 +2,7 @@ mixin picture(imgPath,title,addClass,showModal)
   picture(
     itemscope,
     itemtype='http://schema.org/ImageObject',
-    class=`${addClass ? `${addClass}-picture` : ""}`)
+    class=`${addClass ? `${addClass}__picture` : ""}`)
     source(
       srcset!=`${imgPath}`,
       itemprop='contentUrl')
@@ -12,5 +12,5 @@ mixin picture(imgPath,title,addClass,showModal)
       title!=`${title}`,
       draggable="false",
       loading="lazy",
-      class!=`${addClass ? `${addClass}-image` : ""} ${showModal ? showModal : ""} `,
+      class!=`${addClass ? `${addClass}__image` : ""} ${showModal ? showModal : ""} `,
       itemprop='contentUrl')

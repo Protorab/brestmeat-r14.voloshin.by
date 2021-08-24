@@ -1,0 +1,21 @@
+mixin share(title,links,addClass)
+  nav.share(class=`${addClass ? `${addClass}__share` : ""}`)
+    if title
+      p.share-title(class=`${addClass ? `${addClass}__share-title` : ""}`)!=title
+    ul.share-list(class=`${addClass ? `${addClass}__share-list` : ""}`)
+      each link,idx in links
+        - var count = idx+1
+        - var shareLink = link[0]
+        - var shareIcon = link[1]
+        - var shareTitle = link[2]
+
+        li.share-item(class=`${addClass ? `${addClass}__share-item` : ""}`)
+          a.share-link(
+            class=`${addClass ? `${addClass}__share-link` : ""}`
+            href=`${shareLink}`, 
+            target="_blank", 
+            rel="noopener noreferrer")
+            include ./img-NL
+            +img(
+              shareIcon,
+              shareTitle)

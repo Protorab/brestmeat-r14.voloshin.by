@@ -1,2 +1,39 @@
 section.section.novelty-section
+  //novelty-section__title start
   h5.section__title.novelty-section__title.animate.scroll Новинки
+  //novelty-section__title end
+
+  //.novelty-slider start
+  .novelty-slider.swiper-container.animate.scroll 
+    //.novelty-slides start
+    .novelty-slides.swiper-wrapper 
+      //.novelty-slide start
+      include ./../../mixins/novelty-slide
+      +novelty-slide(
+        "./img/novelty/novelty-image__1.png",
+        'Колбаса варёная "Сытная"',
+        "Новинка")
+      +novelty-slide(
+        "./img/novelty/novelty-image__2.png",
+        'Колбаса варёная "Сытная"',
+        "Новинка")
+      +novelty-slide(
+        "./img/novelty/novelty-image__3.png",
+        'Колбаса варёная "Сытная"',
+        "Новинка")
+      +novelty-slide(
+        "./img/novelty/novelty-image__4.png",
+        'Колбаса варёная "Сытная"',
+        "Новинка")
+      //.novelty-slide end
+
+    //.novelty-slides end
+
+    //novelty-slider__control start
+    .slider-control.novelty-slider__control
+      button.slider-control__btn.slider-control__btn--prev.novelty-slider__prev 
+      button.slider-control__btn.slider-control__btn--next.novelty-slider__next  
+    //novelty-slider__control end
+
+  //.novelty-slider end
+  

@@ -1,0 +1,73 @@
+.pressroom {
+  // .pressroom-section {
+  &-section {
+    // .pressroom-section__title {
+    &__title {
+    }
+  }
+  // .pressroom-card {
+  &-card {
+    @extend .wrapper;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    // pressroom-card__picture {
+    &__picture {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      overflow: hidden;
+      @include adaptive(max-height, 400, 180, 0);
+      img {
+        @include _transition(all, 0.35s);
+      }
+      &:hover {
+        img {
+          transform: scale(1.2);
+        }
+      }
+      @media only screen and (min-width: 768px) {
+        width: 58%;
+      }
+    }
+    // .pressroom-card__content {
+    &__content {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      @include adaptive(padding-left, 35, 30, 0);
+      @media only screen and (min-width: 768px) {
+        width: 42%;
+      }
+    }
+    // .date.pressroom-card__date {
+    &__date {
+      @extend .p;
+      font-weight: 500;
+      @include adaptive(margin-bottom, 15, 10, 0);
+    }
+    // .pressroom-card__title {
+    &__title {
+      @extend .t4;
+      font-weight: 600;
+      @include adaptive(margin-bottom, 35, 20, 0);
+    }
+    // .pressroom-card__text {
+    &__text {
+      p {
+        @include adaptive(margin-bottom, 5, 5, 0);
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    // .pressroom-card__btn {
+    &__btn {
+      margin-top: auto;
+      @include adaptive(width, 155, 130, 0);
+    }
+  }
+}

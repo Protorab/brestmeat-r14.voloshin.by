@@ -486,7 +486,7 @@ section,
 
 .btn {
   @include adaptive(max-width, 280, 215, 0);
-  @include adaptive(height, 55, 50, 0);
+  @include adaptive(height, 48, 45, 0);
   @include _borderRadius(30px);
   @include _transition(all, 0.35s);
   line-height: 0;
@@ -527,7 +527,7 @@ section,
 
     transform: translate(0, -50%);
   }
-  &__active {
+  &.__active {
     border: 2px solid $accentColor;
     color: $accentColor;
     &::before {
@@ -538,6 +538,23 @@ section,
       background: $accentColor;
     }
   }
+
+  // .btn__title {
+  &__title {
+    display: inline-flex;
+    @include adaptive(margin-right, 10, 10, 0);
+  }
+  // .btn__icon {
+  &__icon {
+    display: inline-flex;
+    @include adaptive(width, 15, 15, 0);
+    @include adaptive(height, 15, 15, 0);
+    background-image: url("../img/icons/icon-arrow-white.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include _transition(all, 0.35s);
+  }
   &:hover {
     // background: $accentSecondColor;
 
@@ -545,6 +562,9 @@ section,
       // width: 400px;
       // height: 400px;
       // opacity: 1;
+    }
+    .btn__icon {
+      transform: translateX(10px);
     }
   }
 }
@@ -593,6 +613,51 @@ section,
         &:hover {
           background: $accentColor;
           border-color: $accentColor;
+        }
+      }
+    }
+  }
+  // .slider-control {
+  &-control {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    // .slider-control__btn {
+    &__btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      @include adaptive(width, 18, 15, 0);
+      @include adaptive(height, 18, 15, 0);
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background-image: url("../img/icons/icon-arrow.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        @include _transition(all, 0.35s);
+      }
+      // .slider-control__btn--prev {
+      &--prev {
+        @include adaptive(margin-right, 20, 15, 0);
+        &::before {
+          top: 1.5px;
+          transform: rotate(180deg);
+        }
+      }
+      &.swiper {
+        &-button {
+          &-disabled {
+            &::before {
+              opacity: 0.4;
+            }
+          }
         }
       }
     }
@@ -706,7 +771,9 @@ label {
   @include adaptive(font-size, 16, 15, 0);
 }
 .section {
-  @include adaptive(padding-top, 100, 90, 0);
+  @include adaptive(padding-top, 80, 70, 0);
+  @include adaptive(padding-bottom, 40, 30, 0);
+
   // .section__title {
   &__title {
     @extend .t1;
@@ -720,6 +787,8 @@ label {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    @include adaptive(margin-bottom, 60, 40, 0);
+
     &::before,
     &::after {
       content: "";
@@ -730,7 +799,7 @@ label {
       height: 2px;
       @include _transition(all, 0.35s);
       transform: scaleX(0);
-      transition-delay: 0.85s;
+      transition-delay: 0.55s;
     }
     &::before {
       transform-origin: left;
@@ -744,5 +813,22 @@ label {
         transform: scaleX(1);
       }
     }
+  }
+}
+.label {
+  display: inline-flex;
+  color: $mainColor;
+  @include adaptive(padding-top, 2, 2, 0);
+  @include adaptive(padding-right, 8, 8, 0);
+  @include adaptive(padding-bottom, 2, 2, 0);
+  @include adaptive(padding-left, 8, 8, 0);
+  @include _borderRadius(15px);
+  &--new {
+    background: $accentColor;
+  }
+}
+.swiper {
+  &-wrapper {
+    @include adaptive(margin-bottom, 70, 40, 0);
   }
 }

@@ -1,5 +1,5 @@
 mixin picture(imgPath,title,addClass,showModal)
-  picture(class=`${addClass ? `${addClass}-picture` : ""}`) 
+  picture(class=`${addClass ? `${addClass}__picture` : ""}`) 
     source(
       srcset="img/preloader.gif", 
       data-lazy-srcset!=`${imgPath}`)
@@ -10,4 +10,4 @@ mixin picture(imgPath,title,addClass,showModal)
       title!=`${title}`,
       draggable="false",
       loading="lazy",
-      class!=`${addClass ? `${addClass}-image` : ""} ${showModal ? showModal : ""} `)
+      class!=`${addClass ? `${addClass}__image` : ""} ${showModal ? showModal : ""} `)

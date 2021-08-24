@@ -1,0 +1,41 @@
+section.section.brands-section
+
+  //brands-section__title start
+  h5.section__title.brands-section__title.animate.scroll Наши Бренды
+  //brands-section__title end
+
+  //.brands-slider start
+  .brands-slider.swiper-container.animate.scroll
+
+    //.brands-slides start
+    .brands-slides.swiper-wrapper
+
+      //.brands-slide start
+      include ./../../mixins/brands-slide
+      +brands-slide(
+        "./img/brands/brands-image__1.png",
+        "Мясные подушечки по Итальянски")
+      +brands-slide(
+        "./img/brands/brands-image__2.png",
+        "Вареники")
+      +brands-slide(
+        "./img/brands/brands-image__3.png",
+        "мясные подушечки")
+      +brands-slide(
+        "./img/brands/brands-image__4.png",
+        "Семейные рецепты")
+      +brands-slide(
+        "./img/brands/brands-image__4.png",
+        "Семейные рецепты")
+      //.brands-slide end
+
+    //.brands-slides end
+
+    //brands-slider__control start
+    .slider-control.brands-slider__control
+      button.slider-control__btn.slider-control__btn--prev.brands-slider__prev 
+      button.slider-control__btn.slider-control__btn--next.brands-slider__next 
+    //brands-slider__control end
+
+  //.brands-slider end
+  

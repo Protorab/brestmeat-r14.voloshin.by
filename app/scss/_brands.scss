@@ -1,0 +1,32 @@
+.brands {
+  // .brands-section {
+  &-section {
+    // .brands-section__title {
+    &__title {
+    }
+  }
+  // .brands-slider {
+  &-slider {
+    @extend .wrapper;
+    height: fit-content;
+  }
+  // .brands-slides {
+  &-slides {
+    height: fit-content;
+  }
+  // .brands-slide {
+  &-slide {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    @include adaptive(height, 175, 115, 0);
+
+    // .brands-slide img{
+    img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 100%;
+    }
+  }
+}

@@ -3,7 +3,107 @@
   &-section {
     // .novelty-section__title {
     &__title {
-      @include adaptive(margin-bottom, 45, 25, 0);
+    }
+  }
+  // .novelty-slider {
+  &-slider {
+    @extend .wrapper;
+  }
+  // .novelty-slides {
+  &-slides {
+  }
+  // novelty-slide {
+  &-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    @include adaptive(width, 330, 310, 0);
+    position: relative;
+    // @include adaptive(height, 340, 210, 0);
+    // .novelty-slide__label {
+    &__label {
+      position: absolute;
+      top: 0;
+      @include adaptive(left, 0, 0, 0);
+    }
+    // .novelty-slide__picture {
+    &__picture {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      @include adaptive(height, 215, 210, 0);
+      @include adaptive(margin-bottom, 20, 10, 0);
+
+      img {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        max-height: 100%;
+      }
+    }
+    // .novelty-slide__title {
+    &__title {
+      @extend .t6;
+      font-weight: 600;
+      width: 100%;
+      text-transform: uppercase;
+      border-bottom: 1px solid #b3b3b3;
+      @include adaptive(padding-bottom, 15, 10, 0);
+      @include adaptive(margin-bottom, 15, 10, 0);
+    }
+    //  .novelty-slide__info {
+    &__info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: auto;
+      // .novelty-slide__info-item {
+      &-item {
+        display: flex;
+        @include adaptive(font-size, 10, 9, 0);
+
+        // .novelty-slide__info-item__icon {
+        &__icon {
+          display: inline-flex;
+          justify-content: space-between;
+          align-items: stretch;
+          @include adaptive(min-width, 25, 25, 0);
+          @include adaptive(width, 25, 25, 0);
+          @include adaptive(height, 25, 25, 0);
+          @include adaptive(margin-right, 5, 5, 0);
+        }
+        // .novelty-slide__info-item__group {
+        &__group {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: stretch;
+        }
+        // .novelty-slide__info-item__title {
+        &__title {
+          color: #5b0000;
+          text-transform: uppercase;
+          font-weight: 500;
+        }
+        // .novelty-slide__info-item__text {
+        &__text {
+          color: #505050;
+        }
+      }
+    }
+    // .novelty-slide__link {
+    &__link {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
     }
   }
 }
