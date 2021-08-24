@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const animateItems = document.querySelectorAll(".animate");
   const copyrightYear = document.querySelectorAll(".current-year");
   const preloaderProgress = document.querySelector(".preloader__progress");
-
+  const scrollBtn = document.querySelector(".scroll-btn");
   // variable end
 
   // ytPlayer();
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
   btnsFunc();
   showVisible();
   swiperJsSliders();
-  window.onscroll = showVisible;
+
   // menuDropdown();
   customSelectFunc();
   // collapsibleFunc();
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (burgerMenus) {
     burgerMenus.forEach((burgerMenu) => {
       burgerMenu.addEventListener("click", function (e) {
-        e.preventDefault;
+        e.preventDefault();
 
         const clickedBurgerMenus = document.querySelectorAll(".menu-burger");
         clickedBurgerMenus.forEach((element) => {
@@ -195,6 +195,28 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+  if (scrollBtn) {
+    scrollBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  }
+
+  window.onscroll = function () {
+    showVisible();
+    let header = document.querySelector("#header");
+    let topScroll;
+    header
+      ? (window.innerWidth <= 800 ? (topScroll = 10) : (topScroll = 0),
+        this.pageYOffset > topScroll
+          ? (header.classList.add("--show"), scrollBtn.classList.add("--show"))
+          : (header.classList.remove("--show"),
+            scrollBtn.classList.remove("--show")))
+      : "";
+  };
   window.onresize = function () {
     setMainMarginTop();
 

@@ -10,6 +10,7 @@ $textSecondColor: #4a4852; // Text second Color
 $textThirdColor: #242d3c; // Text Third Color
 $textFourthColor: #4d4d4d; // Text fourth Color
 $textFifthColor: #343434; // Text fifth Color
+$texSixColor: #4a4852; // Text Six Color
 
 $lineHeight: 1.65; // Document Line Height
 $userFont: Montserrat, sans-serif; // User Font Family
@@ -155,8 +156,8 @@ body {
   background: $mainColor;
   color: $textColor;
   min-width: 320px;
-  height: 100%;
   width: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -298,6 +299,7 @@ section,
 .section {
   width: 100%;
   display: flex;
+  flex-direction: column;
 }
 
 .wrapper {
@@ -448,9 +450,11 @@ section,
 
 .main {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .row {
@@ -644,6 +648,17 @@ section,
     }
   }
 }
+.animate {
+  @include _transition(all, 0.56s);
+  opacity: 0;
+  transform: translate(0, 200px);
+
+  &.__show {
+    opacity: 1;
+    transform: translate(0, 0%);
+  }
+}
+
 .t,
 h {
   @for $i from 1 through 6 {
@@ -658,15 +673,15 @@ h {
   }
 
   &1 {
-    @include adaptive(font-size, 35, 22, 0);
+    @include adaptive(font-size, 40, 23, 0);
   }
 
   &2 {
-    @include adaptive(font-size, 30, 20, 0);
+    @include adaptive(font-size, 30, 19, 0);
   }
 
   &3 {
-    @include adaptive(font-size, 25, 15, 0);
+    @include adaptive(font-size, 27, 17, 0);
   }
 
   &4 {
@@ -689,4 +704,45 @@ li,
 label {
   line-height: 1.35;
   @include adaptive(font-size, 16, 15, 0);
+}
+.section {
+  @include adaptive(padding-top, 100, 90, 0);
+  // .section__title {
+  &__title {
+    @extend .t1;
+    text-transform: uppercase;
+    position: relative;
+    text-align: center;
+    font-family: $userFontAlt;
+    font-weight: 700;
+    color: $texSixColor;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    &::before,
+    &::after {
+      content: "";
+      display: inline-block;
+      background: #dfdfdf;
+      width: 100%;
+      @include adaptive(max-width, 512, 82, 0);
+      height: 2px;
+      @include _transition(all, 0.35s);
+      transform: scaleX(0);
+      transition-delay: 0.85s;
+    }
+    &::before {
+      transform-origin: left;
+    }
+    &::after {
+      transform-origin: right;
+    }
+    &.__show {
+      &::before,
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
 }

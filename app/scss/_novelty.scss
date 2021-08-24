@@ -1,0 +1,9 @@
+.novelty {
+  // .novelty-section {
+  &-section {
+    // .novelty-section__title {
+    &__title {
+      @include adaptive(margin-bottom, 45, 25, 0);
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.scroll {
+  // .scroll-btn {
+  &-btn {
+    position: fixed;
+    right: 35px;
+    bottom: 35px;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include _transition(all, 0.35s);
+    transform: translateY(100px);
+    opacity: 0;
+    visibility: hidden;
+    * {
+      @include _transition(all, 0.35s);
+    }
+    // .scroll-btn__title {
+    &__title {
+      font-weight: 600;
+      margin-right: 10px;
+    }
+    // .scroll-btn__icon {
+    &__icon {
+      position: relative;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 10px;
+      height: 10px;
+      margin-top: 5px;
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #000000;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        transform: rotate(45deg);
+        @include _transition(all, 0.35s);
+      }
+    }
+    &:hover {
+      .scroll {
+        &-btn {
+          &__title {
+            color: $accentColor;
+          }
+
+          &__icon {
+            &::before {
+              border-left-color: $accentColor;
+              border-top-color: $accentColor;
+            }
+          }
+        }
+      }
+    }
+    &.--show {
+      transform: translateY(0px);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
