@@ -67,14 +67,14 @@
     justify-content: space-between;
     align-items: flex-start;
     @include adaptive(width, 425, 310, 0);
-    @include adaptive(height, 300, 285, 0);
+    @include adaptive(height, 315, 300, 0);
     @include adaptive(padding, 25, 15, 0);
     @include _transition(all, 0.35s);
     background: $mainColor;
     box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
     // .reviews-slide__text {
     &__text {
-      @include adaptive(max-height, 200, 185, 0);
+      @include adaptive(max-height, 210, 200, 0);
       overflow-x: hidden;
       overflow-y: auto;
     }

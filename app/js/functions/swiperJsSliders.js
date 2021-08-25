@@ -54,7 +54,7 @@ const swiperJsSliders = () => {
   });
   let brandsSlider = new Swiper(".brands-slider", {
     slidesPerView: 4,
-    spaceBetween: 65,
+    spaceBetween: 35,
     speed: 1200,
     navigation: {
       nextEl: ".brands-slider__next",
@@ -63,12 +63,18 @@ const swiperJsSliders = () => {
 
     breakpoints: {
       320: {
-        spaceBetween: 15,
-        slidesPerColumn: 2,
-        slidesPerView: 1,
+        slidesPerView: 2,
+        grid: {
+          rows: 2,
+        },
       },
       640: {
         spaceBetween: 20,
+        slidesPerView: 4,
+
+        grid: {
+          rows: 1,
+        },
       },
       1024: {
         spaceBetween: 45,
