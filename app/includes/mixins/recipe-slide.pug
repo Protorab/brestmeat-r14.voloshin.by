@@ -1,0 +1,24 @@
+mixin recipe-slide(img,title)
+  article.recipe-slide.swiper-slide
+    include ./picture
+    +picture(
+      img,
+      title,
+      "recipe-slide")
+    h5.recipe-slide__title!=title
+    ul.recipe-slide__info
+      li.recipe-slide__info-item
+        i.recipe-slide__info-icon
+          include ./img-NL
+          +img(
+            "./img/icons/icon-clock.svg",
+            "Время готовки")
+        span.recipe-slide__info-title 1 ч 15 мин
+      li.recipe-slide__info-item
+        i.recipe-slide__info-icon
+          include ./img-NL
+          +img(
+            "./img/icons/icon-food.svg",
+            "Количество порций")
+        span.recipe-slide__info-title 5 порций
+    a.recipe-slide__link(href="page-recipe.html") 

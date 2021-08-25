@@ -486,7 +486,7 @@ section,
 
 .btn {
   @include adaptive(max-width, 280, 215, 0);
-  @include adaptive(height, 48, 45, 0);
+  @include adaptive(height, 46, 45, 0);
   @include _borderRadius(30px);
   @include _transition(all, 0.35s);
   line-height: 0;

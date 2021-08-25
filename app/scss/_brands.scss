@@ -20,6 +20,7 @@
     justify-content: center;
     align-items: center;
     @include adaptive(height, 175, 115, 0);
+    overflow: hidden;
 
     // .brands-slide img{
     img {
@@ -27,6 +28,12 @@
       max-width: 100%;
       height: auto;
       max-height: 100%;
+      @include _transition(all, 0.35s);
+    }
+    &:hover {
+      img {
+        transform: scale(1.2);
+      }
     }
   }
 }

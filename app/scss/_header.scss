@@ -158,13 +158,13 @@
       top: 75%;
       background: $accentColor;
       padding-top: 15px;
-      @include adaptive(padding-top, 15, 7, 0);
+      @include adaptive(padding-top, 10, 7, 0);
     }
     // .lang-selector__option {
     &__option {
       padding: 0;
-      @include adaptive(padding-right, 10, 5, 0);
-      @include adaptive(padding-left, 10, 5, 0);
+      @include adaptive(padding-right, 5, 5, 0);
+      @include adaptive(padding-left, 5, 5, 0);
       @include adaptive(font-size, 14, 12, 0);
 
       background: $mainColor;

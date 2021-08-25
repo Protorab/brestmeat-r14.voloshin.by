@@ -47,29 +47,54 @@ section.section.recipe-section
         [
           [
             "https://www.facebook.com/",
-            "./img/icons/icon-fb.svg",
+            "./img/icons/icon-fb-double.svg",
             "Поделится в Facebook"
           ],
           [
             "https://vk.com/",
-            "./img/icons/icon-vk.svg",
+            "./img/icons/icon-vk-double.svg",
             "Поделится в VK"
           ],
           [
             "https://www.instagram.com/",
-            "./img/icons/icon-inst.svg",
+            "./img/icons/icon-inst-double.svg",
             "Поделится в Instagram"
           ],
           [
             "https://ok.ru/",
-            "./img/icons/icon-ok.svg",
+            "./img/icons/icon-ok-double.svg",
             "Поделится в OK"
           ],
           [
             "https://web.telegram.org/",
-            "./img/icons/icon-tg.svg",
+            "./img/icons/icon-tg-double.svg",
             "Поделится в Telegram"
           ]
 
         ],
         "recipe-card")
+  .recipe-slider.swiper-container.animate.scroll
+    .recipe-slides.swiper-wrapper
+      //.recipe-slide start
+      include ./../../mixins/recipe-slide
+      +recipe-slide(
+        "./img/recipe/recipe-image__1.jpg",
+        'Мясной рулет')
+      +recipe-slide(
+        "./img/recipe/recipe-image__2.jpg",
+        'Мясной рулет')
+      +recipe-slide(
+        "./img/recipe/recipe-image__3.jpg",
+        'Мясной рулет')
+      +recipe-slide(
+        "./img/recipe/recipe-image__4.jpg",
+        'Мясной рулет')
+      +recipe-slide(
+        "./img/recipe/recipe-image__4.jpg",
+        'Мясной рулет')
+      //.recipe-slide end
+    //recipe-slider__control start
+    .slider-control.recipe-slider__control
+      button.slider-control__btn.slider-control__btn--prev.recipe-slider__prev 
+      button.slider-control__btn.slider-control__btn--next.recipe-slider__next 
+    //recipe-slider__control end

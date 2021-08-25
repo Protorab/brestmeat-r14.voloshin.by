@@ -80,5 +80,38 @@ const swiperJsSliders = () => {
       nextSlideMessage: "Следующий слайд",
     },
   });
+  let recipeSlider = new Swiper(".recipe-slider", {
+    slidesPerView: 4,
+    spaceBetween: 65,
+    speed: 1200,
+    navigation: {
+      nextEl: ".recipe-slider__next",
+      prevEl: ".recipe-slider__prev",
+    },
+
+    breakpoints: {
+      320: {
+        spaceBetween: 15,
+        slidesPerView: 1,
+      },
+      640: {
+        spaceBetween: 20,
+        slidesPerView: 2,
+      },
+      1024: {
+        spaceBetween: 45,
+        slidesPerView: 3,
+      },
+      1280: {
+        spaceBetween: 65,
+        slidesPerView: 4,
+      },
+    },
+    a11y: {
+      paginationBulletMessage: "Перейти к слайду {{index}}",
+      prevSlideMessage: "Предыдущий слайд",
+      nextSlideMessage: "Следующий слайд",
+    },
+  });
 };
 export default swiperJsSliders;
