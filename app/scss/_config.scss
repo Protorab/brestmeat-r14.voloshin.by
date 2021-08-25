@@ -183,14 +183,6 @@ textarea {
   // background: #060b0d;
   color: $textColor;
 
-  &:focus:required:invalid {
-    border-color: rgb(85, 0, 0);
-  }
-
-  &:required:valid {
-    border-color: rgb(14, 75, 14);
-  }
-
   &::-webkit-input-placeholder {
     @include _transition(all, 0.2s);
 
@@ -292,12 +284,7 @@ a {
     text-decoration: none;
   }
 }
-p {
-  @include adaptive(margin-bottom, 10, 5, 0);
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
+
 footer,
 header,
 section,
@@ -320,17 +307,17 @@ section,
     max-width: $maxWidth + px;
   }
 
-  @media only screen and (max-width: $maxWidth + px) {
+  @media only screen and (min-width: $maxWidth + px) {
     // max-width: $maxWidth + px;
-    max-width: $maxWidthContainer + px;
+    max-width: $maxWidth + px;
   }
 
-  @media only screen and (min-width: $maxWidthContainer + px) {
+  @media only screen and (max-width: $maxWidth + px) {
     width: 100%;
     max-width: $maxWidthContainer + px;
   }
 
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1152px) {
     width: calc(100% - 55px);
   }
 
@@ -811,7 +798,7 @@ label {
       display: inline-block;
       background: #dfdfdf;
       width: 100%;
-      @include adaptive(max-width, 512, 82, 0);
+      @include adaptive(max-width, 512, 60, 0);
       height: 2px;
       @include _transition(all, 0.35s);
       transform: scaleX(0);

@@ -65,19 +65,29 @@
     &--top {
       @include adaptive(padding-bottom, 65, 20, 0);
       align-self: center;
+
       a {
         @include _transition(all, 0.355s);
         -webkit-text-stroke: 1px transparent;
+
         &:hover {
           color: $accentColor;
           -webkit-text-stroke-color: $accentColor;
         }
+      }
+      @media only screen and (max-width: 800px) {
+        flex-wrap: wrap;
       }
     }
     // .footer-wrapper--bottom {
     &--bottom {
       @include adaptive(padding-top, 25, 15, 0);
       border-top: 1px #a3a3a3 solid;
+      @media only screen and (max-width: 800px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
     }
   }
   // .footer-coll {
@@ -91,15 +101,50 @@
     }
     &:nth-child(1) {
       width: 29%;
+
+      @media only screen and (max-width: 800px) {
+        width: 40%;
+        @include adaptive(margin-bottom, 40, 25, 0);
+      }
+      @media only screen and (max-width: 600px) {
+        width: 100%;
+        margin-right: 0;
+      }
     }
     &:nth-child(2) {
       width: 14%;
+
+      @media only screen and (max-width: 800px) {
+        width: 40%;
+        margin-right: 0;
+        @include adaptive(margin-bottom, 40, 25, 0);
+      }
+      @media only screen and (max-width: 600px) {
+        width: 100%;
+        margin-right: 0;
+      }
     }
     &:nth-child(3) {
       width: 29%;
+
+      @media only screen and (max-width: 800px) {
+        width: 40%;
+      }
+      @media only screen and (max-width: 600px) {
+        width: 100%;
+        margin-right: 0;
+      }
     }
     &:nth-child(4) {
       width: 34%;
+
+      @media only screen and (max-width: 800px) {
+        width: 40%;
+      }
+      @media only screen and (max-width: 600px) {
+        width: 100%;
+        margin-right: 0;
+      }
     }
   }
 
@@ -124,6 +169,10 @@
   letter-spacing: -0.01em;
   color: #ffffff;
   opacity: 0.8;
+  @media only screen and (max-width: 800px) {
+    text-align: center;
+    @include adaptive(margin-bottom, 18, 14, 0);
+  }
 }
 .social {
   // .social-links {

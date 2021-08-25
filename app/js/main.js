@@ -19,6 +19,9 @@ import observer from "./functions/lazyLoading";
 // import customSelectFunc functions
 import customSelectFunc from "./functions/customSelect";
 
+// import truncate functions
+import truncate from "./functions/truncate";
+
 // import tabsChange functions
 // import tabsChange from "./functions/tabsChange";
 
@@ -55,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const lazyImages = document.querySelectorAll(
     "img[data-lazy-src],source[data-lazy-srcset] "
   );
+  const pressroomText = document.querySelectorAll(".pressroom-card__text p");
   const animateItems = document.querySelectorAll(".animate");
   const copyrightYear = document.querySelectorAll(".current-year");
   const preloaderProgress = document.querySelector(".preloader__progress");
@@ -94,7 +98,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
   setMainMarginTop();
-
+  if (pressroomText.length > 0) {
+    pressroomText.forEach((item) => {
+      truncate(item, "190");
+    });
+  }
   if (copyrightYear.length > 0) {
     const year = new Date().getFullYear();
     copyrightYear.forEach((item) => {
@@ -137,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keydown", function (e) {
     if (e.which === 27) {
       const modalOpen = document.querySelector(".modal.--open");
-      modalClose(modalOpen);
+      modalOpen ? modalClose(modalOpen) : "";
     }
   });
 

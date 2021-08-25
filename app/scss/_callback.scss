@@ -37,6 +37,12 @@
           color: $accentColor;
         }
       }
+      p {
+        @include adaptive(margin-bottom, 10, 5, 0);
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
       a[href^="tel:"] {
         @extend .t4;
         font-weight: 600;
@@ -47,6 +53,15 @@
           margin-bottom: 0;
         }
       }
+      @media only screen and (max-width: 600px) {
+        width: 100%;
+        &:nth-child(1) {
+          @include adaptive(margin-bottom, 45, 40, 0);
+        }
+      }
+    }
+    @media only screen and (max-width: 600px) {
+      flex-direction: column;
     }
   }
 }

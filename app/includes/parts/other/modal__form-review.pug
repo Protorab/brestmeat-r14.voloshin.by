@@ -1,0 +1,27 @@
+#review__form.modal
+  .modal__body.__form.__review
+    form.modal__form.modal__content.modal__form.__review(action="#")
+      a.modal__close.close__modal(href="#",role="button") 
+        span
+        span
+      fieldset.modal__form-content.__review
+        legend.modal__form-title.__review Оставьте свой отзыв     
+        input.modal__form-input.__review(
+          required,
+          placeholder="Введите имя",
+          type="text",
+          name="name",
+          )
+        input.modal__form-input.__review(
+          required,
+          placeholder="Введите телефон",
+          type="tel",
+          name="phone",
+          )
+        textarea.modal__form-textarea.__review(
+          name="review",
+          required,
+          cols="30", 
+          rows="10",
+          placeholder="Напишите нам свой отзыв")
+        button.btn(type='submit').btn.modal__form-btn.__review Отправить 

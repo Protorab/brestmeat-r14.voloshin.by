@@ -44,6 +44,8 @@ const swiperJsSliders = () => {
         spaceBetween: 45,
       },
     },
+    resizeObserver: true,
+
     a11y: {
       paginationBulletMessage: "Перейти к слайду {{index}}",
       prevSlideMessage: "Предыдущий слайд",
@@ -63,6 +65,7 @@ const swiperJsSliders = () => {
       320: {
         spaceBetween: 15,
         slidesPerColumn: 2,
+        slidesPerView: 1,
       },
       640: {
         spaceBetween: 20,
@@ -74,6 +77,8 @@ const swiperJsSliders = () => {
         spaceBetween: 65,
       },
     },
+    resizeObserver: true,
+
     a11y: {
       paginationBulletMessage: "Перейти к слайду {{index}}",
       prevSlideMessage: "Предыдущий слайд",
@@ -107,6 +112,7 @@ const swiperJsSliders = () => {
         slidesPerView: 4,
       },
     },
+    resizeObserver: true,
     a11y: {
       paginationBulletMessage: "Перейти к слайду {{index}}",
       prevSlideMessage: "Предыдущий слайд",
@@ -138,6 +144,8 @@ const swiperJsSliders = () => {
         spaceBetween: 30,
       },
     },
+    resizeObserver: true,
+
     a11y: {
       paginationBulletMessage: "Перейти к слайду {{index}}",
       prevSlideMessage: "Предыдущий слайд",

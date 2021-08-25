@@ -55,8 +55,8 @@
       width: 100%;
       position: relative;
       z-index: 2;
+      // @include adaptive(max-height, 454, 170, 0);
 
-      @include adaptive(max-height, 454, 170, 0);
       img {
         @include _transition(all, 0.35s);
       }
@@ -65,7 +65,7 @@
           transform: scale(1.2);
         }
       }
-      @media only screen and (min-width: 768px) {
+      @media only screen and (min-width: 1025px) {
         width: 62%;
       }
     }
@@ -78,10 +78,13 @@
       width: 100%;
       position: relative;
       z-index: 2;
-      @include adaptive(padding-right, 40, 20, 0);
-      @include adaptive(padding-left, 40, 20, 0);
+      @include adaptive(padding-top, 30, 20, 0);
+      @include adaptive(padding-right, 40, 5, 0);
+      @include adaptive(padding-left, 40, 5, 0);
 
-      @media only screen and (min-width: 768px) {
+      @media only screen and (min-width: 1025px) {
+        padding-top: 0;
+
         width: 38%;
       }
     }
@@ -142,6 +145,8 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: flex-start;
+      @include adaptive(margin-bottom, 25, 20, 0);
+
       // .recipe-card__list-item {
       &-item {
         display: flex;
@@ -168,15 +173,22 @@
     }
     // .recipe-card__btn {
     &__btn {
-      @include adaptive(width, 160, 140, 0);
+      @include adaptive(width, 180, 170, 0);
       align-self: flex-end;
       margin-top: auto;
+      @include adaptive(margin-bottom, 25, 20, 0);
+      @media only screen and (max-width: 1024px) {
+        align-self: flex-start;
+      }
     }
     // .recipe-card__share {
     &__share {
       margin-top: auto;
       // .recipe-card__share-title {
       &-title {
+        @media only screen and (max-width: 600px) {
+          @include adaptive(margin-bottom, 25, 20, 0);
+        }
       }
       // .recipe-card__share-list {
       &-list {
@@ -187,12 +199,20 @@
       // .recipe-card__share-link {
       &-link {
       }
+      @media only screen and (max-width: 600px) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
     }
     &.__show {
       &::after {
         transform: translate(-50%, 0%) scale(1);
         filter: blur(173.928px);
       }
+    }
+    @media only screen and (max-width: 1024px) {
+      flex-direction: column;
     }
   }
   // .recipe-slider {

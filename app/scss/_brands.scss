@@ -8,20 +8,24 @@
   // .brands-slider {
   &-slider {
     @extend .wrapper;
-    height: fit-content;
+    height: auto;
+
+    // height: fit-content;
   }
   // .brands-slides {
   &-slides {
-    height: fit-content;
+    height: auto;
+    // height: fit-content;
   }
   // .brands-slide {
   &-slide {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    @include adaptive(height, 175, 115, 0);
     overflow: hidden;
-
+    @media only screen and (min-width: 600px) {
+      @include adaptive(height, 175, 115, 0);
+    }
     // .brands-slide img{
     img {
       width: auto;

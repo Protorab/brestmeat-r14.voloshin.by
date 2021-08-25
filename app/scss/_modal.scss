@@ -25,10 +25,14 @@
     max-width: 95%;
     max-height: 97%;
     display: flex;
+    // .modal__body.__form {
+    &.__form {
+    }
 
-    // align-items: center;
-    // justify-content: center;
-    // .modal__body_Img
+    // .modal__body.__review {
+    &.__review {
+    }
+    // .modal__body.__Img {
     &.__img {
       max-width: 95%;
       width: 100%;
@@ -62,13 +66,13 @@
   // .modal__content
   &__content {
     cursor: default;
-    @include _transition(all, 0.2s);
+    @include _transition(all, 0.28s);
     background: $mainColor;
     display: flex;
     position: relative;
     z-index: 2;
     opacity: 0;
-    transform: translate(0px, -50%);
+    transform: translate(0px, -100%);
     perspective-origin: 30px;
     width: 100%;
     height: 100%;
@@ -115,10 +119,13 @@
 
   // .modal__form
   &__form {
-    max-width: 500px;
+    max-width: 450px;
     margin-left: auto;
     margin-right: auto;
-
+    // .modal__form.__review {
+    &.__review {
+      max-width: 550px;
+    }
     // .modal-form__content
     &-content {
       border: none;
@@ -161,15 +168,21 @@
       padding-left: 0;
       border-bottom: 1px solid $textColor;
       &:last-of-type {
-        @include adaptive(margin-bottom, 15, 10, 0);
+        @include adaptive(margin-bottom, 20, 15, 0);
       }
     }
+    // .modal__form-textarea {
+    &-textarea {
+      border: 1px solid $textColor;
+    }
+
     // .modal__form-checkbox {
     &-checkbox {
-      @include adaptive(margin-bottom, 40, 30, 0);
     }
     // .modal__form-btn {
     &-btn {
+      @include adaptive(margin-top, 40, 30, 0);
+
       max-width: 100%;
     }
     // .modal__form-textarea
