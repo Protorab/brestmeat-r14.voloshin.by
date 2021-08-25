@@ -113,5 +113,36 @@ const swiperJsSliders = () => {
       nextSlideMessage: "Следующий слайд",
     },
   });
+  let reviewsSlider = new Swiper(".reviews-slider", {
+    slidesPerView: "auto",
+    spaceBetween: 30,
+    speed: 1200,
+    navigation: {
+      nextEl: ".reviews-slider__next",
+      prevEl: ".reviews-slider__prev",
+    },
+
+    breakpoints: {
+      320: {
+        spaceBetween: 15,
+        slidesPerView: 1,
+      },
+      640: {
+        spaceBetween: 20,
+        slidesPerView: "auto",
+      },
+      1024: {
+        spaceBetween: 25,
+      },
+      1280: {
+        spaceBetween: 30,
+      },
+    },
+    a11y: {
+      paginationBulletMessage: "Перейти к слайду {{index}}",
+      prevSlideMessage: "Предыдущий слайд",
+      nextSlideMessage: "Следующий слайд",
+    },
+  });
 };
 export default swiperJsSliders;

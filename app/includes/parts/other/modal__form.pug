@@ -5,7 +5,7 @@
         span
         span
       fieldset.modal__form-content
-        legend.modal__form-title Заголовок формы      
+        legend.modal__form-title Форма обратной связи     
         input.modal__form-input(
           required,
           placeholder="Введите имя",
@@ -23,9 +23,11 @@
           placeholder="Введите e-mail",
           type="email",
           name="E-mail")
-        textarea.modal__form-textarea(
-          name="Сообщение",
-          cols="30",
-          rows="10",
-          placeholder="Введите текст")
-        button.btn(type='submit').btn.modal__btn Отправить 
+        span.modal__form-checkbox.custom-checkbox 
+          input#modal-agree.custom-checkbox__input(
+            type="checkbox", 
+            name="agree",
+            required)
+          label(for="modal-agree").custom-checkbox__checker.modal__form-checker
+          label(for="modal-agree").custom-checkbox__label.modal__form-label Я согласен с условиями акций и рассылок
+        button.btn(type='submit').btn.modal__form-btn Отправить 

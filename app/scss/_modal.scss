@@ -123,6 +123,11 @@
     &-content {
       border: none;
       padding: 100px 20px 50px;
+      @include adaptive(padding-top, 80, 65, 0);
+      @include adaptive(padding-right, 25, 20, 0);
+      @include adaptive(padding-bottom, 25, 15, 0);
+      @include adaptive(padding-left, 25, 20, 0);
+
       display: flex;
       flex-direction: column;
       width: 100%;
@@ -130,9 +135,10 @@
 
     // .modal__form-title
     &-title {
-      position: absolute;
+      // position: absolute;
       display: flex;
-      @extend .t3;
+      @extend .t4;
+      font-weight: 600;
       text-transform: uppercase;
       margin-left: auto;
       margin-right: auto;
@@ -140,6 +146,8 @@
       left: 0;
       width: 100%;
       padding: 0 25px;
+      margin: 0;
+
       text-align: center;
       align-items: center;
       justify-content: center;
@@ -147,13 +155,23 @@
 
     // .modal__form-input
     &-input {
-      margin-bottom: 10px;
-
-      &:last-child {
-        margin-bottom: 15px;
+      @include _borderRadius(0);
+      @include adaptive(padding-top, 15, 10, 0);
+      @include adaptive(padding-bottom, 15, 10, 0);
+      padding-left: 0;
+      border-bottom: 1px solid $textColor;
+      &:last-of-type {
+        @include adaptive(margin-bottom, 15, 10, 0);
       }
     }
-
+    // .modal__form-checkbox {
+    &-checkbox {
+      @include adaptive(margin-bottom, 40, 30, 0);
+    }
+    // .modal__form-btn {
+    &-btn {
+      max-width: 100%;
+    }
     // .modal__form-textarea
     &-textarea {
       margin-bottom: 15px;

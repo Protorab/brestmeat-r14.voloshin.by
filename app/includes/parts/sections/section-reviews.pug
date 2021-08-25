@@ -1,0 +1,34 @@
+section.section.reviews-section
+  h5.section__title.reviews-section__title.animate.scroll Отзывы
+  .reviews-slider.swiper-container.animate.scroll
+    .reviews-slides.swiper-wrapper
+      //.reviews-slide start
+      include ./../../mixins/reviews-slide
+      +reviews-slide(
+        "<p>Добрый день! Колбасу покупала специально для приготовления пиццы.  Чистится прекрасно, легко нарезается на колечки или соломку. Приятный копчёный аромат. Вкусно и бутерброд сделать, и вприкуску с гарниром, ну и пицца получилась отменная, запах колбасы после духовки просто волшебный. Всем рекомендую! </p>",
+        "20.03.2021",
+        "Отзыв Галина",
+        "г. Брест")
+      +reviews-slide(
+        "<p>Добрый день! Колбасу покупала специально для приготовления пиццы.  Чистится прекрасно, легко нарезается на колечки или соломку. Приятный копчёный аромат. Вкусно и бутерброд сделать, и вприкуску с гарниром, ну и пицца получилась отменная, запах колбасы после духовки просто волшебный. Всем рекомендую! </p>",
+        "20.03.2021",
+        "Отзыв Галина",
+        "г. Брест")
+      +reviews-slide(
+        "<p>Добрый день! Колбасу покупала специально для приготовления пиццы.  Чистится прекрасно, легко нарезается на колечки или соломку. Приятный копчёный аромат. Вкусно и бутерброд сделать, и вприкуску с гарниром, ну и пицца получилась отменная, запах колбасы после духовки просто волшебный. Всем рекомендую! </p>",
+        "20.03.2021",
+        "Отзыв Галина",
+        "г. Брест")
+      //.reviews-slide end
+    //reviews-slider__control start
+    .slider-control.reviews-slider__control
+      button.slider-control__btn.slider-control__btn--prev.reviews-slider__prev
+      button.slider-control__btn.slider-control__btn--next.reviews-slider__next
+    //reviews-slider__control end
+  .reviews-section__btns 
+    a.btn.reviews-section__btn.show-modal(
+      href="#review__form",
+      role="button") Оставить свой отзыв
+    a.btn.__active.reviews-section__btn.show-modal(
+      href="page-reviews.html",
+      role="button") Все отзывы

@@ -105,6 +105,58 @@
       background-color: $accentColor;
     }
   }
+  // .custom-checkbox {
+  &-checkbox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    // .custom-checkbox__input {
+    &__input {
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+      &:checked {
+        & ~ {
+          .custom {
+            &-checkbox {
+              &__checker {
+                &::before {
+                  transform: scale(1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    // .custom-checkbox__checker {
+    &__checker {
+      display: inline-flex;
+      @include adaptive(width, 14, 14, 0);
+      @include adaptive(height, 14, 14, 0);
+      @include adaptive(margin-right, 17, 17, 0);
+      justify-content: center;
+      align-items: center;
+      background: #f5f5f5;
+      border: 1px solid #ececec;
+      box-sizing: border-box;
+      @include _borderRadius(5px);
+      position: relative;
+      overflow: hidden;
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        @include _transition(all, 0.35s);
+        border: 3.5px solid $accentColor;
+        transform: scale(0);
+      }
+    }
+  }
 }
 .collapsible {
   // background-color: #777;

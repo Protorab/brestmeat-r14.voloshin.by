@@ -1,0 +1,52 @@
+.callback {
+  &-section {
+    background: $accentFourthColor;
+    &.section {
+      @include adaptive(padding-top, 50, 40, 0);
+      @include adaptive(padding-bottom, 50, 40, 0);
+    }
+  }
+  //  .callback-info {
+  &-info {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    @include adaptive(margin-bottom, 35, 45, 0);
+    // .callback-info__coll {
+    &__coll {
+      display: flex;
+      flex-direction: column;
+      width: 40%;
+      strong {
+        font-weight: 600;
+      }
+      h {
+        @for $i from 1 through 6 {
+          &#{$i} {
+            @include adaptive(margin-bottom, 15, 10, 0);
+          }
+        }
+      }
+      h5 {
+        color: $textFourthColor;
+      }
+      a {
+        @include _transition(all, 0.35s);
+        &:hover {
+          color: $accentColor;
+        }
+      }
+      a[href^="tel:"] {
+        @extend .t4;
+        font-weight: 600;
+      }
+      p {
+        @include adaptive(margin-bottom, 10, 5, 0);
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

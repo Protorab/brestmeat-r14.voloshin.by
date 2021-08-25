@@ -1,0 +1,10 @@
+mixin reviews-slide(content,date,name,city)
+  article.reviews-slide.swiper-slide 
+    .reviews-slide__text !{content}
+    ul.reviews-slide__info
+      li.reviews-slide__info-item.reviews-slide__info-date
+        span!=date
+      li.reviews-slide__info-item.reviews-slide__info-name
+        span!=name
+        span!=city
+    a.reviews-slide__link(href="page-reviews.html#review-id") 

@@ -292,7 +292,12 @@ a {
     text-decoration: none;
   }
 }
-
+p {
+  @include adaptive(margin-bottom, 10, 5, 0);
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
 footer,
 header,
 section,
@@ -547,13 +552,24 @@ section,
   // .btn__icon {
   &__icon {
     display: inline-flex;
-    @include adaptive(width, 15, 15, 0);
-    @include adaptive(height, 15, 15, 0);
-    background-image: url("../img/icons/icon-arrow-white.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     @include _transition(all, 0.35s);
+
+    // .btn__icon-arrow {
+    &-arrow {
+      @include adaptive(width, 15, 15, 0);
+      @include adaptive(height, 15, 15, 0);
+      background-image: url("../img/icons/icon-arrow-white.svg");
+    }
+    // .btn__icon-mail {
+    &-mail {
+      @include adaptive(width, 30, 25, 0);
+      @include adaptive(height, 30, 25, 0);
+
+      background-image: url("../img/icons/icon-mail.svg");
+    }
   }
   &:hover {
     // background: $accentSecondColor;

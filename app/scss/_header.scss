@@ -89,8 +89,8 @@
   }
 
   &.--show {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     &::before {
       transform: translate(0, 0%);
       backdrop-filter: blur(10px);
