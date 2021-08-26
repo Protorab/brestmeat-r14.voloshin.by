@@ -2,7 +2,7 @@
   @include _transition(all, 0.5s);
   position: fixed;
   top: 0;
-  z-index: 10;
+  z-index: 11;
   background: transparent;
 
   @include adaptive(padding-top, 40, 20, 0);
@@ -51,9 +51,9 @@
     align-items: center;
     position: relative;
     @include _borderRadius(50%);
-    @include adaptive(min-width, 35, 35, 0);
-    @include adaptive(width, 35, 35, 0);
-    @include adaptive(height, 35, 35, 0);
+    @include adaptive(min-width, 40, 40, 0);
+    @include adaptive(width, 40, 40, 0);
+    @include adaptive(height, 40, 40, 0);
     @include adaptive(margin-right, 20, 13, 0);
     @media only screen and (min-width: 1154px) {
       &:last-child {
@@ -74,12 +74,15 @@
       @include _borderRadius(50%);
       @include _transition(all, 0.35s);
     }
-    &:hover {
-      &::before {
-        width: 120%;
-        height: 120%;
+    @media only screen and (min-width: 1152px) {
+      &:hover {
+        &::before {
+          width: 120%;
+          height: 120%;
+        }
       }
     }
+
     // .header-icon__image {
     &__image {
       display: inline-flex;
@@ -136,7 +139,7 @@
         width: 100%;
         height: 100%;
         border: none;
-        @include adaptive(font-size, 14, 12, 0);
+        @include adaptive(font-size, 11, 10, 0);
         & > span {
           margin-right: 3.5px;
         }

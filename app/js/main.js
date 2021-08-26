@@ -191,8 +191,9 @@ document.addEventListener("DOMContentLoaded", () => {
     burgerMenus.forEach((burgerMenu) => {
       burgerMenu.addEventListener("click", function (e) {
         e.preventDefault();
-
-        const clickedBurgerMenus = document.querySelectorAll(".menu-burger");
+        let mobileMenuShow = document.querySelector(".menu-nav--mobile.--show");
+        let clickedBurgerMenus = document.querySelectorAll(".menu-burger");
+        // let header = document.querySelector("#header");
         clickedBurgerMenus.forEach((element) => {
           element.classList.contains("--clicked")
             ? element.classList.remove("--clicked")
@@ -201,11 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // burgerMenu.classList.toggle("--clicked");
         body.classList.toggle("--fixed");
         menu.classList.toggle("--show");
-        const mobileMenuShow = document.querySelector(
-          ".menu-nav--mobile.--show"
-        );
         if (mobileMenuShow) {
-          console.log("mobileMenuShow :>> ", mobileMenuShow);
           mobileMenuShow.onscroll = function () {
             let topScroll;
             window.innerWidth <= 800 ? (topScroll = 10) : (topScroll = 0),

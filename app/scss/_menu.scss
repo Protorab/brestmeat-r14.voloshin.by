@@ -24,9 +24,9 @@
       opacity: 1;
 
       &:nth-child(1) {
-        top: 11px;
+        top: 13px;
         @media only screen and (max-width: 1152px) {
-          top: 15px;
+          top: 18px;
         }
       }
 
@@ -36,10 +36,13 @@
       }
 
       &:nth-child(3) {
-        bottom: 11px;
+        bottom: 13px;
         @media only screen and (max-width: 1152px) {
-          bottom: 15px;
+          bottom: 18px;
         }
+      }
+      @media only screen and (max-width: 1152px) {
+        width: 20px;
       }
     }
     //.menu__burger.--clicked
@@ -47,9 +50,9 @@
       span {
         &:nth-child(1) {
           transform: rotate(-45deg);
-          top: 16.5px;
+          top: 18.5px;
           @media only screen and (max-width: 1152px) {
-            top: 21.5px;
+            top: 23.5px;
           }
         }
 
@@ -62,9 +65,9 @@
 
         &:nth-child(3) {
           transform: rotate(45deg);
-          bottom: 16.5px;
+          bottom: 18.5px;
           @media only screen and (max-width: 1152px) {
-            bottom: 21.5px;
+            bottom: 23.5px;
           }
         }
       }
@@ -82,8 +85,8 @@
       // @include adaptive(min-width, 40, 37, 0);
       // @include adaptive(width, 40, 37, 0);
       // @include adaptive(height, 40, 37, 0);
-      width: 45px;
-      height: 45px;
+      width: 50px;
+      height: 50px;
       order: 4;
       margin-right: 0;
     }
