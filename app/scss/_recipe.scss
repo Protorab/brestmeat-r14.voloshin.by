@@ -130,6 +130,7 @@
       // .recipe-card__info-title {
       &-title {
         @extend .t5;
+        white-space: nowrap;
       }
     }
     // .recipe-card__subtitle {

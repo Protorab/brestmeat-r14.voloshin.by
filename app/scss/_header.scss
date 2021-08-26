@@ -18,7 +18,7 @@
     @include _transition(all, 0.35s);
     transform: translate(0, -100%);
     background: rgba($accentThirdColor, 0.7);
-    z-index: 2;
+    z-index: 0;
   }
   // .header-logo {
   &-logo {
@@ -36,6 +36,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    z-index: 3;
     // overflow: hidden;
   }
   // .header-icons {
