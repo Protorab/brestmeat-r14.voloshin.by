@@ -20,13 +20,16 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    @include adaptive(width, 30, 20, 0);
-    @include adaptive(height, 30, 20, 0);
+    @include adaptive(width, 30, 30, 0);
+    @include adaptive(min-width, 30, 30, 0);
+    @include adaptive(height, 30, 30, 0);
     overflow: hidden;
     @include adaptive(margin-right, 2, 8, 0);
+
     &:last-child {
       margin-right: 0;
     }
+
     @media only screen and (max-width: 600px) {
     }
   }

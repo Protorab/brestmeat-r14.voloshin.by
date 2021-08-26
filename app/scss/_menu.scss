@@ -26,7 +26,7 @@
       &:nth-child(1) {
         top: 13px;
         @media only screen and (max-width: 1152px) {
-          top: 18px;
+          // top: 18px;
         }
       }
 
@@ -38,7 +38,7 @@
       &:nth-child(3) {
         bottom: 13px;
         @media only screen and (max-width: 1152px) {
-          bottom: 18px;
+          // bottom: 18px;
         }
       }
       @media only screen and (max-width: 1152px) {
@@ -52,7 +52,7 @@
           transform: rotate(-45deg);
           top: 18.5px;
           @media only screen and (max-width: 1152px) {
-            top: 23.5px;
+            // top: 23.5px;
           }
         }
 
@@ -67,7 +67,7 @@
           transform: rotate(45deg);
           bottom: 18.5px;
           @media only screen and (max-width: 1152px) {
-            bottom: 23.5px;
+            // bottom: 23.5px;
           }
         }
       }
@@ -85,8 +85,8 @@
       // @include adaptive(min-width, 40, 37, 0);
       // @include adaptive(width, 40, 37, 0);
       // @include adaptive(height, 40, 37, 0);
-      width: 50px;
-      height: 50px;
+      // width: 50px;
+      // height: 50px;
       order: 4;
       margin-right: 0;
     }

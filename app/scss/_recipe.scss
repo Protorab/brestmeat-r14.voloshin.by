@@ -177,8 +177,10 @@
       align-self: flex-end;
       margin-top: auto;
       @include adaptive(margin-bottom, 25, 20, 0);
+
       @media only screen and (max-width: 1024px) {
         align-self: flex-start;
+        @include adaptive(margin-bottom, 45, 40, 0);
       }
     }
     // .recipe-card__share {

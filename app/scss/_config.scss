@@ -258,7 +258,9 @@ textarea {
 }
 
 textarea {
-  height: 150px;
+  width: 100%;
+  @include adaptive(height, 150, 100, 0);
+  // height: 150px;
   resize: none;
 }
 
@@ -862,12 +864,13 @@ label {
   }
   // .social-item {
   &-item {
-    @include adaptive(width, 30, 30, 0);
-    @include adaptive(height, 30, 30, 0);
+    @include adaptive(width, 29, 29, 0);
+    @include adaptive(height, 29, 29, 0);
     @include _borderRadius(50%);
     // background: $accentColor;
     @include adaptive(margin-right, 5, 5, 0);
     @include _transition(all, 0.355s);
+    overflow: hidden;
 
     &:last-child {
       margin-right: 0;

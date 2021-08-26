@@ -137,6 +137,8 @@
     &__checker {
       display: inline-flex;
       @include adaptive(width, 14, 14, 0);
+      @include adaptive(min-width, 14, 14, 0);
+
       @include adaptive(height, 14, 14, 0);
       @include adaptive(margin-right, 17, 17, 0);
       justify-content: center;
