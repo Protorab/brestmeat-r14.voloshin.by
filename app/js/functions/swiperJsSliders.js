@@ -27,7 +27,10 @@ const swiperJsSliders = () => {
       nextEl: ".novelty-slider__next",
       prevEl: ".novelty-slider__prev",
     },
-
+    loop: true,
+    autoplay: {
+      delay: 3500,
+    },
     breakpoints: {
       320: {
         spaceBetween: 15,
@@ -45,7 +48,7 @@ const swiperJsSliders = () => {
       },
     },
     resizeObserver: true,
-
+    lazy: true,
     a11y: {
       paginationBulletMessage: "Перейти к слайду {{index}}",
       prevSlideMessage: "Предыдущий слайд",
@@ -95,6 +98,10 @@ const swiperJsSliders = () => {
     slidesPerView: 4,
     spaceBetween: 65,
     speed: 1200,
+    loop: true,
+    autoplay: {
+      delay: 3500,
+    },
     navigation: {
       nextEl: ".recipe-slider__next",
       prevEl: ".recipe-slider__prev",
