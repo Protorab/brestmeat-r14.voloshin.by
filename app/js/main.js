@@ -204,11 +204,10 @@ document.addEventListener("DOMContentLoaded", () => {
         menu.classList.toggle("--show");
         if (mobileMenuShow) {
           mobileMenuShow.onscroll = function () {
-            let topScroll;
-            window.innerWidth <= 800 ? (topScroll = 10) : (topScroll = 0),
-              this.scrollTop > topScroll
-                ? (this.style.zIndex = "5")
-                : (this.style.zIndex = "1");
+            let topScroll = 10;
+            this.scrollTop > topScroll
+              ? (this.style.zIndex = "5")
+              : (this.style.zIndex = "1");
           };
         }
       });
