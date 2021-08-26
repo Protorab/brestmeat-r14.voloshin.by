@@ -1,0 +1,94 @@
+mixin menu(menuItems,addClass)
+  //menu-nav start
+  nav.menu-nav(class=`${addClass ? `menu-nav--${addClass}` : ""} `)
+    .menu-row
+      .menu-coll.menu-contact
+        h5.menu-contact__title Контакты
+        dl.menu-contact__group
+          dt.menu-contact__group-title Адрес
+          dd.menu-contact__group-content  224034, г. Брест, ул. Писателя Смирнова, 4 
+        dl.menu-contact__group
+          dt.menu-contact__group-title Телефоны
+          dd.menu-contact__group-content  
+            a(href="tel:+375 (212) 61-45-98") +375 (212) 61-45-98 (Приемная)
+        include ./social-links
+        +social-links([
+          [
+            "facebook",
+            "https://www.facebook.com/",
+            "./img/icons/icon-fb--red.svg"],
+          [
+            "vkontakte",
+            "https://vk.com/",
+            "./img/icons/icon-vk--red.svg"],
+          [
+            "instagram",
+            "https://www.instagram.com/",
+            "./img/icons/icon-inst--red.svg"],
+          [
+            "twitter",
+            "https://twitter.com/",
+            "./img/icons/icon-twitter--red.svg"],
+          [
+            "Телефон",
+            "tel:+375-29-123-45-67",
+            "./img/icons/icon-phone--red.svg"],
+          [
+            "ok",
+            "https://ok.ru/",
+            "./img/icons/icon-ok--red.svg"
+          ]
+
+        ],
+        "menu")
+      //menu start
+      ul.menu(
+        itemscope, 
+        itemtype="http://schema.org/SiteNavigationElement",
+        class=`${addClass ? `menu--${addClass}`: ""} `)
+        each menuItem, idx in menuItems
+          - var count = idx+1
+          - var title = menuItem[0]
+          - var link = menuItem[1]
+          - var menuDropdownItems = menuItem[2]
+          //menu__link start
+          li.menu__item(
+            itemprop="name",
+            class=`${addClass ? `menu__item--${addClass}`: ""}`)
+
+            //menu__link start
+            a.menu__link(
+              itemprop="url",
+              href=`${link}`,
+              class=`${addClass ? `menu__link--${addClass}`: ""}`)!=title
+            //menu__link end
+
+            if menuDropdownItems>0
+
+              //menu__dropdown start
+              ul.menu__dropdown(
+                class=`${addClass ? `menu__dropdown--${addClass}`: ""} `)
+                each menuDropdownItem, idxDrop in menuDropdownItems
+                  - var count = idx+1
+                  - var dropTitle = menuDropdownItem[0]
+                  - var dropLink = menuDropdownItem[1]
+
+                  //menu__dropdown-item start
+                  li.menu__dropdown-item(
+                    class=`${addClass ? `menu__dropdown-item--${addClass}`: ""} `)
+
+                    //menu__dropdown-link start
+                    a.menu__dropdown-link(
+                      href=`${dropLink}`,
+                      class=`${addClass ? `menu__dropdown-link--${addClass}`: ""} `)=dropTitle
+                    //menu__dropdown-link end
+
+                  //menu__dropdown-item end
+
+              //menu__dropdown end
+
+          //menu__item end
+
+        //menu end
+        
+    //menu-nav end
