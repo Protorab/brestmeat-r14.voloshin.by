@@ -103,7 +103,7 @@
     // .menu-nav--mobile {
     &--mobile {
       width: 100vw;
-      min-height: 60%;
+      min-height: 65%;
       height: auto;
       position: fixed;
 
@@ -142,6 +142,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
+    overflow: hidden;
     // height: 100%;
     @media only screen and (max-width: 800px) {
       flex-direction: column;
