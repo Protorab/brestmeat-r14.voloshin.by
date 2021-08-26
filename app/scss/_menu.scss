@@ -102,21 +102,22 @@
     }
     // .menu-nav--mobile {
     &--mobile {
-      // @include adaptive(width, 450, 300, 0);
       width: 100vw;
-      min-height: 60vh;
+      min-height: 60%;
+      height: auto;
       position: fixed;
-      // flex-direction: column;
+
       align-items: flex-start;
       justify-content: flex-start;
       background: rgba($accentThirdColor, 0.8754);
       top: 0;
       right: 0;
       overflow: hidden;
-      // z-index: 10;
-      // width: 300px;
+      overflow-x: hidden;
+      overflow-y: auto;
+
       @include adaptive(padding-top, 190, 100, 0);
-      @include adaptive(padding-bottom, 60, 80, 0);
+      @include adaptive(padding-bottom, 60, 25, 0);
       transform: translate(0%, -110%);
       border-bottom: 8px solid $accentSecondColor;
 
@@ -127,9 +128,10 @@
       &.--show {
         transform: translate(0%, 0);
         transition-delay: 0;
-        // backdrop-filter: blur(10px);
-
         box-shadow: -8px 9px 24px rgba(0, 0, 0, 0.3);
+      }
+      @media only screen and (max-width: 600px) {
+        height: 100vh;
       }
     }
   }
@@ -140,6 +142,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
+    // height: 100%;
+    @media only screen and (max-width: 800px) {
+      flex-direction: column;
+      @include adaptive(padding-bottom, 60, 80, 0);
+    }
   }
 
   // .menu__item {
@@ -364,27 +371,30 @@
     }
   }
 
-  // menu--mobile {
+  // .menu--mobile {
   &--mobile {
     width: 50%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     @include adaptive(grid-column-gap, 60, 20, 0);
-    // @include adaptive(grid-row-gap, 20, 15, 0);
-
-    // flex-direction: co
-
-    // margin-bottom:
-
-    // align-items: flex-s
-
-    // justify-content: flex-s
-
-    // overflow-y: a;
+    @media only screen and (max-width: 1024px) {
+      width: 55%;
+    }
+    @media only screen and (max-width: 800px) {
+      width: 100%;
+      order: 1;
+      @include adaptive(margin-bottom, 40, 20, 0);
+    }
+    @media only screen and (max-width: 600px) {
+      grid-template-columns: repeat(1, 100%);
+      @include adaptive(grid-row-gap, 30, 20, 0);
+      @include adaptive(margin-bottom, 45, 35, 0);
+    }
   }
   // .menu-contact {
   &-contact {
     color: $mainColor;
+    width: 40%;
     // transform: translate(0px, 100px);
     // opacity: 0;
     // @include _transition(all, 0.35s);
@@ -444,6 +454,10 @@
       // transition-delay: 0.35s;
       // opacity: 1;
       // transform: translate(0%, 0);
+    }
+    @media only screen and (max-width: 800px) {
+      width: 100%;
+      order: 2;
     }
   }
 }

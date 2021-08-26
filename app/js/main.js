@@ -98,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
   setMainMarginTop();
+
   if (pressroomText.length > 0) {
     pressroomText.forEach((item) => {
       truncate(item, "190");
@@ -200,6 +201,19 @@ document.addEventListener("DOMContentLoaded", () => {
         // burgerMenu.classList.toggle("--clicked");
         body.classList.toggle("--fixed");
         menu.classList.toggle("--show");
+        const mobileMenuShow = document.querySelector(
+          ".menu-nav--mobile.--show"
+        );
+        if (mobileMenuShow) {
+          console.log("mobileMenuShow :>> ", mobileMenuShow);
+          mobileMenuShow.onscroll = function () {
+            let topScroll;
+            window.innerWidth <= 800 ? (topScroll = 10) : (topScroll = 0),
+              this.scrollTop > topScroll
+                ? (this.style.zIndex = "5")
+                : (this.style.zIndex = "1");
+          };
+        }
       });
     });
   }
