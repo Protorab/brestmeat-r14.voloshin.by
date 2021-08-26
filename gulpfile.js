@@ -56,14 +56,8 @@ const path = {
   clean: "./" + distFolder + "/",
 };
 
-function browsersync() {
-  browserSync.init({
-    server: {
-      baseDir: "./" + distFolder + "/",
-    },
-    notify: false,
-    online: true,
-  });
+function clean() {
+  return del(path.clean);
 }
 
 function scripts() {
@@ -191,8 +185,14 @@ function startwatch() {
   watch([path.watch.pug], pugFunc);
 }
 
-function clean() {
-  return del(path.clean);
+function browsersync() {
+  browserSync.init({
+    server: {
+      baseDir: "./" + distFolder + "/",
+    },
+    notify: false,
+    online: true,
+  });
 }
 
 exports.scripts = scripts;

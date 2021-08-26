@@ -21,10 +21,12 @@
   }
   // .header-logo {
   &-logo {
-    @include adaptive(width, 130, 85, 0);
+    @include adaptive(width, 130, 75, 0);
     @include adaptive(height, 100, 65, 0);
     @include _transition(all, 0.35s);
-    object-fit: contain;
+    img {
+      object-fit: contain;
+    }
   }
   // .header-wrapper
   &-wrapper {

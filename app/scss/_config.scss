@@ -826,6 +826,8 @@ label {
   @include adaptive(padding-bottom, 2, 2, 0);
   @include adaptive(padding-left, 8, 8, 0);
   @include _borderRadius(15px);
+  @include adaptive(font-size, 13, 13, 0);
+
   &--new {
     background: $accentColor;
   }
