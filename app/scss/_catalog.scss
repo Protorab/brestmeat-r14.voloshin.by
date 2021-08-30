@@ -14,6 +14,9 @@
     @media only screen and (max-width: 600px) {
       grid-template-columns: repeat(2, 1fr);
     }
+    @media only screen and (max-width: 360px) {
+      grid-template-columns: repeat(1, 100%);
+    }
 
     // catalog-category-card {
     &-card {
@@ -30,7 +33,7 @@
         width: 100%;
         overflow: hidden;
         @include adaptive(height, 195, 105, 0);
-        @include adaptive(margin-bottom, 20, 5, 0);
+        @include adaptive(margin-bottom, 20, 10, 0);
         @include _transition(all, 0.35s);
 
         img {
