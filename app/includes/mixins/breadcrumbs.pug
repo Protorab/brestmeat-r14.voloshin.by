@@ -10,7 +10,10 @@ mixin breadcrumbs(levels)
 
         li.breadcrumbs__item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
           if link
-            a(href=link aria-level!=count)
+            a(
+              
+              href=link, 
+              aria-level!=count)
               span(itemprop="name") #{name}
           else
             span(itemprop="name") #{name}
