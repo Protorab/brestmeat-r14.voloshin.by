@@ -1,7 +1,7 @@
 header#header.header.lock-padding.animate
   .wrapper.header-wrapper
     //header-logo start
-    a.logo.header-logo(href="#")
+    a.logo.header-logo(href="")
       include ./../../mixins/img-NL
       +img(
         "./img/logo.svg",
@@ -11,7 +11,7 @@ header#header.header.lock-padding.animate
     //menu start
     include ./../../mixins/menu.pug
     +menu([
-            ["Каталог","page-catalog.html"],
+            ["Каталог","page-catalog-category.html"],
             ["Рецепты","page-recipe.html"],
             ["О компании","page-about.html"],
             ["Партнерам","page-partner.html"],
@@ -70,21 +70,20 @@ header#header.header.lock-padding.animate
         ],
         "lang-selector")
       //icon-lang end
-  //mobile menu start
-  include ./../../mixins/menu-mobile
-  +menu([
-          ["Каталог","page-catalog.html"],
-          ["Рецепты","page-recipe.html"],
-          ["О компании","page-about.html"],
-          ["Партнерам","page-partner.html"],
-          ["Карьера","page-career.html"],
-          ["Контакты","page-contact.html"],
-          ["Советы","page-advice.html"],
-          ["Пресс-центр","page-press-center.html"],
-          ["Отзывы","page-reviews.html"],
-          ["Фирменная торговля","page-brand-trade.html"],
-          ["Вакансии","page-vacancy.html"],
+    //mobile menu start
+    include ./../../mixins/menu-mobile
+    +menu([
+            ["Каталог","page-catalog-category.html"],
+            ["Рецепты","page-recipe.html"],
+            ["О компании","page-about.html"],
+            ["Партнерам","page-partner.html"],
+            ["Карьера","page-career.html"],
+            ["Контакты","page-contact.html"],
+            ["Советы","page-advice.html"],
+            ["Пресс-центр","page-press-center.html"],
+            ["Отзывы","page-reviews.html"],
+            ["Фирменная торговля","page-brand-trade.html"],
+            ["Вакансии","page-vacancy.html"],
 
-        ],"mobile")
+          ],"mobile")
     //mobile menu end
-  //mobile menu end

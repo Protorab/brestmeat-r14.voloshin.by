@@ -1,0 +1,62 @@
+doctype html
+html(lang="ru")
+
+  //head start
+  include ./includes/mixins/head
+  +head("ОАО Брестский мясокомбинат  - производитель и поставщик колбасных изделий, мясных полуфабрикатов из Республики Беларусь")
+  //head end
+
+  body.--fixed.__loading
+    //preloader start
+    include ./includes/parts/other/preloader
+    //preloader end
+    
+    //header start
+    include ./includes/parts/main/header
+    //header end
+
+    //scrollToTopBtn start
+    include ./includes/elements/scrollToTopBtn
+    //scrollToTopBtn end
+
+    //page-main start
+    main.main.mt__nan
+
+      //top-slider start
+      include ./includes/parts/other/top-slider
+      //top-slider end
+
+      //novelty-section start
+      include ./includes/parts/sections/section-novelty
+      //novelty-section end
+
+      //brands-section start
+      include ./includes/parts/sections/section-brands
+      //brands-section end
+
+      //pressroom-section start
+      include ./includes/parts/sections/section-pressroom
+      //pressroom-section start
+
+      //recipe-section start
+      include ./includes/parts/sections/section-recipe
+      //recipe-section start
+
+      //reviews-section start
+      include ./includes/parts/sections/section-reviews
+      //reviews-section start
+      
+      //callback-section start
+      include ./includes/parts/sections/section-callback
+      //callback-section start
+
+    //page-main end
+    
+    //footer start
+    include ./includes/parts/main/footer
+    //footer end
+    include ./includes/parts/other/modal__search.pug
+    include ./includes/parts/other/modal__form.pug
+    include ./includes/parts/other/modal__form-review.pug
+    include ./includes/parts/other/modal__img.pug
+    include ./includes/parts/other/scripts.pug

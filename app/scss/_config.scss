@@ -894,3 +894,28 @@ label {
     @include _transition(all, 0.255s);
   }
 }
+.page {
+  &-top {
+    &__banner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      @include adaptive(height, 450, 290, 0);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      @include adaptive(margin-bottom, 60, 55, 0);
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background: #131313;
+        opacity: 0.45;
+      }
+    }
+  }
+}

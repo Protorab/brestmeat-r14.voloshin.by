@@ -1,0 +1,9 @@
+mixin catalog-category-card(imgPath,title,animateClass)
+  article.catalog-category-card(class=`${animateClass ? animateClass : ""}`)
+    include ./picture
+    +picture(
+      imgPath,
+      title,
+      "catalog-category-card")
+    h6.catalog-category-card__title!=title
+    a.catalog-category-card__link(href="page-catalog.html") 

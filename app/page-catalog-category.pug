@@ -1,0 +1,61 @@
+doctype html
+html(lang="ru")
+
+  //head start
+  include ./includes/mixins/head
+  +head("Каталог")
+  //head end
+
+  body.--fixed.__loading
+    //preloader start
+    include ./includes/parts/other/preloader
+    //preloader end
+    
+    //header start
+    include ./includes/parts/main/header
+    //header end
+
+    //scrollToTopBtn start
+    include ./includes/elements/scrollToTopBtn
+    //scrollToTopBtn end
+
+    //page-catalog-category start
+    main.main.page-catalog-category.mt__nan
+
+      //page-top__banner start
+      include ./includes/mixins/page-top__banner
+      +page-top__banner(
+        "./img/page-top__banner.jpg",
+        "page-top__banner--catalog-category")
+      //page-top__banner start
+
+      include ./includes/mixins/breadcrumbs
+      +breadcrumbs([
+        [
+          "Главная",
+          "index.html"
+        ],
+        [
+          "Каталог",
+          "#"]
+        ])
+
+      //.catalog-category-section start
+      include ./includes/parts/sections/section-catalog-category
+      //.catalog-category-section end
+
+
+      //callback-section start
+      include ./includes/parts/sections/section-callback
+      //callback-section end
+
+    //page-catalog-category end
+    
+    //footer start
+    include ./includes/parts/main/footer
+    //footer end
+    include ./includes/parts/other/modal__search.pug
+    include ./includes/parts/other/modal__form.pug
+    include ./includes/parts/other/modal__form-review.pug
+    include ./includes/parts/other/modal__img.pug
+    include ./includes/parts/other/scripts.pug

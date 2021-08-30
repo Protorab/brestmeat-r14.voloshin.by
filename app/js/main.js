@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalCloseIcons = document.querySelectorAll(".close__modal");
   const body = document.querySelector("body");
   const main = document.querySelector(".main");
-  const breadcrumb = document.querySelector(".breadcrumb");
+  const breadcrumb = document.querySelector(".breadcrumbs ul");
   const lazyImages = document.querySelectorAll(
     "img[data-lazy-src],source[data-lazy-srcset] "
   );

@@ -1,0 +1,54 @@
+.breadcrumbs {
+  // .breadcrumb__item {
+  @extend .wrapper;
+  overflow: hidden;
+  @include adaptive(margin-bottom, 20, 10, 0);
+
+  // .breadcrumbs__list {
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+  &__item {
+    display: flex;
+    position: relative;
+    font-weight: 400;
+    @include _transition(all, 0.35s);
+    color: #6f6f6f;
+
+    a {
+      @include _transition(all, 0.35s);
+      -webkit-text-stroke: 0.5px transparent;
+    }
+
+    &:last-child {
+      a {
+        -webkit-text-stroke-color: #6f6f6f;
+      }
+    }
+    &:first-child {
+      &::before {
+        display: none;
+      }
+    }
+
+    &::before {
+      -webkit-text-stroke: 0.5px transparent;
+      content: "/";
+      display: inline-block;
+      @include adaptive(margin-right, 5, 5, 0);
+      @include adaptive(margin-left, 5, 5, 0);
+      // position: absolute;
+    }
+    &:hover {
+      a {
+        -webkit-text-stroke-color: #6f6f6f;
+      }
+    }
+  }
+}

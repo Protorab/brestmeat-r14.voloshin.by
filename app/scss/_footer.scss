@@ -2,6 +2,7 @@
   flex-direction: column;
   background: $accentThirdColor;
   color: $mainColor;
+  margin-top: auto;
   @include adaptive(padding-top, 55, 40, 0);
   @include adaptive(padding-bottom, 25, 15, 0);
   // .footer-logo {
