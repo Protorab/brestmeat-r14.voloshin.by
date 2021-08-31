@@ -1,4 +1,42 @@
 .catalog {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  @include adaptive(grid-column-gap, 15, 5, 0);
+  @include adaptive(grid-row-gap, 50, 45, 0);
+
+  // .catalog-card {
+  &-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  // .catalog-section {
+  &-section {
+    padding-top: 0;
+  }
+
+  // .catalog-wrapper {
+  &-wrapper {
+    @extend .wrapper;
+    display: grid;
+    grid-template-columns: 0.22fr 0.8fr;
+    @include adaptive(grid-column-gap, 35, 25, 0);
+    @include adaptive(grid-row-gap, 35, 25, 0);
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  // .catalog__menu
+  &__menu {
+    // .catalog__menu-form
+    &-form {
+      @media only screen and (min-width: 600px) {
+        display: none;
+      }
+    }
+  }
   // .catalog-category {
   &-category {
     @extend .wrapper;

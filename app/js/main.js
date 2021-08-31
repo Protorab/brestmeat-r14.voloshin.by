@@ -26,7 +26,7 @@ import truncate from "./functions/truncate";
 // import tabsChange from "./functions/tabsChange";
 
 // import collapsibleFunc function
-// import collapsibleFunc from "./functions/collapsible";
+import collapsibleFunc from "./functions/collapsible";
 
 // import lazyBg function
 import lazyBg from "./functions/lazyBg";
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // menuDropdown();
   customSelectFunc();
-  // collapsibleFunc();
+  collapsibleFunc();
   // tabsChange();
   // function call end
   setTimeout(() => {

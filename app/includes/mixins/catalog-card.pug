@@ -1,0 +1,41 @@
+mixin catalog-card(img,title,animate)
+  article.catalog-card(class=`${animate ? animate : ""}`)
+    include ./picture
+    +picture(
+      img,
+      "Колбаса сырокопченая Миланская",
+      "catalog-card")
+    h6.catalog-card__title!=title
+    span.catalog-card__composition Состав: 
+      i.catalog-card__composition-icon
+        include ./img-NL
+        +img("./img/icons/icon-composition.svg")
+    .catalog-card__info
+      .catalog-card__info-item
+        i.catalog-card__info-item__icon 
+          include ./img-NL
+          +img("./img/icons/icon-calorie.svg")
+        .catalog-card__info-item__group
+          span.catalog-card__info-item__title Ккал
+          span.catalog-card__info-item__text 170
+      .catalog-card__info-item
+        i.catalog-card__info-item__icon 
+          include ./img-NL
+          +img("./img/icons/icon-fats.svg")
+        .catalog-card__info-item__group
+          span.catalog-card__info-item__title Жиры
+          span.catalog-card__info-item__text 8,0
+      .catalog-card__info-item
+        i.catalog-card__info-item__icon 
+          include ./img-NL
+          +img("./img/icons/icon-proteins.svg")
+        .catalog-card__info-item__group
+          span.catalog-card__info-item__title Белки
+          span.catalog-card__info-item__text 8,0
+      .catalog-card__info-item
+        i.catalog-card__info-item__icon 
+          include ./img-NL
+          +img("./img/icons/icon-carbohydrates.svg")
+        .catalog-card__info-item__group
+          span.catalog-card__info-item__title Углеводы
+          span.catalog-card__info-item__text 8,0

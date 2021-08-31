@@ -1,0 +1,13 @@
+mixin collapsible(title,items,addClass)
+  .collapsible(class=`${addClass ? `${addClass}-group` : ""}`) 
+    p.collapsible__title(class=`${addClass ? `${addClass}-group__title` : ""}`)!=title
+    span.triangle(class=`${addClass ? `${addClass}-group__triangle` : ""}`)
+  .collapsible__content(class=`${addClass ? `${addClass}-group__content` : ""}`)
+    .collapsible__content-wrapper(class=`${addClass ? `${addClass}-group-wrapper` : ""}`)
+      ul.catalog__menu-group__list
+        each item,idx in items
+          - var count = index+1
+          - var name = item[0]
+          - var link = item[1] || null
+          li.catalog__menu-group__list-item
+            a(href=`${link}`).catalog__menu-group__list-link!=name 

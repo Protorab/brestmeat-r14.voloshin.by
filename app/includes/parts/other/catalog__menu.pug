@@ -1,0 +1,39 @@
+aside.catalog__menu 
+  h5.catalog__menu-title продукция
+  a.catalog__menu-link(href="#") Сырокопченые и сыровяленые колбасы
+  a.catalog__menu-link(href="#") Варенокопченые и полукопченые колбасы
+  a.catalog__menu-link(href="#") Вареные колбасы
+  include ./../../mixins/collapsible
+  +collapsible(
+    "Сосиски и сардельки",
+    [
+      ["Сосиски","#"],
+      ["Сардельки","#"]
+    ],
+    "catalog__menu")
+  a.catalog__menu-link(href="#") Ветчина
+  +collapsible(
+    "Копчености",
+    [
+      ["Копчености из птицы","#"]
+    ],
+    "catalog__menu")
+  a.catalog__menu-link(href="#") Рулеты
+  a.catalog__menu-link(href="#") Изделия из субпродуктов
+  a.catalog__menu-link(href="#") Студни
+  a.catalog__menu-link(href="#") Пельмени и вареники
+  a.catalog__menu-link(href="#") Шашлык
+  +collapsible(
+    "Мясные полуфабрикаты",
+    [
+      ["Замороженные","#"],
+      ["Охлажденные","#"]
+    ],
+    "catalog__menu")
+  h5.catalog__menu-title БРЕНДЫ
+  a.catalog__menu-link(href="#") Мясные подушечки по-итальянски
+  a.catalog__menu-link(href="#") Варварины Вареники
+  a.catalog__menu-link(href="#") Мясные подушечки
+  a.catalog__menu-link(href="#") Семейные рецепты
+
+

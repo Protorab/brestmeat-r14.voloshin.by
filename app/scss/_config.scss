@@ -782,6 +782,7 @@ label {
   // .section__title {
   &__title {
     @extend .t1;
+    white-space: nowrap;
     text-transform: uppercase;
     position: relative;
     text-align: center;
@@ -808,8 +809,11 @@ label {
     }
     &::before {
       transform-origin: left;
+      margin-right: 10px;
     }
     &::after {
+      margin-left: 10px;
+
       transform-origin: right;
     }
     &.__show {
