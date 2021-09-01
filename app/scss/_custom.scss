@@ -66,7 +66,9 @@
     border: 1px solid $textColor;
 
     & > span {
-      margin-right: 14px;
+      &:not([class]) {
+        margin-right: 5px;
+      }
     }
   }
 

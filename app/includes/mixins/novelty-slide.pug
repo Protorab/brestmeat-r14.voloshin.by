@@ -8,29 +8,29 @@ mixin novelty-slide(img,title,label)
       title,
       "novelty-slide")
     h6.novelty-slide__title!=title
-    .novelty-slide__info
-      .novelty-slide__info-item
+    ul.novelty-slide__info
+      li.novelty-slide__info-item
         i.novelty-slide__info-item__icon 
           include ./img-NL
           +img("./img/icons/icon-calorie.svg")
-        .novelty-slide__info-item__group
+        span.novelty-slide__info-item__group
           span.novelty-slide__info-item__title Ккал
           span.novelty-slide__info-item__text 170
-      .novelty-slide__info-item
+      li.novelty-slide__info-item
         i.novelty-slide__info-item__icon 
           include ./img-NL
           +img("./img/icons/icon-fats.svg")
-        .novelty-slide__info-item__group
+        span.novelty-slide__info-item__group
           span.novelty-slide__info-item__title Жиры
           span.novelty-slide__info-item__text 8,0
-      .novelty-slide__info-item
+      li.novelty-slide__info-item
         i.novelty-slide__info-item__icon 
           include ./img-NL
           +img("./img/icons/icon-proteins.svg")
-        .novelty-slide__info-item__group
+        span.novelty-slide__info-item__group
           span.novelty-slide__info-item__title Белки
           span.novelty-slide__info-item__text 8,0
-      .novelty-slide__info-item
+      li.novelty-slide__info-item
         i.novelty-slide__info-item__icon 
           include ./img-NL
           +img("./img/icons/icon-carbohydrates.svg")

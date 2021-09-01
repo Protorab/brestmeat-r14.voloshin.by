@@ -10,32 +10,32 @@ mixin catalog-card(img,title,animate)
       i.catalog-card__composition-icon
         include ./img-NL
         +img("./img/icons/icon-composition.svg")
-    .catalog-card__info
-      .catalog-card__info-item
+    ul.catalog-card__info
+      li.catalog-card__info-item
         i.catalog-card__info-item__icon 
           include ./img-NL
           +img("./img/icons/icon-calorie.svg")
-        .catalog-card__info-item__group
+        span.catalog-card__info-item__group
           span.catalog-card__info-item__title Ккал
           span.catalog-card__info-item__text 170
-      .catalog-card__info-item
+      li.catalog-card__info-item
         i.catalog-card__info-item__icon 
           include ./img-NL
           +img("./img/icons/icon-fats.svg")
-        .catalog-card__info-item__group
+        span.catalog-card__info-item__group
           span.catalog-card__info-item__title Жиры
           span.catalog-card__info-item__text 8,0
-      .catalog-card__info-item
+      li.catalog-card__info-item
         i.catalog-card__info-item__icon 
           include ./img-NL
           +img("./img/icons/icon-proteins.svg")
-        .catalog-card__info-item__group
+        span.catalog-card__info-item__group
           span.catalog-card__info-item__title Белки
           span.catalog-card__info-item__text 8,0
-      .catalog-card__info-item
+      li.catalog-card__info-item
         i.catalog-card__info-item__icon 
           include ./img-NL
           +img("./img/icons/icon-carbohydrates.svg")
-        .catalog-card__info-item__group
+        span.catalog-card__info-item__group
           span.catalog-card__info-item__title Углеводы
           span.catalog-card__info-item__text 8,0

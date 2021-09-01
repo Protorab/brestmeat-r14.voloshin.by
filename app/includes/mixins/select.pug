@@ -1,10 +1,10 @@
-mixin select(addID,addClass,title,checkArrow,options,selectName)
+mixin select(addID,addClass,title,checkArrow,options,selectName,setRequired)
   div(class=`custom-select-wrapper ${addClass}-select__wrapper`)
     div(class=`custom-select ${addClass}-select`)
       select(
         id=`${addID}`,
         class=`custom-select-input ${addClass}-select__input`,
-        required='',
+        required=`${setRequired ? setRequired : ""}`,
         name=`${selectName}`)
         option(label='variant')
       div(class=`custom-select__trigger ${addClass}-select__trigger`)

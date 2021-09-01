@@ -9,7 +9,9 @@ const blink = (e, time) => {
   span.style.top = `${yCoord}px`;
   span.style.left = `${xCoord}px`;
   setTimeout(() => {
-    _this.removeChild(span);
+    try {
+      _this.removeChild(span);
+    } catch (error) {}
   }, time);
 };
 export default blink;

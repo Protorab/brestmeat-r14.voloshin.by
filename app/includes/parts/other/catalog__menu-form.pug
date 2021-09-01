@@ -1,4 +1,85 @@
-form(action="#", method="post").catalog__menu-form
-  span.catalog__menu-form__group
-    label(for="catalog-production") 
+form(action="#", method="post").catalog__menu-form.animate
+  span#group-production.catalog__menu-form__group
+    label.catalog__menu-form__label(for="catalog-production") продукция
+    include ./../../mixins/select-category
+    +select(
+      "catalog-production",
+      "catalog__menu-form",
+      "Выбрать",
+      "",
+      [
+        [""],
+        ["Сырокопченые и сыровяленые колбасы"],
+        ["Варенокопченые и полукопченые колбасы"],
+        ["Вареные колбасы"],
+        ["Сосиски и сардельки","category-1"],
+        ["Ветчина"],
+        ["Копчености","category-2"],
+        ["Рулеты"],
+        ["Изделия из субпродуктов"],
+        ["Студни"],
+        ["Пельмени и вареники"],
+        ["Шашлык"],
+        ["Мясные полуфабрикаты","category-3"]
+      ],
+      "catalog-production",
+      "true")
+  span.catalog__menu-form__group.catalog__category(id="category-1")
+    label.catalog__menu-form__label(for="catalog-category__1") Категория
     include ./../../mixins/select-catalog
+    +select(
+      "catalog-category__1",
+      "catalog__menu-form",
+      "Выбрать",
+      "",
+      [
+        [""],
+        ["Сосиски"],
+        ["Сардельки"]
+      ],
+      "catalog-category__1")
+  span.catalog__menu-form__group.catalog__category(id="category-2")
+    label.catalog__menu-form__label(for="catalog-category__2") Категория
+    include ./../../mixins/select-catalog
+    +select(
+      "catalog-category__2",
+      "catalog__menu-form",
+      "Выбрать",
+      "",
+      [
+        [""],
+        ["Копчености из птицы"]
+      ],
+      "catalog-category__2")
+  span.catalog__menu-form__group.catalog__category(id="category-3")
+    label.catalog__menu-form__label(for="catalog-category__3") Категория
+    include ./../../mixins/select-catalog
+    +select(
+      "catalog-category__3",
+      "catalog__menu-form",
+      "Выбрать",
+      "",
+      [
+        [""],
+        ["Замороженные"],
+        ["Охлажденные"]
+      ],
+      "catalog-category__3")
+  span.catalog__menu-form__group
+    label.catalog__menu-form__label(for="catalog-brands") Бренды
+    include ./../../mixins/select
+    +select(
+      "catalog-brands",
+      "catalog__menu-form",
+      "Выбрать",
+      "",
+      [
+        [""],
+        ["Мясные подушечки по-итальянски"],
+        ["Варварины Вареники"],
+        ["Мясные подушечки"],
+        ["Семейные рецепты"]
+      ],
+      "catalog-brands",
+      "true")
+  button.btn.catalog__menu-form__btn(type="submit") Применить

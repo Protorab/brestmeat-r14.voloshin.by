@@ -1,7 +1,7 @@
 mixin collapsible(title,items,addClass)
   .collapsible(class=`${addClass ? `${addClass}-group` : ""}`) 
     p.collapsible__title(class=`${addClass ? `${addClass}-group__title` : ""}`)!=title
-    span.triangle(class=`${addClass ? `${addClass}-group__triangle` : ""}`)
+    i.collapsible__icon(class=`${addClass ? `${addClass}-group__icon` : ""}`)
   .collapsible__content(class=`${addClass ? `${addClass}-group__content` : ""}`)
     .collapsible__content-wrapper(class=`${addClass ? `${addClass}-group-wrapper` : ""}`)
       ul.catalog__menu-group__list

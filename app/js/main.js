@@ -63,6 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const copyrightYear = document.querySelectorAll(".current-year");
   const preloaderProgress = document.querySelector(".preloader__progress");
   const scrollBtn = document.querySelector(".scroll-btn");
+  const showMoreBtn = document.querySelector(".show-more");
+  const catalogCards = document.querySelectorAll(".catalog-card");
+  const catalogMenuFormOptions = document.querySelectorAll(
+    "#group-production .catalog__menu-form__option"
+  );
+
   // variable end
 
   // ytPlayer();
@@ -77,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
   collapsibleFunc();
   // tabsChange();
   // function call end
+
   setTimeout(() => {
     let body = document.querySelector("body");
     body.classList.add("__loading");
@@ -98,7 +105,68 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
   setMainMarginTop();
+  // function scrollTo
+  if (catalogMenuFormOptions.length > 0) {
+    catalogMenuFormOptions.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        let _this = e.currentTarget;
+        let getCategory = _this.dataset.category;
+        let categorySelect = document.getElementById(`${getCategory}`);
+        console.log("getCategory :>> ", getCategory);
+        console.log(categorySelect);
 
+        let categorySelects = document.querySelectorAll(".catalog__category");
+        categorySelects.forEach((element) => {
+          element.style.display = "none";
+        });
+        if (categorySelect) {
+          categorySelect.style.display = "flex";
+        }
+      });
+    });
+  }
+  function scrollTo(element) {
+    window.scroll({
+      behavior: "smooth",
+      left: 0,
+      top: element.offsetTop,
+    });
+  }
+  if (catalogCards.length > 0) {
+    for (let i = 0; i < catalogCards.length; i++) {
+      const catalogCard = catalogCards[i];
+      catalogCard.setAttribute("id", `catalog-card-${i + 1}`);
+    }
+  }
+  const showMore = (e, getParent, classContain, defText, altText) => {
+    let parent = document.querySelector(getParent);
+    let _this = e.currentTarget;
+    let anchorItem = document.getElementById(
+      `catalog-card-${window.innerWidth <= 800 ? "7" : "13"}`
+    );
+
+    parent.classList.contains(classContain)
+      ? ((_this.textContent = defText),
+        scrollTo(anchorItem),
+        parent.classList.remove(classContain))
+      : ((_this.textContent = altText), parent.classList.add(classContain));
+  };
+  // showMore(
+  //   ".show-more",
+  //   "#catalog",
+  //   ".catalog-card",
+  //   "#catalog-card-12",
+  //   "__show-cards",
+  //   "Показать еще",
+  //   "Скрыть"
+  // );
+  if (showMoreBtn) {
+    showMoreBtn.addEventListener("click", (e) => {
+      showMore(e, "#catalog", "__show-cards", "Показать еще", "Скрыть");
+
+      e.preventDefault();
+    });
+  }
   if (pressroomText.length > 0) {
     pressroomText.forEach((item) => {
       truncate(item, "190");
@@ -237,9 +305,22 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   window.onresize = function () {
     setMainMarginTop();
+    if (showMoreBtn) {
+      showMoreBtn.addEventListener("click", (e) => {
+        showMore(e, "#catalog", "__show-cards", "Показать еще", "Скрыть");
 
+        e.preventDefault();
+      });
+    }
     setTimeout(() => {
       setMainMarginTop();
+      if (showMoreBtn) {
+        showMoreBtn.addEventListener("click", (e) => {
+          showMore(e, "#catalog", "__show-cards", "Показать еще", "Скрыть");
+
+          e.preventDefault();
+        });
+      }
     }, 1000);
   };
 });

@@ -62,6 +62,7 @@
       align-items: center;
       width: 100%;
       height: auto;
+
       // .novelty-slide__info-item {
       &-item {
         display: flex;
@@ -79,7 +80,7 @@
         }
         // .novelty-slide__info-item__group {
         &__group {
-          display: flex;
+          display: inline-flex;
           flex-direction: column;
           justify-content: space-between;
           align-items: stretch;
