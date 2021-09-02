@@ -154,15 +154,15 @@
       // .product-slide__info-item {
       &-item {
         display: flex;
-        @include adaptive(font-size, 16, 9, 0);
+        @include adaptive(font-size, 14, 9, 0);
         // .product-slide__info-item__icon {
         &__icon {
           display: inline-flex;
           justify-content: space-between;
           align-items: stretch;
-          @include adaptive(min-width, 45, 30, 0);
-          @include adaptive(width, 45, 30, 0);
-          @include adaptive(height, 45, 30, 0);
+          @include adaptive(min-width, 37, 30, 0);
+          @include adaptive(width, 37, 30, 0);
+          @include adaptive(height, 37, 30, 0);
           @include adaptive(margin-right, 10, 5, 0);
         }
         // .product-slide__info-item__group {
@@ -209,10 +209,10 @@
         // .product-card__awards-item__icon {
         &__icon {
           display: inline-flex;
-          @include adaptive(width, 90, 60, 0);
-          @include adaptive(min-width, 90, 60, 0);
-          @include adaptive(height, 90, 60, 0);
-          @include adaptive(min-height, 90, 60, 0);
+          @include adaptive(width, 60, 40, 0);
+          @include adaptive(min-width, 60, 40, 0);
+          @include adaptive(height, 60, 40, 0);
+          @include adaptive(min-height, 60, 40, 0);
           @include _borderRadius(50%);
           @include adaptive(margin-bottom, 15, 15, 0);
           overflow: hidden;
