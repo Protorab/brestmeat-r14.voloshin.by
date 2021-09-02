@@ -31,7 +31,7 @@
 
     &:last-child {
       a {
-        -webkit-text-stroke-color: #6f6f6f;
+        -webkit-text-stroke-color: $textColor;
       }
     }
     &:first-child {
