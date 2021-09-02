@@ -37,6 +37,8 @@ import lazyBg from "./functions/lazyBg";
 // swiperJsSliders
 import swiperJsSliders from "./functions/swiperJsSliders";
 
+//numberList function
+import numberList from "./functions/numberList";
 // import menuDropdown function
 // import menuDropdown from "./functions/menuDropdown";
 // import showVisible
@@ -68,7 +70,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const catalogMenuFormOptions = document.querySelectorAll(
     "#group-production .catalog__menu-form__option"
   );
-
+  const productCardImageThumbs = document.querySelectorAll(
+    ".product-card__image-slide img"
+  );
   // variable end
 
   // ytPlayer();
@@ -77,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
   btnsFunc();
   showVisible();
   swiperJsSliders();
-
+  numberList();
   // menuDropdown();
   customSelectFunc();
   collapsibleFunc();
@@ -105,14 +109,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
   setMainMarginTop();
+  if (productCardImageThumbs.length > 0) {
+    productCardImageThumbs.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        e.preventDefault();
+        document
+          .querySelector(".product-card__image-current img")
+          .setAttribute("src", e.currentTarget.getAttribute("src"));
+      });
+    });
+  }
   // function scrollTo
+  function scrollTo(element) {
+    window.scroll({
+      behavior: "smooth",
+      left: 0,
+      top: element.offsetTop,
+    });
+  }
   if (catalogMenuFormOptions.length > 0) {
     catalogMenuFormOptions.forEach((item) => {
       item.addEventListener("click", (e) => {
         let _this = e.currentTarget;
         let getCategory = _this.dataset.category;
         let categorySelect = document.getElementById(`${getCategory}`);
-        console.log("getCategory :>> ", getCategory);
         console.log(categorySelect);
 
         let categorySelects = document.querySelectorAll(".catalog__category");
@@ -123,13 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
           categorySelect.style.display = "flex";
         }
       });
-    });
-  }
-  function scrollTo(element) {
-    window.scroll({
-      behavior: "smooth",
-      left: 0,
-      top: element.offsetTop,
     });
   }
   if (catalogCards.length > 0) {

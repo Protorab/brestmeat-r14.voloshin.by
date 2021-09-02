@@ -1,6 +1,6 @@
 mixin breadcrumbs(levels)
   
-  nav.breadcrumbs(aria-label="breadcrumb")
+  nav.breadcrumbs.animate(aria-label="breadcrumb")
     ul.breadcrumbs__list(itemscope itemtype="http://schema.org/BreadcrumbList")
 
       each item, index in levels

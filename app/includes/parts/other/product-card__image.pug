@@ -1,0 +1,19 @@
+.product-card__image
+  .product-card__image-current
+    include ./../../mixins/img
+    +img(
+      "./img/products/product-image__1.jpg",
+      "Колбаса сырокопченая 'Миланская'",
+      "show-modal")
+  .product-card__image-slider.swiper-container
+    .product-card__image-slides.swiper-wrapper
+      include ./../../mixins/product-card__image-slide
+      +product-card__image-slide(
+        "./img/products/product-image__1.jpg",
+        "Колбаса сырокопченая 'Миланская'")
+      +product-card__image-slide(
+        "./img/catalog/catalog__image-1.png",
+        "Колбаса сырокопченая 'Миланская'")
+      +product-card__image-slide(
+        "./img/catalog/catalog__image-2.png",
+        "Колбаса сырокопченая 'Миланская'")

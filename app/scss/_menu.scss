@@ -311,6 +311,12 @@
 
       text-align: left;
     }
+    .__white-page & {
+      color: $textColor;
+    }
+    .--show & {
+      color: $mainColor;
+    }
   }
 
   // .menu__dropdown {

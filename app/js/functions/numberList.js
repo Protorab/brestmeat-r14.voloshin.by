@@ -1,4 +1,4 @@
-export const numberList = () => {
+const numberList = () => {
   let numberList = document.querySelectorAll("ol");
   if (numberList) {
     numberList.forEach((list) => {
@@ -18,3 +18,4 @@ export const numberList = () => {
     });
   }
 };
+export default numberList;

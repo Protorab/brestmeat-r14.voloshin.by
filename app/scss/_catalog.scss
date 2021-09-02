@@ -251,6 +251,8 @@
     animation-name: showInDown;
     animation-timing-function: ease-in-out;
     animation-duration: 0.7s;
+    position: relative;
+
     // .catalog-card__picture {
     &__picture {
       display: flex;
@@ -375,6 +377,21 @@
       //   grid-column-gap: 10px;
       //   grid-row-gap: 10px;
       // }
+    }
+
+    // .catalog-card__link {
+    &__link {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
     }
 
     // .catalog-card:hover

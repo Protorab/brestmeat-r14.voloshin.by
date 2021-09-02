@@ -1,0 +1,10 @@
+mixin product-card__image-slide(imgPath,title,addClass)
+  .product-card__image-slide.swiper-slide
+    img.img--full.img--center.swiper-lazy(
+      src="img/preloader.gif",
+      data-src!=`${imgPath}`, 
+      alt!=`${title}`,
+      title!=`${title}`,
+      draggable="false",
+      loading="lazy",
+      class!=`${addClass ? `${addClass}` : ""}`)

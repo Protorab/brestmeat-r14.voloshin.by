@@ -10,7 +10,11 @@ html(lang="ru")
     //preloader start
     include ./includes/parts/other/preloader
     //preloader end
-    
+
+    //modal__search start
+    include ./includes/parts/other/modal__search.pug
+    //modal__search end
+
     //header start
     include ./includes/parts/main/header
     //header end
@@ -29,6 +33,7 @@ html(lang="ru")
         "page-top__banner--catalog-category")
       //page-top__banner start
 
+      //breadcrumbs start
       include ./includes/mixins/breadcrumbs
       +breadcrumbs([
         [
@@ -39,6 +44,7 @@ html(lang="ru")
           "Каталог",
           "#"]
         ])
+      //breadcrumbs end
 
       //.catalog-category-section start
       include ./includes/parts/sections/section-catalog-category
@@ -54,8 +60,4 @@ html(lang="ru")
     //footer start
     include ./includes/parts/main/footer
     //footer end
-    include ./includes/parts/other/modal__search.pug
-    include ./includes/parts/other/modal__form.pug
-    include ./includes/parts/other/modal__form-review.pug
-    include ./includes/parts/other/modal__img.pug
     include ./includes/parts/other/scripts.pug

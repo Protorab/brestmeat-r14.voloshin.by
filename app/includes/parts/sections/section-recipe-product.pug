@@ -1,0 +1,27 @@
+section.section.recipe-section.__product-page
+  h5.section__title.recipe-section__title.__product-page.animate.scroll Рецепты
+  .recipe-slider.swiper-container.__product-page.animate.scroll
+    .recipe-slides.swiper-wrapper
+      //.recipe-slide start
+      include ./../../mixins/recipe-slide
+      +recipe-slide(
+        "./img/recipe/recipe-image__1.jpg",
+        'Мясной рулет')
+      +recipe-slide(
+        "./img/recipe/recipe-image__2.jpg",
+        'Мясной рулет')
+      +recipe-slide(
+        "./img/recipe/recipe-image__3.jpg",
+        'Мясной рулет')
+      +recipe-slide(
+        "./img/recipe/recipe-image__4.jpg",
+        'Мясной рулет')
+      +recipe-slide(
+        "./img/recipe/recipe-image__4.jpg",
+        'Мясной рулет')
+      //.recipe-slide end
+    //recipe-slider__control start
+    .slider-control.__product-page.recipe-slider__control
+      button.slider-control__btn.__product-page.slider-control__btn--prev.recipe-slider__prev 
+      button.slider-control__btn.__product-page.slider-control__btn--next.recipe-slider__next 
+    //recipe-slider__control end

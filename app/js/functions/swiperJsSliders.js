@@ -165,5 +165,32 @@ const swiperJsSliders = () => {
       nextSlideMessage: "Следующий слайд",
     },
   });
+  let productCardImageSlider = new Swiper(".product-card__image-slider", {
+    slidesPerView: 3,
+    spaceBetween: 25,
+    speed: 1200,
+    lazy: true,
+    breakpoints: {
+      320: {
+        spaceBetween: 15,
+      },
+      640: {
+        spaceBetween: 20,
+      },
+      1024: {
+        spaceBetween: 25,
+      },
+      1280: {
+        spaceBetween: 25,
+        slidesPerView: 3,
+      },
+    },
+    resizeObserver: true,
+    a11y: {
+      paginationBulletMessage: "Перейти к слайду {{index}}",
+      prevSlideMessage: "Предыдущий слайд",
+      nextSlideMessage: "Следующий слайд",
+    },
+  });
 };
 export default swiperJsSliders;

@@ -1,0 +1,55 @@
+article.product-card__description
+  h4.product-card__title Колбаса сырокопченая "Миланская"
+  h5.product-card__info-title Пищевая ценность:
+  ul.product-card__info
+    li.product-card__info-item
+      i.product-card__info-item__icon 
+        include ./../../mixins/img-NL
+        +img("./img/icons/icon-calorie.svg","Ккал")
+      span.product-card__info-item__group
+        span.product-card__info-item__title Ккал
+        span.product-card__info-item__text 170
+    li.product-card__info-item
+      i.product-card__info-item__icon 
+        include ./../../mixins/img-NL
+        +img("./img/icons/icon-fats.svg","Жиры")
+      span.product-card__info-item__group
+        span.product-card__info-item__title Жиры
+        span.product-card__info-item__text 8,0
+    li.product-card__info-item
+      i.product-card__info-item__icon 
+        include ./../../mixins/img-NL
+        +img("./img/icons/icon-proteins.svg","Белки")
+      span.product-card__info-item__group
+        span.product-card__info-item__title Белки
+        span.product-card__info-item__text 8,0
+    li.product-card__info-item
+      i.product-card__info-item__icon 
+        include ./../../mixins/img-NL
+        +img("./img/icons/icon-carbohydrates.svg","Углеводы")
+      span.product-card__info-item__group
+        span.product-card__info-item__title Углеводы
+        span.product-card__info-item__text 8,0
+  ul.product-card__awards
+    li.product-card__awards-item
+      i.product-card__awards-item__icon
+        include ./../../mixins/img-NL
+        +img("./img/awards/awards__image-1.png","Лучший продукт")
+      span.product-card__awards-item__title Лучший продукт
+    li.product-card__awards-item
+      i.product-card__awards-item__icon
+        include ./../../mixins/img-NL
+        +img("./img/awards/awards__image-2.png","Лучший продукт")
+      span.product-card__awards-item__title Экологически чистый продукт
+    li.product-card__awards-item
+      i.product-card__awards-item__icon
+        include ./../../mixins/img-NL
+        +img("./img/awards/awards__image-3.png","Лучший продукт")
+      span.product-card__awards-item__title Лучший продукт
+  .product-card__composition
+    h5.product-card__composition-title Состав продукта:
+    i.product-card__composition-icon
+      include ./../../mixins/img-NL
+      +img("./img/icons/icon-composition.svg","Состав")
+    .product-card__composition-text 
+      p Тушка цыпленка-бройлера, соль, специи и пряности (зеленый перец, черный перец, белый перец, паприка), лук, чеснок, льняная мука, сахар, яблочный уксус, розмарин

@@ -11,6 +11,7 @@ $textThirdColor: #242d3c; // Text Third Color
 $textFourthColor: #4d4d4d; // Text fourth Color
 $textFifthColor: #343434; // Text fifth Color
 $texSixColor: #4a4852; // Text Six Color
+$texSevenColor: #2e2e2e; // Text Six Color
 
 $lineHeight: 1.65; // Document Line Height
 $userFont: Montserrat, sans-serif; // User Font Family
@@ -827,6 +828,7 @@ label {
     }
   }
 }
+
 .label {
   display: inline-flex;
   color: $mainColor;
@@ -841,11 +843,13 @@ label {
     background: $accentColor;
   }
 }
+
 .swiper {
   &-wrapper {
     @include adaptive(margin-bottom, 70, 40, 0);
   }
 }
+
 .social {
   // .social-links {
   &-links {
@@ -901,8 +905,11 @@ label {
     @include _transition(all, 0.255s);
   }
 }
+
 .page {
+  // .page-top {
   &-top {
+    // .page-top__banner {
     &__banner {
       display: flex;
       justify-content: center;
@@ -915,6 +922,7 @@ label {
       background-repeat: no-repeat;
       @include adaptive(margin-bottom, 60, 55, 0);
 
+      // .page-top__banner::before {
       &::before {
         content: "";
         display: inline-block;
@@ -923,6 +931,18 @@ label {
         background: #131313;
         opacity: 0.45;
       }
+    }
+  }
+  // .page-card {
+  &-card {
+    @include adaptive(padding-top, 25, 20, 0);
+
+    @media only screen and (max-width: 800px) {
+      @include adaptive(padding-top, 40, 35, 0);
+    }
+
+    // .page-card__product {
+    &__product {
     }
   }
 }
