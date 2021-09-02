@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const preloaderProgress = document.querySelector(".preloader__progress");
   const scrollBtn = document.querySelector(".scroll-btn");
   const showMoreBtn = document.querySelector(".show-more");
-  const catalogCards = document.querySelectorAll(".catalog-card");
+  const cards = document.querySelectorAll(".card");
   const catalogMenuFormOptions = document.querySelectorAll(
     "#group-production .catalog__menu-form__option"
   );
@@ -145,17 +145,17 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-  if (catalogCards.length > 0) {
-    for (let i = 0; i < catalogCards.length; i++) {
-      const catalogCard = catalogCards[i];
-      catalogCard.setAttribute("id", `catalog-card-${i + 1}`);
+  if (cards.length > 0) {
+    for (let i = 0; i < cards.length; i++) {
+      const card = cards[i];
+      card.setAttribute("id", `card-${i + 1}`);
     }
   }
   const showMore = (e, getParent, classContain, defText, altText) => {
     let parent = document.querySelector(getParent);
     let _this = e.currentTarget;
     let anchorItem = document.getElementById(
-      `catalog-card-${window.innerWidth <= 800 ? "7" : "13"}`
+      `card-${window.innerWidth <= 800 ? "6" : "12"}`
     );
 
     parent.classList.contains(classContain)
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // );
   if (showMoreBtn) {
     showMoreBtn.addEventListener("click", (e) => {
-      showMore(e, "#catalog", "__show-cards", "Показать еще", "Скрыть");
+      showMore(e, "#cards", "__show-cards", "Показать еще", "Скрыть");
 
       e.preventDefault();
     });
@@ -320,7 +320,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setMainMarginTop();
     if (showMoreBtn) {
       showMoreBtn.addEventListener("click", (e) => {
-        showMore(e, "#catalog", "__show-cards", "Показать еще", "Скрыть");
+        showMore(e, "#cards", "__show-cards", "Показать еще", "Скрыть");
 
         e.preventDefault();
       });
@@ -329,7 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setMainMarginTop();
       if (showMoreBtn) {
         showMoreBtn.addEventListener("click", (e) => {
-          showMore(e, "#catalog", "__show-cards", "Показать еще", "Скрыть");
+          showMore(e, "#cards", "__show-cards", "Показать еще", "Скрыть");
 
           e.preventDefault();
         });

@@ -1,5 +1,5 @@
 mixin catalog-card(img,title,animate)
-  article.catalog-card(class=`${animate ? animate : ""}`)
+  article.catalog-card.card(class=`${animate ? animate : ""}`)
     include ./picture
     +picture(
       img,

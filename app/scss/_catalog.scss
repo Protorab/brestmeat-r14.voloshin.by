@@ -4,6 +4,7 @@
   @include adaptive(grid-column-gap, 15, 5, 0);
   @include adaptive(grid-row-gap, 50, 45, 0);
   overflow: hidden;
+
   // .catalog__menu {
   &__menu {
     display: flex;

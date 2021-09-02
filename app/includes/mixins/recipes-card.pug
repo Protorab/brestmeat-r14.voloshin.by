@@ -1,0 +1,24 @@
+mixin recipes-card(img,title)
+  article.recipes-card.card
+    include ./picture-NL
+    +picture(
+      img,
+      title,
+      "recipes-card")
+    h5.recipes-card__title!=title
+    ul.recipes-card__info
+      li.recipes-card__info-item
+        i.recipes-card__info-icon
+          include ./img-NL
+          +img(
+            "./img/icons/icon-clock.svg",
+            "Время готовки")
+        span.recipes-card__info-title 1 ч 15 мин
+      li.recipes-card__info-item
+        i.recipes-card__info-icon
+          include ./img-NL
+          +img(
+            "./img/icons/icon-food.svg",
+            "Количество порций")
+        span.recipes-card__info-title 5 порций
+    a.recipes-card__link(href="page-recipe.html") 

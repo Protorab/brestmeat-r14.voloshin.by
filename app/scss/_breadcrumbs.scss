@@ -23,6 +23,7 @@
     @include _transition(all, 0.35s);
     color: $textColor;
     @include adaptive(font-size, 16, 15, 0);
+
     a {
       @include adaptive(font-size, 15, 10, 0);
       @include _transition(all, 0.35s);
@@ -33,14 +34,13 @@
       a {
         -webkit-text-stroke-color: $textColor;
       }
-    }
-    &:first-child {
       &::before {
         display: none;
       }
     }
 
     &::before {
+      order: 2;
       -webkit-text-stroke: 0.5px transparent;
       content: "/";
       display: inline-block;
@@ -49,6 +49,7 @@
       @include adaptive(font-size, 16, 15, 0);
       // position: absolute;
     }
+
     @media only screen and (min-width: 1152px) {
       &:hover {
         a {
