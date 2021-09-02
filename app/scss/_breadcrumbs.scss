@@ -16,12 +16,15 @@
   }
   &__item {
     display: flex;
+    justify-content: flex-start;
+    align-items: center;
     position: relative;
     font-weight: 400;
     @include _transition(all, 0.35s);
     color: #6f6f6f;
-
+    @include adaptive(font-size, 16, 15, 0);
     a {
+      @include adaptive(font-size, 15, 10, 0);
       @include _transition(all, 0.35s);
       -webkit-text-stroke: 0.5px transparent;
     }
@@ -43,11 +46,14 @@
       display: inline-block;
       @include adaptive(margin-right, 5, 5, 0);
       @include adaptive(margin-left, 5, 5, 0);
+      @include adaptive(font-size, 16, 15, 0);
       // position: absolute;
     }
-    &:hover {
-      a {
-        -webkit-text-stroke-color: #6f6f6f;
+    @media only screen and (min-width: 1152px) {
+      &:hover {
+        a {
+          -webkit-text-stroke-color: #6f6f6f;
+        }
       }
     }
   }

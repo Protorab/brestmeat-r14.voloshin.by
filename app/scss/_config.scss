@@ -561,16 +561,18 @@ section,
       background-image: url("../img/icons/icon-mail.svg");
     }
   }
-  &:hover {
-    // background: $accentSecondColor;
+  @media only screen and (min-width: 1152px) {
+    &:hover {
+      // background: $accentSecondColor;
 
-    &::after {
-      // width: 400px;
-      // height: 400px;
-      // opacity: 1;
-    }
-    .btn__icon {
-      transform: translateX(10px);
+      &::after {
+        // width: 400px;
+        // height: 400px;
+        // opacity: 1;
+      }
+      .btn__icon {
+        transform: translateX(10px);
+      }
     }
   }
 }
@@ -608,17 +610,24 @@ section,
       @include _transition(all, 0.35s);
       background: rgba(255, 255, 255, 0.35);
       border: 1px solid #ffffff;
-      &:hover {
-        background: rgba($accentColor, 0.5);
-        border-color: rgba($accentColor, 0.5);
+
+      @media only screen and (min-width: 1152px) {
+        &:hover {
+          background: rgba($accentColor, 0.5);
+          border-color: rgba($accentColor, 0.5);
+        }
       }
+
       // slider-pagination__bullet_active {
       &_active {
         background: $accentColor;
         border-color: $accentColor;
-        &:hover {
-          background: $accentColor;
-          border-color: $accentColor;
+
+        @media only screen and (min-width: 1152px) {
+          &:hover {
+            background: $accentColor;
+            border-color: $accentColor;
+          }
         }
       }
     }
@@ -887,9 +896,11 @@ label {
       margin-right: 0;
     }
 
-    &:hover {
-      .social-icon {
-        object-position: top center;
+    @media only screen and (min-width: 1152px) {
+      &:hover {
+        .social-icon {
+          object-position: top center;
+        }
       }
     }
   }

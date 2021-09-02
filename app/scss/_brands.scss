@@ -36,9 +36,11 @@
       max-height: 100%;
       @include _transition(all, 0.35s);
     }
-    &:hover {
-      img {
-        transform: scale(1.2);
+    @media only screen and (min-width: 1152px) {
+      &:hover {
+        img {
+          transform: scale(1.2);
+        }
       }
     }
   }

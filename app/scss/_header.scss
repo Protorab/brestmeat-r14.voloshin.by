@@ -76,6 +76,7 @@
       @include _borderRadius(50%);
       @include _transition(all, 0.35s);
     }
+
     @media only screen and (min-width: 1152px) {
       &:hover {
         &::before {

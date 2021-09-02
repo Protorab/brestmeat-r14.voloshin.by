@@ -41,10 +41,13 @@
       &:nth-of-type(1) {
         padding-top: 0;
       }
-
-      &:hover,
       &.__active {
         color: $accentColor;
+      }
+      @media only screen and (min-width: 1152px) {
+        &:hover {
+          color: $accentColor;
+        }
       }
     }
 
@@ -118,8 +121,11 @@
             @include adaptive(height, 8, 8, 0);
             @include adaptive(margin-right, 10, 10, 0);
           }
-
-          &:hover,
+          @media only screen and (min-width: 1152px) {
+            &:hover {
+              color: $accentColor;
+            }
+          }
           &.__active {
             color: $accentColor;
           }
@@ -393,22 +399,23 @@
       justify-content: center;
       align-items: center;
     }
-
-    // .catalog-card:hover
-    &:hover {
-      .catalog {
-        &-card {
-          &__picture {
-            img {
-              transform: scale(1.2);
+    @media only screen and (min-width: 1152px) {
+      // .catalog-card:hover
+      &:hover {
+        .catalog {
+          &-card {
+            &__picture {
+              img {
+                transform: scale(1.2);
+              }
             }
-          }
-          &__title {
-            &::before {
-              transform: scale(0, 1);
-            }
-            &::after {
-              transform: scale(1, 1);
+            &__title {
+              &::before {
+                transform: scale(0, 1);
+              }
+              &::after {
+                transform: scale(1, 1);
+              }
             }
           }
         }
@@ -512,17 +519,20 @@
         justify-content: center;
         align-items: center;
       }
-      &:hover {
-        .catalog {
-          &-category {
-            &-card {
-              &__picture {
-                img {
-                  transform: scale(1.2);
+
+      @media only screen and (min-width: 1152px) {
+        &:hover {
+          .catalog {
+            &-category {
+              &-card {
+                &__picture {
+                  img {
+                    transform: scale(1.2);
+                  }
                 }
-              }
-              &__title {
-                // transform: translateY(-10px);
+                &__title {
+                  // transform: translateY(-10px);
+                }
               }
             }
           }

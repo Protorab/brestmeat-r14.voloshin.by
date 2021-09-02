@@ -33,8 +33,11 @@
       }
       a {
         @include _transition(all, 0.35s);
-        &:hover {
-          color: $accentColor;
+
+        @media only screen and (min-width: 1152px) {
+          &:hover {
+            color: $accentColor;
+          }
         }
       }
       p {

@@ -60,11 +60,14 @@
       img {
         @include _transition(all, 0.35s);
       }
-      &:hover {
-        img {
-          transform: scale(1.2);
+      @media only screen and (min-width: 1152px) {
+        &:hover {
+          img {
+            transform: scale(1.2);
+          }
         }
       }
+
       @media only screen and (min-width: 1025px) {
         width: 62%;
       }
@@ -305,12 +308,15 @@
       bottom: 0;
       left: 0;
     }
-    &:hover {
-      .recipe {
-        &-slide {
-          &__picture {
-            img {
-              transform: scale(1.2);
+
+    @media only screen and (min-width: 1152px) {
+      &:hover {
+        .recipe {
+          &-slide {
+            &__picture {
+              img {
+                transform: scale(1.2);
+              }
             }
           }
         }

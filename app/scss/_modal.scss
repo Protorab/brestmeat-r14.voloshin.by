@@ -109,10 +109,11 @@
         transform: rotate(-45deg);
       }
     }
-
-    &:hover {
-      span {
-        background: $accentColor;
+    @media only screen and (min-width: 1152px) {
+      &:hover {
+        span {
+          background: $accentColor;
+        }
       }
     }
   }
@@ -334,9 +335,12 @@
           transform: rotate(-45deg);
         }
       }
-      &:hover {
-        span {
-          background: $accentColor;
+
+      @media only screen and (min-width: 1152px) {
+        &:hover {
+          span {
+            background: $accentColor;
+          }
         }
       }
     }

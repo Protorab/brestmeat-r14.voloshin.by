@@ -98,9 +98,11 @@
     cursor: pointer;
     @include _transition(all, 0.5s);
 
-    &:hover {
-      background-color: $accentColor;
-      color: $mainColor;
+    @media only screen and (min-width: 1152px) {
+      &:hover {
+        background-color: $accentColor;
+        color: $mainColor;
+      }
     }
 
     &.selected {
@@ -172,8 +174,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  &:hover {
+  @media only screen and (min-width: 1152px) {
+    &:hover {
+    }
   }
 
   &.active {

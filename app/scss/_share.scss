@@ -61,13 +61,16 @@
       position: relative;
       z-index: 1;
     }
-    &:hover {
-      img {
-        object-position: top center;
-      }
 
-      &::before {
-        transform: scale(1);
+    @media only screen and (min-width: 1152px) {
+      &:hover {
+        img {
+          object-position: top center;
+        }
+
+        &::before {
+          transform: scale(1);
+        }
       }
     }
   }
