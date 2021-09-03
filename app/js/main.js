@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const showMoreBtn = document.querySelector(".show-more");
   const cards = document.querySelectorAll(".card");
   const catalogMenuFormOptions = document.querySelectorAll(
-    "#group-production .catalog__menu-form__option"
+    "#group-production .catalog__filter-option"
   );
   const productCardImageThumbs = document.querySelectorAll(
     ".product-card__image-slide img"

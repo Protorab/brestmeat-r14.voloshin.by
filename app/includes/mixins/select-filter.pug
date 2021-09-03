@@ -12,18 +12,19 @@ mixin select(addID,addClass,title,checkArrow,options,selectName,setRequired)
         if checkArrow==triangle
           span(class=`cards__filter-triangle triangle ${addClass}-triangle`)
         else 
-          span(class=`cards__filter-arrow arrow ${addClass}__arrow`)
+          span(class=`cards__filter-arrow arrow ${addClass}-arrow`)
       div(class=`cards__filter-options custom-options ${addClass}-options`)
         each option, index in options
           - var count = index+1
           - var itemTitle = option[0]
-          - var itemCategoryId  = option[1] || null
           if count==1
-            span(class=`cards__filter-option custom-option ${addClass}-option selected`,data-value='def')!=title
+            span(
+              class=`cards__filter-option custom-option ${addClass}-option selected`,
+              data-value='def',
+              data-filter="reset")!=title
           else
             span(
               class=`cards__filter-option custom-option ${addClass}-option`,
-              data-value=`${itemTitle}`,
-              data-category!=`${itemCategoryId}`,
+              data-value=`${itemTitle}`
               data-filter=`filter-n${count-1}`)!=itemTitle 
           

@@ -1,31 +1,35 @@
 mixin select(addID,addClass,title,checkArrow,options,selectName,setRequired)
-  div(class=`custom-select-wrapper ${addClass}-select__wrapper`)
-    div(class=`custom-select ${addClass}-select`)
+  div(class=`cards__filter-select-wrapper custom-select-wrapper ${addClass}-select__wrapper`)
+    div(class=`cards__filter-select custom-select ${addClass}-select`)
       if setRequired
         select(
           id=`${addID}`,
-          class=`custom-select-input ${addClass}-select__input`,
+          class=`cards__filter-select-input custom-select-input ${addClass}-select__input`,
           required=`${setRequired ? setRequired : ""}`,
           name=`${selectName}`)
           option(label='variant')
       else
         select(
           id=`${addID}`,
-          class=`custom-select-input ${addClass}-select__input`,
+          class=`cards__filter-select-input custom-select-input ${addClass}-select__input`,
           name=`${selectName}`)
           option(label='variant')
-      div(class=`custom-select__trigger ${addClass}-select__trigger`)
+      div(class=`cards__filter-select__trigger custom-select__trigger ${addClass}-select__trigger`)
         span!=title
         if checkArrow==triangle
-          span(class=`triangle ${addClass}__triangle`)
+          span(class=`cards__filter-triangle triangle ${addClass}-triangle`)
         else 
-          span(class=`arrow ${addClass}__arrow`)
-      div(class=`custom-options ${addClass}__options`)
+          span(class=`cards__filter-arrow arrow ${addClass}-arrow`)
+      div(class=`cards__filter-options custom-options ${addClass}-options`)
         each option, index in options
           - var count = index+1
           - var itemTitle = option[0]
           if count==1
-            span(class=`custom-option ${addClass}__option selected`,data-value='def')!=title
+            span(
+              class=`cards__filter-option custom-option ${addClass}-option selected`,
+              data-value='def')!=title
           else
-            span(class=`custom-option ${addClass}__option`,data-value=`${itemTitle}`)!=itemTitle 
+            span(
+              class=`cards__filter-option custom-option ${addClass}-option`,data-value=`${itemTitle}`,
+              data-filter=`filter-n${count-1}`)!=itemTitle 
           

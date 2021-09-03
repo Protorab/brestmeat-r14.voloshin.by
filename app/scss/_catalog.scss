@@ -5,122 +5,76 @@
   @include adaptive(grid-row-gap, 50, 45, 0);
   overflow: hidden;
 
-  // .catalog__menu {
-  &__menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
-    height: auto;
+  // .catalog__filter {
+  &__filter {
     background: $accentFourthColor;
     @include adaptive(padding-top, 20, 15, 0);
     @include adaptive(padding-right, 20, 10, 0);
     @include adaptive(padding-bottom, 50, 25, 0);
     @include adaptive(padding-left, 20, 10, 0);
 
-    // .catalog__menu-title {
+    // .catalog__filter-title {
     &-title {
-      @extend .t5;
-      color: $accentColor;
-      text-transform: uppercase;
-      font-weight: 700;
       @include adaptive(margin-bottom, 20, 15, 0);
-      &:not(&:first-child) {
+      &:not(&:first-of-type) {
         @include adaptive(margin-top, 50, 25, 0);
+      }
+      @media only screen and (max-width: 600px) {
+        display: none;
       }
     }
 
-    // .catalog__menu-link {
+    // .catalog__filter-link {
     &-link {
-      color: #000;
-      font-weight: 500;
       @include adaptive(padding-top, 5, 5, 0);
       @include adaptive(margin-bottom, 10, 10, 0);
-      @include _transition(all, 0.45s);
 
       &:nth-of-type(1) {
         padding-top: 0;
       }
-      &.__active {
-        color: $accentColor;
-      }
+
       @media only screen and (min-width: 1152px) {
         &:hover {
           color: $accentColor;
         }
       }
+      @media only screen and (max-width: 600px) {
+        display: none;
+      }
     }
 
-    // .catalog__menu-group {
+    // .catalog__filter-group {
     &-group {
       padding: 0;
       @include adaptive(margin-bottom, 10, 10, 0);
 
-      // .catalog__menu-group__title {
+      // .catalog__filter-group__title {
       &__title {
-        color: #000;
-        font-weight: 500;
       }
-      // .catalog__menu-group__icon {
+      // .catalog__filter-group__icon {
       &__icon {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        @include adaptive(width, 10, 10, 0);
-        @include adaptive(min-width, 10, 10, 0);
-        @include adaptive(height, 8, 8, 0);
-        background-image: url("../img/icons/icon-collapse.svg");
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        background-size: cover;
-        @include _transition(all, 0.15s);
         .active & {
-          background-position: top center;
         }
       }
-      // .catalog__menu-group-wrapper {
+      // .catalog__filter-group-wrapper {
       &-wrapper {
-        padding: 0;
         @include adaptive(padding-bottom, 10, 10, 0);
       }
-      // .catalog__menu-group__list {
+      // .catalog__filter-group__list {
       &__list {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        width: 100%;
         @include adaptive(padding-left, 15, 10, 0);
 
-        // .catalog__menu-group__list-item {
+        // .catalog__filter-group__list-item {
         &-item {
-          display: flex;
-          width: 100%;
           @include adaptive(margin-bottom, 10, 10, 0);
+
           &:last-child {
             margin-bottom: 0;
           }
         }
-        // .catalog__menu-group__list-link {
+        // .catalog__filter-group__list-link {
         &-link {
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          width: 100%;
-          color: #000;
-          font-weight: 500;
-          position: relative;
-          @include _transition(all, 0.45s);
-
           &::before {
-            content: "";
-            display: inline-block;
-            background: $accentColor;
-            @include adaptive(width, 8, 8, 0);
-            @include adaptive(min-width, 8, 8, 0);
-            @include adaptive(height, 8, 8, 0);
-            @include adaptive(margin-right, 10, 10, 0);
           }
           @media only screen and (min-width: 1152px) {
             &:hover {
@@ -133,110 +87,81 @@
         }
       }
     }
-
-    // .catalog__menu-form
-    &-form {
+    .catalog__category {
       display: none;
-      justify-content: flex-start;
-      align-items: flex-start;
-      flex-direction: column;
-      background: $accentFourthColor;
-      position: relative;
-      z-index: 3;
-      @include adaptive(padding-top, 20, 15, 0);
-      @include adaptive(padding-right, 20, 10, 0);
-      @include adaptive(padding-bottom, 20, 15, 0);
-      @include adaptive(padding-left, 20, 10, 0);
-
-      // .catalog__menu-form__group {
-      &__group {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        align-items: center;
-        @include adaptive(margin-bottom, 20, 15, 0);
-        &:last-of-type {
-          @include adaptive(margin-bottom, 30, 25, 0);
-        }
-        &.catalog__category {
-          display: none;
-        }
-      }
-
-      // .catalog__menu-form-select {
-      &-select {
-        // .catalog__menu-form-select__wrapper {
-        &__wrapper {
-          @media only screen and (max-width: 360px) {
-            width: 160px;
-            min-width: 160px;
-          }
-        }
-
-        // .catalog__menu-form-select__trigger {
-        &__trigger {
-          padding: 0px 5px 0px 7px;
-          @include adaptive(font-size, 12, 10, 0);
-          background: $mainColor;
-          border: none;
-          span {
-            &:not([class]) {
-              white-space: nowrap;
-              overflow: hidden;
-              max-width: 150px;
-              text-overflow: ellipsis;
-            }
-          }
-        }
-      }
-
-      // .catalog__menu-form__arrow {
-      &__arrow {
-        &::before,
-        &::after {
-          background: #505050;
-          width: 0.1rem;
-        }
-        &::before {
-          left: -3.5px;
-        }
-        &::after {
-          left: 3.5px;
-        }
-      }
-
-      // .catalog__menu-form__options {
-      &__options {
-        border: none;
-        max-height: 200px;
-        overflow-y: auto;
-      }
-
-      // .catalog__menu-form__option {
-      &__option {
-        padding: 5px 5px 5px 7px;
-        @include adaptive(font-size, 12, 10, 0);
-      }
-      // .catalog__menu-form__label {
-      &__label {
-        @include adaptive(font-size, 14, 12, 0);
-        margin-right: 10px;
-        font-weight: 700;
-        color: $accentColor;
-        text-transform: uppercase;
-        display: inline-flex;
-        justify-content: flex-start;
-        align-items: center;
-        width: 50%;
-      }
-
-      @media only screen and (max-width: 600px) {
-        display: flex;
+    }
+    // .catalog__filter-row {
+    &-row {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      @include adaptive(margin-bottom, 20, 15, 0);
+      &:last-of-type {
+        @include adaptive(margin-bottom, 30, 25, 0);
       }
     }
 
+    // .catalog__filter-select {
+    &-select {
+      // .catalog__filter-form-select__wrapper {
+      &__wrapper {
+        @media only screen and (max-width: 360px) {
+          width: 160px;
+          min-width: 160px;
+        }
+      }
+
+      // .catalog__filter-form-select__trigger {
+      &__trigger {
+        padding: 0px 5px 0px 7px;
+        @include adaptive(font-size, 12, 10, 0);
+        background: $mainColor;
+        border: none;
+        span {
+          &:not([class]) {
+            white-space: nowrap;
+            overflow: hidden;
+            max-width: 150px;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+
+    // .catalog__filter-arrow {
+    &-arrow {
+    }
+
+    // .catalog__filter-options {
+    &-options {
+      border: none;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    // .catalog__filter-option {
+    &-option {
+      padding: 5px 5px 5px 7px;
+      @include adaptive(font-size, 12, 10, 0);
+    }
+    // .catalog__filter-label {
+    &-label {
+      @include adaptive(font-size, 14, 12, 0);
+      margin-right: 10px;
+      font-weight: 700;
+      color: $accentColor;
+      text-transform: uppercase;
+      display: inline-flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 50%;
+    }
+    &-btn {
+      @include adaptive(margin-top, 45, 45, 0);
+    }
     @media only screen and (max-width: 600px) {
-      display: none;
+      display: flex;
     }
   }
 

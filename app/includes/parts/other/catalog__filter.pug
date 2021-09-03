@@ -1,0 +1,151 @@
+aside.cards__filter.catalog__filter.animate 
+  #group-production.cards__filter-row.catalog__filter-row
+    label.cards__filter-label.catalog__filter-label(for="catalog-production") продукция
+    include ./../../mixins/select-category
+    +select(
+      "catalog-production",
+      "catalog__filter",
+      "Выбрать",
+      "",
+      [
+        [""],
+        ["Сырокопченые и сыровяленые колбасы"],
+        ["Варенокопченые и полукопченые колбасы"],
+        ["Вареные колбасы"],
+        ["Сосиски и сардельки","category-1"],
+        ["Ветчина"],
+        ["Копчености","category-2"],
+        ["Рулеты"],
+        ["Изделия из субпродуктов"],
+        ["Студни"],
+        ["Пельмени и вареники"],
+        ["Шашлык"],
+        ["Мясные полуфабрикаты","category-3"]
+      ],
+      "catalog-production",
+      "true")
+  .cards__filter-row.catalog__filter-row.catalog__category(id="category-1")
+    label.cards__filter-label.catalog__filter-label(for="catalog-category__1") Категория
+    include ./../../mixins/select-catalog
+    +select(
+      "catalog-category__1",
+      "catalog__filter",
+      "Выбрать",
+      "",
+      [
+        [""],
+        ["Сосиски"],
+        ["Сардельки"]
+      ],
+      "catalog-category__1")
+  .cards__filter-row.catalog__filter-row.catalog__category(id="category-2")
+    label.cards__filter-label.catalog__filter-label(for="catalog-category__2") Категория
+    include ./../../mixins/select-catalog
+    +select(
+      "catalog-category__2",
+      "catalog__filter",
+      "Выбрать",
+      "",
+      [
+        [""],
+        ["Копчености из птицы"]
+      ],
+      "catalog-category__2")
+  .cards__filter-row.catalog__filter-row.catalog__category(id="category-3")
+    label.cards__filter-label.catalog__filter-label(for="catalog-category__3") Категория
+    include ./../../mixins/select-catalog
+    +select(
+      "catalog-category__3",
+      "catalog__filter",
+      "Выбрать",
+      "",
+      [
+        [""],
+        ["Замороженные"],
+        ["Охлажденные"]
+      ],
+      "catalog-category__3")
+  .cards__filter-row
+    label.cards__filter-label.catalog__filter-label(for="catalog-brands") Бренды
+    include ./../../mixins/select-filter
+    +select(
+      "catalog-brands",
+      "catalog__filter",
+      "Выбрать",
+      "",
+      [
+        [""],
+        ["Мясные подушечки по-итальянски"],
+        ["Варварины Вареники"],
+        ["Мясные подушечки"],
+        ["Семейные рецепты"]
+      ],
+      "catalog-brands",
+      "true")
+
+  h5.cards__filter-title.catalog__filter-title продукция
+  a.cards__filter-link.catalog__filter-link(
+    href="#",
+    data-filter="filter-n99") Сырокопченые и сыровяленые колбасы
+  a.cards__filter-link.catalog__filter-link(
+    href="#",
+    data-filter="filter-n98") Варенокопченые и полукопченые колбасы
+  a.cards__filter-link.catalog__filter-link(
+    href="#",
+    data-filter="filter-n97") Вареные колбасы
+  include ./../../mixins/collapsible
+  +collapsible(
+    "Сосиски и сардельки",
+    [
+      ["Сосиски","#"],
+      ["Сардельки","#"]
+    ],
+    "catalog__filter")
+  a.cards__filter-link.catalog__filter-link(href="#") Ветчина
+  +collapsible(
+    "Копчености",
+    [
+      ["Копчености из птицы","#"]
+    ],
+    "catalog__filter")
+  a.cards__filter-link.catalog__filter-link(
+    data-filter="filter-n93",
+    href="#") Рулеты
+  a.cards__filter-link.catalog__filter-link(
+    data-filter="filter-n92",
+    href="#") Изделия из субпродуктов
+  a.cards__filter-link.catalog__filter-link(
+    data-filter="filter-n91",
+    href="#") Студни
+  a.cards__filter-link.catalog__filter-link(
+    data-filter="filter-n90",
+    href="#") Пельмени и вареники
+  a.cards__filter-link.catalog__filter-link(
+    data-filter="filter-n89",
+    href="#") Шашлык
+  +collapsible(
+    "Мясные полуфабрикаты",
+    [
+      ["Замороженные","#"],
+      ["Охлажденные","#"]
+    ],
+    "catalog__filter")
+  h5.cards__filter-title.catalog__filter-title БРЕНДЫ
+  a.cards__filter-link.catalog__filter-link(
+    href="#",
+    data-filter="filter-n97") Мясные подушечки по-итальянски
+  a.cards__filter-link.catalog__filter-link(
+    href="#",
+    data-filter="filter-n96") Варварины Вареники
+  a.cards__filter-link.catalog__filter-link(
+    href="#",
+    data-filter="filter-n95") Мясные подушечки
+  a.cards__filter-link.catalog__filter-link(
+    href="#",
+    data-filter="filter-n94") Семейные рецепты
+
+  a.btn.cards__filter-btn.catalog__filter-btn(
+    role="button"
+    href="#",
+    data-filter="reset") Сбросить фильтры
+

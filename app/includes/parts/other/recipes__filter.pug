@@ -1,0 +1,72 @@
+aside.cards__filter.recipes__filter.animate.scroll
+  .recipes__filter-row.cards__filter-row
+    label.cards__filter-label.recipes__filter-label(for="recipes-production") Тип ингридиента
+    include ./../../mixins/select-filter
+    +select(
+      "recipes-production",
+      "recipes__filter",
+      "Выбрать",
+      "",
+      [
+        [""],
+        ["Сосиски"],
+        ["Колбаса"],
+        ["Замороженная продукция"],
+        ["Фарш"],
+        ["Мясо"]
+      ],
+      "recipes-production",
+      "true")
+  .recipes__filter-row.cards__filter-row
+    label.cards__filter-label.recipes__filter-label(for="recipes-types") Тип блюда
+    include ./../../mixins/select-filter
+    +select(
+      "recipes-types",
+      "recipes__filter",
+      "Выбрать",
+      "",
+      [
+        [""],
+        ["1-е блюдо"],
+        ["2-е блюдо"],
+        ["Супы"],
+        ["Соки"],
+        ["Десерты"]
+      ],
+      "recipes-types",
+      "true")
+
+  a.cards__filter-link.recipes__filter-link(
+    href="#",
+    data-filter="top") Топ рецептов 
+  include ./../../mixins/collapsible
+  +collapsible(
+      "Тип ингридиента",
+      [
+        ["Сосиски","#"],
+        ["Колбаса","#"],
+        ["Замороженная продукция","#"],
+        ["Фарш","#"],
+        ["Мясо","#"]
+      ],
+      "recipes__filter")
+  +collapsible(
+      "Тип блюда",
+      [
+        ["1-е блюдо","#"],
+        ["2-е блюдо","#"],
+        ["Супы","#"],
+        ["Соки","#"],
+        ["Десерты","#"]
+      ],
+      "recipes__filter")
+  a.cards__filter-link.recipes__filter-link(
+    href="#",
+    data-filter="children") Детское меню
+  
+  a.btn.cards__filter-btn.recipes__filter-btn(
+    role="button"
+    href="#",
+    data-filter="reset") Сбросить фильтры
+
+

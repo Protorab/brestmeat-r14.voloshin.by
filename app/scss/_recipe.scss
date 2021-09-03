@@ -523,8 +523,8 @@
     }
   }
 
-  // .recipes__menu {
-  &__menu {
+  // .recipes__filter {
+  &__filter {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -537,7 +537,7 @@
     @include adaptive(padding-bottom, 25, 25, 0);
     @include adaptive(padding-left, 20, 10, 0);
 
-    // .recipes__menu-title {
+    // .recipes__filter-title {
     &-title {
       @extend .t5;
       color: $accentColor;
@@ -549,28 +549,38 @@
       }
     }
 
-    // .recipes__menu-link {
+    // .recipes__filter-link {
     &-link {
       color: #000;
       font-weight: 500;
       text-transform: uppercase;
-      @include adaptive(padding-top, 5, 5, 0);
       @include adaptive(margin-top, 20, 10, 0);
       @include _transition(all, 0.45s);
-      &:first-child {
+
+      &:first-of-type {
         margin-top: 0;
       }
+
       &.__active {
         color: $accentColor;
       }
+
       @media only screen and (min-width: 1152px) {
         &:hover {
           color: $accentColor;
         }
       }
+      @media only screen and (max-width: 600px) {
+        margin-top: 0;
+        @include adaptive(margin-bottom, 20, 15, 0);
+        @include adaptive(font-size, 14, 12, 0);
+        margin-right: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
     }
 
-    // .recipes__menu-group {
+    // .recipes__filter-group {
     &-group {
       padding: 0;
       @include adaptive(margin-top, 20, 10, 0);
@@ -579,14 +589,14 @@
         margin-bottom: 0;
       }
 
-      // .recipes__menu-group__title {
+      // .recipes__filter-group__title {
       &__title {
         color: #000;
         font-weight: 500;
         text-transform: uppercase;
       }
 
-      // .recipes__menu-group__icon {
+      // .recipes__filter-group__icon {
       &__icon {
         display: inline-flex;
         justify-content: center;
@@ -604,13 +614,13 @@
         }
       }
 
-      // .recipes__menu-group-wrapper {
+      // .recipes__filter-group-wrapper {
       &-wrapper {
         padding: 0;
         @include adaptive(padding-bottom, 10, 10, 0);
       }
 
-      // .recipes__menu-group__list {
+      // .recipes__filter-group__list {
       &__list {
         display: flex;
         flex-direction: column;
@@ -620,7 +630,7 @@
         @include adaptive(padding-top, 20, 10, 0);
         @include adaptive(padding-left, 5, 5, 0);
 
-        // .recipes__menu-group__list-item {
+        // .recipes__filter-group__list-item {
         &-item {
           display: flex;
           width: 100%;
@@ -630,7 +640,7 @@
           }
         }
 
-        // .recipes__menu-group__list-link {
+        // .recipes__filter-group__list-link {
         &-link {
           display: flex;
           justify-content: flex-start;
@@ -660,119 +670,35 @@
           }
         }
       }
-      // .recipes__menu-btn {
+      // .recipes__filter-btn {
+    }
+    // .recipes__filter-row {
+    &-row {
+      @include adaptive(margin-bottom, 20, 15, 0);
+    }
+
+    // .cards__filter-form-select {
+    &-select {
+    }
+    // .cards__filter-arrow {
+    &-arrow {
+    }
+
+    &-options {
+    }
+    // .cards__filter-option {
+    &-option {
+    }
+    &-label {
+      width: 80%;
+      @include adaptive(font-size, 14, 12, 0);
+      margin-right: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
     }
 
     &-btn {
       @include adaptive(margin-top, 25, 15, 0);
-    }
-
-    // .recipes__menu-form
-    &-form {
-      display: none;
-      justify-content: flex-start;
-      align-items: flex-start;
-      flex-direction: column;
-      background: $accentFourthColor;
-      position: relative;
-      z-index: 3;
-      @include adaptive(padding-top, 20, 15, 0);
-      @include adaptive(padding-right, 20, 10, 0);
-      @include adaptive(padding-bottom, 20, 15, 0);
-      @include adaptive(padding-left, 20, 10, 0);
-
-      // .recipes__menu-form__group {
-      &__group {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        align-items: center;
-        @include adaptive(margin-bottom, 20, 15, 0);
-      }
-
-      // .recipes__menu-form-select {
-      &-select {
-        // .recipes__menu-form-select__wrapper {
-        &__wrapper {
-          @media only screen and (max-width: 360px) {
-            width: 160px;
-            min-width: 160px;
-          }
-        }
-
-        // .recipes__menu-form-select__trigger {
-        &__trigger {
-          padding: 0px 5px 0px 7px;
-          @include adaptive(font-size, 12, 10, 0);
-          background: $mainColor;
-          border: none;
-          span {
-            &:not([class]) {
-              white-space: nowrap;
-              overflow: hidden;
-              max-width: 150px;
-              text-overflow: ellipsis;
-            }
-          }
-        }
-      }
-
-      // .recipes__menu-form__arrow {
-      &__arrow {
-        &::before,
-        &::after {
-          background: #505050;
-          width: 0.1rem;
-        }
-        &::before {
-          left: -3.5px;
-        }
-        &::after {
-          left: 3.5px;
-        }
-      }
-
-      // .recipes__menu-form__options {
-      &__options {
-        border: none;
-        max-height: 200px;
-        overflow-y: auto;
-      }
-
-      // .recipes__menu-form__option {
-      &__option {
-        padding: 5px 5px 5px 7px;
-        @include adaptive(font-size, 12, 10, 0);
-      }
-
-      // .recipes__menu-form__link Х
-      &__link {
-        @include adaptive(font-size, 14, 12, 0);
-        margin-right: 10px;
-        font-weight: 700;
-        text-transform: uppercase;
-        align-items: center;
-        @include adaptive(margin-bottom, 20, 15, 0);
-      }
-      // .recipes__menu-form__label {
-      &__label {
-        @include adaptive(font-size, 14, 12, 0);
-        margin-right: 10px;
-        font-weight: 700;
-        text-transform: uppercase;
-        display: inline-flex;
-        justify-content: flex-start;
-        align-items: center;
-        width: 80%;
-      }
-
-      @media only screen and (max-width: 600px) {
-        display: flex;
-      }
-    }
-
-    @media only screen and (max-width: 600px) {
-      display: none;
     }
   }
 

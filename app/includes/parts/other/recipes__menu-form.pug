@@ -1,40 +1,5 @@
 form(action="#", method="post").recipes__menu-form.animate
   a.recipes__menu-form__link(href="#") ТОП РЕЦЕПТОВ
-  .recipes__menu-form__group
-    label.recipes__menu-form__label(for="recipes-production") Тип ингридиента
-    include ./../../mixins/select
-    +select(
-      "recipes-production",
-      "recipes__menu-form",
-      "Выбрать",
-      "",
-      [
-        [""],
-        ["Сосиски"],
-        ["Колбаса"],
-        ["Замороженная продукция"],
-        ["Фарш"],
-        ["Мясо"]
-      ],
-      "recipes-production",
-      "true")
-  .recipes__menu-form__group
-    label.recipes__menu-form__label(for="recipes-brands") Тип блюда
-    include ./../../mixins/select
-    +select(
-      "recipes-brands",
-      "recipes__menu-form",
-      "Выбрать",
-      "",
-      [
-        [""],
-        ["1-е блюдо"],
-        ["2-е блюдо"],
-        ["Супы"],
-        ["Соки"],
-        ["Десерты"]
-      ],
-      "recipes-brands",
-      "true")
+  
   a.recipes__menu-form__link(href="#") Детское меню
   button.btn.recipes__menu-form__btn(type="submit") Применить
