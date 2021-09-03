@@ -1,14 +1,16 @@
 mixin collapsible(title,items,addClass)
-  .collapsible(class=`${addClass ? `${addClass}-group` : ""}`) 
-    p.collapsible__title(class=`${addClass ? `${addClass}-group__title` : ""}`)!=title
-    i.collapsible__icon(class=`${addClass ? `${addClass}-group__icon` : ""}`)
-  .collapsible__content(class=`${addClass ? `${addClass}-group__content` : ""}`)
-    .collapsible__content-wrapper(class=`${addClass ? `${addClass}-group-wrapper` : ""}`)
-      ul(class=`${addClass ? `${addClass}-group__list` : ""}`)
+  .collapsible.cards__filter-group(class=`${addClass ? `${addClass}-group` : ""}`) 
+    p.collapsible__title.cards__filter-group__title(class=`${addClass ? `${addClass}-group__title` : ""}`)!=title
+    i.collapsible__icon.cards__filter-group__icon(class=`${addClass ? `${addClass}-group__icon` : ""}`)
+  .collapsible__content.cards__filter-group__content(class=`${addClass ? `${addClass}-group__content` : ""}`)
+    .collapsible__content-wrapper.cards__filter-group__content-wrapper(class=`${addClass ? `${addClass}-group-wrapper` : ""}`)
+      ul.cards__filter-group__list(class=`${addClass ? `${addClass}-group__list` : ""}`)
         each item,idx in items
           - var count = index+1
           - var name = item[0]
           - var link = item[1] || null
-          li(class=`${addClass ? `${addClass}-group__list-item` : ""}`)
-            a(href=`${link}`,
-            class=`${addClass ? `${addClass}-group__list-link` : ""}`)!=name 
+          li.cards__filter-group__list-item(class=`${addClass ? `${addClass}-group__list-item` : ""}`)
+            a.cards__filter-group__list-link(
+              data-filter=`filter-n${count}`
+              href=`${link}`,
+              class=`${addClass ? `${addClass}-group__list-link` : ""}`)!=name 
