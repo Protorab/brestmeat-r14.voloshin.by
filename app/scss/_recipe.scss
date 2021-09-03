@@ -369,11 +369,6 @@
 }
 
 .recipes {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  @include adaptive(grid-column-gap, 15, 5, 0);
-  @include adaptive(grid-row-gap, 50, 45, 0);
-
   &:not(&.__show-cards) {
     .recipes {
       &-card {
@@ -713,11 +708,6 @@
 
   // .recipes__btn {
   &__btn {
-    grid-column: 1/-1;
-    justify-self: center;
-    align-self: center;
-    max-width: fit-content;
-    padding: 15px 30px;
     @include adaptive(margin-top, 20, 5, 0);
   }
 }

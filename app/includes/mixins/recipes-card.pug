@@ -1,5 +1,7 @@
-mixin recipes-card(img,title)
-  article.recipes-card.card
+mixin recipes-card(img,title,sortable)
+  article.recipes-card.card(
+    data-sortable=`${sortable}`
+  )
     include ./picture-NL
     +picture(
       img,

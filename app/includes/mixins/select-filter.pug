@@ -8,7 +8,7 @@ mixin select(addID,addClass,title,checkArrow,options,selectName,setRequired)
         name=`${selectName}`)
         option(label='variant')
       div(class=`cards__filter-select__trigger custom-select__trigger ${addClass}-select__trigger`)
-        span!=title
+        span.cards__filter-select__trigger-text!=title
         if checkArrow==triangle
           span(class=`cards__filter-triangle triangle ${addClass}-triangle`)
         else 
@@ -19,7 +19,7 @@ mixin select(addID,addClass,title,checkArrow,options,selectName,setRequired)
           - var itemTitle = option[0]
           if count==1
             span(
-              class=`cards__filter-option custom-option ${addClass}-option selected`,
+              class=`cards__filter-option custom-option custom-def-option ${addClass}-option selected`,
               data-value='def',
               data-filter="reset")!=title
           else

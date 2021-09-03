@@ -6,26 +6,26 @@
   overflow: hidden;
 
   &:not(&.__show-cards) {
-    .card {
-      &-card {
-        display: none;
+    // .card {
+    //   &-card {
+    //     display: none;
 
-        @media only screen and (min-width: 600px) {
-          @for $i from 1 to 13 {
-            &:nth-child(#{$i}) {
-              display: flex;
-            }
-          }
-        }
-        @media only screen and (max-width: 600px) {
-          @for $i from 1 to 7 {
-            &:nth-child(#{$i}) {
-              display: flex;
-            }
-          }
-        }
-      }
-    }
+    //     @media only screen and (min-width: 600px) {
+    //       @for $i from 1 to 13 {
+    //         &:nth-child(#{$i}) {
+    //           display: flex;
+    //         }
+    //       }
+    //     }
+    //     @media only screen and (max-width: 600px) {
+    //       @for $i from 1 to 7 {
+    //         &:nth-child(#{$i}) {
+    //           display: flex;
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
   }
 
   // .cards-wrapper {
@@ -254,5 +254,9 @@
     align-self: center;
     max-width: fit-content;
     padding: 15px 30px;
+    animation-name: showInDown;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.7s;
+    position: relative;
   }
 }

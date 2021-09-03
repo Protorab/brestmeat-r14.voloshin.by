@@ -1,5 +1,7 @@
-mixin catalog-card(img,title,animate)
-  article.catalog-card.card(class=`${animate ? animate : ""}`)
+mixin catalog-card(img,title,animate,sortable)
+  article.catalog-card.card(
+    class=`${animate ? animate : ""}`,
+    data-sortable=`${sortable}`)
     include ./picture
     +picture(
       img,
