@@ -1,13 +1,6 @@
-aside.recipes__menu.animate 
+aside.recipes__menu.animate.scroll 
+  a.recipes__menu-link(href="#") Топ рецептов 
   include ./../../mixins/collapsible
-  +collapsible(
-    "Топ рецептов",
-    [
-      ["Пельмени","#"],
-      ["жаренные пельмени","#"],
-      ["Бутерброды с колбасой","#"]
-    ],
-    "recipes__menu")
   +collapsible(
       "Тип ингридиента",
       [
@@ -28,6 +21,8 @@ aside.recipes__menu.animate
         ["Десерты","#"]
       ],
       "recipes__menu")
+  a.recipes__menu-link(href="#") Детское меню
+  
   a.btn.recipes__menu-btn(href="page-recipes.html") Сбросить фильтры
 
 

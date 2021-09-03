@@ -40,7 +40,7 @@ section.section.recipe-section.__page-recipes
         li.recipe-card__list-item.__page-recipes
           span.recipe-card__list-item__content.__page-recipes Мясо сыровяленое
           span.recipe-card__list-item__content.__page-recipes 1000 гр
-      a.btn.recipe-card__btn.__page-recipes(href="page-recipe.html") Подробнее
+      a.btn.recipe-card__btn.__page-recipes(href="page-recipe.html") Перейти
       include ./../../mixins/share
       +share(
         "Поделиться рецептом",
@@ -73,4 +73,5 @@ section.section.recipe-section.__page-recipes
 
         ],
         "recipe-card")
-  
+    span.recipe-card__bg(area-hidden="true")
+      include ./../../../img/recipe__effect.svg
