@@ -359,12 +359,12 @@ document.addEventListener("DOMContentLoaded", () => {
         body.classList.toggle("--fixed");
         menu.classList.toggle("--show");
         if (mobileMenuShow) {
-          mobileMenuShow.onscroll = function () {
-            let topScroll = 10;
-            this.scrollTop > topScroll
-              ? (this.style.zIndex = "5")
-              : (this.style.zIndex = "1");
-          };
+          // mobileMenuShow.onscroll = function () {
+          let topScroll = 5;
+          this.scrollTop > topScroll
+            ? (this.style.zIndex = "5")
+            : (this.style.zIndex = "1");
+          // };
         }
       });
     });
