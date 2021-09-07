@@ -12,8 +12,8 @@
     &__title {
     }
   }
-  // .recipe-card {
-  &-card {
+  // recipe-daily {
+  &-daily {
     @extend .wrapper;
     flex-direction: row;
     justify-content: space-between;
@@ -38,7 +38,7 @@
       background: $mainColor;
       z-index: 1;
     }
-    // .recipe-card__bg {
+    // recipe-daily__bg {
     &__bg {
       position: absolute;
       z-index: -1;
@@ -89,7 +89,7 @@
       // transform: translate(-50%, 0%) scale(1);
       // filter: blur(173.928px);
     }
-    // .recipe-card__picture {
+    // recipe-daily__picture {
     &__picture {
       display: flex;
       justify-content: center;
@@ -115,7 +115,7 @@
         width: 62%;
       }
     }
-    // .recipe-card__content {
+    // recipe-daily__content {
     &__content {
       display: flex;
       flex-direction: column;
@@ -134,7 +134,7 @@
         width: 38%;
       }
     }
-    // .recipe-card__title {
+    // recipe-daily__title {
     &__title {
       @extend .t2;
       line-height: 100%;
@@ -143,7 +143,7 @@
       text-transform: uppercase;
       @include adaptive(margin-bottom, 30, 20, 0);
     }
-    // .recipe-card__info {
+    // recipe-daily__info {
     &__info {
       width: 100%;
       display: flex;
@@ -151,7 +151,7 @@
       align-items: center;
       @include adaptive(margin-bottom, 35, 30, 0);
 
-      // .recipe-card__info-item {
+      // recipe-daily__info-item {
       &-item {
         width: 100%;
         display: inline-flex;
@@ -162,7 +162,7 @@
           margin-right: 0;
         }
       }
-      // .recipe-card__info-icon {
+      // recipe-daily__info-icon {
       &-icon {
         @include adaptive(margin-right, 15, 10, 0);
         @include adaptive(width, 25, 20, 0);
@@ -173,13 +173,13 @@
           margin-right: 0;
         }
       }
-      // .recipe-card__info-title {
+      // recipe-daily__info-title {
       &-title {
         @extend .t5;
         white-space: nowrap;
       }
     }
-    // .recipe-card__subtitle {
+    // recipe-daily__subtitle {
     &__subtitle {
       @extend .t5;
       width: 100%;
@@ -188,7 +188,7 @@
       color: $textThirdColor;
       @include adaptive(margin-bottom, 15, 20, 0);
     }
-    // .recipe-card__list {
+    // recipe-daily__list {
     &__list {
       width: 100%;
       display: flex;
@@ -197,7 +197,7 @@
       align-items: flex-start;
       @include adaptive(margin-bottom, 25, 20, 0);
 
-      // .recipe-card__list-item {
+      // recipe-daily__list-item {
       &-item {
         display: flex;
         justify-content: space-between;
@@ -213,7 +213,7 @@
           margin-bottom: 0;
         }
 
-        // .recipe-card__list-item__content {
+        // recipe-daily__list-item__content {
         &__content {
           display: inline-flex;
           justify-content: center;
@@ -221,7 +221,7 @@
         }
       }
     }
-    // .recipe-card__btn {
+    // recipe-daily__btn {
     &__btn {
       @include adaptive(width, 180, 170, 0);
       align-self: flex-end;
@@ -233,22 +233,22 @@
         @include adaptive(margin-bottom, 45, 40, 0);
       }
     }
-    // .recipe-card__share {
+    // recipe-daily__share {
     &__share {
       margin-top: auto;
-      // .recipe-card__share-title {
+      // recipe-daily__share-title {
       &-title {
         @media only screen and (max-width: 600px) {
           @include adaptive(margin-bottom, 25, 20, 0);
         }
       }
-      // .recipe-card__share-list {
+      // recipe-daily__share-list {
       &-list {
       }
-      // .recipe-card__share-item {
+      // recipe-daily__share-item {
       &-item {
       }
-      // .recipe-card__share-link {
+      // recipe-daily__share-link {
       &-link {
       }
       @media only screen and (max-width: 600px) {
@@ -366,6 +366,104 @@
       }
     }
   }
+  // .recipe-card {
+  &-card {
+    @extend .wrapper;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    align-self: center;
+    // .recipe-card-section {
+    &-section {
+      padding-top: 0;
+      @media only screen and (max-width: 800px) {
+        padding-top: 20px;
+      }
+    }
+    // recipe-card__picture {
+    &__picture {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      @include adaptive(height, 360, 200, 0);
+      overflow: hidden;
+      @include adaptive(margin-bottom, 40, 20, 0);
+
+      img {
+        @include _transition(all, 0.35s);
+      }
+
+      @media only screen and (min-width: 1152px) {
+        &:hover {
+          img {
+            transform: scale(1.2);
+          }
+        }
+      }
+
+      // @media only screen and (max-width: 600px) {
+      // @include adaptive(height, 360, 200, 0);
+      // }
+    }
+    // .recipe-card__media {
+    &__media {
+      display: flex;
+      justify-content: flex-start;
+      align-items: stretch;
+      flex-direction: column;
+      width: 100%;
+      @include coll(2, 30);
+      height: auto;
+      margin-right: 30px;
+    }
+    // .recipe-card__stats {
+    &__stats {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background: #e7e7e7;
+      @include adaptive(padding-top, 15, 10, 0);
+      @include adaptive(padding-right, 20, 18, 0);
+      @include adaptive(padding-bottom, 15, 10, 0);
+      @include adaptive(padding-left, 20, 18, 0);
+
+      @media only screen and (max-width: 600px) {
+        @include adaptive(padding-top, 25, 20, 0);
+        @include adaptive(padding-bottom, 25, 20, 0);
+      }
+      // recipe-card__card__stats-icon {
+      &-icon {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        background: $accentColor;
+        @include adaptive(width, 65, 45, 0);
+        @include adaptive(min-width, 65, 45, 0);
+        @include adaptive(height, 65, 45, 0);
+        @include _borderRadius(50%);
+        img {
+          width: 27px;
+          height: 27px;
+          object-fit: contain;
+        }
+      }
+    }
+    // .product-card__content {
+    &__content {
+      display: flex;
+      justify-content: flex-start;
+      align-items: stretch;
+      flex-direction: column;
+      width: 100%;
+      @include coll(2, 30);
+      height: auto;
+      margin-left: 30px;
+    }
+  }
 }
 
 .recipes {
@@ -465,7 +563,7 @@
       justify-content: flex-start;
 
       align-items: center;
-      // .recipe-card__info-item {
+      // recipe-daily__info-item {
       &-item {
         display: flex;
         width: 100%;
@@ -475,14 +573,14 @@
 
         @include adaptive(font-size, 12, 12, 0);
       }
-      // .recipe-card__info-icon {
+      // recipe-daily__info-icon {
       &-icon {
         @include adaptive(margin-right, 10, 10, 0);
         @include adaptive(width, 20, 20, 0);
         @include adaptive(min-width, 20, 20, 0);
         @include adaptive(height, 20, 20, 0);
       }
-      // .recipe-card__info-title {
+      // recipe-daily__info-title {
       &-title {
         color: $textFourthColor;
         white-space: nowrap;

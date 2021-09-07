@@ -65,16 +65,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const copyrightYear = document.querySelectorAll(".current-year");
   const preloaderProgress = document.querySelector(".preloader__progress");
   const scrollBtn = document.querySelector(".scroll-btn");
-  const showMoreBtn = document.querySelector(".show-more");
-  const cards = document.querySelectorAll(".card");
   const catalogMenuFormOptions = document.querySelectorAll(
     "#group-production .catalog__filter-option"
   );
   const productCardImageThumbs = document.querySelectorAll(
     ".product-card__image-slide img"
   );
-  const filterItems = document.querySelectorAll("*[data-filter]");
-  let itemsCounter = window.innerWidth <= 800 ? 6 : 12;
 
   // variable end
 
@@ -134,6 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
       top: element.offsetTop,
     });
   }
+
   const hideCatalogCategory = () => {
     let categorySelects = document.querySelectorAll(".catalog__category");
     if (categorySelects.length > 0) {
@@ -156,102 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-  const checkCardsLength = (items) => {
-    items.length >= itemsCounter
-      ? (showMoreBtn.style.display = "flex")
-      : (showMoreBtn.style.display = "none");
-  };
 
-  const hideCards = (items) => {
-    for (let i = 0; i < items.length; i++) {
-      const item = items[i];
-      item.style.display = "none";
-    }
-
-    for (let i = 0; i < itemsCounter; i++) {
-      const item = items[i];
-      item.style.display = "flex";
-    }
-  };
-  const showCards = (items) => {
-    for (let i = 0; i < items.length; i++) {
-      const item = items[i];
-      item.style.display = "flex";
-    }
-  };
-  if (cards.length > 0) {
-    for (let i = 0; i < cards.length; i++) {
-      const card = cards[i];
-      card.setAttribute("id", `card-${i + 1}`);
-      hideCards(cards);
-    }
-    checkCardsLength(cards);
-  }
-
-  const showMore = (e, getParent, classContain, defText, altText) => {
-    let _this = e.currentTarget;
-    let parent = document.querySelector(getParent);
-
-    if (!parent.classList.contains(classContain)) {
-      _this.textContent = altText;
-      showCards(cards);
-      parent.classList.add(classContain);
-    } else {
-      hideCards(cards);
-      _this.textContent = defText;
-      parent.classList.remove(classContain);
-    }
-  };
-
-  if (showMoreBtn) {
-    showMoreBtn.addEventListener("click", (e) => {
-      showMore(e, "#cards", "__show-cards", "Показать еще", "Скрыть");
-
-      e.preventDefault();
-    });
-  }
-  if (filterItems.length > 0) {
-    filterItems.forEach((item) => {
-      item.addEventListener("click", (e) => {
-        e.preventDefault();
-        let _this = e.currentTarget;
-        let currentFilter = _this.dataset.filter;
-        let sortableCard = document.querySelector(
-          `.card[data-sortable="${currentFilter}"]`
-        );
-        if (currentFilter !== "reset") {
-          cards.forEach((element) => {
-            element.style.display = "none";
-          });
-          sortableCard ? (sortableCard.style.display = "flex") : "";
-          sortableCard.length >= itemsCounter
-            ? (showMoreBtn.style.display = "flex")
-            : (showMoreBtn.style.display = "none");
-        } else {
-          hideCards(cards);
-          checkCardsLength(cards);
-          let currentOptions =
-            _this.parentNode.querySelectorAll(".custom-option");
-          let currentSelectTriggerText = _this.parentNode.querySelectorAll(
-            ".cards__filter-select__trigger-text"
-          );
-          let currentDefOptions =
-            _this.parentNode.querySelectorAll(".custom-def-option");
-
-          currentOptions.forEach((element) => {
-            element.classList.remove("selected");
-          });
-          currentDefOptions.forEach((element) => {
-            element.classList.add("selected");
-          });
-          currentSelectTriggerText.forEach((element) => {
-            element.textContent = "Выбрать";
-          });
-          hideCatalogCategory();
-        }
-      });
-    });
-  }
   if (pressroomText.length > 0) {
     pressroomText.forEach((item) => {
       truncate(item, "190");

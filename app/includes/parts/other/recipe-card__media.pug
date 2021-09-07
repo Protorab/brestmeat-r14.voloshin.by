@@ -1,0 +1,25 @@
+.recipe-card__media
+  include ./../../mixins/picture
+  +picture(
+    "./img/recipe/recipe-image__card.jpg",
+    "Мясной рулет",
+    "recipe-card",
+    "show-modal")
+  ul.recipe-card__stats
+    li.recipe-card__stats-item
+      i.recipe-card__stats-icon
+        include ./../../mixins/img-NL
+        +img(
+          "./img/icons/icon-clock--white.svg",
+          "1 ч 15 мин"
+          )
+      span.recipe-card__stats-title 1 ч 15 мин
+    li.recipe-card__stats-item
+      i.recipe-card__stats-icon
+        include ./../../mixins/img-NL
+        +img(
+          "./img/icons/icon-food--white.svg",
+          "5 порций"
+          )
+      span.recipe-card__stats-title 5 порций
+    

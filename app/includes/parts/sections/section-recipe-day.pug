@@ -1,46 +1,46 @@
 section.section.recipe-section.__page-recipes
   h5.section__title.__page-recipes.recipe-section__title.animate Рецепт дня
-  article.recipe-card.__page-recipes.animate
-    a.recipe-card__picture.__page-recipes(href="page-recipe.html")
+  article.recipe-daily.__page-recipes.animate
+    a.recipe-daily__picture.__page-recipes(href="page-recipe.html")
       include ./../../mixins/img
       +img(
         "./img/recipe/recipe-image__current.jpg",
         "Мясной рулет")
-    .recipe-card__content.__page-recipes
-      h2.recipe-card__title.__page-recipes Мясной рулет
-      ul.recipe-card__info.__page-recipes
-        li.recipe-card__info-item.__page-recipes
-          i.recipe-card__info-icon.__page-recipes
+    .recipe-daily__content.__page-recipes
+      h2.recipe-daily__title.__page-recipes Мясной рулет
+      ul.recipe-daily__info.__page-recipes
+        li.recipe-daily__info-item.__page-recipes
+          i.recipe-daily__info-icon.__page-recipes
             include ./../../mixins/img-NL
             +img(
               "./img/icons/icon-clock.svg",
               "Время готовки")
-          span.recipe-card__info-title.__page-recipes 1 ч 15 мин
-        li.recipe-card__info-item.__page-recipes
-          i.recipe-card__info-icon.__page-recipes
+          span.recipe-daily__info-title.__page-recipes 1 ч 15 мин
+        li.recipe-daily__info-item.__page-recipes
+          i.recipe-daily__info-icon.__page-recipes
             include ./../../mixins/img-NL
             +img(
               "./img/icons/icon-food.svg",
               "Количество порций")
-          span.recipe-card__info-title.__page-recipes 5 порций
-      h5.recipe-card__subtitle.__page-recipes Ингридиенты
-      ul.recipe-card__list.__page-recipes
-        li.recipe-card__list-item.__page-recipes
-          span.recipe-card__list-item__content.__page-recipes Мясо сыровяленое
-          span.recipe-card__list-item__content.__page-recipes 1000 гр
-        li.recipe-card__list-item.__page-recipes
-          span.recipe-card__list-item__content.__page-recipes Мясо сыровяленое
-          span.recipe-card__list-item__content.__page-recipes 1000 гр
-        li.recipe-card__list-item.__page-recipes
-          span.recipe-card__list-item__content.__page-recipes Мясо сыровяленое
-          span.recipe-card__list-item__content.__page-recipes 1000 гр
-        li.recipe-card__list-item.__page-recipes
-          span.recipe-card__list-item__content.__page-recipes Мясо сыровяленое
-          span.recipe-card__list-item__content.__page-recipes 1000 гр
-        li.recipe-card__list-item.__page-recipes
-          span.recipe-card__list-item__content.__page-recipes Мясо сыровяленое
-          span.recipe-card__list-item__content.__page-recipes 1000 гр
-      a.btn.recipe-card__btn.__page-recipes(href="page-recipe.html") Перейти
+          span.recipe-daily__info-title.__page-recipes 5 порций
+      h5.recipe-daily__subtitle.__page-recipes Ингридиенты
+      ul.recipe-daily__list.__page-recipes
+        li.recipe-daily__list-item.__page-recipes
+          span.recipe-daily__list-item__content.__page-recipes Мясо сыровяленое
+          span.recipe-daily__list-item__content.__page-recipes 1000 гр
+        li.recipe-daily__list-item.__page-recipes
+          span.recipe-daily__list-item__content.__page-recipes Мясо сыровяленое
+          span.recipe-daily__list-item__content.__page-recipes 1000 гр
+        li.recipe-daily__list-item.__page-recipes
+          span.recipe-daily__list-item__content.__page-recipes Мясо сыровяленое
+          span.recipe-daily__list-item__content.__page-recipes 1000 гр
+        li.recipe-daily__list-item.__page-recipes
+          span.recipe-daily__list-item__content.__page-recipes Мясо сыровяленое
+          span.recipe-daily__list-item__content.__page-recipes 1000 гр
+        li.recipe-daily__list-item.__page-recipes
+          span.recipe-daily__list-item__content.__page-recipes Мясо сыровяленое
+          span.recipe-daily__list-item__content.__page-recipes 1000 гр
+      a.btn.recipe-daily__btn.__page-recipes(href="page-recipe.html") Перейти
       include ./../../mixins/share
       +share(
         "Поделиться рецептом",
@@ -72,6 +72,6 @@ section.section.recipe-section.__page-recipes
           ]
 
         ],
-        "recipe-card")
-    span.recipe-card__bg(area-hidden="true")
+        "recipe-daily")
+    span.recipe-daily__bg(area-hidden="true")
       include ./../../../img/recipe__effect.svg

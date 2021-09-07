@@ -93,7 +93,7 @@
 }
 
 @mixin coll($collCount, $collGap) {
-  flex: 1 1 calc((100% / #{$collCount}) - #{$collGap});
+  flex: 1 1 calc((100% / #{$collCount}) - #{$collGap}px);
 }
 
 @function get-vw($property) {
