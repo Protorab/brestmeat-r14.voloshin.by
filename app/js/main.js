@@ -86,7 +86,72 @@ document.addEventListener("DOMContentLoaded", () => {
   collapsibleFunc();
   // tabsChange();
   // function call end
+  const recipeStepsCheck = () => {
+    let recipeSteps = document.querySelectorAll(".recipe-card__step");
+    let moreBtn = document.querySelector("#more__btn");
+    var itemsCounter = window.innerWidth <= 800 ? 3 : 7;
+    const hideRecipeStep = () => {
+      for (let i = 0; i < recipeSteps.length; i++) {
+        const element = recipeSteps[i];
+        element.style.display = "none";
+      }
+      for (let j = 0; j < itemsCounter; j++) {
+        const recipeStep = recipeSteps[j];
+        recipeStep.style.display = "flex";
+      }
+    };
+    const showRecipeStep = () => {
+      for (let i = 0; i < recipeSteps.length; i++) {
+        const element = recipeSteps[i];
+        element.style.display = "flex";
+        element.classList.contains("scroll")
+          ? (element.classList.remove("scroll"),
+            element.classList.add("__show"))
+          : "";
+      }
+    };
+    if (recipeSteps && recipeSteps.length > itemsCounter) {
+      console.log("innerWidth :>> ", itemsCounter);
 
+      hideRecipeStep();
+
+      if (moreBtn) {
+        moreBtn.style.display = "flex";
+        !moreBtn.classList.contains("animate")
+          ? moreBtn.classList.add("animate")
+          : "";
+        !moreBtn.classList.contains("scroll")
+          ? moreBtn.classList.add("scroll")
+          : "";
+      }
+    } else {
+      if (moreBtn) {
+        moreBtn.style.display = "none";
+        moreBtn.classList.contains("animate")
+          ? moreBtn.classList.remove("animate")
+          : "";
+        moreBtn.classList.contains("scroll")
+          ? moreBtn.classList.remove("scroll")
+          : "";
+      }
+    }
+    if (moreBtn) {
+      moreBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        let _this = e.currentTarget;
+        let defText = "Подробнее....";
+        let altText = "Скрыть";
+
+        _this.classList.contains("__clicked")
+          ? (_this.classList.remove("__clicked"),
+            (_this.textContent = defText),
+            hideRecipeStep())
+          : (_this.classList.add("__clicked"),
+            (_this.textContent = altText),
+            showRecipeStep());
+      });
+    }
+  };
   setTimeout(() => {
     let body = document.querySelector("body");
     body.classList.add("__loading");
@@ -94,6 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < 100; i++) {
       preloaderProgress.value++;
     }
+    recipeStepsCheck();
     window.setTimeout(function () {
       body.classList.add("__load");
       body.classList.remove("__loading");
@@ -194,6 +260,16 @@ document.addEventListener("DOMContentLoaded", () => {
   if (modalCloseIcons.length > 0) {
     modalCloseIcons.forEach((icon) => {
       icon.addEventListener("click", (e) => {
+        let clickedBurgerMenus = document.querySelectorAll(".menu-burger");
+        clickedBurgerMenus.forEach((element) => {
+          element.classList.contains("--clicked")
+            ? element.classList.remove("--clicked")
+            : "";
+        });
+
+        menu.classList.contains("--show")
+          ? menu.classList.remove("--show")
+          : "";
         modalClose(icon.closest(".modal"));
         e.preventDefault();
       });
@@ -205,6 +281,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.which === 27) {
       const modalOpen = document.querySelector(".modal.--open");
       modalOpen ? modalClose(modalOpen) : "";
+      let clickedBurgerMenus = document.querySelectorAll(".menu-burger");
+      clickedBurgerMenus.forEach((element) => {
+        element.classList.contains("--clicked")
+          ? element.classList.remove("--clicked")
+          : "";
+      });
+
+      menu.classList.contains("--show") ? menu.classList.remove("--show") : "";
+      body.classList.contains("--fixed")
+        ? body.classList.remove("--fixed")
+        : "";
     }
   });
 
@@ -281,7 +368,25 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-
+  function CallPrint(strid) {
+    var prtContent = document.getElementById(strid);
+    // var prtCSS =
+    //   '<link rel="stylesheet" href="/templates/css/template.css" type="text/css" />';
+    var WinPrint = window.open(
+      "",
+      "",
+      "left=50,top=50,width=800,height=640,toolbar=0,scrollbars=1,status=0"
+    );
+    WinPrint.document.write('<div id="print" class="contentpane">');
+    // WinPrint.document.write(prtCSS);
+    WinPrint.document.write(prtContent.innerHTML);
+    WinPrint.document.write("</div>");
+    WinPrint.document.close();
+    WinPrint.focus();
+    WinPrint.print();
+    WinPrint.close();
+    prtContent.innerHTML = strOldOne;
+  }
   window.onscroll = function () {
     showVisible();
     let header = document.querySelector("#header");
@@ -296,6 +401,8 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   window.onresize = function () {
     setMainMarginTop();
+    recipeStepsCheck();
+
     if (showMoreBtn) {
       showMoreBtn.addEventListener("click", (e) => {
         showMore(e, "#cards", "__show-cards", "Показать еще", "Скрыть");
@@ -305,6 +412,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     setTimeout(() => {
       setMainMarginTop();
+      recipeStepsCheck();
+
       if (showMoreBtn) {
         showMoreBtn.addEventListener("click", (e) => {
           showMore(e, "#cards", "__show-cards", "Показать еще", "Скрыть");

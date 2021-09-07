@@ -1,0 +1,110 @@
+script.
+  var filterItems = document.querySelectorAll("*[data-filter]");
+  var cards = document.querySelectorAll(".card");
+  var itemsCounter = window.innerWidth <= 800 ? 6 : 12;
+  var showMoreBtn = document.querySelector(".show-more");
+  var hideCatalogCategory = function hideCatalogCategory() {
+  var categorySelects = document.querySelectorAll(".catalog__category");
+  if (categorySelects.length > 0) {
+  categorySelects.forEach(function (element) {
+  element.style.display = "none";
+  });
+  }
+  };
+  var checkCardsLength = function checkCardsLength(items) {
+  items.length >= itemsCounter
+  ? (showMoreBtn.style.display = "flex")
+  : (showMoreBtn.style.display = "none");
+  };
+  var hideCards = function hideCards(items) {
+  for (var i = 0; i < items.length; i++) {
+  var item = items[i];
+  item.style.display = "none";
+  }
+  for (var _i = 0; _i < itemsCounter; _i++) {
+  var _item = items[_i];
+  _item.style.display = "flex";
+  }
+  };
+  var showCards = function showCards(items) {
+  for (var i = 0; i < items.length; i++) {
+  var item = items[i];
+  item.style.display = "flex";
+  }
+  };
+  if (cards.length > 0) {
+  for (var i = 0; i < cards.length; i++) {
+  var card = cards[i];
+  card.setAttribute("id", "card-".concat(i + 1));
+  hideCards(cards);
+  }
+  checkCardsLength(cards);
+  }
+  if (filterItems.length > 0) {
+  filterItems.forEach(function (item) {
+  item.addEventListener("click", function (e) {
+  e.preventDefault();
+  var _this = e.currentTarget;
+  var currentFilter = _this.dataset.filter;
+  var sortableCard = document.querySelector(
+  '.card[data-sortable="'.concat(currentFilter, '"]')
+  );
+  if (currentFilter !== "reset") {
+  cards.forEach(function (element) {
+  element.style.display = "none";
+  });
+  sortableCard ? (sortableCard.style.display = "flex") : "";
+  if (sortableCard && sortableCard.length >= itemsCounter) {
+  showMoreBtn.style.display = "flex";
+  } else {
+  showMoreBtn.style.display = "none";
+  }
+  } else {
+  hideCards(cards);
+  checkCardsLength(cards);
+  var currentOptions =
+  _this.parentNode.querySelectorAll(".custom-option");
+  var currentSelectTriggerText = _this.parentNode.querySelectorAll(
+  ".cards__filter-select__trigger-text"
+  );
+  var currentDefOptions =
+  _this.parentNode.querySelectorAll(".custom-def-option");
+  currentOptions.forEach(function (element) {
+  element.classList.remove("selected");
+  });
+  currentDefOptions.forEach(function (element) {
+  element.classList.add("selected");
+  });
+  currentSelectTriggerText.forEach(function (element) {
+  element.textContent = "Выбрать";
+  });
+  hideCatalogCategory();
+  }
+  });
+  });
+  }
+  var showMore = function showMore(
+  e,
+  getParent,
+  classContain,
+  defText,
+  altText
+  ) {
+  var _this = e.currentTarget;
+  var parent = document.querySelector(getParent);
+  if (!parent.classList.contains(classContain)) {
+  _this.textContent = altText;
+  showCards(cards);
+  parent.classList.add(classContain);
+  } else {
+  hideCards(cards);
+  _this.textContent = defText;
+  parent.classList.remove(classContain);
+  }
+  };
+  if (showMoreBtn) {
+  showMoreBtn.addEventListener("click", function (e) {
+  showMore(e, "#cards", "__show-cards", "Показать еще", "Скрыть");
+  e.preventDefault();
+  });
+  }

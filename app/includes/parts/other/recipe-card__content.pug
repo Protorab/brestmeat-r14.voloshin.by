@@ -1,1 +1,89 @@
-article.recipe-card__content
+.recipe-card__content
+  .recipe-card__ingredients 
+    h4.recipe-card__ingredients-title Ингридиенты
+    ul.recipe-card__ingredients-list
+      li.recipe-card__ingredients-item
+        span.recipe-card__ingredients-item__content Мясо сыровяленое
+        span.recipe-card__ingredients-item__content 1000 гр
+      li.recipe-card__ingredients-item
+        span.recipe-card__ingredients-item__content Мясо сыровяленое
+        span.recipe-card__ingredients-item__content 1000 гр
+      li.recipe-card__ingredients-item
+        span.recipe-card__ingredients-item__content Мясо сыровяленое
+        span.recipe-card__ingredients-item__content 1000 гр
+      li.recipe-card__ingredients-item
+        span.recipe-card__ingredients-item__content Мясо сыровяленое
+        span.recipe-card__ingredients-item__content 1000 гр
+      li.recipe-card__ingredients-item
+        span.recipe-card__ingredients-item__content Мясо сыровяленое
+        span.recipe-card__ingredients-item__content 1000 гр
+  .recipe-card__steps
+    h4.recipe-card__steps-title Приготовление
+    dl.recipe-card__step.animate
+      dt.recipe-card__step-number 1
+      dd.recipe-card__step-content 
+        p Мякоть свинины, говядины и сало пропускаем через крупную сетку мясорубки. Тщательно, в течение 15 минут, вымесить полученную массу руками, добавляя соль, молотый перец,. Миску с фаршем поставить в холодильник на 30 - 40 минут (если есть возможность, то лучше, если простоит там 1 - 2 часа)
+    dl.recipe-card__step.animate
+      dt.recipe-card__step-number 2
+      dd.recipe-card__step-content 
+        p Мякоть свинины, говядины и сало пропускаем через крупную сетку мясорубки. Тщательно, в течение 15 минут, вымесить полученную массу руками, добавляя соль, молотый перец,. Миску с фаршем поставить в холодильник на 30 - 40 минут (если есть возможность, то лучше, если простоит там 1 - 2 часа)
+    dl.recipe-card__step.animate
+      dt.recipe-card__step-number 3
+      dd.recipe-card__step-content 
+        p Мякоть свинины, говядины и сало пропускаем через крупную сетку мясорубки. Тщательно, в течение 15 минут, вымесить полученную массу руками, добавляя соль, молотый перец,. Миску с фаршем поставить в холодильник на 30 - 40 минут (если есть возможность, то лучше, если простоит там 1 - 2 часа)
+    dl.recipe-card__step.animate.scroll
+      dt.recipe-card__step-number 4
+      dd.recipe-card__step-content 
+        p Мякоть свинины, говядины и сало пропускаем через крупную сетку мясорубки. Тщательно, в течение 15 минут, вымесить полученную массу руками, добавляя соль, молотый перец,. Миску с фаршем поставить в холодильник на 30 - 40 минут (если есть возможность, то лучше, если простоит там 1 - 2 часа)
+    dl.recipe-card__step.animate.scroll
+      dt.recipe-card__step-number 5
+      dd.recipe-card__step-content 
+        p Мякоть свинины, говядины и сало пропускаем через крупную сетку мясорубки. Тщательно, в течение 15 минут, вымесить полученную массу руками, добавляя соль, молотый перец,. Миску с фаршем поставить в холодильник на 30 - 40 минут (если есть возможность, то лучше, если простоит там 1 - 2 часа)
+    dl.recipe-card__step.animate.scroll
+      dt.recipe-card__step-number 6
+      dd.recipe-card__step-content 
+        p Мякоть свинины, говядины и сало пропускаем через крупную сетку мясорубки. Тщательно, в течение 15 минут, вымесить полученную массу руками, добавляя соль, молотый перец,. Миску с фаршем поставить в холодильник на 30 - 40 минут (если есть возможность, то лучше, если простоит там 1 - 2 часа)
+    dl.recipe-card__step.animate.scroll
+      dt.recipe-card__step-number 7
+      dd.recipe-card__step-content 
+        p Мякоть свинины, говядины и сало пропускаем через крупную сетку мясорубки. Тщательно, в течение 15 минут, вымесить полученную массу руками, добавляя соль, молотый перец,. Миску с фаршем поставить в холодильник на 30 - 40 минут (если есть возможность, то лучше, если простоит там 1 - 2 часа)
+  a#more__btn.recipe-card__more(href="#")  Подробнее....
+
+  include ./../../mixins/share
+  +share(
+        "Поделиться рецептом",
+        [
+          [
+            "https://www.facebook.com/",
+            "./img/icons/icon-fb-double.svg",
+            "Поделится в Facebook"
+          ],
+          [
+            "https://vk.com/",
+            "./img/icons/icon-vk-double.svg",
+            "Поделится в VK"
+          ],
+          [
+            "https://www.instagram.com/",
+            "./img/icons/icon-inst-double.svg",
+            "Поделится в Instagram"
+          ],
+          [
+            "https://ok.ru/",
+            "./img/icons/icon-ok-double.svg",
+            "Поделится в OK"
+          ],
+          [
+            "https://web.telegram.org/",
+            "./img/icons/icon-tg-double.svg",
+            "Поделится в Telegram"
+          ]
+
+        ],
+        "recipe-card")
+  a.recipe-card__print.print(href="#",title="Распечатать рецепт") 
+    i.print__icon
+      include ./../../mixins/img-NL
+      +img("./img/icons/icon-printer-double.svg",
+      "Распечатать рецепт")
+    span.print__title Распечатать рецепт

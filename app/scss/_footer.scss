@@ -132,6 +132,7 @@
 
       @media only screen and (max-width: 800px) {
         width: 40%;
+        @include adaptive(margin-bottom, 40, 25, 0);
       }
       @media only screen and (max-width: 600px) {
         width: 100%;

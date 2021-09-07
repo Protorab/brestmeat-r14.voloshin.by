@@ -1,0 +1,28 @@
+section.section.recipe-other-section
+  h5.section__title.recipe-other-section__title.animate.scroll Попробуйте приготовить
+
+  .recipe-slider.swiper-container.animate.scroll
+    .recipe-slides.swiper-wrapper
+      //.recipe-slide start
+      include ./../../mixins/recipe-slide
+      +recipe-slide(
+        "./img/recipe/recipe-image__1.jpg",
+        'Мясной рулет')
+      +recipe-slide(
+        "./img/recipe/recipe-image__2.jpg",
+        'Мясной рулет')
+      +recipe-slide(
+        "./img/recipe/recipe-image__3.jpg",
+        'Мясной рулет')
+      +recipe-slide(
+        "./img/recipe/recipe-image__4.jpg",
+        'Мясной рулет')
+      +recipe-slide(
+        "./img/recipe/recipe-image__4.jpg",
+        'Мясной рулет')
+      //.recipe-slide end
+    //recipe-slider__control start
+    .slider-control.recipe-slider__control
+      button.slider-control__btn.slider-control__btn--prev.recipe-slider__prev 
+      button.slider-control__btn.slider-control__btn--next.recipe-slider__next 
+    //recipe-slider__control end

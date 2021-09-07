@@ -785,6 +785,7 @@ label {
   line-height: 1.35;
   @include adaptive(font-size, 16, 15, 0);
 }
+
 .section {
   @include adaptive(padding-top, 80, 70, 0);
   @include adaptive(padding-bottom, 40, 30, 0);
@@ -954,6 +955,53 @@ label {
 
     // .page-card__product {
     &__product {
+    }
+  }
+}
+.print {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: fit-content;
+  // .print__icon {
+  &__icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    @include adaptive(width, 35, 25, 0);
+    @include adaptive(min-width, 35, 25, 0);
+    @include adaptive(height, 35, 25, 0);
+    @include adaptive(margin-right, 10, 10, 0);
+    @include _transition(all, 0.35s);
+    overflow: hidden;
+
+    img {
+      @include _transition(all, 0.25s);
+
+      object-position: bottom center;
+    }
+  }
+
+  // print__title {
+  &__title {
+    @include _transition(all, 0.35s);
+    font-weight: 500;
+    -webkit-text-stroke: 1px transparent;
+  }
+
+  @media only screen and (min-width: 1152px) {
+    &:hover {
+      .print {
+        &__icon {
+          img {
+            object-position: top center;
+          }
+        }
+        &__title {
+          color: $accentColor;
+          -webkit-text-stroke-color: $accentColor;
+        }
+      }
     }
   }
 }
