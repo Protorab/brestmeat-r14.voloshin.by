@@ -1,0 +1,48 @@
+doctype html
+html(lang="ru")
+
+  //head start
+  include ./includes/mixins/head
+  +head("page")
+  //head end
+
+  body.--fixed.__loading
+    //preloader start
+    include ./includes/parts/other/preloader
+    //preloader end
+    
+    //header start
+    include ./includes/parts/main/header
+    //header end
+
+    //scrollToTopBtn start
+    include ./includes/elements/scrollToTopBtn
+    //scrollToTopBtn end
+
+    //page- start
+    main.main.page.page-article
+      
+      //breadcrumbs start
+      include ./includes/mixins/breadcrumbs
+      +breadcrumbs([
+        [
+          "Главная",
+          "index.html"
+        ],
+        [
+          "Page",
+          "#"]
+        ])
+      //breadcrumbs end
+
+    //page- end
+    
+    //footer start
+    include ./includes/parts/main/footer
+    //footer end
+    include ./includes/parts/other/modal__search.pug
+    include ./includes/parts/other/modal__form.pug
+    include ./includes/parts/other/modal__form-review.pug
+    include ./includes/parts/other/modal__img.pug
+    include ./includes/parts/other/scripts.pug
+    include ./includes/parts/other/filterscript

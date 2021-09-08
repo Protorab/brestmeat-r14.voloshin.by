@@ -957,6 +957,14 @@ label {
     &__product {
     }
   }
+  // .page-article {
+  &-article {
+    @include adaptive(padding-top, 25, 20, 0);
+
+    @media only screen and (max-width: 800px) {
+      @include adaptive(padding-top, 40, 35, 0);
+    }
+  }
 }
 .print {
   display: inline-flex;

@@ -7,11 +7,18 @@
   img {
     width: 100%;
     height: auto;
-    @include adaptive(margin-bottom, 80, 40, 0);
+    &[class^="show-modal"] {
+      @include _transition(all, 0.35s);
+      @media only screen and (min-width: 1152px) {
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
   }
   p,
   a {
-    @include adaptive(margin-bottom, 15, 5, 0);
+    @include adaptive(margin-bottom, 35, 30, 0);
 
     &:last-child,
     &:last-of-type {
@@ -19,7 +26,7 @@
     }
   }
   strong {
-    font-weight: bolder;
+    font-weight: 600;
   }
   mark {
     color: $mainColor;
@@ -30,12 +37,8 @@
       &#{$i} {
         font-family: Raleway, sans-serif;
 
-        @include adaptive(margin-bottom, 40, 20, 0);
-        max-width: 50%;
-
-        @media only screen and (max-width: 1024px) {
-          max-width: 100%;
-        }
+        @include adaptive(margin-bottom, 15, 10, 0);
+        // max-width: 50%;
       }
     }
   }
@@ -54,7 +57,8 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    @include adaptive(margin, -50, -10, 0);
+    // @include adaptive(margin, -20, -10, 0);
+    margin: -20px;
     flex-wrap: wrap;
   }
 
@@ -65,8 +69,10 @@
     align-items: flex-start;
     width: 100%;
     height: auto;
-    @include adaptive(margin, 50, 10, 0);
-    flex: 1 1 calc(50% - 100px);
+    margin: 20px;
+    overflow: hidden;
+    // @include adaptive(margin, 20, 10, 0);
+    flex: 1 1 calc(50% - 40px);
 
     @media only screen and (max-width: 1024px) {
       flex: 1 1 calc(50% - 20px);
@@ -77,6 +83,96 @@
     @include adaptive(width, 100, 50, 0);
     height: 2px;
     background: $accentColor;
+  }
+  // .article-wrapper {
+  &-wrapper {
+    @extend .wrapper;
+    @include adaptive(padding-top, 50, 35, 0);
+    @include adaptive(margin-bottom, 100, 50, 0);
+  }
+  // .article-control Х
+  &-control {
+    @extend .wrapper;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    @include adaptive(margin-bottom, 120, 60, 0);
+    // .article-control__item {
+    &__item {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 500;
+      @include _transition(all, 0.35s);
+
+      @media only screen and (min-width: 1152px) {
+        &:hover {
+          color: $accentColor;
+          .article {
+            &-control {
+              &__icon {
+                &::before {
+                  background-position: left center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    // .article-control__icon {
+    &__icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      @include adaptive(width, 25, 25, 0);
+      @include adaptive(min-width, 25, 25, 0);
+      @include adaptive(height, 25, 25, 0);
+      @include _transition(all, 0.35s);
+      position: relative;
+
+      &::before {
+        content: "";
+        display: inline-flex;
+        width: 100%;
+        height: 100%;
+        @include _transition(all, 0.35s);
+        background-image: url("../img/icons//icon-arrow-double.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: right center;
+      }
+    }
+    // .article-control__prev {
+    &__prev {
+      .article {
+        &-control {
+          &__icon {
+            margin-right: 10px;
+
+            &::before {
+              transform: scale(-1, -1);
+            }
+          }
+        }
+      }
+    }
+    // .article-control__next {
+    &__next {
+      text-align: right;
+      .article {
+        &-control {
+          &__icon {
+            margin-left: 10px;
+
+            order: 2;
+            &::before {
+              background-position: right center;
+            }
+          }
+        }
+      }
+    }
   }
 }
 

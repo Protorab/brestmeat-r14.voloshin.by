@@ -1,0 +1,72 @@
+doctype html
+html(lang="ru")
+
+  //head start
+  include ./includes/mixins/head
+  +head("При какой температуре и сколько коптить курицу")
+  //head end
+
+  body.--fixed.__loading.__white-page
+    //preloader start
+    include ./includes/parts/other/preloader
+    //preloader end
+    
+    //header start
+    include ./includes/parts/main/header
+    //header end
+
+    //scrollToTopBtn start
+    include ./includes/elements/scrollToTopBtn
+    //scrollToTopBtn end
+
+    //page-article-advice start
+    main.main.page.page-article.page-article-advice
+      
+      //breadcrumbs start
+      include ./includes/mixins/breadcrumbs
+      +breadcrumbs([
+        [
+          "Главная",
+          "index.html"
+        ],
+        [
+          "Советы",
+          "page-advice.html"
+        ],
+        [
+          "При какой температуре и сколько коптить курицу",
+          "#"
+        ]
+        ])
+      //breadcrumbs end
+    .article-wrapper.article-advice-wrapper
+      article.article
+        h4 
+          strong ПРИ КАКОЙ ТЕМПЕРАТУРЕ И СКОЛЬКО КОПТИТЬ КУРИЦУ
+        table
+          tr
+            td
+              img.show-modal(src="./img/advice/advice-image.jpg",
+              alt="При какой температуре и сколько коптить курицу"
+              title="При какой температуре и сколько коптить курицу"
+              loading="lazy")
+            td
+              p Пусть этот величественный праздник наполнит Ваши сердца светлыми чувствами надежды и любви, дарит счастье и добро. Желаем Вам радости, здоровья и благополучия. Пусть этот величественный праздник наполнит Ваши сердца светлыми чувствами надежды и любви, дарит счастье и добро. Желаем Вам радости, здоровья и благополучия.  <br> Пусть этот величественный праздник наполнит Ваши сердца светлыми чувствами надежды и любви, дарит счастье и добро.<br>  Желаем Вам радости, здоровья и благополучия.<br> Пусть этот величественный праздник наполнит Ваши сердца светлыми чувствами надежды и любви, дарит счастье и добро. Желаем Вам радости, здоровья и благополучия. 
+              p Пусть этот величественный праздник наполнит Ваши сердца светлыми чувствами надежды и любви, дарит счастье и добро. Желаем Вам радости, здоровья и благополучия.<br>  Пусть этот величественный праздник наполнит Ваши сердца светлыми чувствами надежды и любви, дарит счастье и добро.<br>  Желаем Вам радости, здоровья и благополучия.  Пусть этот величественный праздник наполнит Ваши сердца светлыми чувствами надежды и любви, дарит счастье и добро. 
+    .article-control
+      a.article-control__item.article-control__prev(href="page-advice.html") 
+        i.article-control__icon
+        | Вернуться в раздел
+      a.article-control__item.article-control__next(href="page-article-advice.html") 
+        i.article-control__icon
+        | Следующая статья
+    //page-article-advice end
+    
+    //footer start
+    include ./includes/parts/main/footer
+    //footer end
+    include ./includes/parts/other/modal__search.pug
+    include ./includes/parts/other/modal__form.pug
+    include ./includes/parts/other/modal__form-review.pug
+    include ./includes/parts/other/modal__img.pug
+    include ./includes/parts/other/scripts.pug
