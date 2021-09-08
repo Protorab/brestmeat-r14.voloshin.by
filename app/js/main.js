@@ -1,50 +1,22 @@
-// import inputmask
 import inputmask from "inputmask";
-
-// import attrClear function
 import attrClear from "./functions/attrClear";
-
-// import modalWindow functions
 import { modalClose, bodyLock } from "./functions/modalWindow";
-
-// import modalWindow init functions
 import modalWindowInit from "./functions/modalWindowInit";
-
-// import  btns functions
 import btnsFunc from "./functions/btns";
-
-// import lazyLoading functions
 import observer from "./functions/lazyLoading";
-
-// import customSelectFunc functions
 import customSelectFunc from "./functions/customSelect";
-
-// import truncate functions
 import truncate from "./functions/truncate";
-
-// import tabsChange functions
 // import tabsChange from "./functions/tabsChange";
-
-// import collapsibleFunc function
 import collapsibleFunc from "./functions/collapsible";
-
 // import lazyBg function
 import lazyBg from "./functions/lazyBg";
-
-// import ytPlayer function
 // import ytPlayer from "./functions/youtubePlayer";
-
-// swiperJsSliders
 import swiperJsSliders from "./functions/swiperJsSliders";
-
 //numberList function
 import numberList from "./functions/numberList";
-// import menuDropdown function
 // import menuDropdown from "./functions/menuDropdown";
-// import showVisible
 import showVisible from "./functions/showVisible";
-
-//setMarginTop function
+import itemCountCheck from "./functions/itemCountCheck";
 import setMarginTop from "./functions/setMarginTop";
 document.addEventListener("DOMContentLoaded", () => {
   // variable start
@@ -71,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const productCardImageThumbs = document.querySelectorAll(
     ".product-card__image-slide img"
   );
-
+  const printBtns = document.querySelectorAll(".print");
   // variable end
 
   // ytPlayer();
@@ -86,72 +58,31 @@ document.addEventListener("DOMContentLoaded", () => {
   collapsibleFunc();
   // tabsChange();
   // function call end
-  const recipeStepsCheck = () => {
-    let recipeSteps = document.querySelectorAll(".recipe-card__step");
-    let moreBtn = document.querySelector("#more__btn");
-    var itemsCounter = window.innerWidth <= 800 ? 3 : 7;
-    const hideRecipeStep = () => {
-      for (let i = 0; i < recipeSteps.length; i++) {
-        const element = recipeSteps[i];
-        element.style.display = "none";
-      }
-      for (let j = 0; j < itemsCounter; j++) {
-        const recipeStep = recipeSteps[j];
-        recipeStep.style.display = "flex";
-      }
-    };
-    const showRecipeStep = () => {
-      for (let i = 0; i < recipeSteps.length; i++) {
-        const element = recipeSteps[i];
-        element.style.display = "flex";
-        element.classList.contains("scroll")
-          ? (element.classList.remove("scroll"),
-            element.classList.add("__show"))
-          : "";
-      }
-    };
-    if (recipeSteps && recipeSteps.length > itemsCounter) {
-      console.log("innerWidth :>> ", itemsCounter);
-
-      hideRecipeStep();
-
-      if (moreBtn) {
-        moreBtn.style.display = "flex";
-        !moreBtn.classList.contains("animate")
-          ? moreBtn.classList.add("animate")
-          : "";
-        !moreBtn.classList.contains("scroll")
-          ? moreBtn.classList.add("scroll")
-          : "";
-      }
-    } else {
-      if (moreBtn) {
-        moreBtn.style.display = "none";
-        moreBtn.classList.contains("animate")
-          ? moreBtn.classList.remove("animate")
-          : "";
-        moreBtn.classList.contains("scroll")
-          ? moreBtn.classList.remove("scroll")
-          : "";
-      }
-    }
-    if (moreBtn) {
-      moreBtn.addEventListener("click", (e) => {
+  function callPrint(strid) {
+    var prtContent = document.getElementById(strid);
+    // var prtCSS =
+    //   '<link rel="stylesheet" href="css/main.min.css" type="text/css" />';
+    var WinPrint = window.open(
+      "",
+      "",
+      "left=50,top=50,width=800,height=640,toolbar=0,scrollbars=1,status=0"
+    );
+    WinPrint.document.write('<div id="print" class="contentpane">');
+    // WinPrint.document.write(prtCSS);
+    WinPrint.document.write(prtContent.innerHTML);
+    WinPrint.document.write("</div>");
+    WinPrint.document.close();
+    WinPrint.focus();
+    WinPrint.print();
+  }
+  if (printBtns.length > 0) {
+    printBtns.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
         e.preventDefault();
-        let _this = e.currentTarget;
-        let defText = "Подробнее....";
-        let altText = "Скрыть";
-
-        _this.classList.contains("__clicked")
-          ? (_this.classList.remove("__clicked"),
-            (_this.textContent = defText),
-            hideRecipeStep())
-          : (_this.classList.add("__clicked"),
-            (_this.textContent = altText),
-            showRecipeStep());
+        callPrint("recipe");
       });
-    }
-  };
+    });
+  }
   setTimeout(() => {
     let body = document.querySelector("body");
     body.classList.add("__loading");
@@ -159,7 +90,14 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < 100; i++) {
       preloaderProgress.value++;
     }
-    recipeStepsCheck();
+    itemCountCheck(
+      "#more__btn",
+      ".recipe-card__step",
+      "Подробнее",
+      "Скрыть",
+      3,
+      7
+    );
     window.setTimeout(function () {
       body.classList.add("__load");
       body.classList.remove("__loading");
@@ -368,25 +306,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-  function CallPrint(strid) {
-    var prtContent = document.getElementById(strid);
-    // var prtCSS =
-    //   '<link rel="stylesheet" href="/templates/css/template.css" type="text/css" />';
-    var WinPrint = window.open(
-      "",
-      "",
-      "left=50,top=50,width=800,height=640,toolbar=0,scrollbars=1,status=0"
-    );
-    WinPrint.document.write('<div id="print" class="contentpane">');
-    // WinPrint.document.write(prtCSS);
-    WinPrint.document.write(prtContent.innerHTML);
-    WinPrint.document.write("</div>");
-    WinPrint.document.close();
-    WinPrint.focus();
-    WinPrint.print();
-    WinPrint.close();
-    prtContent.innerHTML = strOldOne;
-  }
+
   window.onscroll = function () {
     showVisible();
     let header = document.querySelector("#header");
@@ -401,7 +321,14 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   window.onresize = function () {
     setMainMarginTop();
-    recipeStepsCheck();
+    itemCountCheck(
+      "#more__btn",
+      ".recipe-card__step",
+      "Подробнее",
+      "Скрыть",
+      3,
+      7
+    );
 
     if (showMoreBtn) {
       showMoreBtn.addEventListener("click", (e) => {
@@ -412,7 +339,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     setTimeout(() => {
       setMainMarginTop();
-      recipeStepsCheck();
+      itemCountCheck(
+        "#more__btn",
+        ".recipe-card__step",
+        "Подробнее",
+        "Скрыть",
+        3,
+        7
+      );
 
       if (showMoreBtn) {
         showMoreBtn.addEventListener("click", (e) => {

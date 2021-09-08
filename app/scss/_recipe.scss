@@ -381,9 +381,11 @@
 
     // .recipe-card-section {
     &-section {
-      padding-top: 0;
+      @include adaptive(padding-top, 20, 20, 0);
+
       @media only screen and (max-width: 800px) {
-        padding-top: 20px;
+        // padding-top: 20px;
+        @include adaptive(padding-top, 35, 35, 0);
       }
     }
 
@@ -459,27 +461,26 @@
         align-items: center;
         color: #525252;
         @extend .t6;
-        @include adaptive(margin-right, 10, 5, 0);
+        @include adaptive(margin-right, 25, 15, 0);
       }
-      // recipe-card__card__stats-icon {
+      // recipe-card__stats-icon {
       &-icon {
         display: inline-flex;
         justify-content: center;
         align-items: center;
         overflow: hidden;
         background: $accentColor;
-        @include adaptive(width, 65, 45, 0);
-        @include adaptive(min-width, 65, 45, 0);
-        @include adaptive(height, 65, 45, 0);
+        @include adaptive(width, 55, 35, 0);
+        @include adaptive(min-width, 55, 35, 0);
+        @include adaptive(height, 55, 35, 0);
+        @include adaptive(min-height, 55, 35, 0);
         @include _borderRadius(50%);
         @include adaptive(margin-right, 10, 5, 0);
 
         img {
-          width: 27px;
-          height: 27px;
-          @include adaptive(width, 27, 21, 0);
-          @include adaptive(min-width, 27, 21, 0);
-          @include adaptive(height, 27, 21, 0);
+          @include adaptive(width, 24, 18, 0);
+          @include adaptive(min-width, 24, 18, 0);
+          @include adaptive(height, 24, 18, 0);
 
           object-fit: contain;
         }

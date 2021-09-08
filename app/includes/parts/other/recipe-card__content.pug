@@ -1,4 +1,4 @@
-.recipe-card__content
+#recipe.recipe-card__content
   .recipe-card__ingredients 
     h4.recipe-card__ingredients-title Ингридиенты
     ul.recipe-card__ingredients-list
@@ -47,7 +47,11 @@
       dt.recipe-card__step-number 7
       dd.recipe-card__step-content 
         p Мякоть свинины, говядины и сало пропускаем через крупную сетку мясорубки. Тщательно, в течение 15 минут, вымесить полученную массу руками, добавляя соль, молотый перец,. Миску с фаршем поставить в холодильник на 30 - 40 минут (если есть возможность, то лучше, если простоит там 1 - 2 часа)
-  a#more__btn.recipe-card__more(href="#")  Подробнее....
+    dl.recipe-card__step.animate.scroll
+      dt.recipe-card__step-number 8
+      dd.recipe-card__step-content 
+        p Мякоть свинины, говядины и сало пропускаем через крупную сетку мясорубки. Тщательно, в течение 15 минут, вымесить полученную массу руками, добавляя соль, молотый перец,. Миску с фаршем поставить в холодильник на 30 - 40 минут (если есть возможность, то лучше, если простоит там 1 - 2 часа)
+  a#more__btn.recipe-card__more(href="#")  Подробнее
 
   include ./../../mixins/share
   +share(
@@ -81,7 +85,7 @@
 
         ],
         "recipe-card")
-  a.recipe-card__print.print(href="#",title="Распечатать рецепт") 
+  a.recipe-card__print.print.animate.scroll(href="#",title="Распечатать рецепт") 
     i.print__icon
       include ./../../mixins/img-NL
       +img("./img/icons/icon-printer-double.svg",
