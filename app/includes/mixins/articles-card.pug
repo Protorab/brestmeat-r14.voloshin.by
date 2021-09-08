@@ -1,0 +1,29 @@
+mixin articles-card(imgPath,title,link,addClass,animate,dateShort,dateLong)
+  article.articles-card(class=`${addClass ? `${addClass}-card` : ""} ${animate ? `${animate}` : ""}`)
+    picture.articles-card__picture(
+      class=`${addClass ? `${addClass}-card__picture` : ""}`) 
+      source(
+        srcset="img/preloader.gif", 
+        data-lazy-srcset!=`${imgPath}`)
+      img.img--full.img--center.articles-card__image(
+        src="img/preloader.gif",
+        data-lazy-src!=`${imgPath}`, 
+        alt!=`${title}`,
+        title!=`${title}`,
+        draggable="false",
+        loading="lazy",
+        class!=`${addClass ? `${addClass}-card__image` : ""}`)
+    if dateShort || dateLong
+      time.articles-card__date(datetime=`${dateShort}`)!=dateLong
+    h5.articles-card__title(
+      class=`${addClass ? `${addClass}-card__title` : ""}`)!=title
+    p.articles-link(
+      class=`${addClass ? `${addClass}-card__articles-link` : ""}`)
+      | Читать
+      i.articles-link__icon(
+      class=`${addClass ? `${addClass}-card__articles-link__icon` : ""}`)
+        include ./img-NL
+        +img(
+          "./img/icons/icon-arrow-double.svg",
+          "Читать")
+    a.articles-card__link(href=`${link ? link : "#"}`) 

@@ -98,6 +98,14 @@ document.addEventListener("DOMContentLoaded", () => {
       3,
       7
     );
+    itemCountCheck(
+      "#show-more",
+      ".articles-card",
+      "Показать ещё",
+      "Скрыть",
+      3,
+      6
+    );
     window.setTimeout(function () {
       body.classList.add("__load");
       body.classList.remove("__loading");
@@ -339,6 +347,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     setTimeout(() => {
       setMainMarginTop();
+      itemCountCheck(
+        "#show-more",
+        ".articles-card",
+        "Показать ещё",
+        "Скрыть",
+        3,
+        6
+      );
       itemCountCheck(
         "#more__btn",
         ".recipe-card__step",
