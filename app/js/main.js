@@ -292,7 +292,6 @@ document.addEventListener("DOMContentLoaded", () => {
     burgerMenus.forEach((burgerMenu) => {
       burgerMenu.addEventListener("click", function (e) {
         e.preventDefault();
-        let mobileMenuShow = document.querySelector(".menu-nav--mobile.--show");
         let clickedBurgerMenus = document.querySelectorAll(".menu-burger");
         // let header = document.querySelector("#header");
         clickedBurgerMenus.forEach((element) => {
@@ -303,14 +302,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // burgerMenu.classList.toggle("--clicked");
         body.classList.toggle("--fixed");
         menu.classList.toggle("--show");
-        if (mobileMenuShow) {
-          // mobileMenuShow.onscroll = function () {
-          let topScroll = 5;
-          this.scrollTop > topScroll
-            ? (this.style.zIndex = "5")
-            : (this.style.zIndex = "1");
-          // };
-        }
       });
     });
   }
