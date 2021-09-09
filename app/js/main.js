@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ".product-card__image-slide img"
   );
   const printBtns = document.querySelectorAll(".print");
-  const imgsShowModal = document.querySelectorAll(".article img.show-modal");
+  const imgsShowModal = document.querySelectorAll(".article img");
 
   // variable end
 
@@ -126,11 +126,14 @@ document.addEventListener("DOMContentLoaded", () => {
   setMainMarginTop();
   if (imgsShowModal.length > 0) {
     imgsShowModal.forEach((item) => {
-      let parentSpan = document.createElement("span");
-      let getParent = item.parentNode;
-      parentSpan.classList.add("modal-image");
-      getParent.insertBefore(parentSpan, item);
-      parentSpan.appendChild(item);
+      item.setAttribute("draggable", "false");
+      if (item.classList.contains("show-modal")) {
+        let parentSpan = document.createElement("span");
+        let getParent = item.parentNode;
+        parentSpan.classList.add("modal-image");
+        getParent.insertBefore(parentSpan, item);
+        parentSpan.appendChild(item);
+      }
     });
   }
   if (productCardImageThumbs.length > 0) {
