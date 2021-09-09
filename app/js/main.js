@@ -44,6 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ".product-card__image-slide img"
   );
   const printBtns = document.querySelectorAll(".print");
+  const imgsShowModal = document.querySelectorAll(".article img.show-modal");
+
   // variable end
 
   // ytPlayer();
@@ -122,7 +124,15 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   setMainMarginTop();
-
+  if (imgsShowModal.length > 0) {
+    imgsShowModal.forEach((item) => {
+      let parentSpan = document.createElement("span");
+      let getParent = item.parentNode;
+      parentSpan.classList.add("modal-image");
+      getParent.insertBefore(parentSpan, item);
+      parentSpan.appendChild(item);
+    });
+  }
   if (productCardImageThumbs.length > 0) {
     productCardImageThumbs.forEach((item) => {
       item.addEventListener("click", (e) => {
@@ -328,7 +338,6 @@ document.addEventListener("DOMContentLoaded", () => {
       : "";
   };
   window.onresize = function () {
-    setMainMarginTop();
     itemCountCheck(
       "#more__btn",
       ".recipe-card__step",
@@ -337,14 +346,6 @@ document.addEventListener("DOMContentLoaded", () => {
       3,
       7
     );
-
-    if (showMoreBtn) {
-      showMoreBtn.addEventListener("click", (e) => {
-        showMore(e, "#cards", "__show-cards", "Показать еще", "Скрыть");
-
-        e.preventDefault();
-      });
-    }
     setTimeout(() => {
       setMainMarginTop();
       itemCountCheck(
@@ -363,14 +364,6 @@ document.addEventListener("DOMContentLoaded", () => {
         3,
         7
       );
-
-      if (showMoreBtn) {
-        showMoreBtn.addEventListener("click", (e) => {
-          showMore(e, "#cards", "__show-cards", "Показать еще", "Скрыть");
-
-          e.preventDefault();
-        });
-      }
     }, 1000);
   };
 });

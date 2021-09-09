@@ -340,7 +340,7 @@
 
   // .catalog-section {
   &-section {
-    padding-top: 0;
+    @include adaptive(padding-top, 30, 20, 0);
     @media only screen and (max-width: 800px) {
       padding-top: 20px;
     }
@@ -457,7 +457,7 @@
 
     // .catalog-category-section {
     &-section {
-      padding-top: 0;
+      @include adaptive(padding-top, 30, 20, 0);
       @media only screen and (max-width: 800px) {
         padding-top: 20px;
       }
