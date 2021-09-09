@@ -308,7 +308,7 @@
     color: $texSevenColor;
     font-weight: 500;
     @include _transition(all, 0.35s);
-    -webkit-text-stroke: 1px transparent;
+    // -webkit-text-stroke: 1px transparent;
 
     // .articles-link__icon {
     &__icon {
@@ -329,7 +329,7 @@
     @media only screen and (min-width: 1152px) {
       &:hover {
         color: $accentColor;
-        -webkit-text-stroke-color: $accentColor;
+        // -webkit-text-stroke-color: $accentColor;
 
         .articles {
           &-link {
