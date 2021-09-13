@@ -1,0 +1,68 @@
+mixin collapsible(title)
+  article.collapsible.vacancy-collapsible
+    h6.collapsible__title.vacancy-collapsible__title!=title
+    i.collapsible__icon.vacancy-collapsible__icon
+  .collapsible__content.vacancy-collapsible__content
+    article.collapsible__content-wrapper.vacancy-collapsible__content-wrapper
+      .vacancy__description
+        p Компания: ОАО «Брестский мясокомбинат»
+        p Город: Брест
+        p ОАО «Брестский мясокомбинат» - лидер мясной промышленности Республики Беларусь объявляет конкурс на вакансию «Токарь».
+
+      h6.vacancy__title Обязанности:
+
+      ul.vacancy__list 
+        li.vacancy__list-item Выполнение токарных работ на универсальных токарных станках;
+
+        li.vacancy__list-item Изготовление деталей на металлообрабатывающем оборудовании согласно чертежам, эскизам и образцам;
+
+        li.vacancy__list-item Выполнение регламентных работ по техническому обслуживанию металлообрабатывающего оборудования;
+
+        li.vacancy__list-item Поддержание требуемого технического состояния технологической оснастки (приспособлений, измерительных и вспомогательных инструментов).
+
+      h6.vacancy__title Требования:
+
+      ul.vacancy__list 
+        li.vacancy__list-item Опыт работы от 5 лет (наличие квалификационных документов (диплом, свидетельства, подтверждающие специализацию и присвоенный разряд);
+
+        li.vacancy__list-item Знание режимов резания металлов и сплавов;
+
+        li.vacancy__list-item Знание и умение пользования контрольно-измерительными приборами;
+
+        li.vacancy__list-item Знание устройства и кинематических схем станков различных типов, правила проверки их на точность;
+
+        li.vacancy__list-item Умение чтения чертежей;
+        
+        li.vacancy__list-item Приветствуется наличие квалификации шлифовщика/фрезеровщика, а также навыков работ на другом металлообрабатывающем оборудовании.
+
+      h6.vacancy__title Условия:
+
+      ul.vacancy__list 
+        li.vacancy__list-item Заработная плата 780 р. на руки
+
+        li.vacancy__list-item График работы пятидневка: 08:00 - 17:00;
+
+        li.vacancy__list-item Выходные согласно графику: суббота-воскресенье; пятница-суббота; воскресенье-понедельник;
+
+        li.vacancy__list-item Работа в крупной, стабильно развивающейся компании;
+
+        li.vacancy__list-item Достойный уровень оплаты труда: бонусная система;
+
+        li.vacancy__list-item Официальное оформление согласно ТК РБ;
+
+        li.vacancy__list-item Полный социальный пакет (материальные бонусы, медицинская страховка).
+
+      .vacancy-hr
+        include ./picture
+        +picture(
+          "./img/vacancy/vacancy__image.jpg",
+          "Специалист отдела кадров",
+          "vacancy-hr",
+          "show-modal")
+        article.vacancy-hr__content
+          h5.vacancy-hr__title Специалист отдела кадров
+          p.vacancy-hr__text Телефон для уточнения дополнительной информации: 
+          a.vacancy-hr__link(href="tel:+375 44 236 96 36") +375 44 236 96 36
+
+
+

@@ -3,10 +3,10 @@ html(lang="ru")
 
   //head start
   include ./includes/mixins/head
-  +head("Отзывы")
+  +head("Вакансии ОАО Брестский мясокомбинат")
   //head end
 
-  body.--fixed.__loading.__white-page
+  body.--fixed.__loading
     //preloader start
     include ./includes/parts/other/preloader
     //preloader end
@@ -19,9 +19,15 @@ html(lang="ru")
     include ./includes/elements/scrollToTopBtn
     //scrollToTopBtn end
 
-    //page-reviews start
-    main.main.page-reviews
-      
+    //page-vacancy start
+    main.main.page-vacancy.mt__nan
+      //page-top__banner start
+      include ./includes/mixins/page-top__banner
+      +page-top__banner(
+        "./img/page-top__banner.jpg",
+        "page-top__banner--catalog-category")
+      //page-top__banner start
+
       //breadcrumbs start
       include ./includes/mixins/breadcrumbs
       +breadcrumbs([
@@ -30,20 +36,21 @@ html(lang="ru")
           "index.html"
         ],
         [
-          "Отзывы",
-          "#"]
+          "Карьера",
+          "page-career.html"
+        ],
+        [
+          "Вакансии ОАО Брестский мясокомбинат",
+          "#"
+        ]
         ])
       //breadcrumbs end
-
-      //section-reviews-page start
-      include ./includes/parts/sections/section-reviews-page
-      //section-reviews-page end
       
-      //callback-section start
-      include ./includes/parts/sections/section-callback
-      //callback-section end
+      //vacancy section start
+      include ./includes/parts/sections/section-vacancy
+      //vacancy section end
 
-    //page-reviews end
+    //page-vacancy end
     
     //footer start
     include ./includes/parts/main/footer

@@ -1,0 +1,167 @@
+.vacancy {
+  @extend .wrapper;
+  background: #ececec;
+  @include adaptive(padding-top, 35, 25, 0);
+  @include adaptive(padding-right, 40, 20, 0);
+  @include adaptive(padding-bottom, 40, 35, 0);
+  @include adaptive(padding-left, 40, 20, 0);
+
+  // vacancy-collapsible {
+  &-collapsible {
+    @include adaptive(padding-top, 15, 15, 0);
+    @include adaptive(padding-bottom, 15, 15, 0);
+
+    // .collapsible__title {
+    &__title {
+      @extend .t6;
+
+      text-transform: uppercase;
+      font-weight: 600;
+      position: relative;
+      display: inline-flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      &::before {
+        content: "";
+        display: inline-flex;
+        width: 7px;
+        height: 7px;
+        background: $accentColor;
+        @include adaptive(margin-right, 10, 5, 0);
+      }
+    }
+    // .vacancy-collapsible__icon {
+    &__icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      @include adaptive(width, 10, 10, 0);
+      @include adaptive(min-width, 10, 10, 0);
+      @include adaptive(height, 8, 8, 0);
+      background-image: url("../img/icons/icon-collapse.svg");
+      background-repeat: no-repeat;
+      background-position: bottom center;
+      background-size: cover;
+      @include _transition(all, 0.15s);
+
+      .active & {
+        background-position: top center;
+      }
+    }
+
+    // .vacancy-collapsible__content {
+    &__content {
+      border-bottom: 1px solid #b5b5b5;
+      color: #000;
+
+      // .vacancy-collapsible__content-wrapper {
+      &-wrapper {
+        @include adaptive(padding-top, 5, 5, 0);
+        @include adaptive(padding-bottom, 40, 35, 0);
+      }
+    }
+  }
+  // vacancy__description {
+  &__description {
+    @include adaptive(margin-bottom, 40, 30, 0);
+  }
+  // vacancy__title {
+  &__title {
+    @extend .t6;
+    @include adaptive(margin-bottom, 25, 20, 0);
+    font-weight: 600;
+    color: $accentColor;
+  }
+  // vacancy__list {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    @include adaptive(margin-bottom, 40, 35, 0);
+
+    // .vacancy__list-item {
+    &-item {
+      position: relative;
+      display: inline-flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 3px;
+        height: 3px;
+        background: #000;
+        @include _borderRadius(50%);
+        margin-top: 10px;
+        @include adaptive(margin-right, 10, 10, 0);
+      }
+    }
+  }
+  // .vacancy-hr {
+  &-hr {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    // .vacancy-hr__picture {
+    &__picture {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include adaptive(width, 140, 90, 0);
+      @include adaptive(height, 170, 125, 0);
+      @include adaptive(margin-right, 30, 20, 0);
+
+      overflow: hidden;
+
+      img {
+        @include _transition(all, 0.35s);
+      }
+      @media only screen and (min-width: 1152px) {
+        &:hover {
+          img {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+    // vacancy-hr__content {
+    &__content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    // .vacancy-hr__title {
+    &__title {
+      @extend .t5;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $accentColor;
+      @include adaptive(margin-bottom, 15, 10, 0);
+
+      @media only screen and (max-width: 600px) {
+        @include adaptive(margin-bottom, 25, 20, 0);
+      }
+    }
+    // .vacancy-hr__text {
+    &__text {
+      @extend .t6;
+      @include adaptive(margin-bottom, 5, 5, 0);
+    }
+    // .vacancy-hr__link {
+    &__link {
+      @extend .t6;
+      font-weight: 500;
+      display: inline-block;
+      @include _transition(all, 0.35s);
+      @media only screen and (min-width: 1152px) {
+        &:hover {
+          color: $accentColor;
+        }
+      }
+    }
+  }
+}
