@@ -16,6 +16,10 @@
       // padding-top: 20px;
       @include adaptive(padding-top, 35, 35, 0);
     }
+    // .vacancy-section__title {
+    &__title {
+      // @include adaptive(margin-bottom, 35, 20, 0);
+    }
   }
   // vacancy-collapsible {
   &-collapsible {
@@ -195,6 +199,8 @@
       @include adaptive(width, 25, 25, 0);
       @include adaptive(min-width, 25, 25, 0);
       @include adaptive(height, 25, 25, 0);
+      @include adaptive(margin-right, 10, 5, 0);
+
       @include _transition(all, 0.35s);
       transform: scale(-1, -1);
       img {
