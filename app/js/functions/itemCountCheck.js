@@ -9,7 +9,7 @@ const itemCountCheck = (
   let items = document.querySelectorAll(getItems);
   let moreBtn = document.querySelector(getMoreBtn);
   var itemsCounter = window.innerWidth <= 800 ? mobCount : desktopCount;
-
+  console.log("itemsCounter :>> ", itemsCounter);
   const hideRecipeStep = () => {
     for (let i = 0; i < items.length; i++) {
       const element = items[i];
@@ -33,8 +33,6 @@ const itemCountCheck = (
   };
 
   if (items && items.length > itemsCounter) {
-    console.log("innerWidth :>> ", itemsCounter);
-
     hideRecipeStep();
 
     if (moreBtn) {

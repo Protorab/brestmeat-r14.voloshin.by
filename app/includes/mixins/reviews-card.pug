@@ -1,0 +1,10 @@
+mixin reviews-card(date,name,city,reviewText)
+  article.reviews-card
+    .reviews-card__text
+      p!=reviewText
+    ul.reviews-card__info
+      li.reviews-card__info-item.reviews-card-date
+        span!=date
+      li.reviews-card__info-item.reviews-card-name
+        span!=name
+        span!=city

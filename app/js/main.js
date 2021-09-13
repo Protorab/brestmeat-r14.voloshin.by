@@ -45,6 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   const printBtns = document.querySelectorAll(".print");
   const imgsShowModal = document.querySelectorAll(".article img");
+  const recipeCardSteps = document.querySelectorAll(".recipe-card__step");
+  const articlesCard = document.querySelectorAll(".articles-card");
+  const reviewsCard = document.querySelectorAll(".reviews-card");
 
   // variable end
 
@@ -58,6 +61,37 @@ document.addEventListener("DOMContentLoaded", () => {
   // menuDropdown();
   customSelectFunc();
   collapsibleFunc();
+  if (recipeCardSteps.length > 0) {
+    itemCountCheck(
+      "#more__btn",
+      ".recipe-card__step",
+      "Подробнее",
+      "Скрыть",
+      3,
+      7
+    );
+  }
+  if (articlesCard.length > 0) {
+    itemCountCheck(
+      "#show-more",
+      ".articles-card",
+      "Показать ещё",
+      "Скрыть",
+      3,
+      6
+    );
+  }
+  if (reviewsCard.length > 0) {
+    itemCountCheck(
+      "#more-reviews",
+      ".reviews-card",
+      "Смотреть еще",
+      "Скрыть",
+      4,
+      12
+    );
+  }
+
   // tabsChange();
   // function call end
   function callPrint(strid) {
@@ -85,6 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
   setTimeout(() => {
     let body = document.querySelector("body");
     body.classList.add("__loading");
@@ -92,22 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < 100; i++) {
       preloaderProgress.value++;
     }
-    itemCountCheck(
-      "#more__btn",
-      ".recipe-card__step",
-      "Подробнее",
-      "Скрыть",
-      3,
-      7
-    );
-    itemCountCheck(
-      "#show-more",
-      ".articles-card",
-      "Показать ещё",
-      "Скрыть",
-      3,
-      6
-    );
+
     window.setTimeout(function () {
       body.classList.add("__load");
       body.classList.remove("__loading");
@@ -332,14 +352,7 @@ document.addEventListener("DOMContentLoaded", () => {
       : "";
   };
   window.onresize = function () {
-    itemCountCheck(
-      "#more__btn",
-      ".recipe-card__step",
-      "Подробнее",
-      "Скрыть",
-      3,
-      7
-    );
+    setMainMarginTop();
     setTimeout(() => {
       setMainMarginTop();
       itemCountCheck(
@@ -349,6 +362,14 @@ document.addEventListener("DOMContentLoaded", () => {
         "Скрыть",
         3,
         6
+      );
+      itemCountCheck(
+        "#more__btn",
+        ".reviews-card",
+        "Смотреть еще",
+        "Скрыть",
+        4,
+        12
       );
       itemCountCheck(
         "#more__btn",

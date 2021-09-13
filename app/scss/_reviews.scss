@@ -33,6 +33,7 @@
       }
     }
   }
+
   // .reviews-slider {
   &-slider {
     @extend .wrapper;
@@ -48,6 +49,7 @@
       overflow: unset;
     }
   }
+
   // .reviews-slides {
   &-slides {
     margin-top: 30px;
@@ -59,6 +61,7 @@
       margin-left: -0px;
     }
   }
+
   // .reviews-slide {
   &-slide {
     position: relative;
@@ -119,6 +122,139 @@
       &.swiper-slide-active {
         opacity: 1;
       }
+    }
+  }
+
+  // .reviews-cards
+  &-cards {
+    // .reviews-cards-section
+    @extend .wrapper;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include adaptive(grid-column-gap, 35, 20, 0);
+    @include adaptive(grid-row-gap, 40, 30, 0);
+
+    &-section {
+      @include adaptive(padding-top, 30, 20, 0);
+      @include adaptive(padding-bottom, 150, 105, 0);
+
+      @media only screen and (max-width: 800px) {
+        // padding-top: 20px;
+        @include adaptive(padding-top, 35, 35, 0);
+      }
+    }
+    @media only screen and (max-width: 800px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media only screen and (max-width: 800px) {
+      grid-template-columns: repeat(1, 100%);
+    }
+  }
+
+  // reviews-card {
+  &-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    animation-name: showInDown;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.7s;
+    position: relative;
+    background: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    border-top: 4px solid $accentColor;
+    @include adaptive(padding-top, 25, 20, 0);
+    @include adaptive(padding-right, 20, 15, 0);
+    @include adaptive(padding-bottom, 15, 10, 0);
+    @include adaptive(padding-left, 20, 15, 0);
+    @include _transition(all, 0.35s);
+
+    @media only screen and (min-width: 1152px) {
+      &:hover {
+        box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.26);
+      }
+    }
+    @media only screen and (max-width: 600px) {
+      @include adaptive(padding-top, 35, 30, 0);
+      @include adaptive(padding-bottom, 25, 20, 0);
+    }
+    * {
+      @include adaptive(font-size, 14, 14, 0);
+    }
+    // .reviews-card__info {
+    &__info {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: flex-start;
+      // .reviews-card__info-item {
+      &-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+        font-weight: 600;
+        color: #4d4d4d;
+
+        span {
+          display: inline-block;
+        }
+      }
+    }
+
+    // .reviews-card__text {
+    &__text {
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      @include adaptive(max-height, 200, 200, 0);
+      @include adaptive(margin-bottom, 15, 10, 0);
+      color: #000;
+
+      p {
+        margin-bottom: 5px;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        @include adaptive(margin-bottom, 25, 20, 0);
+      }
+    }
+  }
+  // .reviews__btns {
+  &__btns {
+    @extend .wrapper;
+    grid-column: 1/-1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    @include adaptive(padding-top, 40, 20, 0);
+
+    @media only screen and (max-width: 600px) {
+      flex-direction: column;
+    }
+  }
+  // .reviews__btn {
+  &__btn {
+    width: fit-content;
+    padding-right: 25px;
+    padding-left: 25px;
+    min-width: 190px;
+    &:nth-child(2) {
+      @include adaptive(margin-bottom, 15, 15, 0);
+      @media only screen and (min-width: 600px) {
+        margin-bottom: 0;
+        @include adaptive(margin-left, 25, 15, 0);
+      }
+    }
+    @media only screen and (max-width: 600px) {
+      @include adaptive(max-width, 250, 230, 0);
+      @include adaptive(width, 250, 230, 0);
+      align-self: center;
     }
   }
 }
