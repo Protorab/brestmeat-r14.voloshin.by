@@ -2,10 +2,21 @@
   @extend .wrapper;
   background: #ececec;
   @include adaptive(padding-top, 35, 25, 0);
-  @include adaptive(padding-right, 40, 20, 0);
+  @include adaptive(padding-right, 40, 18, 0);
   @include adaptive(padding-bottom, 40, 35, 0);
-  @include adaptive(padding-left, 40, 20, 0);
+  @include adaptive(padding-left, 40, 18, 0);
+  @include adaptive(margin-bottom, 45, 40, 0);
 
+  // .vacancy-section {
+  &-section {
+    @include adaptive(padding-top, 30, 20, 0);
+    // padding-bottom: 0;
+
+    @media only screen and (max-width: 800px) {
+      // padding-top: 20px;
+      @include adaptive(padding-top, 35, 35, 0);
+    }
+  }
   // vacancy-collapsible {
   &-collapsible {
     @include adaptive(padding-top, 15, 15, 0);
@@ -90,6 +101,7 @@
         content: "";
         display: inline-block;
         width: 3px;
+        min-width: 3px;
         height: 3px;
         background: #000;
         @include _borderRadius(50%);
@@ -112,6 +124,8 @@
       justify-content: center;
       align-items: center;
       @include adaptive(width, 140, 90, 0);
+      @include adaptive(min-width, 140, 90, 0);
+
       @include adaptive(height, 170, 125, 0);
       @include adaptive(margin-right, 30, 20, 0);
 
@@ -160,6 +174,51 @@
       @media only screen and (min-width: 1152px) {
         &:hover {
           color: $accentColor;
+        }
+      }
+    }
+  }
+  // .vacancy-link {
+  &-link {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 500;
+    color: #000;
+    @include adaptive(margin-bottom, 100, 80, 0);
+
+    // .vacancy-link__icon {
+    &__icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      @include adaptive(width, 25, 25, 0);
+      @include adaptive(min-width, 25, 25, 0);
+      @include adaptive(height, 25, 25, 0);
+      @include _transition(all, 0.35s);
+      transform: scale(-1, -1);
+      img {
+        // object-fit: contain;
+        object-position: center right;
+        @include _transition(all, 0.25s);
+      }
+    }
+    @media only screen and (min-width: 1152px) {
+      &:hover {
+        color: $accentColor;
+        // -webkit-text-stroke-color: $accentColor;
+
+        .vacancy {
+          &-link {
+            &__icon {
+              transform: scale(-1, -1) translate(10px, 0px);
+
+              // transform: translate(10px, 0px);
+              img {
+                object-position: center left;
+              }
+            }
+          }
         }
       }
     }
