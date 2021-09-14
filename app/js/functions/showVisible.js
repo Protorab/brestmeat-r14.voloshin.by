@@ -10,7 +10,7 @@ function isVisible(elem) {
 function showVisible() {
   for (let element of document.querySelectorAll(".animate.scroll")) {
     if (isVisible(element)) {
-      element.classList.add("__show");
+      element.classList.add("__animated");
     }
   }
 }

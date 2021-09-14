@@ -1,11 +1,17 @@
 .callback {
   &-section {
     background: $accentFourthColor;
-    &.section {
-      @include adaptive(padding-top, 50, 40, 0);
-      @include adaptive(padding-bottom, 50, 40, 0);
+    @include adaptive(padding-top, 50, 40, 0);
+    @include adaptive(padding-bottom, 50, 40, 0);
+
+    // .callback-section__btn {
+    &__btn {
+      width: fit-content;
+      @include adaptive(padding-right, 25, 15, 0);
+      @include adaptive(padding-left, 25, 15, 0);
     }
   }
+
   //  .callback-info {
   &-info {
     display: flex;
@@ -13,14 +19,17 @@
     justify-content: space-between;
     align-items: flex-start;
     @include adaptive(margin-bottom, 35, 45, 0);
+
     // .callback-info__coll {
     &__coll {
       display: flex;
       flex-direction: column;
       width: 40%;
+
       strong {
         font-weight: 600;
       }
+
       h {
         @for $i from 1 through 6 {
           &#{$i} {
@@ -28,9 +37,11 @@
           }
         }
       }
+
       h5 {
         color: $textFourthColor;
       }
+
       a {
         @include _transition(all, 0.35s);
 
@@ -40,29 +51,38 @@
           }
         }
       }
+
       p {
         @include adaptive(margin-bottom, 10, 5, 0);
+
         &:last-child {
           margin-bottom: 0;
         }
       }
+
       a[href^="tel:"] {
         @extend .t4;
         font-weight: 600;
       }
+
       p {
         @include adaptive(margin-bottom, 10, 5, 0);
+
         &:last-child {
           margin-bottom: 0;
         }
       }
+
       @media only screen and (max-width: 600px) {
         width: 100%;
-        &:nth-child(1) {
-          @include adaptive(margin-bottom, 45, 40, 0);
+        &:not(&.__vacancy-page) {
+          &:nth-child(1) {
+            @include adaptive(margin-bottom, 45, 40, 0);
+          }
         }
       }
     }
+
     @media only screen and (max-width: 600px) {
       flex-direction: column;
     }

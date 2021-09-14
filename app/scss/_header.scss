@@ -7,6 +7,7 @@
 
   @include adaptive(padding-top, 40, 20, 0);
   @include _transition(all, 0.35s);
+
   &::before {
     content: "";
     display: inline-block;
@@ -20,6 +21,7 @@
     background: rgba($accentThirdColor, 0.7);
     z-index: 0;
   }
+
   // .header-logo {
   &-logo {
     @include adaptive(width, 130, 75, 0);
@@ -31,6 +33,7 @@
       object-fit: contain;
     }
   }
+
   // .header-wrapper
   &-wrapper {
     flex-direction: row;
@@ -39,6 +42,7 @@
     z-index: 3;
     // overflow: hidden;
   }
+
   // .header-icons {
   &-icons {
     display: flex;
@@ -46,6 +50,7 @@
     align-items: center;
     z-index: 2;
   }
+
   // .header-icon {
   &-icon {
     display: inline-flex;
@@ -57,6 +62,7 @@
     @include adaptive(width, 40, 40, 0);
     @include adaptive(height, 40, 40, 0);
     @include adaptive(margin-right, 20, 13, 0);
+
     @media only screen and (min-width: 1154px) {
       &:last-child {
         margin-right: 0;
@@ -94,9 +100,11 @@
       position: relative;
     }
   }
+
   &.animate {
     transform: translate(0, -200px);
-    &.__show {
+
+    &.__animated {
       opacity: 1;
       transform: translate(0, 0%);
     }
@@ -105,16 +113,19 @@
   &.--show {
     padding-top: 12px;
     padding-bottom: 12px;
+
     &::before {
       transform: translate(0, 0%);
       backdrop-filter: blur(10px);
     }
+
     .header {
       &-logo {
         @include adaptive(width, 70, 65, 0);
         @include adaptive(height, 55, 45, 0);
       }
     }
+
     .menu {
       &__link {
         // color: $accentColor;
@@ -122,6 +133,7 @@
     }
   }
 }
+
 .lang {
   // .lang-selector
   &-selector {

@@ -1,0 +1,77 @@
+doctype html
+html(lang="ru")
+
+  //head start
+  include ./includes/mixins/head
+  +head("Тендеры")
+  //head end
+
+  body.--fixed.__loading
+    //preloader start
+    include ./includes/parts/other/preloader
+    //preloader end
+    
+    //modal__search start
+    include ./includes/parts/other/modal__search.pug
+    //modal__search end
+
+    //header start
+    include ./includes/parts/main/header
+    //header end
+
+    //scrollToTopBtn start
+    include ./includes/elements/scrollToTopBtn
+    //scrollToTopBtn end
+
+    //page-tenders start
+    main.main.page.mt__nan
+      
+      //page-top__banner start
+      include ./includes/mixins/page-top__banner
+      +page-top__banner(
+        "./img/tender-top__banner.jpg",
+        "page-top__banner--tender")
+      //page-top__banner start
+
+      //breadcrumbs start
+      include ./includes/mixins/breadcrumbs
+      +breadcrumbs([
+        [
+          "Главная",
+          "index.html"
+        ],
+        [
+          "Тендеры",
+          "#"]
+        ])
+      //breadcrumbs end
+
+    //.tenders-section start
+    section.section.tenders-section
+      h1.section__title.tenders-section__title.animate Тендеры
+
+      ul.tenders__list
+        li.tenders__list-item.animate
+          a.tenders__list-link(href="https://icetrade.by/tenders/all/view/885794", target="_blank", rel="noopener noreferrer") Тендер "Комплексные пищевые добавки для изготовления колбасной продукции"
+        li.tenders__list-item.animate
+          a.tenders__list-link(href="https://icetrade.by/tenders/all/view/885785", target="_blank", rel="noopener noreferrer") Тендер "Комплексные пищевые добавки для изготовления колбасной продукции"
+        li.tenders__list-item.animate
+          a.tenders__list-link(href="https://icetrade.by/tenders/all/view/885744", target="_blank", rel="noopener noreferrer") Тендер "Установка динамического взвешивания и этикетирования"
+        li.tenders__list-item.animate
+          a.tenders__list-link(href="https://icetrade.by/tenders/all/view/884852", target="_blank", rel="noopener noreferrer") Тендер "Комплексные пищевые добавки для изготовления колбасной продукции"
+        li.tenders__list-item.animate
+          a.tenders__list-link(href="https://icetrade.by/tenders/all/view/884144", target="_blank", rel="noopener noreferrer") Тендер "Комплексные пищевые добавки для изготовления колбасной продукции"
+        li.tenders__list-item.animate
+          a.tenders__list-link(href="https://icetrade.by/tenders/all/view/884109", target="_blank", rel="noopener noreferrer") Тендер "Комплексные пищевые добавки для изготовления колбасной продукции, овощи и грибы сушеные"
+    //.tenders-section  end
+
+    //page-tenders end
+    
+    //footer start
+    include ./includes/parts/main/footer
+    //footer end
+      
+    include ./includes/parts/other/modal__form.pug
+    include ./includes/parts/other/modal__form-review.pug
+    include ./includes/parts/other/modal__img.pug
+    include ./includes/parts/other/scripts.pug

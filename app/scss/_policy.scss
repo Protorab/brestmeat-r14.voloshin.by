@@ -1,0 +1,64 @@
+.policy {
+  // .policy-section {
+  &-section {
+    @include adaptive(padding-top, 30, 20, 0);
+    @media only screen and (max-width: 800px) {
+      padding-top: 20px;
+    }
+
+    // .policy-section__title {
+    &__title {
+      white-space: normal;
+      &::before,
+      &::after {
+        @include adaptive(max-width, 300, 20, 0);
+
+        // width: auto;
+      }
+    }
+  }
+  // .policy-wrapper {
+  &-wrapper {
+    @extend .wrapper;
+    @include adaptive(margin-bottom, 100, 80, 0);
+  }
+  // policy__doc {
+  &__doc {
+    width: 100%;
+    height: auto;
+
+    @media only screen and (max-width: 800px) {
+      display: none;
+    }
+  }
+  // .policy__link {
+  &__link {
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+    // .policy__link-icon {
+    &-icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      @include adaptive(width, 55, 45, 0);
+      @include adaptive(min-width, 55, 45, 0);
+      @include adaptive(height, 55, 45, 0);
+      @include adaptive(margin-right, 15, 10, 0);
+
+      background-image: url("../img/icons/icon-doc-red.svg");
+      background-size: contain;
+      background-position: center;
+    }
+    // .policy__link-title Х
+    &-title {
+      @extend .t5;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: underline;
+    }
+    @media only screen and (max-width: 800px) {
+      display: inline-flex;
+    }
+  }
+}

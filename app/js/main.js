@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const recipeCardSteps = document.querySelectorAll(".recipe-card__step");
   const articlesCard = document.querySelectorAll(".articles-card");
   const reviewsCard = document.querySelectorAll(".reviews-card");
-
+  const menuItems = document.querySelectorAll(".menu__item");
   // variable end
 
   // ytPlayer();
@@ -61,6 +61,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // menuDropdown();
   customSelectFunc();
   collapsibleFunc();
+  if (menuItems.length > 0) {
+    menuItems.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        body.classList.contains("--fixed")
+          ? body.classList.remove("--fixed")
+          : "";
+      });
+    });
+  }
   if (recipeCardSteps.length > 0) {
     itemCountCheck(
       "#more__btn",
@@ -218,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
     animateItems.forEach((item) => {
       if (!item.classList.contains("scroll")) {
         setInterval(() => {
-          item.classList.add("__show");
+          item.classList.add("__animated");
         }, 1000);
       }
     });

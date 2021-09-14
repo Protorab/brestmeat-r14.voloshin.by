@@ -496,6 +496,7 @@ section,
   overflow: hidden;
   z-index: 1;
   font-weight: 600;
+
   &::before,
   &::after {
     @include _transition(all, 0.35s);
@@ -522,6 +523,8 @@ section,
 
     transform: translate(0, -50%);
   }
+
+  // .btn.__active {
   &.__active {
     border: 2px solid $accentColor;
     color: $accentColor;
@@ -539,6 +542,7 @@ section,
     display: inline-flex;
     @include adaptive(margin-right, 10, 10, 0);
   }
+
   // .btn__icon {
   &__icon {
     display: inline-flex;
@@ -553,14 +557,27 @@ section,
       @include adaptive(height, 15, 15, 0);
       background-image: url("../img/icons/icon-arrow-white.svg");
     }
+
     // .btn__icon-mail {
     &-mail {
       @include adaptive(width, 30, 25, 0);
+      @include adaptive(min-width, 30, 25, 0);
+
       @include adaptive(height, 30, 25, 0);
 
       background-image: url("../img/icons/icon-mail.svg");
     }
+
+    // .btn__icon-cv {
+    &-cv {
+      @include adaptive(width, 25, 17, 0);
+      @include adaptive(min-width, 25, 23, 0);
+
+      @include adaptive(height, 25, 20, 0);
+      background-image: url("../img/icons/icon-cv.svg");
+    }
   }
+
   @media only screen and (min-width: 1152px) {
     &:hover {
       // background: $accentSecondColor;
@@ -576,6 +593,7 @@ section,
     }
   }
 }
+
 .blink {
   position: absolute;
   @include _transition(all, 0.35s);
@@ -588,6 +606,7 @@ section,
   transform: translate(-50%, -50%);
   z-index: -1;
 }
+
 .slider {
   // .slider-pagination {
   &-pagination {
@@ -632,6 +651,7 @@ section,
       }
     }
   }
+
   // .slider-control {
   &-control {
     display: flex;
@@ -646,24 +666,30 @@ section,
       position: relative;
       @include adaptive(width, 18, 15, 0);
       @include adaptive(height, 18, 15, 0);
+      @include adaptive(width, 25, 25, 0);
+      @include adaptive(min-width, 25, 25, 0);
+      @include adaptive(height, 25, 25, 0);
       &::before {
         content: "";
         display: inline-block;
         width: 100%;
         height: 100%;
-        background-image: url("../img/icons/icon-arrow.svg");
-        background-size: contain;
+        background-image: url("../img/icons/icon-arrow-double.svg");
+        background-size: cover;
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: right center;
         position: relative;
         @include _transition(all, 0.35s);
       }
       // .slider-control__btn--prev {
       &--prev {
         @include adaptive(margin-right, 20, 15, 0);
+
         &::before {
           top: 1.5px;
-          transform: rotate(180deg);
+          // transform: rotate(180deg);
+          transform: scale(-1, -1);
+          margin-bottom: 2px;
         }
       }
       &.swiper {
@@ -675,9 +701,17 @@ section,
           }
         }
       }
+      @media only screen and (min-width: 1152px) {
+        &:hover {
+          &::before {
+            background-position: left center;
+          }
+        }
+      }
     }
   }
 }
+
 .developer {
   // developer-link {
   &-link {
@@ -728,12 +762,13 @@ section,
     }
   }
 }
+
 .animate {
   @include _transition(all, 0.56s);
   opacity: 0;
   transform: translate(0, 200px);
 
-  &.__show {
+  &.__animated {
     opacity: 1;
     transform: translate(0, 0%);
   }
@@ -818,16 +853,19 @@ label {
       transform: scaleX(0);
       transition-delay: 0.55s;
     }
+
     &::before {
       transform-origin: left;
       margin-right: 10px;
     }
+
     &::after {
       margin-left: 10px;
 
       transform-origin: right;
     }
-    &.__show {
+
+    &.__animated {
       &::before,
       &::after {
         transform: scaleX(1);

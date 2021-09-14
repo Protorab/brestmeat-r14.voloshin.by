@@ -21,6 +21,7 @@
       // @include adaptive(margin-bottom, 35, 20, 0);
     }
   }
+
   // vacancy-collapsible {
   &-collapsible {
     @include adaptive(padding-top, 15, 15, 0);
@@ -77,10 +78,12 @@
       }
     }
   }
+
   // vacancy__description {
   &__description {
     @include adaptive(margin-bottom, 40, 30, 0);
   }
+
   // vacancy__title {
   &__title {
     @extend .t6;
@@ -88,6 +91,7 @@
     font-weight: 600;
     color: $accentColor;
   }
+
   // vacancy__list {
   &__list {
     display: flex;
@@ -114,6 +118,7 @@
       }
     }
   }
+
   // .vacancy-hr {
   &-hr {
     display: flex;
@@ -182,6 +187,7 @@
       }
     }
   }
+
   // .vacancy-link {
   &-link {
     display: inline-flex;
@@ -189,7 +195,12 @@
     align-items: center;
     font-weight: 500;
     color: #000;
-    @include adaptive(margin-bottom, 100, 80, 0);
+
+    // .vacancy-link-wrapper
+    &-wrapper {
+      @extend .wrapper;
+      @include adaptive(margin-bottom, 80, 50, 0);
+    }
 
     // .vacancy-link__icon {
     &__icon {
@@ -203,12 +214,14 @@
 
       @include _transition(all, 0.35s);
       transform: scale(-1, -1);
+
       img {
         // object-fit: contain;
         object-position: center right;
         @include _transition(all, 0.25s);
       }
     }
+
     @media only screen and (min-width: 1152px) {
       &:hover {
         color: $accentColor;

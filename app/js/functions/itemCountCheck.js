@@ -9,7 +9,6 @@ const itemCountCheck = (
   let items = document.querySelectorAll(getItems);
   let moreBtn = document.querySelector(getMoreBtn);
   var itemsCounter = window.innerWidth <= 800 ? mobCount : desktopCount;
-  console.log("itemsCounter :>> ", itemsCounter);
   const hideRecipeStep = () => {
     for (let i = 0; i < items.length; i++) {
       const element = items[i];
@@ -27,7 +26,8 @@ const itemCountCheck = (
       const element = items[i];
       element.style.display = "flex";
       element.classList.contains("scroll")
-        ? (element.classList.remove("scroll"), element.classList.add("__show"))
+        ? (element.classList.remove("scroll"),
+          element.classList.add("__animated"))
         : "";
     }
   };

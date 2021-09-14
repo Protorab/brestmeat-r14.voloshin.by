@@ -1,0 +1,76 @@
+doctype html
+html(lang="ru")
+
+  //head start
+  include ./includes/mixins/head
+  +head("Политика в области качества и безопасности пищевых продуктов")
+  //head end
+
+  body.--fixed.__loading
+    //preloader start
+    include ./includes/parts/other/preloader
+    //preloader end
+
+    //modal__search start
+    include ./includes/parts/other/modal__search.pug
+    //modal__search end
+    
+    //header start
+    include ./includes/parts/main/header
+    //header end
+
+    //scrollToTopBtn start
+    include ./includes/elements/scrollToTopBtn
+    //scrollToTopBtn end
+
+    //page-policy start
+    main.main.page.mt__nan
+      
+      //page-top__banner start
+      include ./includes/mixins/page-top__banner
+      +page-top__banner(
+        "./img/policy-top__banner.jpg",
+        "page-top__banner--policy")
+      //page-top__banner start
+
+      //breadcrumbs start
+      include ./includes/mixins/breadcrumbs
+      +breadcrumbs([
+        [
+          "Главная",
+          "index.html"
+        ],
+        [
+          "Политика в области качества и безопасности пищевых продуктов",
+          "#"]
+        ])
+      //breadcrumbs end
+
+    //.policy-section start
+    section.section.policy-section
+      h1.section__title.policy-section__title.animate Политика в области качества и безопасности пищевых продуктов
+
+      .policy-wrapper 
+        img.policy__doc.show-modal(
+        src="./img/policy.jpg",
+        alt!=`Политика в области качества и безопасности пищевых продуктов`,
+        title!=`Политика в области качества и безопасности пищевых продуктов`,
+        draggable="false",
+        loading="lazy")
+        a.policy__link(href="./assets/policy.pdf", target="_blank", rel="noopener noreferrer") 
+          i.policy__link-icon
+          span.policy__link-title Открыть
+
+
+    //.policy-section  end
+
+    //page-policy end
+    
+    //footer start
+    include ./includes/parts/main/footer
+    //footer end
+    
+    include ./includes/parts/other/modal__form.pug
+    include ./includes/parts/other/modal__form-review.pug
+    include ./includes/parts/other/modal__img.pug
+    include ./includes/parts/other/scripts.pug
