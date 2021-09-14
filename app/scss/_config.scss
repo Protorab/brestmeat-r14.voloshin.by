@@ -982,6 +982,13 @@ label {
         opacity: 0.45;
       }
     }
+    // .page-top__section {
+    &__section {
+      @include adaptive(padding-top, 30, 20, 0);
+      @media only screen and (max-width: 800px) {
+        padding-top: 20px;
+      }
+    }
   }
   // .page-card {
   &-card {
@@ -1046,6 +1053,79 @@ label {
         &__title {
           color: $accentColor;
           -webkit-text-stroke-color: $accentColor;
+        }
+      }
+    }
+  }
+}
+.download {
+  // .download__link {
+  &__link {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    // .download__link-icon {
+    &-icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      @include adaptive(width, 55, 45, 0);
+      @include adaptive(min-width, 55, 45, 0);
+      @include adaptive(height, 55, 45, 0);
+      @include adaptive(margin-right, 15, 10, 0);
+
+      background-image: url("../img/icons/icon-doc-red.svg");
+      background-size: contain;
+      background-position: center;
+    }
+    // .download__link-title Х
+    &-title {
+      @extend .t5;
+      font-weight: 600;
+      text-transform: uppercase;
+      position: relative;
+      @include _transition(all, 0.35s);
+
+      &::before,
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+        @include _transition(all, 0.35s);
+      }
+      &::before {
+        left: 0;
+        transform-origin: left center;
+        background: $textColor;
+      }
+      &::after {
+        right: 0;
+        transform-origin: right center;
+        transform: scale(0, 1);
+        background: $accentColor;
+      }
+    }
+
+    &.__policy {
+      display: none;
+      @media only screen and (max-width: 800px) {
+        display: inline-flex;
+      }
+    }
+
+    @media only screen and (min-width: 1152px) {
+      &:hover {
+        .download__link-title {
+          color: $accentColor;
+          &::before {
+            transform: scale(0, 1);
+          }
+          &::after {
+            transform: scale(1, 1);
+          }
         }
       }
     }

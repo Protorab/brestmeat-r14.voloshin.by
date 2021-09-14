@@ -127,21 +127,16 @@
 
   // .reviews-cards
   &-cards {
-    // .reviews-cards-section
     @extend .wrapper;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     @include adaptive(grid-column-gap, 35, 20, 0);
     @include adaptive(grid-row-gap, 40, 30, 0);
-
+    // .reviews-cards-section
     &-section {
-      @include adaptive(padding-top, 30, 20, 0);
       @include adaptive(padding-bottom, 150, 105, 0);
 
-      @media only screen and (max-width: 800px) {
-        // padding-top: 20px;
-        @include adaptive(padding-top, 35, 35, 0);
-      }
+      // padding-top: 20px;
     }
     @media only screen and (max-width: 800px) {
       grid-template-columns: repeat(2, 1fr);

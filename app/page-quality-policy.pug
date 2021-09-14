@@ -46,23 +46,26 @@ html(lang="ru")
         ])
       //breadcrumbs end
 
-    //.policy-section start
-    section.section.policy-section
-      h1.section__title.policy-section__title.animate Политика в области качества и безопасности пищевых продуктов
+      //.policy-section start
+      section.section.policy-section.page-top__section
+        h1.section__title.policy-section__title.animate Политика в области качества и безопасности пищевых продуктов
 
-      .policy-wrapper 
-        img.policy__doc.show-modal(
-        src="./img/policy.jpg",
-        alt!=`Политика в области качества и безопасности пищевых продуктов`,
-        title!=`Политика в области качества и безопасности пищевых продуктов`,
-        draggable="false",
-        loading="lazy")
-        a.policy__link(href="./assets/policy.pdf", target="_blank", rel="noopener noreferrer") 
-          i.policy__link-icon
-          span.policy__link-title Открыть
+        .policy-wrapper.animate 
+          img.policy__doc.show-modal(
+          src="./img/policy.jpg",
+          alt!=`Политика в области качества и безопасности пищевых продуктов`,
+          title!=`Политика в области качества и безопасности пищевых продуктов`,
+          draggable="false",
+          loading="lazy")
+          a.download__link.__policy.animate(
+            href="./assets/policy.pdf", 
+            target="_blank", 
+            rel="noopener noreferrer") 
+            i.download__link-icon.__policy
+            span.download__link-title.__policy Открыть
 
 
-    //.policy-section  end
+      //.policy-section  end
 
     //page-policy end
     

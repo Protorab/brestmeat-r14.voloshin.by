@@ -340,10 +340,6 @@
 
   // .catalog-section {
   &-section {
-    @include adaptive(padding-top, 30, 20, 0);
-    @media only screen and (max-width: 800px) {
-      padding-top: 20px;
-    }
   }
 
   // .catalog-wrapper {
@@ -457,10 +453,6 @@
 
     // .catalog-category-section {
     &-section {
-      @include adaptive(padding-top, 30, 20, 0);
-      @media only screen and (max-width: 800px) {
-        padding-top: 20px;
-      }
     }
   }
   &:not(&.__show-cards) {

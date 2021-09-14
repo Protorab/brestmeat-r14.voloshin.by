@@ -196,12 +196,6 @@
 
   // .articles-section {
   &-section {
-    @include adaptive(padding-top, 30, 20, 0);
-
-    @media only screen and (max-width: 800px) {
-      // padding-top: 20px;
-      @include adaptive(padding-top, 35, 35, 0);
-    }
   }
   // .articles-anons {
   &-anons {

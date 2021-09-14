@@ -1,0 +1,97 @@
+doctype html
+html(lang="ru")
+
+  //head start
+  include ./includes/mixins/head
+  +head("Консолидированная финансовая отчетность")
+  //head end
+
+  body.--fixed.__loading
+    //preloader start
+    include ./includes/parts/other/preloader
+    //preloader end
+    
+    //modal__search start
+    include ./includes/parts/other/modal__search.pug
+    //modal__search end
+
+    //header start
+    include ./includes/parts/main/header
+    //header end
+
+    //scrollToTopBtn start
+    include ./includes/elements/scrollToTopBtn
+    //scrollToTopBtn end
+
+    //page-reporting start
+    main.main.page.mt__nan
+      //page-top__banner start
+      include ./includes/mixins/page-top__banner
+      +page-top__banner(
+        "./img/page-top__banner.jpg",
+        "page-top__banner--policy")
+      //page-top__banner start
+      
+      //breadcrumbs start
+      include ./includes/mixins/breadcrumbs
+      +breadcrumbs([
+        [
+          "Главная",
+          "index.html"
+        ],
+        [
+          "Консолидированная финансовая отчетность",
+          "#"]
+        ])
+      //breadcrumbs end
+      //.reporting-section start
+      section.section.reporting-section.page-top__section
+        h1.section__title.reporting-section__title.animate Консолидированная финансовая отчетность
+        .reporting-wrapper
+          ul.reporting
+            li.reporting__item.animate 
+              a.reporting__link(
+                href="./assets/konsolidirovannaya-finansovaya-otchetnost-bmk-2016.pdf", 
+                target="_blank", 
+                rel="noopener noreferrer") 
+                i.reporting__link-icon
+                span.reporting__link-title Консолидированная финансовая отчетность за 2016 год
+            li.reporting__item.animate 
+              a.reporting__link(
+                href="./assets/konsolidirovannaya-finansovaya-otchetnost-za-2018-bmk.pdf", 
+                target="_blank", 
+                rel="noopener noreferrer") 
+                i.reporting__link-icon
+                span.reporting__link-title Консолидированная финансовая отчетность за 2018 год
+            li.reporting__item.animate 
+              a.reporting__link(
+                href="./assets/konsolidirovannaya-finansovaya-otchetnost-za-2017-bmk.pdf", 
+                target="_blank", 
+                rel="noopener noreferrer") 
+                i.reporting__link-icon
+                span.reporting__link-title Консолидированная финансовая отчетность за 2017 год
+            li.reporting__item.animate 
+              a.reporting__link(
+                href="./assets/Konsolidirovannaya-finansovaya-otchetnost-za-2019-g-bmk.pdf", 
+                target="_blank", 
+                rel="noopener noreferrer") 
+                i.reporting__link-icon
+                span.reporting__link-title Консолидированная финансовая отчетность за 2019 год
+          a.download__link.__reporting.animate(
+            href="./assets/rekvizity.pdf", 
+            target="_blank", 
+            rel="noopener noreferrer") 
+            i.download__link-icon.__reporting
+            span.download__link-title.__reporting Реквизиты
+    //.reporting-section  end
+    //page-reporting end
+    
+    //footer start
+    include ./includes/parts/main/footer
+    //footer end
+      
+    include ./includes/parts/other/modal__form.pug
+    include ./includes/parts/other/modal__form-review.pug
+    include ./includes/parts/other/modal__img.pug
+    include ./includes/parts/other/scripts.pug
+    include ./includes/parts/other/filterscript

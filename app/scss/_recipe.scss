@@ -3,13 +3,8 @@
   &-section {
     &.__page {
       &-recipes {
-        @include adaptive(padding-top, 30, 20, 0);
         padding-bottom: 0;
-
-        @media only screen and (max-width: 800px) {
-          // padding-top: 20px;
-          @include adaptive(padding-top, 35, 35, 0);
-        }
+        // padding-top: 20px;
       }
     }
     // .recipe-section__title {
@@ -385,12 +380,6 @@
 
     // .recipe-card-section {
     &-section {
-      @include adaptive(padding-top, 30, 20, 0);
-
-      @media only screen and (max-width: 800px) {
-        // padding-top: 20px;
-        @include adaptive(padding-top, 35, 35, 0);
-      }
     }
 
     // .recipe-card__media {

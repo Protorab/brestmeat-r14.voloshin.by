@@ -1,0 +1,99 @@
+.reporting {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  @include adaptive(grid-column-gap, 50, 25, 0);
+  @include adaptive(grid-row-gap, 25, 20, 0);
+  @include adaptive(margin-bottom, 65, 45, 0);
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: repeat(1, 100%);
+  }
+
+  // .reporting-section {
+  &-section {
+    @include adaptive(padding-bottom, 100, 70, 0);
+    // .reporting-section__title {
+    &__title {
+      @media only screen and (max-width: 800px) {
+        white-space: normal;
+      }
+    }
+  }
+  // .reporting-wrapper {
+  &-wrapper {
+    @extend .wrapper;
+  }
+  // .reporting__item {
+  &__item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    @include adaptive(padding-top, 25, 20, 0);
+    @include adaptive(padding-right, 35, 20, 0);
+    @include adaptive(padding-bottom, 25, 20, 0);
+    @include adaptive(padding-left, 35, 20, 0);
+    background: #ececec;
+  }
+  // reporting__link {
+  &__link {
+    color: #4d4d4d;
+    @extend .t6;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    // .reporting__link-title {
+    &-title {
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      color: inherit;
+      position: relative;
+      @include _transition(all, 0.35s);
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+        @include _transition(all, 0.35s);
+      }
+      &::before {
+        left: 0;
+        transform-origin: left center;
+        background: $accentColor;
+        transform: scale(0, 1);
+      }
+    }
+    &-icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      @include adaptive(width, 55, 45, 0);
+      @include adaptive(min-width, 55, 45, 0);
+      @include adaptive(height, 55, 45, 0);
+      @include adaptive(margin-right, 15, 10, 0);
+
+      background-image: url("../img/icons/icon-doc-red.svg");
+      background-size: contain;
+      background-position: center;
+    }
+    @media only screen and (min-width: 1152px) {
+      &:hover {
+        .reporting__link-title {
+          color: $accentColor;
+          &::before {
+            transform: scale(1, 1);
+          }
+        }
+      }
+    }
+  }
+}
