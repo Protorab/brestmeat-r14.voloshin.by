@@ -22,7 +22,8 @@
   }
   // .reporting-wrapper {
   &-wrapper {
-    @extend .wrapper;
+    // @extend .wrapper;
+    @extend .wrapper-s;
   }
   // .reporting__item {
   &__item {

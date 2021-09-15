@@ -4,32 +4,11 @@
   }
   // .tenders__list {
   &__list {
-    width: calc(100% - 284px);
-    margin: 0 auto;
+    @extend .wrapper-s;
     position: relative;
-    display: flex;
-    flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     @include adaptive(margin-bottom, 80, 60, 0);
-
-    @media only screen and (min-width: 1920px) {
-      max-width: 1285px;
-    }
-
-    @media only screen and (min-width: $maxWidth + px) {
-      // max-width: $maxWidth + px;
-      max-width: $maxWidth + px;
-      max-width: 1285px;
-    }
-
-    @media only screen and (max-width: 1152px) {
-      width: calc(100% - 55px);
-    }
-
-    @media only screen and (max-width: 600px) {
-      width: calc(100% - 44px);
-    }
 
     // .tenders__list-item {
     &-item {
