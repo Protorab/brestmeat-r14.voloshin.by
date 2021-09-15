@@ -3,7 +3,7 @@ html(lang="ru")
 
   //head start
   include ./includes/mixins/head
-  +head("Рецепты")
+  +head("Партнерам")
   //head end
 
   body.--fixed.__loading
@@ -23,16 +23,16 @@ html(lang="ru")
     include ./includes/elements/scrollToTopBtn
     //scrollToTopBtn end
 
-    //page-recipes start
-    main.main.page-recipes.mt__nan
+    //page-partner start
+    main.main.page-partner.mt__nan
 
       //page-top__banner start
       include ./includes/mixins/page-top__banner
       +page-top__banner(
         "./img/page-top__banner.jpg",
-        "page-top__banner--recipes")
+        "page-top__banner--partner")
       //page-top__banner start
-      
+
       //breadcrumbs start
       include ./includes/mixins/breadcrumbs
       +breadcrumbs([
@@ -41,27 +41,28 @@ html(lang="ru")
           "index.html"
         ],
         [
-          "Рецепты",
+          "Партнерам",
           "#"]
         ])
       //breadcrumbs end
+      //partner-section start
+      include ./includes/parts/sections/section-partner
+      //partner-section end
 
-      //recipe-day-section start
-      include ./includes/parts/sections/section-recipe-day
-      //recipe-day-section end
+      //callback-section start
+      include ./includes/parts/sections/section-callback
+      //callback-section end
 
-      //recipes start
-      include ./includes/parts/sections/section-recipes
-      //recipes end
-
-    //page-recipes end
+    //page-partner end
     
     //footer start
     include ./includes/parts/main/footer
     //footer end
-    
+      
     include ./includes/parts/other/modal__form.pug
     include ./includes/parts/other/modal__form-review.pug
     include ./includes/parts/other/modal__img.pug
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwTc3Us1I54oPA-VyekF1PATy_eIu7iA0")
+    include ./includes/parts/other/partnerMapScript
     include ./includes/parts/other/scripts.pug
-    include ./includes/parts/other/filterscript
+    

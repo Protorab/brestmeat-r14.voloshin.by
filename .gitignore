@@ -2,6 +2,7 @@
 /dist/
 /brestmeat-r14.voloshin.by/
 /.git/
+/**/**.pdf
 /**/.git
 /**/**.zip
 /**/**.7z

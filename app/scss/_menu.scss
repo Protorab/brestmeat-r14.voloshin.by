@@ -273,6 +273,9 @@
           }
         }
       }
+      &:last-of-type {
+        grid-column: 1;
+      }
       &:hover {
         &::before {
           width: 0;

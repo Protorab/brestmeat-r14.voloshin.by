@@ -1,0 +1,31 @@
+mixin select(addID,addClass,title,options,selectName,setRequired,label)
+  label(
+    for=`${addID}`,
+    class=`custom-select__label ${addClass}-select__label`)!=label
+  div(class=`custom-select-wrapper ${addClass}-select__wrapper`)
+    div(class=`custom-select ${addClass}-select`)
+      select(
+        id=`${addID}`,
+        class=`custom-select-input ${addClass}-select__input`,
+        required=`${setRequired ? setRequired : ""}`,
+        name=`${selectName}`)
+        option(label='variant')
+      div(class=`custom-select__trigger ${addClass}-select__trigger`)
+        span(class=`custom-select__title ${addClass}-select__title`)!=title
+        i(class=`custom-select__triangle ${addClass}__triangle`)
+      div(class=`custom-options ${addClass}__options`)
+        each option, index in options
+          - var count = index+1
+          - var itemTitle = option[0]
+          - var itemCountryFilter = option[1]
+
+          if count==1
+            span(
+              class=`custom-option ${addClass}__option selected`
+              data-value=`def`)!=title
+          else
+            span(
+              class=`custom-option ${addClass}__option`,
+              data-value=`${itemTitle}`,
+              data-filter=`${itemCountryFilter}`)!=itemTitle 
+          

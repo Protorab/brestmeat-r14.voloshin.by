@@ -1,0 +1,197 @@
+script(type='text/javascript').
+  // When the window has finished loading create our google map below
+  var centerMap;
+  var coordinate = [49.523598, 16.1457969];
+  var lat = coordinate[0];
+  var lng = coordinate[1];
+  var center = {lat:lat,lng:lng}
+  google.maps.event.addDomListener(window, "load", init);
+  function init() {
+  var mapOptions = {
+
+  zoom: 5.35,
+  center: new google.maps.LatLng(49.523598, 16.1457969),
+  disableDefaultUI: true, 
+  styles: [
+  {
+  featureType: "all",
+  elementType: "labels.text.fill",
+  stylers: [
+  { saturation: 36 },
+  { color: "#333333" },
+  { lightness: 40 },
+  ],
+  },
+  {
+  featureType: "all",
+  elementType: "labels.text.stroke",
+  stylers: [
+  { visibility: "on" },
+  { color: "#ffffff" },
+  { lightness: 16 },
+  ],
+  },
+  {
+  featureType: "all",
+  elementType: "labels.icon",
+  stylers: [{ visibility: "off" }],
+  },
+  {
+  featureType: "administrative",
+  elementType: "geometry.fill",
+  stylers: [{ color: "#fefefe" }, { lightness: 20 }],
+  },
+  {
+  featureType: "administrative",
+  elementType: "geometry.stroke",
+  stylers: [
+  { color: "#fefefe" },
+  { lightness: 17 },
+  { weight: 1.2 },
+  ],
+  },
+  {
+  featureType: "administrative",
+  elementType: "labels.text.fill",
+  stylers: [{ color: "#000000" }],
+  },
+  {
+  featureType: "administrative.province",
+  elementType: "labels.text.fill",
+  stylers: [{ color: "#eeeeee" }],
+  },
+  {
+  featureType: "administrative.locality",
+  elementType: "labels.text.fill",
+  stylers: [{ color: "#cd282b" }],
+  },
+  {
+  featureType: "administrative.neighborhood",
+  elementType: "labels.text.fill",
+  stylers: [{ color: "#a3a3a3" }],
+  },
+  {
+  featureType: "administrative.land_parcel",
+  elementType: "labels.text.fill",
+  stylers: [{ color: "#a3a3a3" }],
+  },
+  {
+  featureType: "landscape",
+  elementType: "geometry",
+  stylers: [{ color: "#f5f5f5" }, { lightness: 20 }],
+  },
+  {
+  featureType: "landscape",
+  elementType: "labels.text.fill",
+  stylers: [{ color: "#cd282b" }],
+  },
+  {
+  featureType: "poi",
+  elementType: "geometry",
+  stylers: [{ color: "#dddddd" }, { lightness: 21 }],
+  },
+  {
+  featureType: "poi",
+  elementType: "labels.text.fill",
+  stylers: [{ color: "#cd282b" }],
+  },
+  {
+  featureType: "poi.park",
+  elementType: "geometry",
+  stylers: [{ color: "#eeeeee" }, { lightness: 21 }],
+  },
+  {
+  featureType: "poi.school",
+  elementType: "labels.text",
+  stylers: [
+  { weight: "0.68" },
+  { visibility: "on" },
+  { color: "#ff0000" },
+  ],
+  },
+  {
+  featureType: "poi.school",
+  elementType: "labels.text.fill",
+  stylers: [
+  { color: "#cd282b" },
+  { weight: "0.92" },
+  { visibility: "simplified" },
+  ],
+  },
+  {
+  featureType: "road.highway",
+  elementType: "geometry.fill",
+  stylers: [{ color: "#dddddd" }, { lightness: 17 }],
+  },
+  {
+  featureType: "road.highway",
+  elementType: "geometry.stroke",
+  stylers: [
+  { color: "#dddddd" },
+  { lightness: 29 },
+  { weight: 0.2 },
+  ],
+  },
+  {
+  featureType: "road.highway",
+  elementType: "labels.text",
+  stylers: [{ color: "#cd282b" }],
+  },
+  {
+  featureType: "road.arterial",
+  elementType: "geometry",
+  stylers: [{ color: "#dddddd" }, { lightness: 18 }],
+  },
+  {
+  featureType: "road.arterial",
+  elementType: "labels.text.fill",
+  stylers: [{ color: "#cd282b" }],
+  },
+  {
+  featureType: "road.local",
+  elementType: "geometry",
+  stylers: [{ color: "#eeeeee" }, { lightness: 16 }],
+  },
+  {
+  featureType: "road.local",
+  elementType: "geometry.stroke",
+  stylers: [{ color: "#cd282b" }],
+  },
+  {
+  featureType: "road.local",
+  elementType: "labels.text",
+  stylers: [{ hue: "#ff0000" }],
+  },
+  {
+  featureType: "road.local",
+  elementType: "labels.text.fill",
+  stylers: [{ color: "#cd282b" }],
+  },
+  {
+  featureType: "road.local",
+  elementType: "labels.text.stroke",
+  stylers: [{ visibility: "on" }],
+  },
+  {
+  featureType: "transit",
+  elementType: "geometry",
+  stylers: [{ color: "#f2f2f2" }, { lightness: 19 }],
+  },
+  {
+  featureType: "transit",
+  elementType: "labels.text.fill",
+  stylers: [{ color: "#cd282b" }],
+  },
+  {
+  featureType: "water",
+  elementType: "geometry",
+  stylers: [{ color: "#eeeeee" }, { lightness: 17 }],
+  },
+  ],
+  };
+  // Get the HTML DOM element that will contain your map
+  // We are using a div with id="map" seen below in the <body>
+  var mapElement = document.getElementById("partnerMap");
+  // Create the Google Map using our element and options defined above
+  var map = new google.maps.Map(mapElement, mapOptions);
+  }

@@ -11,7 +11,9 @@ const customSelectFunc = () => {
             let customInput = this.parentNode.parentNode.querySelector(
               ".custom-select-input"
             );
-            let inputOption = customInput.querySelector("option");
+            if (customInput) {
+            }
+
             this.parentNode
               .querySelector(".custom-option.selected")
               .classList.remove("selected");
@@ -19,13 +21,17 @@ const customSelectFunc = () => {
             this.closest(".custom-select").querySelector(
               ".custom-select__trigger span"
             ).textContent = this.textContent;
-            this.dataset.value !== "def"
-              ? (inputOption.setAttribute("value", this.textContent),
-                inputOption.setAttribute("selected", true),
-                (inputOption.innerHTML = this.textContent))
-              : (inputOption.setAttribute("value", ""),
-                inputOption.removeAttribute("selected"),
-                (inputOption.innerHTML = ""));
+            if (customInput) {
+              let inputOption = customInput.querySelector("option");
+
+              this.dataset.value !== "def"
+                ? (inputOption.setAttribute("value", this.textContent),
+                  inputOption.setAttribute("selected", true),
+                  (inputOption.innerHTML = this.textContent))
+                : (inputOption.setAttribute("value", ""),
+                  inputOption.removeAttribute("selected"),
+                  (inputOption.innerHTML = ""));
+            }
           }
         });
       }

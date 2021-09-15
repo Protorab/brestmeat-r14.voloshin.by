@@ -50,6 +50,21 @@
       pointer-events: none;
       opacity: 0;
     }
+    // .custom-select__triangle {
+    &__triangle {
+      @include adaptive(width, 10, 10, 0);
+      @include adaptive(min-width, 10, 10, 0);
+      @include adaptive(height, 7, 7, 0);
+      display: inline-flex;
+      background-image: url("../img/icons/icon-collapse.svg");
+      background-size: cover;
+      background-position: bottom center;
+      @include _transition(all, 0.15s);
+
+      .open & {
+        background-position: top center;
+      }
+    }
   }
 
   &-select__trigger {
