@@ -1,8 +1,8 @@
 mixin select(addID,addClass,title,options,selectName,setRequired,label)
   label(
     for=`${addID}`,
-    class=`custom-select__label ${addClass}-select__label`)!=label
-  div(class=`custom-select-wrapper ${addClass}-select__wrapper`)
+    class=`custom-select__label  ${addClass}-select__label`)!=label
+  div(class=`custom-select-wrapper  ${addClass}-select__wrapper `)
     div(class=`custom-select ${addClass}-select`)
       select(
         id=`${addID}`,
@@ -23,7 +23,8 @@ mixin select(addID,addClass,title,options,selectName,setRequired,label)
           if count==1
             span(
               class=`custom-option ${addClass}__option selected`
-              data-value=`def`)!=title
+              data-value=`def`,
+              data-id="def")!=title
           else
             span(
               class=`custom-option ${addClass}__option`,

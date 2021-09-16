@@ -74,6 +74,9 @@
   }
   // partner-select {
   &-select {
+    //partner-select__wrapper {
+    &__wrapper {
+    }
     //partner-select__label {
     &__label {
       color: $mainColor;
@@ -100,6 +103,123 @@
     @include adaptive(max-height, 150, 100, 0);
     overflow-y: auto;
     overflow-x: hidden;
+  }
+
+  // .partner-contacts
+  &-contacts {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+    @include adaptive(margin-bottom, 70, 50, 0);
+
+    &.__default {
+      margin-bottom: 0;
+    }
+    &:not(&.__default) {
+      animation-name: showInUp;
+      animation-timing-function: ease-in-out;
+      animation-duration: 0.7s;
+      position: relative;
+    }
+    // .partner-contacts-section {
+    &-section {
+      @include adaptive(padding-top, 100, 80, 0);
+      @include adaptive(padding-bottom, 100, 90, 0);
+      overflow: hidden;
+      // .partner-contacts-section__title {
+      &__title {
+        @extend .t3;
+        font-weight: 500;
+        @include adaptive(margin-bottom, 65, 35, 0);
+      }
+    }
+  }
+  // .partner-contact {
+  &-contact {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    flex: 1 1 100%;
+    &.__default {
+      flex: 0 0 40%;
+      &:nth-child(1) {
+        @include adaptive(margin-right, 75, 30, 0);
+        @media only screen and (max-width: 800px) {
+          margin-right: 0;
+          @include adaptive(margin-bottom, 45, 25, 0);
+        }
+      }
+      @media only screen and (max-width: 800px) {
+        flex: 1 1 100%;
+      }
+    }
+
+    // .partner-contact__title {
+    &__title {
+      @extend .t6;
+      font-weight: 600;
+      text-transform: uppercase;
+      @include adaptive(margin-bottom, 30, 25, 0);
+    }
+    // .partner-contact__list {
+    &__list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      // .partner-contact__list-item {
+      &-item {
+        @extend .t6;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        @include _transition(all, 0.35s);
+        @include adaptive(padding-left, 20, 17, 0);
+        @include adaptive(margin-bottom, 15, 10, 0);
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+        * {
+          @extend .t6;
+          @include _transition(all, 0.35s);
+        }
+
+        &::before {
+          content: "";
+          display: flex;
+          position: absolute;
+          @include adaptive(width, 10, 7, 0);
+          @include adaptive(min-width, 10, 7, 0);
+          @include adaptive(height, 10, 7, 0);
+          background: $accentColor;
+          left: 0;
+          top: 7px;
+        }
+
+        a {
+          @include adaptive(margin-bottom, 5, 5, 0);
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+
+          strong {
+            font-weight: 500;
+          }
+          @media only screen and (min-width: 1152px) {
+            &:hover {
+              strong {
+                color: $accentColor;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 .advantages {

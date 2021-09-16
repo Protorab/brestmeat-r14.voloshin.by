@@ -22,10 +22,12 @@ mixin select(addID,addClass,title,options,selectName,setRequired,label)
           if count==1
             span(
               class=`custom-option ${addClass}__option selected`
-              data-value=`def`)!=title
+              data-value=`def`,
+              data-country-filter="def")!=title
           else
             span(
               class=`custom-option ${addClass}__option`,
               data-value=`${itemTitle}`,
-              data-filter=`${itemCountryFilter}`)!=itemTitle 
+              data-filter=`${itemCountryFilter}`,
+              data-country-filter=`${itemCountryFilter}`)!=itemTitle 
           

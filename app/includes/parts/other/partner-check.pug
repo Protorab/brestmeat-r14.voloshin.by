@@ -1,7 +1,7 @@
-.partner-check
+section.partner-check.animate.scroll
   h2.partner-check__title Узнайте контакты дилера в вашем регионе
   .partner-check__row
-    .partner-check__item 
+    #country.partner-check__item 
       include ./../../mixins/select-partner-country
       +select(
         "partner-country","partner","Выберите страну",
@@ -9,7 +9,7 @@
           ["",""],["Беларусь","by"],["Россия","ru"]
         ],
         "country-select","","Страна")
-    .partner-check__item 
+    #region.partner-check__item.__disabled
       include ./../../mixins/select-partner-region
       +select(
         "partner-region","partner","Выберите регион",
@@ -63,4 +63,3 @@
           ["Челябинская область","ru","chlbnsk"],
         ],
         "region-select","","Регион")
-.partner-contacts

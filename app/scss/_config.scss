@@ -1158,3 +1158,8 @@ label {
     }
   }
 }
+.__disabled {
+  pointer-events: none;
+  opacity: 0.8;
+  cursor: pointer;
+}

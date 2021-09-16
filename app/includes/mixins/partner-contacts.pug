@@ -1,0 +1,51 @@
+mixin partner-contacts(getId,title,phones)
+  .partner-contacts.animate(data-contacts-id=`${getId}`)
+    article.partner-contact 
+      h6.partner-contact__title !{title}
+      ul.partner-contact__list
+        each phone,idx in phones
+          - var phoneNumber = phone[0]
+          - var phoneLabel = phone[1]
+          - var phoneNumberAlt = phone[2]
+          - var phoneLabelAlt = phone[3]
+          - var emailLink = phone[4]
+          - var siteLink = phone[5]
+          - var phoneNumberDop1 = phone[6]
+          - var phoneLabelDop1 = phone[7]
+          - var phoneNumberDop2 = phone[8]
+          - var phoneLabelDop2 = phone[9]
+          - var phoneNumberDop3 = phone[10]
+          - var phoneLabelDop3 = phone[11]
+          - var phoneNumberDop4 = phone[12]
+          - var phoneLabelDop4 = phone[13]
+
+          li.partner-contact__list-item.animate
+            a(href=`tel:${phoneNumber}`) 
+              strong!=phoneNumber 
+              !=phoneLabel
+            if phoneNumberAlt
+              a(href=`tel:${phoneNumberAlt}`) 
+                strong!=phoneNumberAlt
+                !=phoneLabelAlt
+            if phoneNumberDop1
+              a(href=`tel:${phoneNumberDop1}`) 
+                strong!=phoneNumberDop1
+                !=phoneLabelDop1
+            if phoneNumberDop2
+              a(href=`tel:${phoneNumberDop2}`) 
+                strong!=phoneNumberDop2
+                !=phoneLabelDop2
+            if phoneNumberDop3
+              a(href=`tel:${phoneNumberDop3}`) 
+                strong!=phoneNumberDop3
+                !=phoneLabelDop3
+            if phoneNumberDop4
+              a(href=`tel:${phoneNumberDop4}`) 
+                strong!=phoneNumberDop4
+                !=phoneLabelDop4
+            if emailLink
+              a(href=`mailto:${emailLink}`)
+                strong!=emailLink
+            if siteLink
+              a(href=`${siteLink}`, target="_blank", rel="noopener noreferrer") 
+                strong!=siteLink

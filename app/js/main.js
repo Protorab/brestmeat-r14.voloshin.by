@@ -390,4 +390,61 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     }, 1000);
   };
+  const partnerOptions = document.querySelectorAll(".partner__option ");
+  const countryOptions = document.querySelectorAll(
+    "#country .partner__option "
+  );
+  const regionOptions = document.querySelectorAll("#region .partner__option");
+
+  const region = document.getElementById("region");
+  const contacts = document.querySelectorAll("*[data-contacts-id]");
+
+  if (contacts.length > 0) {
+    contacts.forEach((element) => {
+      element.style.display = "none";
+    });
+  }
+  if (countryOptions.length > 0) {
+    countryOptions.forEach((option) => {
+      option.addEventListener("click", (e) => {
+        let _this = e.currentTarget;
+        let getCountryFilter = _this.dataset.countryFilter;
+        getCountryFilter !== "def"
+          ? region.classList.remove("__disabled")
+          : region.classList.add("__disabled");
+        regionOptions.forEach((regionOption) => {
+          regionOption.style.display = "none";
+          regionOption.dataset.id === getCountryFilter ||
+          regionOption.dataset.id === "def"
+            ? (regionOption.style.display = "flex")
+            : ((regionOption.style.display = "none"),
+              (region.querySelector(".partner-select__title").textContent =
+                "Выберите регион"),
+              regionOptions.forEach((regionOption) => {
+                regionOption.classList.remove("selected");
+              }),
+              region
+                .querySelector('.partner__option[data-value="def"]')
+                .classList.add("selected"),
+              contacts.forEach((contact) => {
+                contact.style.display = "none";
+              }));
+        });
+      });
+    });
+  }
+  if (regionOptions.length > 0) {
+    regionOptions.forEach((option) => {
+      option.addEventListener("click", (e) => {
+        let _this = e.currentTarget;
+        let getFilter = _this.dataset.filter;
+        contacts.forEach((contact) => {
+          contact.dataset.contactsId === getFilter ||
+          contact.dataset.contactsId === "def"
+            ? (contact.style.display = "flex")
+            : (contact.style.display = "none");
+        });
+      });
+    });
+  }
 });
