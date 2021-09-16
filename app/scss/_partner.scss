@@ -199,6 +199,7 @@
           background: $accentColor;
           left: 0;
           top: 7px;
+          @include adaptive(top, 7, 5, 0);
         }
 
         a {
