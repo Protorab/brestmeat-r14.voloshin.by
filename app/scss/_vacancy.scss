@@ -236,3 +236,74 @@
     }
   }
 }
+.vacancies {
+  @extend .wrapper;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  @include adaptive(grid-row-gap, 40, 20, 0);
+  @include adaptive(grid-column-gap, 25, 20, 0);
+
+  @media only screen and (max-width: 1152px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: repeat(1, 100%);
+  }
+
+  // .vacancies-section
+  &-section {
+    @include adaptive(padding-bottom, 150, 100, 0);
+    // .vacancies-section__title {
+    &__title {
+    }
+  }
+  // vacancies__card {
+  &__card {
+    width: 100%;
+    height: 100%;
+    @include adaptive(min-height, 220, 175, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: $accentFourthColor;
+    position: relative;
+    border-top: 8px solid $accentColor;
+    margin-top: auto;
+    @include _transition(all, 0.25s);
+    @include adaptive(padding, 15, 10, 0);
+
+    // .vacancies__card-title {
+    &-title {
+      @extend .t5;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    // .vacancies__card-city {
+    &-city {
+      position: absolute;
+      @include adaptive(bottom, 15, 5, 0);
+      font-weight: 500;
+      text-transform: uppercase;
+      @include adaptive(font-size, 15, 14, 0);
+    }
+
+    // .vacancies__card-link {
+    &-link {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+    }
+    @media only screen and (min-width: 1152px) {
+      &:hover {
+        box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.26);
+      }
+    }
+  }
+}

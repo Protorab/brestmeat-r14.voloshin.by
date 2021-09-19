@@ -50,14 +50,14 @@ mixin menu(menuItems,addClass)
           li.menu__item(
             itemprop="name",
             class=`${addClass ? `menu__item--${addClass}`: ""}`)
-
+            
             //menu__link start
             a.menu__link(
               itemprop="url",
               href=`${link}`,
               class=`${addClass ? `menu__link--${addClass}`: ""}`)!=title
             //menu__link end
-
+            
             if menuDropdownItems>0
 
               //menu__dropdown start

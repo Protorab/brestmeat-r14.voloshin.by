@@ -3,7 +3,7 @@ html(lang="ru")
 
   //head start
   include ./includes/mixins/head
-  +head("Вакансии ОАО Брестский мясокомбинат")
+  +head("Вакансии")
   //head end
 
   body.--fixed.__loading
@@ -23,13 +23,13 @@ html(lang="ru")
     include ./includes/elements/scrollToTopBtn
     //scrollToTopBtn end
 
-    //page-vacancy start
-    main.main.page-vacancy.mt__nan
+    //page-vacancies start
+    main.main.page.mt__nan
       //page-top__banner start
       include ./includes/mixins/page-top__banner
       +page-top__banner(
         "./img/page-top__banner.jpg",
-        "page-top__banner--catalog-category")
+        "page-top__banner--vacancies")
       //page-top__banner start
 
       //breadcrumbs start
@@ -40,30 +40,16 @@ html(lang="ru")
           "index.html"
         ],
         [
-          "Карьера",
-          "page-career.html"
-        ],
-        [
           "Вакансии",
-          "page-vacancies.html"
-        ],
-        [
-          "Вакансии ОАО Брестский мясокомбинат",
-          "#"
-        ]
+          "#"]
         ])
       //breadcrumbs end
-      
-      //vacancy section start
-      include ./includes/parts/sections/section-vacancy
-      //vacancy section end
 
-      //callback-vacancy section start
-      include ./includes/parts/sections/section-callback-vacancy
-      //callback-vacancy section end
-      
-    //page-vacancy end
-    
+    //page-vacancies end
+    //vacancies-section start 
+    include ./includes/parts/sections/section-vacancies
+    //vacancies-section end 
+
     //footer start
     include ./includes/parts/main/footer
     //footer end
