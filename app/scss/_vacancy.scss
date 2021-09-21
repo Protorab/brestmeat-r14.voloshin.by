@@ -40,24 +40,8 @@
         @include adaptive(margin-right, 10, 5, 0);
       }
     }
-    // .vacancy-collapsible__icon {
-    &__icon {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      @include adaptive(width, 10, 10, 0);
-      @include adaptive(min-width, 10, 10, 0);
-      @include adaptive(height, 8, 8, 0);
-      background-image: url("../img/icons/icon-collapse.svg");
-      background-repeat: no-repeat;
-      background-position: bottom center;
-      background-size: cover;
-      @include _transition(all, 0.15s);
 
-      .active & {
-        background-position: top center;
-      }
-    }
+    // .vacancy-collapsible__icon {
 
     // .vacancy-collapsible__content {
     &__content {
@@ -304,6 +288,312 @@
       &:hover {
         box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.26);
       }
+    }
+  }
+}
+.career {
+  // .career-wrapper {
+  &-wrapper {
+    @extend .wrapper;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media only screen and (max-width: 800px) {
+      flex-wrap: wrap;
+    }
+  }
+  // .career-category {
+  &-category {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 13%;
+    height: auto;
+    // .career-category__link {
+    &__link {
+      @extend .t5;
+      text-transform: uppercase;
+      font-weight: 600;
+      @include adaptive(margin-bottom, 15, 10, 0);
+      position: relative;
+      padding-bottom: 2px;
+      display: inline-flex;
+      @include _transition(all, 0.35s);
+
+      &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: $accentColor;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        @include _transition(all, 0.35s);
+        transform-origin: left;
+        transform: scale(0, 1);
+      }
+      @media only screen and (min-width: 1152px) {
+        &:hover {
+          color: $accentColor;
+          &::before {
+            transform: scale(1, 1);
+          }
+        }
+      }
+    }
+    @media only screen and (max-width: 800px) {
+      width: 100%;
+      @include adaptive(margin-bottom, 40, 35, 0);
+    }
+  }
+  // .career-content {
+  &-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 85%;
+    height: auto;
+    @include adaptive(padding-bottom, 130, 100, 0);
+    @media only screen and (max-width: 800px) {
+      width: 100%;
+    }
+  }
+  // .career-section
+  &-section {
+    @include adaptive(padding-bottom, 100, 80, 0);
+    // .career-section__title {
+    &__title {
+      @extend .t3;
+      font-weight: 600;
+      @include adaptive(margin-bottom, 35, 25, 0);
+    }
+  }
+  // .career-work {
+  &-work {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include adaptive(grid-row-gap, 55, 50, 0);
+    @include adaptive(grid-column-gap, 45, 20, 0);
+
+    @media only screen and (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media only screen and (max-width: 800px) {
+      @include adaptive(grid-row-gap, 65, 60, 0);
+    }
+    @media only screen and (max-width: 600px) {
+      grid-template-columns: repeat(1, 100%);
+    }
+
+    // .career-work-card {
+    &-card {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      // .career-work-card__picture {
+      &__picture {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        @include adaptive(width, 75, 65, 0);
+        @include adaptive(min-width, 75, 65, 0);
+        @include adaptive(height, 75, 65, 0);
+        @include adaptive(min-height, 75, 65, 0);
+        @include _borderRadius(50%);
+        overflow: hidden;
+        background: $accentColor;
+        @include adaptive(margin-right, 15, 10, 0);
+
+        @media only screen and (max-width: 600px) {
+          margin-right: 0;
+          @include adaptive(margin-bottom, 30, 25, 0);
+        }
+      }
+      // .career-work-card__title {
+      &__title {
+        @extend .t6;
+        font-weight: 700;
+        text-transform: uppercase;
+        width: 100%;
+        @include adaptive(margin-bottom, 25, 15, 0);
+        @media only screen and (max-width: 600px) {
+          text-align: center;
+        }
+      }
+      // .career-work-card__content {
+      &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 100%;
+      }
+      @media only screen and (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    // .career-work-section {
+    &-section {
+    }
+  }
+  // .career-steps {
+  &-steps {
+    background: $accentThirdColor;
+    border-top: 8px solid $accentColor;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @include adaptive(grid-row-gap, 45, 40, 0);
+    @include adaptive(grid-column-gap, 25, 20, 0);
+    @include adaptive(padding-top, 30, 25, 0);
+    @include adaptive(padding-right, 25, 25, 0);
+    @include adaptive(padding-bottom, 30, 25, 0);
+    @include adaptive(padding-left, 25, 25, 0);
+
+    @media only screen and (max-width: 1152px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media only screen and (max-width: 600px) {
+      grid-template-columns: repeat(1, 100%);
+    }
+
+    // .career-steps-section {
+    &-section {
+      // .career-steps-section__title {
+      &__title {
+        text-transform: uppercase;
+      }
+    }
+
+    // .career-steps__card {
+    &__card {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+      height: 100%;
+
+      // .career-steps__card-title {
+      &-title {
+        @extend .t6;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: $mainColor;
+        @include adaptive(margin-bottom, 25, 20, 0);
+      }
+      // .career-steps__card-number {
+      &-number {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        @include adaptive(width, 40, 40, 0);
+        @include adaptive(min-width, 40, 40, 0);
+        @include adaptive(height, 40, 40, 0);
+        @include _transition(all, 0.35s);
+        @include _borderRadius(50%);
+        @include adaptive(margin-right, 10, 10, 0);
+        background: $accentColor;
+      }
+      // .career-steps__card-content {
+      &-content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        background: $mainColor;
+        @include adaptive(padding, 15, 10, 0);
+        @include adaptive(height, 190, 180, 0);
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        p {
+          @include adaptive(margin-bottom, 5, 5, 0);
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        @media only screen and (max-width: 800px) {
+          @include adaptive(padding, 30, 25, 0);
+        }
+      }
+    }
+  }
+  // .career-questions {
+  &-questions {
+    // .career-questions-section {
+    &-section {
+      // .career-questions-section__title {
+      &__title {
+        text-transform: uppercase;
+      }
+    }
+  }
+  // .career-collapsible {
+  &-collapsible {
+    background: $accentFourthColor;
+    @include adaptive(padding, 15, 10, 0);
+    @include adaptive(margin-top, 15, 10, 0);
+
+    &:nth-child(2) {
+      margin-top: 0;
+    }
+
+    @media only screen and (max-width: 800px) {
+      @include adaptive(padding, 25, 20, 0);
+    }
+
+    // .career-collapsible__title {
+    &__title {
+      @extend .t6;
+    }
+    // .career-collapsible__content {
+    &__content {
+      // .career-collapsible__content-wrapper {
+      &-wrapper {
+        background: $accentFourthColor;
+        @include adaptive(padding, 15, 10, 0);
+        @media only screen and (max-width: 800px) {
+          @include adaptive(padding, 25, 20, 0);
+        }
+        p {
+          @include adaptive(margin-bottom, 10, 5, 0);
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  // career__btn {
+  &__btn {
+    align-self: center;
+    width: fit-content;
+    max-width: unset;
+    padding: 15px 30px;
+    line-height: 107%;
+    @include adaptive(margin-top, 50, 40, 0);
+
+    @media only screen and (max-width: 600px) {
+      text-align: center;
+
+      @include adaptive(height, 60, 55, 0);
     }
   }
 }

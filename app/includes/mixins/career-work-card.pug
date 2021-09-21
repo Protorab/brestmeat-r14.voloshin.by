@@ -1,0 +1,7 @@
+mixin career-work-card(imgPath,title,content)
+  article.career-work-card.animate
+    include ./picture-NL
+    +picture(imgPath,title,"career-work-card")
+    .career-work-card__content
+      h6.career-work-card__title!=title
+      .career-work-card__text !{content}

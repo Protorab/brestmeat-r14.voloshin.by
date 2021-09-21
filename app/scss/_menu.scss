@@ -213,8 +213,7 @@
       text-align: left;
       margin-bottom: -2px;
       // padding-right: 20px;
-      border-top: 2px solid $mainColor;
-      border-bottom: 2px solid $mainColor;
+
       hr {
         display: flex;
         content: "";
@@ -302,9 +301,9 @@
         }
       }
 
-      &:not(&:hover) {
-        transition-delay: 0s;
-      }
+      // &:not(&:hover) {
+      // transition-delay: 0s;
+      // }
       &:nth-child(10),
       &:nth-child(8) {
         hr {
@@ -313,6 +312,7 @@
           }
         }
       }
+
       .--show & {
         opacity: 1;
         transform: translate(0%, 0);
@@ -329,7 +329,6 @@
         grid-column: 1;
       }
       &:hover {
-        border-color: $accentColor;
         hr {
           &::before {
             opacity: 1;
@@ -376,8 +375,13 @@
       justify-content: flex-start;
       text-transform: uppercase;
       padding-left: 10px;
-
       text-align: left;
+      border-top: 2px solid $mainColor;
+      border-bottom: 2px solid $mainColor;
+      @include _transition(all, 0.25s);
+      &:hover {
+        border-color: $accentColor;
+      }
     }
     .__white-page & {
       color: $textColor;

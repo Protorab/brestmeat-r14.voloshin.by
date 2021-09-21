@@ -1,0 +1,90 @@
+doctype html
+html(lang="ru")
+
+  //head start
+  include ./includes/mixins/head
+  +head("Карьера")
+  //head end
+
+  body.--fixed.__loading
+    //preloader start
+    include ./includes/parts/other/preloader
+    //preloader end
+    
+    //modal__search start
+    include ./includes/parts/other/modal__search.pug
+    //modal__search end
+
+    //header start
+    include ./includes/parts/main/header
+    //header end
+
+    //scrollToTopBtn start
+    include ./includes/elements/scrollToTopBtn
+    //scrollToTopBtn end
+
+    //page-career start
+    main.main.page-career.mt__nan
+      //page-top__banner start
+      include ./includes/mixins/page-top__banner
+      +page-top__banner(
+        "./img/page-top__banner.jpg",
+        "page-top__banner--career")
+      //page-top__banner end
+
+      //breadcrumbs start
+      include ./includes/mixins/breadcrumbs
+      +breadcrumbs([
+        [
+          "Главная",
+          "index.html"
+        ],
+        [
+          "Карьера",
+          "#"]
+        ])
+      //breadcrumbs end
+
+      //.career-wrapper start
+      .career-wrapper.page-top__section
+
+        //.career-category start
+        aside.career-category
+          a.career-category__link.animate(href="page-vacancies.html") Вакансии
+          a.career-category__link.animate(href="page-students.html") Студентам
+          a.career-category__link.animate(href="page-question.html") анкета
+        //.career-category end
+
+        //.career-content start
+        .career-content
+        
+          //career-work start
+          include ./includes/parts/sections/career-work
+          //career-work start
+
+          //career-steps start
+          include ./includes/parts/sections/career-steps
+          //career-steps start
+
+          //career-questions start
+          include ./includes/parts/sections/career-questions
+          //career-questions start
+          
+        //.career-content end
+        
+      //.career-wrapper end
+
+      //callback-vacancy start
+      include ./includes/parts/sections/section-callback-vacancy
+      //callback-vacancy end
+
+    //page-career end
+    
+    //footer start
+    include ./includes/parts/main/footer
+    //footer end
+      
+    include ./includes/parts/other/modal__form.pug
+    include ./includes/parts/other/modal__form-review.pug
+    include ./includes/parts/other/modal__img.pug
+    include ./includes/parts/other/scripts.pug
