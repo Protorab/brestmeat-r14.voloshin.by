@@ -1,0 +1,113 @@
+doctype html
+html(lang="ru")
+
+  //head start
+  include ./includes/mixins/head
+  +head("Студентам")
+  //head end
+
+  body.--fixed.__loading
+    //preloader start
+    include ./includes/parts/other/preloader
+    //preloader end
+    
+    //modal__search start
+    include ./includes/parts/other/modal__search.pug
+    //modal__search end
+
+    //header start
+    include ./includes/parts/main/header
+    //header end
+
+    //scrollToTopBtn start
+    include ./includes/elements/scrollToTopBtn
+    //scrollToTopBtn end
+
+    //page-students start
+    main.main.page-students.mt__nan
+
+      //page-top__banner start
+      include ./includes/mixins/page-top__banner
+      +page-top__banner(
+        "./img/tender-top__banner.jpg",
+        "page-top__banner--students")
+      //page-top__banner end
+
+      //breadcrumbs start
+      include ./includes/mixins/breadcrumbs
+      +breadcrumbs([
+        [
+          "Главная",
+          "index.html"
+        ],
+        [
+          "Карьера",
+          "page-career.html"
+        ],
+        [
+          "Студентам",
+          "page-students.html"
+        ]
+        ])
+      //breadcrumbs end
+      .wrapper
+        section.section.students-sections.page-top__section
+          h1.section__title.students-sections__title.animate СТУДЕТАМ
+          article.article.students-article.animate
+            h3 
+              strong
+                span(style='color:#e31e24;') Будущее - за молодыми профессионалами!
+            p Если Вы:
+            p Активный и целеустремленный студент средне-специального либо высшего учебного заведения; <br>Стремитесь расширить свои знания и опыт;<br>Мечтаете о работе в команде профессионалов;<br>Хотите приобрести навыки делового общения;<br>А также познакомиться с интересными и позитивными людьми.<br>То мы ждем Вас!
+            p На базе ОАО «Брестский мясокомбинат» Вы можете пройти практику по следующим направлениям:
+            br
+            ul(style="list-style:square; margin-left:10px;")
+              li Бухгалтерия;
+              li Ветеринария;
+              li Информационные технологии;
+              li Кадровое делопроизводство;
+              li Лабораторные исследования;
+              li Маркетинг, реклама, PR;
+              li Международные отношения;
+              li Метрология и автоматизация;
+              li Охрана труда;
+              li Ремонт и наладка производственного оборудования;
+              li Строительство;
+              li Технология пищевых производств;
+              li Стандартизация, управление качеством;
+              li Управление персоналом, HR;
+              li Экономика;
+              li Электроэнергетика;
+              li Юриспруденция.
+              li Мы будем рады видеть Вас в нашей команде!
+            br
+            p На базе ОАО «Брестский мясокомбинат» Вы можете пройти практику по следующим направлениям:
+            br
+            ul(style="list-style:square; margin-left:10px;")
+              li Заполнить анкету;
+            a.btn.callback-section__btn(href="") 
+              span.btn__title Заполнить анкету
+              i.btn__icon.btn__icon-cv
+            br
+            ul(style="list-style:square; margin-left:10px;")
+              li Связаться с сотрудником бюро по работе с персоналом по номеру
+                strong(style="font-weight:500;")
+                  a(href="tel:8 (0162) 27-77-57") &nbsp8 (0162) 27-77-57.
+            br
+            h4
+              strong(style='font-weight:500;letter-spacing: -0.01em;font-family: Montserrat;') 
+                span(style='color:#e31e24;')
+                  sup *
+                | К конкурсу допускаются только анкеты установленного образца.
+            br
+            p Студенты, успешно зарекомендовавшие себя за время прохождения практики, в дальнейшем имеют возможность пополнить ряды наших сотрудников.
+    //page-students end
+    
+    //footer start
+    include ./includes/parts/main/footer
+    //footer end
+      
+    include ./includes/parts/other/modal__form.pug
+    include ./includes/parts/other/modal__form-review.pug
+    include ./includes/parts/other/modal__img.pug
+    include ./includes/parts/other/scripts.pug

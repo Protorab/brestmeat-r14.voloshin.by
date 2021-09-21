@@ -24,8 +24,8 @@ ul {
         top: -3px;
         @include adaptive(margin-right, 5, 5, 0);
         @include _borderRadius(50%);
-        width: 4px;
-        height: 4px;
+        width: 6px;
+        height: 6px;
         background: $textColor;
       }
     }

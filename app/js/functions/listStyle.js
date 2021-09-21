@@ -1,4 +1,4 @@
-export const listStyle = () => {
+const listStyle = () => {
   let ul = document.querySelectorAll("ul");
   if (ul) {
     ul.forEach(function (item) {
@@ -7,3 +7,4 @@ export const listStyle = () => {
     });
   }
 };
+export default listStyle;

@@ -18,6 +18,7 @@ import numberList from "./functions/numberList";
 import showVisible from "./functions/showVisible";
 import itemCountCheck from "./functions/itemCountCheck";
 import setMarginTop from "./functions/setMarginTop";
+import listStyle from "./functions/listStyle";
 document.addEventListener("DOMContentLoaded", () => {
   // variable start
   const phoneInput = document.querySelectorAll("input[type=tel]");
@@ -58,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
   showVisible();
   swiperJsSliders();
   numberList();
+  listStyle();
   // menuDropdown();
   customSelectFunc();
   collapsibleFunc();

@@ -358,7 +358,7 @@
     align-items: flex-start;
     width: 85%;
     height: auto;
-    @include adaptive(padding-bottom, 130, 100, 0);
+    // @include adaptive(padding-bottom, 30, 20, 0);
     @media only screen and (max-width: 800px) {
       width: 100%;
     }
@@ -538,6 +538,8 @@
   &-questions {
     // .career-questions-section {
     &-section {
+      @include adaptive(padding-bottom, 150, 110, 0);
+
       // .career-questions-section__title {
       &__title {
         text-transform: uppercase;
