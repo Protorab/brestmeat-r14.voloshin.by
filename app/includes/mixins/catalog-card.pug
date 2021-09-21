@@ -1,4 +1,4 @@
-mixin catalog-card(img,title,animate,sortable)
+mixin catalog-card(img,title,animate,sortable,link,icon)
   article.catalog-card.card(
     class=`${animate ? animate : ""}`,
     data-sortable=`${sortable}`)
@@ -11,7 +11,7 @@ mixin catalog-card(img,title,animate,sortable)
     span.catalog-card__composition Состав: 
       i.catalog-card__composition-icon
         include ./img-NL
-        +img("./img/icons/icon-composition.svg","Состав")
+        +img(`${icon ? icon : "./img/icons/icon-cow.svg"}`,"Состав")
     ul.catalog-card__info
       li.catalog-card__info-item
         i.catalog-card__info-item__icon 
@@ -41,4 +41,4 @@ mixin catalog-card(img,title,animate,sortable)
         span.catalog-card__info-item__group
           span.catalog-card__info-item__title Углеводы
           span.catalog-card__info-item__text 8,0
-    a.catalog-card__link(href="page-product.html") 
+    a.catalog-card__link(href=`${link ? link : "page-product.html"}`) 
