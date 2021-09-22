@@ -6,13 +6,13 @@ const numberList = () => {
       console.log(startNumber);
       let starter = 0;
       startNumber ? (starter = startNumber) : (starter = 0);
-      let listItems = list.querySelectorAll("li");
+      let listItems = list.querySelectorAll(":scope > li");
 
       for (let i = 0; i < listItems.length; i++) {
         const listItem = listItems[i];
         listItem.insertAdjacentHTML(
           "afterbegin",
-          `<span class="item-number">${startNumber++}</span>`
+          `<span class="item-number">${startNumber++}.</span>`
         );
       }
     });

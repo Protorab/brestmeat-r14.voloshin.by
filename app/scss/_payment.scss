@@ -1,0 +1,137 @@
+.payment {
+  // .payment-section {
+  &-section {
+    // .payment-section__title {
+    &__title {
+    }
+  }
+  // .payment__title {
+  &__title {
+    @extend .t4;
+    font-weight: 500;
+    text-transform: uppercase;
+    @include adaptive(margin-bottom, 35, 30, 0);
+  }
+  // .payment-info {
+
+  &-info {
+    // .payment-info__list {
+    &__list {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(5, 1fr);
+      @include adaptive(grid-column-gap, 25, 15, 0);
+      @include adaptive(grid-row-gap, 20, 15, 0);
+      @include adaptive(margin-bottom, 80, 75, 0);
+      @media only screen and (max-width: 800px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    // .payment-info__item {
+    &__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      background: #ececec;
+      width: 100%;
+      @include adaptive(padding-top, 20, 15, 0);
+      @include adaptive(padding-right, 20, 15, 0);
+      @include adaptive(padding-bottom, 20, 15, 0);
+      @include adaptive(padding-left, 20, 15, 0);
+
+      // .payment-info__item-icon {
+      &-icon {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        @include adaptive(width, 60, 40, 0);
+        @include adaptive(min-width, 60, 40, 0);
+        @include adaptive(height, 60, 40, 0);
+        @include adaptive(margin-bottom, 15, 15, 0);
+
+        img {
+          width: auto;
+          max-width: 100%;
+          height: auto;
+          max-height: 100%;
+        }
+      }
+      // .payment-info__item-title {
+      &-title {
+        text-transform: uppercase;
+        @include adaptive(font-size, 14, 10, 0);
+        font-weight: 600;
+      }
+    }
+  }
+  // .payment-use {
+  &-use {
+    // .payment-use__list {
+    &__list {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      @include adaptive(grid-column-gap, 30, 15, 0);
+      @include adaptive(grid-row-gap, 20, 20, 0);
+      @include adaptive(margin-bottom, 80, 75, 0);
+
+      @media only screen and (max-width: 800px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media only screen and (max-width: 800px) {
+        grid-template-columns: repeat(1, 100%);
+      }
+    }
+    // .payment-use__item {
+    &__item {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background: $accentThirdColor;
+      border-top: 8px solid $accentColor;
+      @include adaptive(padding-top, 40, 35, 0);
+      @include adaptive(padding-right, 15, 15, 0);
+      @include adaptive(padding-bottom, 40, 35, 0);
+      @include adaptive(padding-left, 15, 15, 0);
+
+      // .payment-use__item-number {
+      &-number {
+        @extend .t2;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        color: $accentColor;
+        background: $mainColor;
+        font-weight: 600;
+        @include adaptive(padding-top, 5, 5, 0);
+        @include adaptive(padding-right, 15, 15, 0);
+        @include adaptive(padding-bottom, 5, 5, 0);
+        @include adaptive(padding-left, 15, 15, 0);
+        @include adaptive(margin-right, 15, 15, 0);
+        @include adaptive(min-width, 65, 50, 0);
+      }
+      // .payment-use__item-title {
+      &-title {
+        color: $mainColor;
+        @extend .t5;
+        font-family: $userFont;
+      }
+    }
+  }
+  // .payment-need {
+  &-need {
+    @include adaptive(padding-bottom, 60, 45, 0);
+
+    ul {
+      &:not([class]),
+      &[class^="list__type"] {
+        li {
+          &::before {
+            background: $accentColor;
+          }
+        }
+      }
+    }
+  }
+}

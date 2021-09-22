@@ -1,0 +1,154 @@
+doctype html
+html(lang="ru")
+
+  //head start
+  include ./includes/mixins/head
+  +head("Оплата услуг ЕРИП")
+  //head end
+
+  body.--fixed.__loading
+    //preloader start
+    include ./includes/parts/other/preloader
+    //preloader end
+    
+    //modal__search start
+    include ./includes/parts/other/modal__search.pug
+    //modal__search end
+
+    //header start
+    include ./includes/parts/main/header
+    //header end
+
+    //scrollToTopBtn start
+    include ./includes/elements/scrollToTopBtn
+    //scrollToTopBtn end
+
+    //page-payment start
+    main.main.page-payment.mt__nan
+      //page-top__banner start
+      include ./includes/mixins/page-top__banner
+      +page-top__banner(
+        "./img/tender-top__banner.jpg",
+        "page-top__banner--payment")
+      //page-top__banner end
+      
+      //breadcrumbs start
+      include ./includes/mixins/breadcrumbs
+      +breadcrumbs([
+        [
+          "Главная",
+          "index.html"
+        ],
+        [
+          "Оплата услуг ЕРИП",
+          "#"]
+        ])
+      //breadcrumbs end
+      .wrapper
+        section.section.payment-section.page-top__section
+          h1.section__title.payment-section__title.animate Оплата услуг ЕРИП
+          article.payment-info
+            h4.payment__title.payment-info__title.animate Оплату Вы можете произвести в любом банке:
+            ul.payment-info__list
+              li.payment-info__item.animate 
+                i.payment-info__item-icon
+                  include ./includes/mixins/img-NL
+                  +img(
+                    "./img/icons/icon-computer.svg",
+                    "Интернет-банкинг")
+                span.payment-info__item-title Интернет-банкинг
+              li.payment-info__item.animate 
+                i.payment-info__item-icon
+                  include ./includes/mixins/img-NL
+                  +img(
+                    "./img/icons/icon-mobile-phone.svg",
+                    "Интернет-банкинг")
+                span.payment-info__item-title Мобильный банк
+              li.payment-info__item.animate 
+                i.payment-info__item-icon
+                  include ./includes/mixins/img-NL
+                  +img(
+                    "./img/icons/icon-atm.svg",
+                    "Интернет-банкинг")
+                span.payment-info__item-title Инфокиоск
+              li.payment-info__item.animate 
+                i.payment-info__item-icon
+                  include ./includes/mixins/img-NL
+                  +img(
+                    "./img/icons/icon-machine.svg",
+                    "Интернет-банкинг")
+                span.payment-info__item-title Банкомат
+              li.payment-info__item.animate 
+                i.payment-info__item-icon
+                  include ./includes/mixins/img-NL
+                  +img(
+                    "./img/icons/icon-cashbox.svg",
+                    "Интернет-банкинг")
+                span.payment-info__item-title Касса
+          article.payment-use
+            h4.payment__title.payment-use__title.animate Совершить оплату можно с использованием:
+            ul.payment-use__list
+              li.payment-use__item.animate.scroll
+                span.payment-use__item-number 1
+                span.payment-use__item-title Наличных денежных средств
+              li.payment-use__item.animate.scroll
+                span.payment-use__item-number 2
+                span.payment-use__item-title Любых электронных денег
+              li.payment-use__item.animate.scroll
+                span.payment-use__item-number 3
+                span.payment-use__item-title Банковских платежных карточек
+          article.article.payment-need.animate.scroll
+            h4 ДЛЯ ПРОВЕДЕНИЯ ПЛАТЕЖА НЕОБХОДИМО:
+            br
+            ol
+              li Выбрать:
+                ul(style="list-style:square; margin-left:15px;")
+                  li Пункт “Система “Расчет” (ЕРИП);
+                  li г. Брест;
+                  li Коммунальные платежи;
+                  li ЖРЭУ;
+              li Коммунальные платежи;
+              li Для оплаты «услуги» ввести Лицевой счет;
+              li Ввести сумму платежа (если не указана);
+              li Проверить корректность информации;
+              li Совершить платеж.
+              br
+
+              p Если Вы осуществляете платеж в кассе банка, пожалуйста, сообщите кассиру о необходимости проведения платежа через систему ”Расчет“ (ЕРИП).
+              h6 Оплата за приобретенное жилье а.г. Хотислав
+              p
+                span(style='color:#e31e24;') Уважаемые плательщики!
+              p Информируем Вас, что оплата за приобретенное жилье (а.г. Хотислав, Малоритский р-н, Брестской обл.) будет производиться в общереспубликанской системе «Расчет».
+          article.article.payment-need.animate.scroll
+            h4 ДЛЯ ПРОВЕДЕНИЯ ПЛАТЕЖА НЕОБХОДИМО:
+            br
+            ol
+              li Выбрать:
+                ul(style="list-style:square; margin-left:15px;")
+                  li Пункт “Система “Расчет” (ЕРИП);
+                  li Недвижимость;
+                  li Покупка-продажа недвижимости;
+                  li Брестская область;
+                  li Брестский мясокомбинат;
+                  li Покупка недвижимости.
+              li Для оплаты необходимо ввести Номер лицевого счета;
+              li Ввести сумму платежа (если не указана);
+              li Проверить корректность информации (ФИО, сумму платежа);
+              li Совершить платеж.
+              br
+              p Если Вы осуществляете платеж в кассе банка, пожалуйста, сообщите кассиру о необходимости проведения платежа через систему ”Расчет“ (ЕРИП).
+              p Оплату необходимо осуществлять 
+                strong  с 15-го по 31-е 
+                | число месяца.
+
+
+    //page-payment end
+    
+    //footer start
+    include ./includes/parts/main/footer
+    //footer end
+      
+    include ./includes/parts/other/modal__form.pug
+    include ./includes/parts/other/modal__form-review.pug
+    include ./includes/parts/other/modal__img.pug
+    include ./includes/parts/other/scripts.pug
