@@ -45,7 +45,8 @@
       &#{$i} {
         font-family: Raleway, sans-serif;
 
-        @include adaptive(margin-bottom, 15, 10, 0);
+        @include adaptive(margin-bottom, 25, 20, 0);
+
         // max-width: 50%;
       }
     }

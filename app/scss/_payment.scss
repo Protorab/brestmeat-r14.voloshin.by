@@ -121,6 +121,9 @@
   }
   // .payment-need {
   &-need {
+    * {
+      font-weight: 500;
+    }
     @include adaptive(padding-bottom, 60, 45, 0);
 
     ul {

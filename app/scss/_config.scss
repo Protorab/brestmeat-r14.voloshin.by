@@ -942,9 +942,9 @@ label {
       opacity: 0;
       @include _transition(all, 0.35s);
       .--show & {
-        transition-delay: 0.45s;
-        opacity: 1;
-        transform: translate(0%, 0);
+        // transition-delay: 0.45s;
+        // opacity: 1;
+        // transform: translate(0%, 0);
       }
     }
   }

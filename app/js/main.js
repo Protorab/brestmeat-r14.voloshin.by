@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // menuDropdown();
   customSelectFunc();
   collapsibleFunc();
+
   if (menuItems.length > 0) {
     menuItems.forEach((item) => {
       item.addEventListener("click", (e) => {

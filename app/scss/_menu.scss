@@ -127,14 +127,46 @@
         transition-delay: 0.4s;
       }
 
+      @media only screen and (max-width: 600px) {
+        height: 100vh;
+        padding-bottom: 0;
+      }
       &.--show {
         transform: translate(0%, 0);
         transition-delay: 0;
         box-shadow: -8px 9px 24px rgba(0, 0, 0, 0.3);
-      }
-      @media only screen and (max-width: 600px) {
-        height: 100vh;
-        padding-bottom: 0;
+
+        .menu {
+          &-contact {
+            &__title {
+              transition-delay: 0.35s;
+              opacity: 1;
+              transform: translate(0%, 0);
+            }
+            &__group {
+              transition-delay: 0.35s;
+              opacity: 1;
+              transform: translate(0%, 0);
+            }
+          }
+          &__item {
+            opacity: 1;
+            transform: translate(0%, 0);
+
+            @for $var from 1 to 15 {
+              $delay: $var * 0.08;
+
+              &:nth-child(#{$var}) {
+                transition-delay: #{$delay + s};
+              }
+            }
+          }
+        }
+        .social-links--menu {
+          transition-delay: 0.45s;
+          opacity: 1;
+          transform: translate(0%, 0);
+        }
       }
     }
   }
@@ -302,9 +334,9 @@
         }
       }
 
-      // &:not(&:hover) {
-      // transition-delay: 0s;
-      // }
+      &:not(&:hover) {
+        transition-delay: 0s;
+      }
       &:nth-child(10),
       &:nth-child(8) {
         hr {
@@ -314,18 +346,6 @@
         }
       }
 
-      .--show & {
-        opacity: 1;
-        transform: translate(0%, 0);
-
-        @for $var from 1 to 15 {
-          $delay: $var * 0.08;
-
-          &:nth-child(#{$var}) {
-            transition-delay: #{$delay + s};
-          }
-        }
-      }
       &:last-of-type {
         grid-column: 1;
       }
@@ -507,9 +527,6 @@
       opacity: 0;
       @include _transition(all, 0.35s);
       .--show & {
-        transition-delay: 0.35s;
-        opacity: 1;
-        transform: translate(0%, 0);
       }
     }
     a {
@@ -529,9 +546,6 @@
       opacity: 0;
       @include _transition(all, 0.35s);
       .--show & {
-        transition-delay: 0.4s;
-        opacity: 1;
-        transform: translate(0%, 0);
       }
       &:last-of-type {
         @include adaptive(margin-bottom, 25, 20, 0);
