@@ -50,14 +50,14 @@ mixin menu(menuItems,addClass)
           li.menu__item(
             itemprop="name",
             class=`${addClass ? `menu__item--${addClass}`: ""}`)
-            
+            hr
             //menu__link start
             a.menu__link(
               itemprop="url",
               href=`${link}`,
               class=`${addClass ? `menu__link--${addClass}`: ""}`)!=title
             //menu__link end
-            
+            hr
             if menuDropdownItems>0
 
               //menu__dropdown start
@@ -71,13 +71,11 @@ mixin menu(menuItems,addClass)
                   //menu__dropdown-item start
                   li.menu__dropdown-item(
                     class=`${addClass ? `menu__dropdown-item--${addClass}`: ""} `)
-
                     //menu__dropdown-link start
                     a.menu__dropdown-link(
                       href=`${dropLink}`,
                       class=`${addClass ? `menu__dropdown-link--${addClass}`: ""} `)=dropTitle
                     //menu__dropdown-link end
-
                   //menu__dropdown-item end
 
               //menu__dropdown end
