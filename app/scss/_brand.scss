@@ -32,6 +32,9 @@
     &:last-child {
       margin-bottom: 0;
     }
+    @media only screen and (max-width: 1152px) {
+      display: none;
+    }
 
     // .brand-shops-section {
     &-section {
@@ -44,6 +47,7 @@
         @include adaptive(margin-bottom, 30, 20, 0);
       }
     }
+
     // .brand-shops__card {
     &__card {
       width: 100%;
@@ -62,6 +66,87 @@
         color: $accentColor;
         text-transform: uppercase;
         @include adaptive(margin-bottom, 15, 10, 0);
+      }
+      // .brand-shops__card-subtitle {
+      &-subtitle {
+        @include adaptive(font-size, 15, 15, 0);
+        @include adaptive(margin-bottom, 10, 7, 0);
+        font-weight: 600;
+        color: #272727;
+      }
+      // .brand-shops__card-address {
+      &-address {
+        @include adaptive(font-size, 15, 15, 0);
+        @include adaptive(margin-bottom, 20, 15, 0);
+        mark {
+          color: $accentColor;
+          background: transparent;
+          font-weight: 500;
+        }
+      }
+
+      // .brand-shops__card-list {
+      &-list {
+        @include adaptive(margin-bottom, 25, 15, 0);
+        color: #000;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        // .brand-shops__card-list__item {
+        &__item {
+        }
+        // .brand-shops__card-list__link {
+        &__link {
+          @include _transition(all, 0.35s);
+          @media only screen and (min-width: 1152px) {
+            &:hover {
+              color: $accentColor;
+            }
+          }
+        }
+      }
+    }
+    // .brand-shops-mobile {
+    &-mobile {
+      display: none;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      background: #ededed;
+      @include adaptive(padding-top, 10, 5, 0);
+      @include adaptive(padding-right, 30, 25, 0);
+      @include adaptive(padding-left, 30, 25, 0);
+      @include adaptive(padding-bottom, 35, 30, 0);
+      @include adaptive(margin-bottom, 85, 80, 0);
+
+      @media only screen and (max-width: 1152px) {
+        display: flex;
+      }
+    }
+
+    // .brand-shop__collapsible {
+    &__collapsible {
+      width: 100%;
+      height: 100%;
+      display: flex;
+
+      // .brand-shops__card-title {
+      &-title {
+        @include adaptive(font-size, 15, 15, 0);
+        font-weight: 700;
+        color: $accentColor;
+        text-transform: uppercase;
+      }
+      // .brand-shops__collapsible-content {
+      &-content {
+        border-bottom: 1px solid #9a9a9a;
+        // .brand-shops__collapsible-content__wrapper {
+        &__wrapper {
+          padding-top: 0;
+          @include adaptive(padding-bottom, 30, 25, 0);
+        }
       }
       // .brand-shops__card-subtitle {
       &-subtitle {

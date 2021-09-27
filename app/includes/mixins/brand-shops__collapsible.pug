@@ -1,0 +1,23 @@
+mixin brand-shops__collapsible(title,address,workModes,phones)
+  article.collapsible.brand-shops__collapsible
+    h6.collapsible__title.brand-shops__collapsible-title!=title
+    i.collapsible__icon.brand-shops__collapsible-icon
+  .collapsible__content.brand-shops__collapsible-content
+    article.collapsible__content-wrapper.brand-shops__collapsible-content__wrapper
+      h6.brand-shops__collapsible-subtitle Адрес:
+      p.brand-shops__collapsible-address !{address}
+      h6.brand-shops__collapsible-subtitle Режим работы:
+      ul.brand-shops__collapsible-list
+        each workMode, idx in workModes
+          - var count = idx+1
+          - var workTitle = workMode[0] || null
+            li.brand-shops__collapsible-list__item!=workTitle
+      p.brand-shops__collapsible-subtitle Телефоны:
+      ul.brand-shops__collapsible-list
+        each phone, idx in phones
+          - var count = idx+1
+          - var phoneLink = phone[0]
+          - var phoneTitle = phone[1]
+            li.brand-shops__collapsible-list__item   
+              a.brand-shops__collapsible-list__link(href=`tel:${phoneLink ? phoneLink : "#"}`)!=phoneTitle 
+
