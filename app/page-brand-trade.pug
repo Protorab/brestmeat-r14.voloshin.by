@@ -3,18 +3,18 @@ html(lang="ru")
 
   //head start
   include ./includes/mixins/head
-  +head("Колбаса сырокопчёная")
+  +head("Фирменная торговля")
   //head end
 
-  body.--fixed.__loading
+  body.--fixed.__loading.__white-page
     //preloader start
     include ./includes/parts/other/preloader
     //preloader end
-
+    
     //modal__search start
     include ./includes/parts/other/modal__search.pug
     //modal__search end
-    
+
     //header start
     include ./includes/parts/main/header
     //header end
@@ -23,15 +23,8 @@ html(lang="ru")
     include ./includes/elements/scrollToTopBtn
     //scrollToTopBtn end
 
-    //page-catalog-category start
-    main.main.page-catalog.mt__nan
-
-      //page-top__banner start
-      include ./includes/mixins/page-top__banner
-      +page-top__banner(
-        "./img/page-top__banner.jpg",
-        "page-top__banner--catalog-category")
-      //page-top__banner start
+    //page-brand-trade start
+    main.main.page-brand-trade
       
       //breadcrumbs start
       include ./includes/mixins/breadcrumbs
@@ -41,31 +34,28 @@ html(lang="ru")
           "index.html"
         ],
         [
-          "Каталог",
-          "page-catalog-category.html"],
-        [
-          "Колбаса сырокопчёная",
+          "Фирменная торговля",
           "#"]
         ])
       //breadcrumbs end
 
-      //.catalog-section start
-      include ./includes/parts/sections/section-catalog
-      //.catalog-section end
+      //section-brand-trade start
+      include ./includes/parts/sections/section-brand-trade
+      //section-brand-trade end
+      .wrapper.brand-trade-wrapper
+        //section-brand-shops start
+        include ./includes/parts/sections/section-brand-shops
+        //section-brand-shops end
 
-
-      //callback-section start
-      include ./includes/parts/sections/section-callback
-      //callback-section end
-
-    //page-catalog-category end
+    //page-brand-trade end
     
     //footer start
     include ./includes/parts/main/footer
     //footer end
+      
     include ./includes/parts/other/modal__form.pug
     include ./includes/parts/other/modal__form-review.pug
     include ./includes/parts/other/modal__img.pug
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwTc3Us1I54oPA-VyekF1PATy_eIu7iA0")
+    include ./includes/parts/other/shopsMapScript
     include ./includes/parts/other/scripts.pug
-    
-    include ./includes/parts/other/filterscript

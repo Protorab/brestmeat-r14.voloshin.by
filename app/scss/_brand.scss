@@ -1,0 +1,112 @@
+.brand {
+  &-trade {
+    // .brand-trade-section {
+    &-section {
+      // .brand-trade-section__title {
+      &__title {
+      }
+    }
+    // .brand-trade__article {
+    &__article {
+      p,
+      a {
+        font-weight: 500;
+      }
+    }
+  }
+  // .brand-shops {
+  &-shops {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: #ededed;
+    border-top: 8px solid $accentColor;
+    @include adaptive(grid-column-gap, 70, 45, 0);
+    @include adaptive(grid-row-gap, 70, 45, 0);
+    @include adaptive(padding-top, 25, 20, 0);
+    @include adaptive(padding-right, 50, 25, 0);
+    @include adaptive(padding-bottom, 30, 25, 0);
+    @include adaptive(padding-left, 50, 25, 0);
+    @include adaptive(margin-bottom, 35, 20, 0);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    // .brand-shops-section {
+    &-section {
+      // .brand-shops-section__title {
+      &__title {
+        @extend .t3;
+        font-weight: 600;
+        color: #000;
+        text-transform: uppercase;
+        @include adaptive(margin-bottom, 30, 20, 0);
+      }
+    }
+    // .brand-shops__card {
+    &__card {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+      * {
+      }
+      // .brand-shops__card-title {
+      &-title {
+        @include adaptive(font-size, 15, 15, 0);
+
+        font-weight: 700;
+        color: $accentColor;
+        text-transform: uppercase;
+        @include adaptive(margin-bottom, 15, 10, 0);
+      }
+      // .brand-shops__card-subtitle {
+      &-subtitle {
+        @include adaptive(font-size, 15, 15, 0);
+        @include adaptive(margin-bottom, 10, 7, 0);
+        font-weight: 600;
+        color: #272727;
+      }
+      // .brand-shops__card-address {
+      &-address {
+        @include adaptive(font-size, 15, 15, 0);
+        @include adaptive(margin-bottom, 20, 15, 0);
+        mark {
+          color: $accentColor;
+          background: transparent;
+          font-weight: 500;
+        }
+      }
+
+      // .brand-shops__card-list {
+      &-list {
+        @include adaptive(margin-bottom, 25, 15, 0);
+        color: #000;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        // .brand-shops__card-list__item {
+        &__item {
+        }
+        // .brand-shops__card-list__link {
+        &__link {
+          @include _transition(all, 0.35s);
+          @media only screen and (min-width: 1152px) {
+            &:hover {
+              color: $accentColor;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.shops-map {
+  width: 100%;
+  @include adaptive(height, 565, 420, 0);
+}
