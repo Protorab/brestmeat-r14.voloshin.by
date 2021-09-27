@@ -350,18 +350,21 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-
-  window.onscroll = function () {
-    showVisible();
+  const stickyHeader = () => {
     let header = document.querySelector("#header");
     let topScroll;
     header
       ? (window.innerWidth <= 800 ? (topScroll = 10) : (topScroll = 0),
-        this.pageYOffset > topScroll
+        window.pageYOffset > topScroll
           ? (header.classList.add("--show"), scrollBtn.classList.add("--show"))
           : (header.classList.remove("--show"),
             scrollBtn.classList.remove("--show")))
       : "";
+  };
+  stickyHeader();
+  window.onscroll = function () {
+    showVisible();
+    stickyHeader();
   };
   window.onresize = function () {
     setMainMarginTop();

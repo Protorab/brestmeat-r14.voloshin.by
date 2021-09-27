@@ -1,4 +1,4 @@
-mixin catalog-card(img,title,animate,sortable,link,icon)
+mixin catalog-card(img,title,animate,sortable,link,icon,composition)
   article.catalog-card.card(
     class=`${animate ? animate : ""}`,
     data-sortable=`${sortable}`)
@@ -11,7 +11,7 @@ mixin catalog-card(img,title,animate,sortable,link,icon)
     span.catalog-card__composition Состав: 
       i.catalog-card__composition-icon
         include ./img-NL
-        +img(`${icon ? icon : "./img/icons/icon-cow.svg"}`,"Состав")
+        +img(`${icon ? icon : "./img/icons/icon-cow.svg"}`,`${composition ? composition : "Говядина"}`)
     ul.catalog-card__info
       li.catalog-card__info-item
         i.catalog-card__info-item__icon 

@@ -6,9 +6,22 @@ script(type='text/javascript').
   var lng = coordinate[1];
   var center = {lat:lat,lng:lng} //Minsk
   var defIcon = "./img/icons/icon-pin.svg"
+  var windowXPosition = 220;
+  var windowYPosition = 550;
+      window.innerWidth <= 1600 ? windowYPosition = 550 : windowYPosition = 620;
+      window.onresize = function () {
+        setInterval(() => {
+        window.innerWidth <= 1600 ? windowYPosition = 550 : windowYPosition = 620;
+        
+        }, 500);
+      };
+
+      
+      console.log(windowYPosition);
+  var maxWindowWidth= 440;
   var mapElement = document.getElementById("shopMap");
   var mapOptions = {
-      zoom: 9,
+      zoom: 5.35,
       center: center,
       disableDefaultUI: true, 
       styles: [
@@ -198,9 +211,9 @@ script(type='text/javascript').
           title: `220088, Г. Брест,ул. Смоленская, 33`,
           id: "markerId1",
           icon: defIcon,
-          animation: google.maps.Animation.DROP,
+          
         });
-    markerId1.setAnimation(google.maps.Animation.BOUNCE);
+      
     infowindow1 = new google.maps.InfoWindow({
       content: `<article  class="map-popup">
                   <div class="map-popup__image">
@@ -229,8 +242,8 @@ script(type='text/javascript').
                     </li>
                   </ul>
                 </article>`,
-      pixelOffset: new google.maps.Size(220, 600),
-      maxWidth: 440,
+      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
+      maxWidth: maxWindowWidth,
     });
 
     google.maps.event.addListener(markerId1, "click", function() {
@@ -242,9 +255,9 @@ script(type='text/javascript').
           title: `г. Брест, ул. Писателя Смирнова, 4`,
           id: "markerId2",
           icon: defIcon,
-          animation: google.maps.Animation.DROP,
+          
         });
-    markerId2.setAnimation(google.maps.Animation.BOUNCE);
+      
 
     infowindow2 = new google.maps.InfoWindow({
       content: `<article  class="map-popup">
@@ -266,16 +279,14 @@ script(type='text/javascript').
                   <ul class="map-popup__list">
                     <li class="map-popup__list-item">
                       <a href="tel:+375 (212) 61-45-98">
-                        +375 (212) 61-45-98 (Отдел сбыта)
+                        +375 (212) 61-45-98
                       </a>
-                      <a href="tel:+375 17 343-49-00">
-                        +375 17 343-49-00 (ФАКС)
-                      </a>
+                      
                     </li>
                   </ul>
                 </article>`,
-      pixelOffset: new google.maps.Size(220, 600),
-      maxWidth: 440,
+      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
+      maxWidth: maxWindowWidth,
     });
     google.maps.event.addListener(markerId2, "click", function() {
       infowindow2.open(map, markerId2);
@@ -286,9 +297,9 @@ script(type='text/javascript').
           title: `г.Брест, ул. Московская, 340`,
           id: "markerId3",
           icon: defIcon,
-          animation: google.maps.Animation.DROP,
+          
         });
-    markerId3.setAnimation(google.maps.Animation.BOUNCE);
+      
     infowindow3 = new google.maps.InfoWindow({
       content: `<article  class="map-popup">
                   <div class="map-popup__image">
@@ -309,16 +320,14 @@ script(type='text/javascript').
                   <ul class="map-popup__list">
                     <li class="map-popup__list-item">
                       <a href="tel:+375 (212) 61-45-98">
-                        +375 (212) 61-45-98 (Отдел сбыта)
+                        +375 (212) 61-45-98
                       </a>
-                      <a href="tel:+375 17 343-49-00">
-                        +375 17 343-49-00 (ФАКС)
-                      </a>
+                      
                     </li>
                   </ul>
                 </article>`,
-      pixelOffset: new google.maps.Size(220, 600),
-      maxWidth: 440,
+      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
+      maxWidth: maxWindowWidth,
     });
     google.maps.event.addListener(markerId3, "click", function() {
       infowindow3.open(map, markerId3);
@@ -332,9 +341,9 @@ script(type='text/javascript').
           title: `г.Брест, ул. Московская, 340`,
           id: "markerId4",
           icon: defIcon,
-          animation: google.maps.Animation.DROP,
+          
         });
-    markerId4.setAnimation(google.maps.Animation.BOUNCE);
+      
     infowindow4 = new google.maps.InfoWindow({
       content: `<article  class="map-popup">
                   <div class="map-popup__image">
@@ -355,16 +364,14 @@ script(type='text/javascript').
                   <ul class="map-popup__list">
                     <li class="map-popup__list-item">
                       <a href="tel:+375 (212) 61-45-98">
-                        +375 (212) 61-45-98 (Отдел сбыта)
+                        +375 (212) 61-45-98
                       </a>
-                      <a href="tel:+375 17 343-49-00">
-                        +375 17 343-49-00 (ФАКС)
-                      </a>
+                      
                     </li>
                   </ul>
                 </article>`,
-      pixelOffset: new google.maps.Size(220, 600),
-      maxWidth: 440,
+      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
+      maxWidth: maxWindowWidth,
     });
     google.maps.event.addListener(markerId4, "click", function() {
       infowindow4.open(map, markerId4);
@@ -375,9 +382,9 @@ script(type='text/javascript').
           title: `г. Брест, ул. Гоголя, 80`,
           id: "markerId5",
           icon: defIcon,
-          animation: google.maps.Animation.DROP,
+          
         });
-    markerId5.setAnimation(google.maps.Animation.BOUNCE);
+      
     infowindow5 = new google.maps.InfoWindow({
       content: `<article  class="map-popup">
                   <div class="map-popup__image">
@@ -398,16 +405,14 @@ script(type='text/javascript').
                   <ul class="map-popup__list">
                     <li class="map-popup__list-item">
                       <a href="tel:+375 (212) 61-45-98">
-                        +375 (212) 61-45-98 (Отдел сбыта)
+                        +375 (212) 61-45-98
                       </a>
-                      <a href="tel:+375 17 343-49-00">
-                        +375 17 343-49-00 (ФАКС)
-                      </a>
+                      
                     </li>
                   </ul>
                 </article>`,
-      pixelOffset: new google.maps.Size(220, 600),
-      maxWidth: 440,
+      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
+      maxWidth: maxWindowWidth,
     });
     google.maps.event.addListener(markerId5, "click", function() {
       infowindow5.open(map, markerId5);
@@ -418,9 +423,9 @@ script(type='text/javascript').
           title: `г.Брест, Центральный Брестский рынок, ул.Карбышева, 25`,
           id: "markerId6",
           icon: defIcon,
-          animation: google.maps.Animation.DROP,
+          
         });
-    markerId6.setAnimation(google.maps.Animation.BOUNCE);
+      
     infowindow6 = new google.maps.InfoWindow({
       content: `<article  class="map-popup">
                   <div class="map-popup__image">
@@ -441,16 +446,14 @@ script(type='text/javascript').
                   <ul class="map-popup__list">
                     <li class="map-popup__list-item">
                       <a href="tel:+375 (212) 61-45-98">
-                        +375 (212) 61-45-98 (Отдел сбыта)
+                        +375 (212) 61-45-98
                       </a>
-                      <a href="tel:+375 17 343-49-00">
-                        +375 17 343-49-00 (ФАКС)
-                      </a>
+                      
                     </li>
                   </ul>
                 </article>`,
-      pixelOffset: new google.maps.Size(220, 600),
-      maxWidth: 440,
+      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
+      maxWidth: maxWindowWidth,
     });
     google.maps.event.addListener(markerId6, "click", function() {
       infowindow6.open(map, markerId6);
@@ -461,9 +464,9 @@ script(type='text/javascript').
           title: `224034, г. Брест, ул. Писателя Смирнова, 4`,
           id: "markerId7",
           icon: defIcon,
-          animation: google.maps.Animation.DROP,
+          
         });
-    markerId7.setAnimation(google.maps.Animation.BOUNCE);
+    
     infowindow7 = new google.maps.InfoWindow({
       content: `<article  class="map-popup">
                   <div class="map-popup__image">
@@ -484,16 +487,14 @@ script(type='text/javascript').
                   <ul class="map-popup__list">
                     <li class="map-popup__list-item">
                       <a href="tel:+375 (212) 61-45-98">
-                        +375 (212) 61-45-98 (Отдел сбыта)
+                        +375 (212) 61-45-98
                       </a>
-                      <a href="tel:+375 17 343-49-00">
-                        +375 17 343-49-00 (ФАКС)
-                      </a>
+                      
                     </li>
                   </ul>
                 </article>`,
-      pixelOffset: new google.maps.Size(220, 600),
-      maxWidth: 440,
+      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
+      maxWidth: maxWindowWidth,
     });
     google.maps.event.addListener(markerId7, "click", function() {
       infowindow7.open(map, markerId7);
@@ -504,9 +505,9 @@ script(type='text/javascript').
           title: `г. Пинск, ул. Брестская, 19-4`,
           id: "markerId8",
           icon: defIcon,
-          animation: google.maps.Animation.DROP,
+          
         });
-    markerId8.setAnimation(google.maps.Animation.BOUNCE);
+      
     infowindow8 = new google.maps.InfoWindow({
       content: `<article  class="map-popup">
                   <div class="map-popup__image">
@@ -527,16 +528,14 @@ script(type='text/javascript').
                   <ul class="map-popup__list">
                     <li class="map-popup__list-item">
                       <a href="tel:+375 (212) 61-45-98">
-                        +375 (212) 61-45-98 (Отдел сбыта)
+                        +375 (212) 61-45-98
                       </a>
-                      <a href="tel:+375 17 343-49-00">
-                        +375 17 343-49-00 (ФАКС)
-                      </a>
+                      
                     </li>
                   </ul>
                 </article>`,
-      pixelOffset: new google.maps.Size(220, 600),
-      maxWidth: 440,
+      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
+      maxWidth: maxWindowWidth,
     });
     google.maps.event.addListener(markerId8, "click", function() {
       infowindow8.open(map, markerId8);
@@ -547,9 +546,9 @@ script(type='text/javascript').
           title: `г. Брест, ул. Орджоникидзе, 7`,
           id: "markerId9",
           icon: defIcon,
-          animation: google.maps.Animation.DROP,
+          
         });
-    markerId9.setAnimation(google.maps.Animation.BOUNCE);
+      
     infowindow9 = new google.maps.InfoWindow({
       content: `<article  class="map-popup">
                   <div class="map-popup__image">
@@ -570,16 +569,14 @@ script(type='text/javascript').
                   <ul class="map-popup__list">
                     <li class="map-popup__list-item">
                       <a href="tel:+375 (212) 61-45-98">
-                        +375 (212) 61-45-98 (Отдел сбыта)
+                        +375 (212) 61-45-98
                       </a>
-                      <a href="tel:+375 17 343-49-00">
-                        +375 17 343-49-00 (ФАКС)
-                      </a>
+                      
                     </li>
                   </ul>
                 </article>`,
-      pixelOffset: new google.maps.Size(220, 600),
-      maxWidth: 440,
+      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
+      maxWidth: maxWindowWidth,
     });
     google.maps.event.addListener(markerId9, "click", function() {
       infowindow9.open(map, markerId9);
@@ -590,9 +587,9 @@ script(type='text/javascript').
           title: `г.Пружаны, ул. Ленина 6/1`,
           id: "markerId10",
           icon: defIcon,
-          animation: google.maps.Animation.DROP,
+          
         });
-    markerId10.setAnimation(google.maps.Animation.BOUNCE);
+      
     infowindow10 = new google.maps.InfoWindow({
       content: `<article  class="map-popup">
                   <div class="map-popup__image">
@@ -613,16 +610,14 @@ script(type='text/javascript').
                   <ul class="map-popup__list">
                     <li class="map-popup__list-item">
                       <a href="tel:+375 (212) 61-45-98">
-                        +375 (212) 61-45-98 (Отдел сбыта)
+                        +375 (212) 61-45-98
                       </a>
-                      <a href="tel:+375 17 343-49-00">
-                        +375 17 343-49-00 (ФАКС)
-                      </a>
+                      
                     </li>
                   </ul>
                 </article>`,
-      pixelOffset: new google.maps.Size(220, 600),
-      maxWidth: 440,
+      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
+      maxWidth: maxWindowWidth,
     });
     google.maps.event.addListener(markerId10, "click", function() {
       infowindow10.open(map, markerId10);
@@ -633,9 +628,9 @@ script(type='text/javascript').
           title: `г. Брест, ул. Волгоградская, 11`,
           id: "markerId11",
           icon: defIcon,
-          animation: google.maps.Animation.DROP,
+          
         });
-    markerId11.setAnimation(google.maps.Animation.BOUNCE);
+      
     infowindow11 = new google.maps.InfoWindow({
       content: `<article  class="map-popup">
                   <div class="map-popup__image">
@@ -656,16 +651,14 @@ script(type='text/javascript').
                   <ul class="map-popup__list">
                     <li class="map-popup__list-item">
                       <a href="tel:+375 (212) 61-45-98">
-                        +375 (212) 61-45-98 (Отдел сбыта)
+                        +375 (212) 61-45-98
                       </a>
-                      <a href="tel:+375 17 343-49-00">
-                        +375 17 343-49-00 (ФАКС)
-                      </a>
+                      
                     </li>
                   </ul>
                 </article>`,
-      pixelOffset: new google.maps.Size(220, 600),
-      maxWidth: 440,
+      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
+      maxWidth: maxWindowWidth,
     });
     google.maps.event.addListener(markerId11, "click", function() {
       infowindow11.open(map, markerId11);

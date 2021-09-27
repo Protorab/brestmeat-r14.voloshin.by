@@ -81,6 +81,14 @@
     @media (min-width: 2560px) {
       #{$property}: $startSize + px !important;
     }
+  } @else if $type==5 {
+    #{$property}: calc(
+      #{$minSize+px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320})
+    ) !important;
+
+    @media (min-width: 2560px) {
+      #{$property}: $startSize + px !important;
+    }
   } @else {
     #{$property}: calc(
       #{$minSize+px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320})

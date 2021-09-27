@@ -245,9 +245,9 @@
       // .product-card__composition-icon {
       &-icon {
         display: inline-flex;
-        @include adaptive(width, 28, 28, 0);
-        @include adaptive(min-width, 28, 28, 0);
-        @include adaptive(height, 27, 27, 0);
+        @include adaptive(width, 32, 28, 0);
+        @include adaptive(min-width, 32, 28, 0);
+        @include adaptive(height, 32, 28, 0);
         @include adaptive(margin-bottom, 20, 18, 0);
         img {
           object-fit: contain;
