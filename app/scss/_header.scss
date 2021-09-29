@@ -4,7 +4,7 @@
   top: 0;
   z-index: 12;
   background: transparent;
-
+  user-select: none;
   @include adaptive(padding-top, 40, 20, 0);
   @include _transition(all, 0.35s);
 

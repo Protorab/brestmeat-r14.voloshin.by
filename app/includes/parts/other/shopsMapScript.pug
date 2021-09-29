@@ -201,66 +201,23 @@ script(type='text/javascript').
         },
       ],
     };
-  google.maps.event.addDomListener(window, "load", init);
-  map = new google.maps.Map(mapElement, mapOptions);
-  
-  function init() {
-    var markerId1 = new google.maps.Marker({
-          position: new google.maps.LatLng(52.130218, 23.706738),
-          map: map,
-          title: `220088, Г. Брест,ул. Смоленская, 33`,
-          id: "markerId1",
-          icon: defIcon,
+  var markers = [
+      {
+          "title": "220088, Г. Брест,ул. Смоленская, 33",
+          "lat": "52.130218",
+          "lng": "23.706738",
+          "image": "./img/map-popup-image.jpg",
+          "workTimes":
+            [
+              ""
+            ],
           
-        });
-      
-    infowindow1 = new google.maps.InfoWindow({
-      content: `<article  class="map-popup">
-                  <div class="map-popup__image">
-                    <img class="img--full img--center" loading="lazy" draggable="false" src='./img/map-popup-image.jpg'>
-                  </div>
-                  <h6 class="map-popup__title">Магазин “Консум”</h6>
-                  <p class="map-popup__address">220088, Г. Брест,ул. Смоленская, 33</p>
-                  <p class="map-popup__subtitle">Режим работы:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      Понедельник – пятница 10:00-19:00
-                    </li>
-                    <li class="map-popup__list-item">
-                      Суббота 10:00-19:00, Воскресенье 10:00-17:00
-                    </li>
-                  </ul>
-                  <p class="map-popup__subtitle">Телефоны:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      <a href="tel:8 (017) 243 43 89">
-                        8 (017) 243 43 89
-                      </a>
-                      <a href="tel:8 (017) 365 28 46">
-                        8 (017) 365 28 46
-                      </a>
-                    </li>
-                  </ul>
-                </article>`,
-      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
-      maxWidth: maxWindowWidth,
-    });
-
-    google.maps.event.addListener(markerId1, "click", function() {
-      infowindow1.open(map, markerId1);
-    });
-    var markerId2 = new google.maps.Marker({
-          position: new google.maps.LatLng(52.095170, 23.645024),
-          map: map,
-          title: `г. Брест, ул. Писателя Смирнова, 4`,
-          id: "markerId2",
-          icon: defIcon,
-          
-        });
-      
-
-    infowindow2 = new google.maps.InfoWindow({
-      content: `<article  class="map-popup">
+      },
+      {
+          "title": 'г. Брест, ул. Писателя Смирнова, 4',
+          "lat": '52.095170',
+          "lng": '23.645024',
+          content: `<article  class="map-popup">
                   <div class="map-popup__image">
                     <img class="img--full img--center" loading="lazy" draggable="false" src='./img/map-popup-image.jpg'>
                   </div>
@@ -284,383 +241,69 @@ script(type='text/javascript').
                       
                     </li>
                   </ul>
-                </article>`,
-      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
-      maxWidth: maxWindowWidth,
-    });
-    google.maps.event.addListener(markerId2, "click", function() {
-      infowindow2.open(map, markerId2);
-    });
-    var markerId3 = new google.maps.Marker({
-          position: new google.maps.LatLng(52.101029, 23.767473),
-          map: map,
-          title: `г.Брест, ул. Московская, 340`,
-          id: "markerId3",
-          icon: defIcon,
-          
-        });
-      
-    infowindow3 = new google.maps.InfoWindow({
-      content: `<article  class="map-popup">
-                  <div class="map-popup__image">
-                    <img class="img--full img--center" loading="lazy" draggable="false" src='./img/map-popup-image.jpg'>
-                  </div>
-                  <h6 class="map-popup__title">Маказин «ЯН»</h6>
-                  <p class="map-popup__address">г.Брест, ул. Московская, 340</p>
-                  <p class="map-popup__subtitle">Режим работы:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      Понедельник – пятница 10:00-19:00
-                    </li>
-                    <li class="map-popup__list-item">
-                      Суббота 10:00-17:00, Воскресенье - Выходной
-                    </li>
-                  </ul>
-                  <p class="map-popup__subtitle">Телефоны:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      <a href="tel:+375 (212) 61-45-98">
-                        +375 (212) 61-45-98
-                      </a>
-                      
-                    </li>
-                  </ul>
-                </article>`,
-      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
-      maxWidth: maxWindowWidth,
-    });
-    google.maps.event.addListener(markerId3, "click", function() {
-      infowindow3.open(map, markerId3);
-    });
-    google.maps.event.addListener(markerId2, "click", function() {
-      infowindow2.open(map, markerId2);
-    });
-    var markerId4 = new google.maps.Marker({
-          position: new google.maps.LatLng(52.101029, 23.767473),
-          map: map,
-          title: `г.Брест, ул. Московская, 340`,
-          id: "markerId4",
-          icon: defIcon,
-          
-        });
-      
-    infowindow4 = new google.maps.InfoWindow({
-      content: `<article  class="map-popup">
-                  <div class="map-popup__image">
-                    <img class="img--full img--center" loading="lazy" draggable="false" src='./img/map-popup-image.jpg'>
-                  </div>
-                  <h6 class="map-popup__title">Маказин «ЯН»</h6>
-                  <p class="map-popup__address">г.Брест, ул. Московская, 340</p>
-                  <p class="map-popup__subtitle">Режим работы:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      Понедельник – пятница 10:00-19:00
-                    </li>
-                    <li class="map-popup__list-item">
-                      Суббота 10:00-17:00, Воскресенье - Выходной
-                    </li>
-                  </ul>
-                  <p class="map-popup__subtitle">Телефоны:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      <a href="tel:+375 (212) 61-45-98">
-                        +375 (212) 61-45-98
-                      </a>
-                      
-                    </li>
-                  </ul>
-                </article>`,
-      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
-      maxWidth: maxWindowWidth,
-    });
-    google.maps.event.addListener(markerId4, "click", function() {
-      infowindow4.open(map, markerId4);
-    });
-    var markerId5 = new google.maps.Marker({
-          position: new google.maps.LatLng(52.094158, 23.698941),
-          map: map,
-          title: `г. Брест, ул. Гоголя, 80`,
-          id: "markerId5",
-          icon: defIcon,
-          
-        });
-      
-    infowindow5 = new google.maps.InfoWindow({
-      content: `<article  class="map-popup">
-                  <div class="map-popup__image">
-                    <img class="img--full img--center" loading="lazy" draggable="false" src='./img/map-popup-image.jpg'>
-                  </div>
-                  <h6 class="map-popup__title">Маказин «Верас-14»</h6>
-                  <p class="map-popup__address">г. Брест, ул. Гоголя, 80</p>
-                  <p class="map-popup__subtitle">Режим работы:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      Понедельник – пятница 10:00-19:00
-                    </li>
-                    <li class="map-popup__list-item">
-                      Суббота 10:00-17:00, Воскресенье - Выходной
-                    </li>
-                  </ul>
-                  <p class="map-popup__subtitle">Телефоны:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      <a href="tel:+375 (212) 61-45-98">
-                        +375 (212) 61-45-98
-                      </a>
-                      
-                    </li>
-                  </ul>
-                </article>`,
-      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
-      maxWidth: maxWindowWidth,
-    });
-    google.maps.event.addListener(markerId5, "click", function() {
-      infowindow5.open(map, markerId5);
-    });
-    var markerId6 = new google.maps.Marker({
-          position: new google.maps.LatLng(52.096809, 23.692262),
-          map: map,
-          title: `г.Брест, Центральный Брестский рынок, ул.Карбышева, 25`,
-          id: "markerId6",
-          icon: defIcon,
-          
-        });
-      
-    infowindow6 = new google.maps.InfoWindow({
-      content: `<article  class="map-popup">
-                  <div class="map-popup__image">
-                    <img class="img--full img--center" loading="lazy" draggable="false" src='./img/map-popup-image.jpg'>
-                  </div>
-                  <h6 class="map-popup__title">Лоток магазина «Верас-14»</h6>
-                  <p class="map-popup__address">г.Брест, Центральный Брестский рынок, ул.Карбышева, 25</p>
-                  <p class="map-popup__subtitle">Режим работы:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      8:00-18:00
-                    </li>
-                    <li class="map-popup__list-item">
-                      Сан день 1-й пн месяца
-                    </li>
-                  </ul>
-                  <p class="map-popup__subtitle">Телефоны:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      <a href="tel:+375 (212) 61-45-98">
-                        +375 (212) 61-45-98
-                      </a>
-                      
-                    </li>
-                  </ul>
-                </article>`,
-      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
-      maxWidth: maxWindowWidth,
-    });
-    google.maps.event.addListener(markerId6, "click", function() {
-      infowindow6.open(map, markerId6);
-    });
-    var markerId7 = new google.maps.Marker({
-          position: new google.maps.LatLng(52.095170, 23.645024),
-          map: map,
-          title: `224034, г. Брест, ул. Писателя Смирнова, 4`,
-          id: "markerId7",
-          icon: defIcon,
-          
-        });
-    
-    infowindow7 = new google.maps.InfoWindow({
-      content: `<article  class="map-popup">
-                  <div class="map-popup__image">
-                    <img class="img--full img--center" loading="lazy" draggable="false" src='./img/map-popup-image.jpg'>
-                  </div>
-                  <h6 class="map-popup__title">Маказин «Консум»</h6>
-                  <p class="map-popup__address">224034, г. Брест, ул. Писателя Смирнова, 4</p>
-                  <p class="map-popup__subtitle">Режим работы:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      Понедельник – пятница 10:00-19:00
-                    </li>
-                    <li class="map-popup__list-item">
-                      Суббота 10:00-17:00, Воскресенье - Выходной
-                    </li>
-                  </ul>
-                  <p class="map-popup__subtitle">Телефоны:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      <a href="tel:+375 (212) 61-45-98">
-                        +375 (212) 61-45-98
-                      </a>
-                      
-                    </li>
-                  </ul>
-                </article>`,
-      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
-      maxWidth: maxWindowWidth,
-    });
-    google.maps.event.addListener(markerId7, "click", function() {
-      infowindow7.open(map, markerId7);
-    });
-    var markerId8 = new google.maps.Marker({
-          position: new google.maps.LatLng(52.111766, 26.094622),
-          map: map,
-          title: `г. Пинск, ул. Брестская, 19-4`,
-          id: "markerId8",
-          icon: defIcon,
-          
-        });
-      
-    infowindow8 = new google.maps.InfoWindow({
-      content: `<article  class="map-popup">
-                  <div class="map-popup__image">
-                    <img class="img--full img--center" loading="lazy" draggable="false" src='./img/map-popup-image.jpg'>
-                  </div>
-                  <h6 class="map-popup__title">Маказин «Консум»</h6>
-                  <p class="map-popup__address">г. Пинск, ул. Брестская, 19-4</p>
-                  <p class="map-popup__subtitle">Режим работы:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      Понедельник – пятница 10:00-19:00
-                    </li>
-                    <li class="map-popup__list-item">
-                      Суббота 10:00-17:00, Воскресенье - Выходной
-                    </li>
-                  </ul>
-                  <p class="map-popup__subtitle">Телефоны:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      <a href="tel:+375 (212) 61-45-98">
-                        +375 (212) 61-45-98
-                      </a>
-                      
-                    </li>
-                  </ul>
-                </article>`,
-      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
-      maxWidth: maxWindowWidth,
-    });
-    google.maps.event.addListener(markerId8, "click", function() {
-      infowindow8.open(map, markerId8);
-    });
-    var markerId9 = new google.maps.Marker({
-          position: new google.maps.LatLng(52.098235, 23.683382),
-          map: map,
-          title: `г. Брест, ул. Орджоникидзе, 7`,
-          id: "markerId9",
-          icon: defIcon,
-          
-        });
-      
-    infowindow9 = new google.maps.InfoWindow({
-      content: `<article  class="map-popup">
-                  <div class="map-popup__image">
-                    <img class="img--full img--center" loading="lazy" draggable="false" src='./img/map-popup-image.jpg'>
-                  </div>
-                  <h6 class="map-popup__title">Маказин «Консум»</h6>
-                  <p class="map-popup__address">г. Брест, ул. Орджоникидзе, 7</p>
-                  <p class="map-popup__subtitle">Режим работы:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      Понедельник – пятница 10:00-20:00
-                    </li>
-                    <li class="map-popup__list-item">
-                      Сан день 1-й пн месяца
-                    </li>
-                  </ul>
-                  <p class="map-popup__subtitle">Телефоны:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      <a href="tel:+375 (212) 61-45-98">
-                        +375 (212) 61-45-98
-                      </a>
-                      
-                    </li>
-                  </ul>
-                </article>`,
-      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
-      maxWidth: maxWindowWidth,
-    });
-    google.maps.event.addListener(markerId9, "click", function() {
-      infowindow9.open(map, markerId9);
-    });
-    var markerId10 = new google.maps.Marker({
-          position: new google.maps.LatLng(52.556038, 24.454550),
-          map: map,
-          title: `г.Пружаны, ул. Ленина 6/1`,
-          id: "markerId10",
-          icon: defIcon,
-          
-        });
-      
-    infowindow10 = new google.maps.InfoWindow({
-      content: `<article  class="map-popup">
-                  <div class="map-popup__image">
-                    <img class="img--full img--center" loading="lazy" draggable="false" src='./img/map-popup-image.jpg'>
-                  </div>
-                  <h6 class="map-popup__title">Маказин «Консум»</h6>
-                  <p class="map-popup__address">г.Пружаны, ул. Ленина 6/1</p>
-                  <p class="map-popup__subtitle">Режим работы:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      Понедельник – пятница 10:00-20:00
-                    </li>
-                    <li class="map-popup__list-item">
-                      Сан день 1-й пн месяца
-                    </li>
-                  </ul>
-                  <p class="map-popup__subtitle">Телефоны:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      <a href="tel:+375 (212) 61-45-98">
-                        +375 (212) 61-45-98
-                      </a>
-                      
-                    </li>
-                  </ul>
-                </article>`,
-      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
-      maxWidth: maxWindowWidth,
-    });
-    google.maps.event.addListener(markerId10, "click", function() {
-      infowindow10.open(map, markerId10);
-    });
-    var markerId11 = new google.maps.Marker({
-          position: new google.maps.LatLng(52.556038, 24.454550),
-          map: map,
-          title: `г. Брест, ул. Волгоградская, 11`,
-          id: "markerId11",
-          icon: defIcon,
-          
-        });
-      
-    infowindow11 = new google.maps.InfoWindow({
-      content: `<article  class="map-popup">
-                  <div class="map-popup__image">
-                    <img class="img--full img--center" loading="lazy" draggable="false" src='./img/map-popup-image.jpg'>
-                  </div>
-                  <h6 class="map-popup__title">Маказин «Консум»</h6>
-                  <p class="map-popup__address">г. Брест, ул. Волгоградская, 11</p>
-                  <p class="map-popup__subtitle">Режим работы:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      Понедельник – пятница 10:00-20:00
-                    </li>
-                    <li class="map-popup__list-item">
-                      Суббота 10:00-17:00, Воскресенье - Выходной
-                    </li>
-                  </ul>
-                  <p class="map-popup__subtitle">Телефоны:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      <a href="tel:+375 (212) 61-45-98">
-                        +375 (212) 61-45-98
-                      </a>
-                      
-                    </li>
-                  </ul>
-                </article>`,
-      // pixelOffset: new google.maps.Size(windowXPosition, windowYPosition),
-      maxWidth: maxWindowWidth,
-    });
-    google.maps.event.addListener(markerId11, "click", function() {
-      infowindow11.open(map, markerId11);
-    });
+                </article>`
+      }
+    ]; 
+  
+  
+  function init() {
+    var infoWindow = new google.maps.InfoWindow();
+    map = new google.maps.Map(mapElement, mapOptions);
+    for (var i = 0; i < markers.length; i++) {
+            var marker = markers[i];
+            var myLatlng = new google.maps.LatLng(marker.lat, marker.lng);
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: marker.title,
+                icon: defIcon,
+            });
+
+            //Attach click event to the marker.
+            (function (marker, marker) {
+                google.maps.event.addListener(marker, "click", function (e) {
+                    //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
+                    infoWindow.setContent(`<article  class="map-popup">
+                      <div class="map-popup__image">
+                        <img class="img--full img--center" loading="lazy" draggable="false" src="${marker.image}">
+                      </div>
+                      <h6 class="map-popup__title">Магазин “Консум”</h6>
+                      <p class="map-popup__address">${marker.title}</p>
+                      <p class="map-popup__subtitle">Режим работы:</p>
+                      <ul class="map-popup__list">
+                        ${marker.workTimeWeekDays 
+                          ? `<li class="map-popup__list-item">
+                              ${marker.workTimeWeekDays}
+                            </li>` 
+                          : ""}
+                        ${marker.workTimeWeekends 
+                          ? `<li class="map-popup__list-item">
+                              ${marker.workTimeWeekends}
+                            </li>` 
+                          : ""}
+                        ${marker.cleanDay 
+                          ? `<li class="map-popup__list-item">
+                              ${marker.cleanDay}
+                            </li>` 
+                          : ""}
+                      </ul>
+                      <p class="map-popup__subtitle">Телефоны:</p>
+                      <ul class="map-popup__list">
+                        <li class="map-popup__list-item">
+                          <a href="tel:8 (017) 243 43 89">
+                            8 (017) 243 43 89
+                          </a>
+                          <a href="tel:8 (017) 365 28 46">
+                            8 (017) 365 28 46
+                          </a>
+                        </li>
+                      </ul>
+                    </article>`);
+                    
+                    infoWindow.open(map, marker);
+                });
+            })(marker, marker);
+        }
   }
+  google.maps.event.addDomListener(window, "load", init);
+

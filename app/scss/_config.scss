@@ -70,7 +70,8 @@ $maxWidthContainer: 1200;
 
   &::-webkit-scrollbar {
     cursor: pointer;
-    width: 0.5rem;
+    width: 0.75rem;
+    height: 0.75rem;
     background: #f2f2f2;
   }
 
@@ -110,7 +111,12 @@ $maxWidthContainer: 1200;
   color: $mainColor;
   -webkit-text-stroke-color: $mainColor;
 }
-
+::-webkit-calendar-picker-indicator {
+  color: transparent;
+  opacity: 1;
+  background: url(../img/icons/icon-calendar.svg) no-repeat center;
+  background-size: contain;
+}
 // GENERAL DOCUMENT STYLES
 html {
   font-size: $fontSize;
@@ -1040,6 +1046,7 @@ label {
     }
   }
 }
+
 .print {
   display: inline-flex;
   justify-content: flex-start;
@@ -1087,6 +1094,7 @@ label {
     }
   }
 }
+
 .download {
   // .download__link {
   &__link {
@@ -1160,11 +1168,13 @@ label {
     }
   }
 }
+
 .__disabled {
   pointer-events: none;
   opacity: 0.8;
   cursor: pointer;
 }
+
 .gm {
   &-style {
     * {
@@ -1328,5 +1338,39 @@ label {
         @include adaptive(font-size, 14, 10, 0);
       }
     }
+  }
+}
+.red-color {
+  color: $accentColor;
+}
+.warning {
+  border: 2px solid $accentColor;
+  position: relative;
+
+  // .warning__text {
+  &__text {
+    color: $accentColor;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-weight: 500;
+  }
+}
+
+.__overflow {
+  overflow: hidden;
+  // .__overflow-y {
+  &-y {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  // .__overflow-x {
+  &-x {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  // .__overflow-auto {
+  &-auto {
+    overflow: auto;
   }
 }

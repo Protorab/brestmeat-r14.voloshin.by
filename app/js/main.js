@@ -19,6 +19,8 @@ import showVisible from "./functions/showVisible";
 import itemCountCheck from "./functions/itemCountCheck";
 import setMarginTop from "./functions/setMarginTop";
 import listStyle from "./functions/listStyle";
+import cvFormAdd from "./functions/cvFormAdd";
+import cvShowHide from "./functions/cvShowHide";
 document.addEventListener("DOMContentLoaded", () => {
   // variable start
   const phoneInput = document.querySelectorAll("input[type=tel]");
@@ -50,9 +52,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const articlesCard = document.querySelectorAll(".articles-card");
   const reviewsCard = document.querySelectorAll(".reviews-card");
   const menuItems = document.querySelectorAll(".menu__item");
+  const cvPhotoInps = document.querySelectorAll(".photo");
+  // const cvPhotoImg = document.querySelector(".cv-form__photo-image");
+  const fileInputs = document.querySelectorAll("input[type=file]");
+  const partnerOptions = document.querySelectorAll(".partner__option ");
+  const countryOptions = document.querySelectorAll(
+    "#country .partner__option "
+  );
+  const regionOptions = document.querySelectorAll("#region .partner__option");
+
+  const region = document.getElementById("region");
+  const contacts = document.querySelectorAll("*[data-contacts-id]");
+
   // variable end
 
   // ytPlayer();
+  cvShowHide();
   lazyBg();
   modalWindowInit();
   btnsFunc();
@@ -62,8 +77,27 @@ document.addEventListener("DOMContentLoaded", () => {
   listStyle();
   // menuDropdown();
   customSelectFunc();
+  cvFormAdd();
+
   collapsibleFunc();
 
+  if (cvPhotoInps.length > 0) {
+    cvPhotoInps.forEach((input) => {
+      input.onchange = (e) => {
+        const [file] = input.files;
+        if (file) {
+          input.parentNode
+            .querySelector("img")
+            .setAttribute("src", URL.createObjectURL(file));
+          let checkWarninig = document.querySelector(".warning__text");
+          checkWarninig ? checkWarninig.remove() : "";
+          input.parentNode.querySelector(
+            ".cv-form__photo-title"
+          ).style.display = "none";
+        }
+      };
+    });
+  }
   if (menuItems.length > 0) {
     menuItems.forEach((item) => {
       item.addEventListener("click", (e) => {
@@ -123,6 +157,35 @@ document.addEventListener("DOMContentLoaded", () => {
     WinPrint.focus();
     WinPrint.print();
   }
+  function validateSize(input) {
+    const fileSize = input.files[0].size / 1024 / 1024; // in MiB
+    let warningText = document.createElement("span");
+    warningText.classList.add("warning__text");
+    warningText.textContent = input.dataset.warningText;
+
+    if (fileSize > 2) {
+      // alert("File size exceeds 2 MiB");
+      input.value = "";
+      input.parentNode.querySelector("img").setAttribute("src", "");
+      input.parentNode.classList.add("warning");
+      let checkWarninig = document.querySelector(".warning__text");
+      checkWarninig ? "" : input.parentNode.appendChild(warningText);
+    } else {
+      warningText ? warningText.remove() : "";
+      input.parentNode.classList.contains("warning")
+        ? input.parentNode.classList.remove("warning")
+        : "";
+    }
+  }
+  if (fileInputs.length > 0) {
+    fileInputs.forEach((input) => {
+      input.addEventListener("change", (e) => {
+        let _this = e.currentTarget;
+        validateSize(_this);
+      });
+    });
+  }
+
   if (printBtns.length > 0) {
     printBtns.forEach((btn) => {
       btn.addEventListener("click", (e) => {
@@ -396,14 +459,6 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     }, 1000);
   };
-  const partnerOptions = document.querySelectorAll(".partner__option ");
-  const countryOptions = document.querySelectorAll(
-    "#country .partner__option "
-  );
-  const regionOptions = document.querySelectorAll("#region .partner__option");
-
-  const region = document.getElementById("region");
-  const contacts = document.querySelectorAll("*[data-contacts-id]");
 
   if (contacts.length > 0) {
     contacts.forEach((element) => {

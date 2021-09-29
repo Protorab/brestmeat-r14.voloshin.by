@@ -1,0 +1,486 @@
+section.section.cv-section.__students.page-top__section
+  h1.section__title.cv-section__title.__students.animate Анкета для студента
+  form.cv-form.__students.animate(
+    action="#",
+    method="POST",
+    enctype="multipart/form-data") 
+    p.cv-form__warning.__students 
+      sup.red-color *
+      | Предприятие гарантирует сохранение в тайне информации, предоставленной в анкете.
+    p.cv-form__warning.__students 
+      sup.red-color *
+      | Анкеты,содержащие неполную информацию к участию не допускаются.
+    p.cv-form__warning.__students 
+      sup.red-color *
+      | Заполнение анкеты не обязывает предприятие принять кандидата на практику.
+    .cv-form__fieldset.__students
+      .cv-form__row.__department.__students
+        .cv-form__coll.__students.__students 
+          label.cv-form__label.__students.animate.scroll(for="department") Отдел
+          input#department.cv-form__input.animate.scroll(
+            type="text",
+            name="department",
+            placeholder="Данное поле заполняет сотрудник отдела")
+          label.cv-form__label.__students.animate.scroll(for="department-phone") Телефон
+          input#department-phone.cv-form__input.__students.animate.scroll(
+            type="tel",
+            name="department-phone",
+            placeholder="Данное поле заполняет сотрудник отдела")
+        .cv-form__coll.__students 
+          label.cv-form__label.__students.animate.scroll(for="department-position") Должность / профессия
+          input#department-position.cv-form__input.__students.animate.scroll(
+            type="text",
+            name="department-position",
+            placeholder="Данное поле заполняет сотрудник отдела")
+          label.cv-form__label.__students.animate.scroll(for="department-from-whom") От кого
+          input#department-from-whom.cv-form__input.__students.animate.scroll(
+            type="text",
+            name="department-from-whom",
+            placeholder="Данное поле заполняет сотрудник отдела")
+    fieldset.cv-form__fieldset.__personal-data
+      legend.cv-form__title.animate.scroll  Личные данные
+      .cv-form__row.__students
+        .cv-form__coll.__students 
+          label.cv-form__photo.animate.scroll(for="cv-personal__photo") 
+            input#cv-personal__photo.cv-form__photo-input.photo(
+              type="file", 
+              name="personal photo",
+              data-warning-text="Размер файла не должен превышать 2 Мб"
+              required)
+            img.cv-form__photo-image(
+              src="",
+              draggable="false")  
+            span.cv-form__photo-title 
+              | Загрузить фото
+              sup.red-color *
+          label.cv-form__label.__students.animate.scroll(for="family-status")
+            | Семейное положение
+            sup.red-color *
+          include ./../../mixins/select
+          +select(
+            "family-status","cv-form","Выбрать","checkTriangle",
+            [
+              [""],
+              ["Холост(а)"],
+              ["Женат/Замужем"],
+              ["Вдовец/Вдова"]
+            ],"family-status","true","","animate","scroll")
+          include ./../../mixins/cv-form-group
+          +cv-form-group(
+            "Электронная почта","cv-email","email","email","Написать....","__students","animate","scroll")
+        .cv-form__coll.__students
+          +cv-form-group(
+            "Фамилия","cv-surname","text","surname","Написать","__students","animate","scroll")
+          +cv-form-group(
+            "Отчество","cv-second","text","lname","Написать","__students","animate","scroll")
+          label.cv-form__label.__students.animate.scroll(for="cv-sex")
+            | Пол
+            sup.red-color *
+          +select(
+            "cv-sex","cv-form","Выбрать","checkTriangle",
+            [
+              [""],
+              ["Мужской"],
+              ["Женский"],
+              ["Другое"]
+            ],"sex","true","","animate","scroll")
+          +cv-form-group(
+            "Адрес проживания","cv-address","text","address","Написать","__students","animate","scroll")
+          +cv-form-group(
+            "Домашний телефон","cv-home-phone","number","home-phone","+375 (_ _) _ _ _ - _ _ - _ _","__students","animate","scroll")
+        .cv-form__coll
+          +cv-form-group(
+            "Имя","cv-name","text","name","Написать","__students","animate","scroll")
+          +cv-form-group(
+            "Дата рождения","cv-birth-date","date","birth-date","","__students","animate","scroll","2003-12-31","1959-01-01")
+          label.cv-form__label.__students.animate.scroll(for="cv-citizenship")
+            | Гражданство
+            sup.red-color *
+          +select(
+            "cv-citizenship","cv-form","Выбрать","checkTriangle",
+            [
+              [""],
+              ["РБ"],
+              ["РФ"],
+              ["Другое"]
+            ],"citizenship","true","","animate","scroll")
+          +cv-form-group(
+            "Адрес по прописке","cv-address-second","text","address-second","Написать","__students","animate","scroll")
+          +cv-form-group(
+            "Мобильный телефон","cv-phone","tel","phone","+375 (_ _) _ _ _ - _ _ - _ _","__students","animate","scroll")
+    fieldset.cv-form__fieldset.__education
+      legend.cv-form__title.__students.animate.scroll  Образование
+      .cv-form__row.__students
+        .cv-form__coll.__students
+          +cv-form-group(
+            "Полное название учебного заведения","cv-educational-institution","text","educational-institution","Написать","__students","animate","scroll")
+      .cv-form__row.__students
+        .cv-form__coll.__students
+          +cv-form-group(
+            "Факультет","cv-faculty","text","faculty","Написать","__students","animate","scroll")
+        .cv-form__coll.__students
+          +cv-form-group(
+            "Специальность","cv-speciality","text","speciality","Написать","__students","animate","scroll")
+      .cv-form__row.__students
+        .cv-form__coll.__students
+          +cv-form-group(
+            "Специализация","cv-specialization","text","specialization","Написать","__students","animate","scroll")
+        .cv-form__coll.__students
+          +cv-form-group(
+            "Курс","cv-class","text","class","Написать","__students","animate","scroll")
+        .cv-form__coll.__students
+          +cv-form-group(
+            "№ группы","cv-group-number","text","group-number","Написать","__students","animate","scroll")
+      .cv-form__row.rs.__students
+        .cv-form__coll.__students
+          label.cv-form__label.__students(
+            for=`cv-start-edc`)  Период обучения
+            sup.red-color *
+          .cv-form__group.animate.scroll.__students
+            input.cv-form__input(
+              id=`cv-start-edc`,
+              type=`date`, 
+              name=`start-edc`,
+              required
+              max=`2003-12-31`,
+              min=`1959-01-01`)
+            hr.cv-form__hr
+            input.cv-form__input(
+              id=`cv-end-edc`,
+              type=`date`, 
+              name=`end-edc`,
+              required
+              max=`2100-12-31`,
+              min=`1959-01-01`)
+        .cv-form__coll.__students
+          +cv-form-group(
+            "Предполагается ли распределение после окончания уч. заведения","cv-distribution","text","distribution","Написать...","__students","animate","scroll")
+      .cv-form__row.__students
+        .cv-form__coll.__students
+          label.cv-form__label.__students.animate.scroll(for="cv-education-form")
+            | Форма обучения
+            sup.red-color *
+          +select(
+            "cv-education-form","cv-form","Выбрать","checkTriangle",
+            [
+              [""],
+              ["Очная"],
+              ["Заочна"],
+              ["Дистанционная"],
+              ["Вечерняя"],
+              ["Другое"]
+            ],"education-form","true","","animate","scroll")
+        .cv-form__coll.__students
+          label.cv-form__label.__students.animate.scroll(for="cv-education-payment")
+            | Форма оплаты
+            sup.red-color *
+          +select(
+            "cv-education-payment","cv-form","Выбрать","checkTriangle",
+            [
+              [""],
+              ["Бюджет"],
+              ["Платная"],
+              ["Другое"]
+            ],"education-payment","true","","animate","scroll")
+        .cv-form__coll.__students
+          +cv-form-group(
+            "Средний балл успеваемости","cv-GPA","text","GPA","Написать...","__students","animate","scroll")
+      .cv-form__row.__students
+        .cv-form__coll.__students
+          +cv-form-group(
+            "ФИО декана","cv-dekan-surname","text","dekan-surname","Написать...","__students","animate","scroll")
+        .cv-form__coll.__students
+          +cv-form-group(
+            "Контактный телефон","cv-dekan-phone","tel","dekan-phone","+375 (_ _) _ _ _ - _ _ - _ _","__students","animate","scroll")
+      .cv-form__row.__students
+        .cv-form__coll.__students
+          +cv-form-group(
+            "ФИО заведующего кафедрой","cv-zavkaf-surname","text","zavkaf-surname","Написать...","__students","animate","scroll")
+        .cv-form__coll.__students
+          +cv-form-group(
+            "Контактный телефон","cv-zavkaf-phone","tel","zavkaf-phone","+375 (_ _) _ _ _ - _ _ - _ _","__students","animate","scroll")
+      .cv-form__row.__students
+        .cv-form__coll.__students
+          +cv-form-group(
+            "Успехи и достижения в образовании, в спорте","cv-education-successes ","text","education-successes","Написать...","__students","animate","scroll")
+    fieldset.cv-form__fieldset.__language
+      legend.cv-form__title.__students.animate.scroll  ВЛАДЕНИЕ ИНОСТРАННЫМИ ЯЗЫКАМИ
+      .cv-form__row.__students
+        .cv-form__coll.__students
+          label.cv-form__label.__students.animate.scroll(for="cv-language")
+            | Иностранный язык
+            sup.red-color *
+          +select(
+            "cv-language","cv-form","Выбрать","checkTriangle",
+            [
+              [""],
+              ["Беларуский"],
+              ["Русский"],
+              ["Английский"],
+              ["Немецкий"],
+              ["Итальянский"],
+              ["Французкий"],
+              ["Китайский"],
+              ["Польский"]
+            ],"language","true","","animate","scroll")
+        .cv-form__coll.__students
+          label.cv-form__label.__students.animate.scroll(for="cv-language-level")
+            | Уровень владения
+            sup.red-color *
+          +select(
+            "cv-language-level","cv-form","Выбрать","checkTriangle",
+            [
+              [""],
+              ["Начальный"],
+              ["Ниже среднего"],
+              ["Средний"],
+              ["Выше среднего"],
+              ["Продвинутый"],
+              ["Профессиональный"]
+            ],"language-level","true","","animate","scroll")
+      .cv-form__row.__students
+        .cv-form__coll
+          button.cv-form__add.animate.scroll 
+            i.cv-form__add-icon
+            span.cv-form__add-title Добавить язык
+    fieldset.cv-form__fieldset.__pc
+      legend.cv-form__title.__students.animate.scroll  Знание ПК
+      .cv-form__row.__students
+        .cv-form__coll.__students
+          label.cv-form__label.__students.animate.scroll(for="cv-word")
+            | Word
+          +select(
+            "cv-word","cv-form","Выбрать","checkTriangle",
+            [
+              [""],
+              ["Начальный"],
+              ["Ниже среднего"],
+              ["Средний"],
+              ["Выше среднего"],
+              ["Продвинутый"],
+              ["Профессиональный"]
+            ],"word","false","","animate","scroll")
+        .cv-form__coll.__students
+          label.cv-form__label.__students.animate.scroll(for="cv-excel")
+            | Excel
+          +select(
+            "cv-excel","cv-form","Выбрать","checkTriangle",
+            [
+              [""],
+              ["Начальный"],
+              ["Ниже среднего"],
+              ["Средний"],
+              ["Выше среднего"],
+              ["Продвинутый"],
+              ["Профессиональный"]
+            ],"excel","false","","animate","scroll")
+        .cv-form__coll.__students
+          label.cv-form__label.__students.animate.scroll(for="cv-PowerPoint")
+            | PowerPoint
+          +select(
+            "cv-PowerPoint","cv-form","Выбрать","checkTriangle",
+            [
+              [""],
+              ["Начальный"],
+              ["Ниже среднего"],
+              ["Средний"],
+              ["Выше среднего"],
+              ["Продвинутый"],
+              ["Профессиональный"]
+            ],"PowerPoint","false","","animate","scroll")
+        .cv-form__coll.__students
+          label.cv-form__label.__students.animate.scroll(for="cv-Outlook")
+            | Outlook
+          +select(
+            "cv-Outlook","cv-form","Выбрать","checkTriangle",
+            [
+              [""],
+              ["Начальный"],
+              ["Ниже среднего"],
+              ["Средний"],
+              ["Выше среднего"],
+              ["Продвинутый"],
+              ["Профессиональный"]
+            ],"Outlook","false","","animate","scroll")
+        .cv-form__coll.__students
+          label.cv-form__label.__students.animate.scroll(for="cv-AutoCad")
+            | AutoCad
+          +select(
+            "cv-AutoCad","cv-form","Выбрать","checkTriangle",
+            [
+              [""],
+              ["Начальный"],
+              ["Ниже среднего"],
+              ["Средний"],
+              ["Выше среднего"],
+              ["Продвинутый"],
+              ["Профессиональный"]
+            ],"AutoCad","false","","animate","scroll")
+        .cv-form__coll.__students
+          label.cv-form__label.__students.animate.scroll(for="cv-1С")
+            | 1С
+          +select(
+            "cv-1С","cv-form","Выбрать","checkTriangle",
+            [
+              [""],
+              ["Начальный"],
+              ["Ниже среднего"],
+              ["Средний"],
+              ["Выше среднего"],
+              ["Продвинутый"],
+              ["Профессиональный"]
+            ],"1С","false","","animate","scroll")
+        .cv-form__coll.__students
+          label.cv-form__label.__students.animate.scroll(
+            for=`cv-other-soft`)  Другое
+          input.cv-form__input.__students.animate.scroll(
+            id=`cv-other-soft`,
+            type=`text`, 
+            name=`other-soft`,
+            placeholder=`Написать...`)
+    fieldset.cv-form__fieldset.__practice
+      legend.cv-form__title.__students.animate.scroll Практика
+      .cv-form__row.__students
+        .cv-form__coll.__students
+          label.cv-form__label.__students.animate.scroll(for="cv-practice")
+            | Вид практики
+            sup.red-color *
+          +select(
+            "cv-practice","cv-form","Выбрать","checkTriangle",
+            [
+              [""],
+              ["Вид 1"],
+              ["Вид 2"],
+              ["Вид 3"],
+              ["Вид 4"],
+              ["Вид 5"],
+              ["Вид 6"]
+            ],"practice-type","true","","animate","scroll")
+        .cv-form__coll.__students
+          label.cv-form__label.__students.animate.scroll(
+            for=`cv-start-practice`)  Период практики
+            sup.red-color *
+          .cv-form__group.animate.scroll.__students
+            input.cv-form__input.animate.scroll(
+              id=`cv-start-practice`,
+              type=`date`, 
+              name=`start-practice`,
+              required
+              max=`2003-12-31`,
+              min=`1959-01-01`)
+            hr.cv-form__hr
+            input.cv-form__input.animate.scroll(
+              id=`cv-end-practice`,
+              type=`date`, 
+              name=`end-practice`,
+              required
+              max=`2100-12-31`,
+              min=`1959-01-01`)
+      .cv-form__row.__students
+        .cv-form__coll.__students
+          +cv-form-group(
+            "До какой даты Вам необходимо определиться с базой <br> практики","cv-practice-date","date","practice-date","","__students","animate","scroll","2100-12-31","1959-01-01")
+        .cv-form__coll.__students
+          label.cv-form__label.__students.animate.scroll(for="cv-hostel")
+            | Нуждаетесь ли Вы в предоставлении общежития на время прохождения практики
+            sup.red-color *
+          +select(
+            "cv-hostel","cv-form","Выбрать","checkTriangle",
+            [
+              [""],
+              ["Да"],
+              ["Нет"],
+              ["Не знаю"]
+            ],"hostel","true","","animate","scroll")
+      .cv-form__row.__students
+        .cv-form__coll.__students
+          +cv-form-group(
+            "Какие цели на время прохождения практики Вы ставите перед собой","cv-practice-purpose","text","practice-purpose","Написать...","__students","animate","scroll")
+      .cv-form__row.__students
+        .cv-form__coll.__students
+          include ./../../mixins/cv-form-group-radio
+          +cv-form-group-radio(
+            "Нравится ли Вам специальность, по которой <br> Вы обучаетесь в УО?","cv-like-specialization",
+            [
+              ["Да","none","false"],["Нет","flex","true"]
+            ]
+            ,"like-specialization","__students","animate","scroll","required","like-specialization-reason")
+          .cv-form__input-wrapper#like-specialization-reason(style="display: none;")
+            textarea.cv-form__textarea.__students(
+              name="like-specialization-reason", 
+              cols="30", 
+              rows="10",
+              id="like-specialization-reason",
+              placeholder="Основные причины")
+        .cv-form__coll.__students
+          +cv-form-group-radio(
+            "Собираетесь ли Вы в будущем работать по получаемой Вами специалности?","cv-work-specialization",
+            [
+              ["Да","none","false"],["Нет","flex","true"]
+            ]
+            ,"work-specialization","__students","animate","scroll","required","work-specialization-reason")
+          .cv-form__input-wrapper#work-specialization-reason(style="display: none;")
+            textarea.visible-state.cv-form__textarea.__students(
+              name="work-specialization-reason", 
+              cols="30", 
+              rows="10",
+              placeholder="Основные причины")
+      .cv-form__row.__students
+        .cv-form__coll.__students.__overflow
+          +cv-form-group-radio(
+            "Привлекались ли Вы к адмиистративной или уголовной ответственности? (увжите за что, в том числе нарушения ПДД и погашенные судимости)","cv-criminal",
+            [
+              ["Да","flex","true"],["Нет","none","false"]
+            ]
+            ,"have-criminal","__students","animate","scroll","required","criminal")
+          #criminal.cv-form__input-wrapper(style="display: none;")
+            table.cv-form__table.__students
+              tr
+                th Год
+                th Статья
+                th Расшифровка
+              tr
+                td
+                  input(type="text", name="crime-year")
+                td
+                  input(type="text", name="crime-article")
+                td
+                  input(type="text", name="crime-decoding")
+              tr
+                td
+                  input(type="text", name="crime-year")
+                td
+                  input(type="text", name="crime-article")
+                td
+                  input(type="text", name="crime-decoding")
+              tr
+                td
+                  input(type="text", name="crime-year")
+                td
+                  input(type="text", name="crime-article")
+                td
+                  input(type="text", name="crime-decoding")
+    fieldset.cv-form__fieldset.__motivation
+      legend.cv-form__title.__students.animate.scroll Мотивационное письмо
+      .cv-form__row.__students
+        .cv-form__coll.__students
+          label.cv-form__label.__students.animate.scroll(
+            for=`cv-motivation`)  Почему ОАО “Брестсткий мясокомбинат” должен именно Вас взять на практику?*
+            sup.red-color *
+          textarea.cv-form__textarea.__motivation.__students.animate.scroll(
+            name="motivation-reason", 
+            cols="30", 
+            rows="10",
+            id="cv-motivation",
+            placeholder="Написать...",
+            required)
+          span.custom-radio.cv-form__radio
+            input.custom-radio__input.cv-form__radio-input(
+                id=`cv-agree`,
+                type=`radio`, 
+                name=`agree`,
+                value=`подтверждаю`
+                required)
+            label(for=`cv-agree`).custom-radio__checker.cv-form__radio-checker
+            label(for=`cv-agree`).custom-radio__label.cv-form__radio-label Я подтверждаю, что представленные мной сведения являются полными и достоверными.
+    button.btn.cv-form__btn(type="submit") Отправить

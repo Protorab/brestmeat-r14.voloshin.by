@@ -1,0 +1,23 @@
+mixin cv-form-group(title,idSet,type,name,placeholder,addClass,animate,scroll,maxDate,minDate)
+  label.cv-form__label(
+    for=`${idSet}`,
+    class=`${addClass ? addClass : "" } ${animate ? animate : "" }  ${scroll ? scroll : "" }`)  !{title}
+    sup.red-color *
+  if maxDate
+    input.cv-form__input(
+      id=`${idSet}`,
+      type=`${type}`, 
+      name=`${name}`,
+      placeholder=`${placeholder ? placeholder : ""}`,
+      class=`${addClass ? addClass : "" } ${animate ? animate : "" }  ${scroll ? scroll : "" }`,
+      required
+      max=`${maxDate}`,
+      min=`${minDate}`)
+  else
+    input.cv-form__input(
+      id=`${idSet}`,
+      type=`${type}`, 
+      name=`${name}`,
+      placeholder=`${placeholder ? placeholder : ""}`,
+      class=`${addClass ? addClass : "" } ${animate ? animate : "" }  ${scroll ? scroll : "" }`,
+      required)
