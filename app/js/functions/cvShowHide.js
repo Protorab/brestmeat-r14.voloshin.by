@@ -13,7 +13,7 @@ const cvShowHide = () => {
         needBlock.style.display = state;
         textarea ? textarea.setAttribute("required", isRequired) : "";
         if (inputs.length > 0) {
-          for (let i = 0; i < 3; i++) {
+          for (let i = 0; i < inputs.length; i++) {
             const input = inputs[i];
             input.setAttribute("required", isRequired);
           }

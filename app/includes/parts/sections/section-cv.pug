@@ -1,0 +1,202 @@
+section.section.cv-section.page-top__section
+  h1.section__title.cv-section__title.animate Анкета для соискателя
+  form.cv-form.animate(
+    action="#",
+    method="POST",
+    enctype="multipart/form-data")
+    include ./../../mixins/select
+    include ./../../mixins/cv-form-group
+    include ./../../mixins/cv-form-group-radio
+    include ./../../mixins/cv-form-group-radio-alt
+    p.cv-form__warning 
+      sup.red-color *
+      | Предприятие гарантирует сохранение в тайне информации, предоставленной в анкете.
+    fieldset.cv-form__fieldset.__main-question
+      legend.cv-form__title.animate.scroll  Выберите предприятие
+      .cv-form__row
+        .cv-form__coll 
+          span.custom-radio.cv-form__radio.animate.scroll 
+            input.custom-radio__input.cv-form__radio-input(
+                id=`cv-company-1`,
+                data-id=`${dataId}`,
+                type=`radio`, 
+                name=`company`,
+                value=`ОАО "Брестский мясокомбинат" `
+                required)
+            label(for=`cv-company-1`).custom-radio__checker.cv-form__radio-checker
+            label(for=`cv-company-1`).custom-radio__label.cv-form__radio-label ОАО "Брестский мясокомбинат" 
+        .cv-form__coll 
+          span.custom-radio.cv-form__radio.animate.scroll 
+            input.custom-radio__input.cv-form__radio-input(
+                id=`cv-company-2`,
+                data-id=`${dataId}`,
+                type=`radio`, 
+                name=`company`,
+                value=`ПУП "Брестские традиции" `
+                required)
+            label(for=`cv-company-2`).custom-radio__checker.cv-form__radio-checker
+            label(for=`cv-company-2`).custom-radio__label.cv-form__radio-label ПУП "Брестские традиции" 
+        .cv-form__coll
+          span.custom-radio.cv-form__radio.animate.scroll 
+            input.custom-radio__input.cv-form__radio-input(
+                id=`cv-company-3`,
+                data-id=`${dataId}`,
+                type=`radio`, 
+                name=`company`,
+                value=`ТУП "Брестские угощения" `
+                required)
+            label(for=`cv-company-3`).custom-radio__checker.cv-form__radio-checker
+            label(for=`cv-company-3`).custom-radio__label.cv-form__radio-label ТУП "Брестские угощения" 
+      .cv-form__row
+        .cv-form__coll
+          +cv-form-group(
+            "Какая вакансия Вас могла бы заинтересовать?","cv-vacancy","text","vacancy","Написать....","","animate","scroll")
+    fieldset.cv-form__fieldset.__personal-data
+      legend.cv-form__title.animate.scroll  Личные данные
+      .cv-form__row
+        .cv-form__coll
+          +cv-form-group(
+            "Фамилия","cv-surname","text","surname","Написать....","","animate","scroll")
+          +cv-form-group(
+            "Дата рождения","cv-birth-date","date","birth-date","","","animate","scroll","2003-12-31","1959-01-01")
+          label.cv-form__label.animate.scroll(for="cv-sex")
+            | Пол
+            sup.red-color *
+          +select(
+            "cv-sex","cv-form","Выбрать","checkTriangle",
+            [
+              [""],
+              ["Мужской"],
+              ["Женский"],
+              ["Другое"]
+            ],"sex","true","","animate","scroll")
+        .cv-form__coll
+          +cv-form-group(
+            "Имя","cv-name","text","name","Написать","","animate","scroll")
+          label.cv-form__label.animate.scroll(for="cv-citizenship")
+            | Гражданство
+            sup.red-color *
+          +select(
+            "cv-citizenship","cv-form","Выбрать","checkTriangle",
+            [
+              [""],
+              ["РБ"],
+              ["РФ"],
+              ["Другое"]
+            ],"citizenship","true","","animate","scroll")
+          +cv-form-group(
+            "Адрес по прописке","cv-address-second","text","address-second","Написать","","animate","scroll")
+        .cv-form__coll
+          +cv-form-group(
+            "Отчество","cv-second","text","lname","Написать","","animate","scroll")
+          .cv-form__photo-wrapper
+            label.cv-form__label.file-name(for="cv-personal__photo") Прикрепить Ваше фото (размер до 2 Мб)
+            input#cv-personal__photo.cv-form__photo-input(
+                type="file", 
+                name="personal photo",
+                data-warning-text="Размер файла не должен превышать 2 Мб"
+                required)
+            label.btn.cv-form__input-btn(for="cv-personal__photo") Прикрепить фото
+          +cv-form-group(
+            "Адрес проживания","cv-address","text","address","Написать","","animate","scroll")
+    fieldset.cv-form__fieldset.__contact-data
+      legend.cv-form__title.animate.scroll  Контактные данные
+      .cv-form__row.__three-coll
+        .cv-form__coll
+          +cv-form-group(
+            "Мобильный телефон","cv-phone","tel","phone","+375 (_ _) _ _ _ - _ _ - _ _","","animate","scroll")
+        .cv-form__coll
+          +cv-form-group(
+            "Электронная почта","cv-email","email","email","Написать....","","animate","scroll")
+    fieldset.cv-form__fieldset.__education
+      legend.cv-form__title.animate.scroll  Образование
+      .cv-form__row
+        .cv-form__coll
+          label.cv-form__label.animate.scroll(for="cv-level-education")
+            | Уровень образования
+            sup.red-color *
+          +select(
+            "cv-level-education","cv-form","Выбрать","checkTriangle",
+            [
+              [""],
+              ["Среднее"],
+              ["Средне-специальное"],
+              ["Профиссианально-техническое"],
+              ["Высшее"]
+            ],"level-education","true","","animate","scroll")
+        .cv-form__coll
+          +cv-form-group(
+            "Полное название УЗ","cv-name-institution","text","name-institution","Написать....","","animate","scroll")
+        .cv-form__coll
+          +cv-form-group(
+            "Специальность","cv-speciality","text","speciality","Написать","","animate","scroll")
+    fieldset.cv-form__fieldset.__family
+      legend.cv-form__title.animate.scroll  Семейное положение
+      .cv-form__row
+        .cv-form__coll
+          +cv-form-group-radio-alt(
+            "","cv-family-married",
+            [
+              ["Женат/ замужем","grid","true"]
+            ]
+            ,"family-status","","animate","scroll","required","family-status")
+        .cv-form__coll
+          +cv-form-group-radio-alt(
+            "","cv-family-single",
+            [
+              ["Холост/ не замужем","none","false"]
+            ]
+            ,"family-status","","animate","scroll","required","family-status")
+        .cv-form__coll
+          +cv-form-group-radio-alt(
+            "","cv-family-divorced",
+            [
+              ["Разведен(а)","none","false"]
+            ]
+            ,"family-status","","animate","scroll","required","family-status")
+        .cv-form__coll
+          +cv-form-group-radio-alt(
+            "","cv-family-widower",
+            [
+              ["Вдовец/ва","none","false"]
+            ]
+            ,"family-status","","animate","scroll","required","family-status")
+      .cv-form__row.cv-form__input-wrapper#family-status(style="display: none;")
+        .cv-form__coll
+          label.cv-form__label(for="cv-spouse-info")
+            | ФИО и место работы супруги(а)
+            sup.red-color *
+          textarea.cv-form__textarea.__students(
+            name="spouse-info", 
+            cols="30", 
+            rows="10",
+            id="cv-spouse-info",
+            placeholder="Написать...")
+        .cv-form__coll
+          label.cv-form__label(for="cv-childe-info")
+            | Дети (Ф.И.О., возраст, место учёбы/работы)
+            sup.red-color *
+          textarea.cv-form__textarea.__students(
+            name="childe-info", 
+            cols="30", 
+            rows="10",
+            id="cv-childe-info",
+            placeholder="Написать...")
+    ieldset.cv-form__fieldset.__other
+      legend.cv-form__title.animate.scroll  Дополнительные сведения
+      .cv-form__row
+        .cv-form__coll
+          +cv-form-group-radio(
+            'Состоите ли Вы в общественном объединении (ООО "БРСМ", РОО "Белая Русь" и др.)?',"cv-moron",
+            [
+              ["Да","grid","true"],["Нет","none","false"]
+            ]
+            ,"moron","","animate","scroll","required","moron")
+      .cv-form__row#moron(style="display: none;")
+        .cv-form__coll 
+          +cv-form-group(
+            "№ билета","cv-ticket-number","text","ticket-number","Написать","","","")
+        .cv-form__coll 
+          +cv-form-group(
+            "Название общественного объединения*","cv-association-name","text","association-name","Написать","","","")
+    button.btn.cv-form__btn(type="submit") Отправить

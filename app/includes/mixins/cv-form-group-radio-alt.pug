@@ -1,0 +1,46 @@
+mixin cv-form-group-radio-alt(title,idSet,inputs,name,addClass,animate,scroll,isRequired,dataId)
+  if isRequired
+    each input, idx in inputs
+      - var count = idx+1
+      - var value = input[0]
+      - var visible = input[1]
+      - var setIsRequired = input[2]
+
+      span.custom-radio.cv-form__radio(
+        class=`${addClass ? addClass : "" } ${animate ? animate : "" }  ${scroll ? scroll : "" }`)
+        input.custom-radio__input.cv-form__radio-input(
+            id=`${idSet}-${count}`,
+            data-id=`${dataId}`,
+            type=`radio`, 
+            name=`${name}`,
+            value=`${value}`
+            class=`${addClass ? addClass : "" }`,
+            data-visible-state=`${visible}`
+            data-required=`${setIsRequired}`,
+            required)
+        label(
+          for=`${idSet}-${count}`,
+          class=`${addClass ? addClass : "" }`).custom-radio__checker.cv-form__radio-checker
+        label(for=`${idSet}-${count}`).custom-radio__label.cv-form__radio-label!=value
+  else
+    each input, idx in inputs
+      - var count = idx+1
+      - var value = input[0]
+      - var visible = input[1]
+      - var setIsRequired = input[2]
+      
+      span.custom-radio.cv-form__radio(
+        class=`${addClass ? addClass : "" } ${animate ? animate : "" }  ${scroll ? scroll : "" }`)
+        input.custom-radio__input.cv-form__radio-input(
+            id=`${idSet}-${count}`,
+            data-id=`${dataId}`,
+            type=`radio`,
+            name=`${name}`,
+            value=`${value}`
+            class=`${addClass ? addClass : "" }`,
+            data-visible-state=`${visible}`,
+            data-required=`${setIsRequired}`,)
+        label(
+          for=`${idSet}-${count}`,
+          class=`${addClass ? addClass : "" }`).custom-radio__checker.cv-form__radio-checker
+        label(for=`${idSet}-${count}`).custom-radio__label.cv-form__radio-label!=value

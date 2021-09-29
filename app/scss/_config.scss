@@ -1182,7 +1182,7 @@ label {
     }
     // .gm-style-iw{
     &-iw {
-      @include adaptive(height, 500, 330, 5);
+      @include adaptive(height, 450, 330, 5);
 
       // @include adaptive(max-height, 500, 450, 5);
       max-height: unset !important;
@@ -1203,7 +1203,7 @@ label {
     .gm-style-iw-d {
       padding: 0;
       overflow: hidden !important;
-      @include adaptive(height, 500, 450, 5);
+      @include adaptive(height, 450, 330, 5);
       max-height: unset !important;
 
       // @include adaptive(max-height, 500, 500, 5);
@@ -1367,7 +1367,7 @@ label {
     color: $accentColor;
     position: absolute;
     left: 0;
-    bottom: 0;
+    top: 100%;
     font-weight: 500;
   }
 }

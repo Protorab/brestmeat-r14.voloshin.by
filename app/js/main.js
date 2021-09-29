@@ -162,19 +162,28 @@ document.addEventListener("DOMContentLoaded", () => {
     let warningText = document.createElement("span");
     warningText.classList.add("warning__text");
     warningText.textContent = input.dataset.warningText;
+    let fileName = input.parentNode.querySelector(".file-name");
 
     if (fileSize > 2) {
       // alert("File size exceeds 2 MiB");
       input.value = "";
-      input.parentNode.querySelector("img").setAttribute("src", "");
+      let uploadImage = input.parentNode.querySelector("img");
+      uploadImage ? uploadImage.setAttribute("src", "") : "";
       input.parentNode.classList.add("warning");
-      let checkWarninig = document.querySelector(".warning__text");
-      checkWarninig ? "" : input.parentNode.appendChild(warningText);
+      let checkWarning = document.querySelector(".warning__text");
+      checkWarning ? "" : input.parentNode.appendChild(warningText);
+      setTimeout(() => {
+        warningText ? warningText.remove() : "";
+        input.parentNode.classList.contains("warning")
+          ? input.parentNode.classList.remove("warning")
+          : "";
+      }, 2000);
     } else {
       warningText ? warningText.remove() : "";
       input.parentNode.classList.contains("warning")
         ? input.parentNode.classList.remove("warning")
         : "";
+      fileName ? (fileName.textContent = input.files[0].name) : "";
     }
   }
   if (fileInputs.length > 0) {

@@ -32,6 +32,10 @@
       margin-bottom: 10px;
       font-weight: 500;
       color: $textThirdColor;
+
+      @media only screen and (max-width: 1396px) {
+        @include adaptive(font-size, 15, 14, 0);
+      }
     }
     // .cv-form__input {
     &__input {
@@ -66,6 +70,14 @@
         @media only screen and (max-width: 600px) {
         }
       }
+      // .cv-form__input-btn {
+      &-btn {
+        @include adaptive(max-height, 55, 50, 0);
+        @include adaptive(height, 55, 50, 0);
+        width: 100%;
+        max-width: unset;
+        // @include adaptive(margin-bottom, 35, 25, 0);
+      }
     }
     // .cv-form__row {
     &__row {
@@ -94,6 +106,12 @@
           grid-template-columns: repeat(1, 100%);
         }
       }
+      &.__three-coll {
+        grid-template-columns: repeat(3, 1fr);
+        @media only screen and (max-width: 800px) {
+          grid-template-columns: repeat(1, 100%);
+        }
+      }
       &:last-child {
         margin-bottom: 0;
       }
@@ -115,6 +133,9 @@
       .cv-form {
         &__radio {
           @include adaptive(margin-bottom, 15, 10, 0);
+          &:last-of-type {
+            margin-bottom: 0;
+          }
           @media only screen and (max-width: 800px) {
             @include adaptive(margin-bottom, 25, 20, 0);
           }
@@ -124,9 +145,6 @@
             @include adaptive(margin-bottom, 25, 20, 0);
           }
         }
-      }
-      &.w75 {
-        width: 75%;
       }
     }
 
@@ -155,7 +173,7 @@
       @include adaptive(width, 195, 180, 0);
       @include adaptive(height, 255, 255, 0);
       position: relative;
-      overflow: hidden;
+      // overflow: hidden;
       color: $mainColor;
       background: #9b9b9b;
       @include adaptive(margin-bottom, 65, 30, 0);
@@ -185,6 +203,13 @@
       &-title {
         position: relative;
         z-index: 1;
+      }
+      // .cv-form__photo-wrapper {
+      &-wrapper {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        position: relative;
       }
     }
     // .cv-form-select {
@@ -351,7 +376,13 @@
     }
     // .cv-form__radio {
     &__radio {
+      // .cv-form__radio-label {
+      &-label {
+        font-weight: 500;
+        color: $textThirdColor;
+      }
     }
+
     // .cv-form__textarea {
     &__textarea {
       padding: 15px;
@@ -412,6 +443,9 @@
     &__btn {
       width: fit-content;
       @include adaptive(min-width, 215, 215, 0);
+      @media only screen and (max-width: 600px) {
+        align-self: center;
+      }
     }
   }
 }
