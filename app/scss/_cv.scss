@@ -13,6 +13,7 @@
     @include adaptive(padding-bottom, 45, 40, 0);
     @include adaptive(padding-left, 60, 20, 0);
     sup {
+      top: 0;
       @extend .t6;
     }
     // .cv-form__warning {
