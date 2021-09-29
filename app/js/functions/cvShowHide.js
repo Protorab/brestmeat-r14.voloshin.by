@@ -20,8 +20,6 @@ const cvShowHide = () => {
         }
       });
     });
-  } else {
-    return false;
   }
 };
 export default cvShowHide;
