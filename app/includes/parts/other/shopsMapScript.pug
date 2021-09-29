@@ -1,10 +1,10 @@
 script(type='text/javascript').
   // When the window has finished loading create our google map below
   var map;
-  var coordinate = [53.907116, 27.561822];
+  var coordinate = [53.907116, 27.561822];  //Minsk
   var lat = coordinate[0];
   var lng = coordinate[1];
-  var center = {lat:lat,lng:lng} //Minsk
+  var center = {lat:lat,lng:lng} 
   var defIcon = "./img/icons/icon-pin.svg"
   var windowXPosition = 220;
   var windowYPosition = 550;
@@ -17,7 +17,6 @@ script(type='text/javascript').
       };
 
       
-      console.log(windowYPosition);
   var maxWindowWidth= 440;
   var mapElement = document.getElementById("shopMap");
   var mapOptions = {
@@ -203,106 +202,197 @@ script(type='text/javascript').
     };
   var markers = [
       {
-          "title": "220088, Г. Брест,ул. Смоленская, 33",
-          "lat": "52.130218",
-          "lng": "23.706738",
-          "image": "./img/map-popup-image.jpg",
-          "workTimes":
-            [
-              ""
-            ],
+          'title': 'МАКАЗИН «КОНСУМ»',
+          'address': '220088, Г. Брест,ул. Смоленская, 33',
+          'lat': '52.130218',
+          'lng': '23.706738',
+          'image': './img/map-popup-image.jpg',
+          'wekDaysTime':'Понедельник: пятница 10:00-19:00',
+          'weekendTime':'Суббота 10:00-19:00, Воскресенье 10:00-17:00',
+          'washDay':'',
+          'phone1': '8 (017) 243 43 89',
+          'phone2': '8 (017) 365 28 46'
           
       },
       {
-          "title": 'г. Брест, ул. Писателя Смирнова, 4',
-          "lat": '52.095170',
-          "lng": '23.645024',
-          content: `<article  class="map-popup">
-                  <div class="map-popup__image">
-                    <img class="img--full img--center" loading="lazy" draggable="false" src='./img/map-popup-image.jpg'>
-                  </div>
-                  <h6 class="map-popup__title">Магазин “Консум”</h6>
-                  <p class="map-popup__address">г. Брест, ул. Писателя Смирнова, 4</p>
-                  <p class="map-popup__subtitle">Режим работы:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      Понедельник – пятница 10:00-19:00
-                    </li>
-                    <li class="map-popup__list-item">
-                      Суббота 10:00-17:00, Воскресенье - Выходной
-                    </li>
-                  </ul>
-                  <p class="map-popup__subtitle">Телефоны:</p>
-                  <ul class="map-popup__list">
-                    <li class="map-popup__list-item">
-                      <a href="tel:+375 (212) 61-45-98">
-                        +375 (212) 61-45-98
-                      </a>
-                      
-                    </li>
-                  </ul>
-                </article>`
+          'title': 'МАКАЗИН «КОНСУМ»',
+          'address': 'г. Брест, ул. Писателя Смирнова, 4',
+          'lat': '52.095170',
+          'lng': '23.645024',
+          'image': './img/map-popup-image.jpg',
+          'wekDaysTime':'Понедельник: пятница 8:00-20:00',
+          'weekendTime':'Суббота: 8:00-17:00, Воскресенье: Выходной',
+          'washDay':'',
+          'phone1': '+375 (212) 61-45-98',
+          'phone2': ''
+          
+      },
+      {
+          'title': 'МАКАЗИН «ЯН»',
+          'address': 'г. Брест, ул. Московская, 340',
+          'lat': '52.101029',
+          'lng': '23.767473',
+          'image': './img/map-popup-image.jpg',
+          'wekDaysTime':'Понедельник: пятница 8:00-20:00',
+          'weekendTime':'Суббота: 8:00-17:00, Воскресенье: Выходной',
+          'washDay':'',
+          'phone1': '+375 (212) 61-45-98',
+          'phone2': ''
+          
+      },
+      {
+          'title': 'МАКАЗИН «ВЕРАС-14»',
+          'address': 'г. Брест, ул. Гоголя, 80',
+          'lat': '52.094158',
+          'lng': '23.698941',
+          'image': './img/map-popup-image.jpg',
+          'wekDaysTime':'Понедельник: пятница 8:00-20:00',
+          'weekendTime':'Суббота: 8:00-17:00, Воскресенье: Выходной',
+          'washDay':'',
+          'phone1': '+375 (212) 61-45-98',
+          'phone2': ''
+          
+      },
+      {
+          'title': 'ЛОТОК МАГАЗИНА «ВЕРАС-14»',
+          'address': 'г.Брест, Центральный Брестский рынок, ул.Карбышева, 25',
+          'lat': '52.096809',
+          'lng': '23.692262',
+          'image': './img/map-popup-image.jpg',
+          'wekDaysTime':'8:00-18:00',
+          'weekendTime':'',
+          'washDay':'Сан день 1-й пн месяца',
+          'phone1': '+375 (212) 61-45-98',
+          'phone2': ''
+          
+      },
+      {
+          'title': 'МАКАЗИН «КОНСУМ»',
+          'address': 'г. Пинск, ул. Брестская, 19-4',
+          'lat': '52.111766',
+          'lng': '26.094622',
+          'image': './img/map-popup-image.jpg',
+          'wekDaysTime':'Понедельник: пятница 8:00-20:00',
+          'weekendTime':'Суббота: 8:00-17:00, Воскресенье: Выходной',
+          'washDay':'',
+          'phone1': '+375 (212) 61-45-98',
+          'phone2': ''
+          
+      },
+      {
+          'title': 'МАКАЗИН «КОНСУМ»',
+          'address': 'г. Брест, ул. Орджоникидзе, 7',
+          'lat': '52.098235',
+          'lng': '23.683382',
+          'image': './img/map-popup-image.jpg',
+          'wekDaysTime':'Понедельник: пятница 10:00-20:00',
+          'weekendTime':'',
+          'washDay':'Сан день: 1-й пн месяца',
+          'phone1': '+375 (212) 61-45-98',
+          'phone2': ''
+          
+      },
+      {
+          'title': 'МАКАЗИН «КОНСУМ»',
+          'address': 'г.Пружаны, ул. Ленина 6/1',
+          'lat': '52.556038',
+          'lng': '24.454550',
+          'image': './img/map-popup-image.jpg',
+          'wekDaysTime':'Понедельник: пятница 10:00-20:00',
+          'weekendTime':'',
+          'washDay':'Сан день: 1-й пн месяца',
+          'phone1': '+375 (212) 61-45-98',
+          'phone2': ''
+          
+      },
+      {
+          'title': 'МАКАЗИН «КОНСУМ»',
+          'address': 'г. Брест, ул. Волгоградская, 11',
+          'lat': '52.075447',
+          'lng': '23.756370',
+          'image': './img/map-popup-image.jpg',
+          'wekDaysTime':'Понедельник: пятница 8:00-20:00',
+          'weekendTime':'Суббота: 8:00-17:00, Воскресенье: Выходной',
+          'washDay':'',
+          'phone1': '+375 (212) 61-45-98',
+          'phone2': ''
+          
       }
     ]; 
   
   
   function init() {
-    var infoWindow = new google.maps.InfoWindow();
+    var infoWindow = new google.maps.InfoWindow({
+      maxWidth: 440,
+    });
     map = new google.maps.Map(mapElement, mapOptions);
     for (var i = 0; i < markers.length; i++) {
-            var marker = markers[i];
-            var myLatlng = new google.maps.LatLng(marker.lat, marker.lng);
-            var marker = new google.maps.Marker({
+            var data = markers[i];
+            var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+            var gMarker = new google.maps.Marker({
                 position: myLatlng,
                 map: map,
-                title: marker.title,
+                title: data.title,
                 icon: defIcon,
-            });
+                address:  data.address,
+                image: data.image,
+                wekDaysTime: data.wekDaysTime,
+                weekendTime: data.weekendTime,
+                washDay: data.washDay,
+                phone1: data.phone1,
+                phone2: data.phone2,
 
+            });
+            
             //Attach click event to the marker.
-            (function (marker, marker) {
-                google.maps.event.addListener(marker, "click", function (e) {
+            (function (gMarker, data) {
+                google.maps.event.addListener(gMarker, "click", function (e) {
                     //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
                     infoWindow.setContent(`<article  class="map-popup">
                       <div class="map-popup__image">
-                        <img class="img--full img--center" loading="lazy" draggable="false" src="${marker.image}">
+                        <img class="img--full img--center" loading="lazy" draggable="false" src="${gMarker.image}">
                       </div>
-                      <h6 class="map-popup__title">Магазин “Консум”</h6>
-                      <p class="map-popup__address">${marker.title}</p>
+                      <h6 class="map-popup__title">${gMarker.title}</h6>
+                      <p class="map-popup__address">${gMarker.address}</p>
                       <p class="map-popup__subtitle">Режим работы:</p>
                       <ul class="map-popup__list">
-                        ${marker.workTimeWeekDays 
+                        
+                        ${gMarker.wekDaysTime 
                           ? `<li class="map-popup__list-item">
-                              ${marker.workTimeWeekDays}
-                            </li>` 
+                                ${gMarker.wekDaysTime}
+                            </li>`
                           : ""}
-                        ${marker.workTimeWeekends 
+                        ${gMarker.weekendTime 
                           ? `<li class="map-popup__list-item">
-                              ${marker.workTimeWeekends}
-                            </li>` 
+                                ${gMarker.weekendTime}
+                            </li>`
                           : ""}
-                        ${marker.cleanDay 
+                        ${gMarker.washDay 
                           ? `<li class="map-popup__list-item">
-                              ${marker.cleanDay}
-                            </li>` 
+                                ${gMarker.washDay}
+                            </li>`
                           : ""}
                       </ul>
                       <p class="map-popup__subtitle">Телефоны:</p>
                       <ul class="map-popup__list">
                         <li class="map-popup__list-item">
-                          <a href="tel:8 (017) 243 43 89">
-                            8 (017) 243 43 89
-                          </a>
-                          <a href="tel:8 (017) 365 28 46">
-                            8 (017) 365 28 46
-                          </a>
+                          ${gMarker.phone1 
+                          ? `<a href="tel:${gMarker.phone1}">
+                              ${gMarker.phone1}
+                            </a>`
+                          : ""}
+                          ${gMarker.phone2 
+                          ? `<a href="tel:${gMarker.phone2}">
+                                  ${gMarker.phone2}
+                            </a>`
+                          : ""}
                         </li>
                       </ul>
                     </article>`);
                     
-                    infoWindow.open(map, marker);
+                    infoWindow.open(map, gMarker);
                 });
-            })(marker, marker);
+            })(gMarker, data);
         }
   }
   google.maps.event.addDomListener(window, "load", init);
