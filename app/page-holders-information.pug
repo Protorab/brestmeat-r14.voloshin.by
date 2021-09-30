@@ -1,0 +1,111 @@
+doctype html
+html(lang="ru")
+
+  //head start
+  include ./includes/mixins/head
+  +head("Информация для владельцев акций")
+  //head end
+
+  body.--fixed.__loading
+    //preloader start
+    include ./includes/parts/other/preloader
+    //preloader end
+    
+    //modal__search start
+    include ./includes/parts/other/modal__search.pug
+    //modal__search end
+
+    //header start
+    include ./includes/parts/main/header
+    //header end
+
+    //scrollToTopBtn start
+    include ./includes/elements/scrollToTopBtn
+    //scrollToTopBtn end
+
+    //page-holders-information start
+    main.main.page-holders-information.mt__nan
+
+      //page-top__banner start
+      include ./includes/mixins/page-top__banner
+      +page-top__banner(
+        "./img/page-top__banner.jpg",
+        "page-top__banner-holders-information")
+      //page-top__banner start
+
+      //breadcrumbs start
+      include ./includes/mixins/breadcrumbs
+      +breadcrumbs([
+        [
+          "Главная",
+          "index.html"
+        ],
+        [
+          "Информация для владельцев акций",
+          "page-holders-information.html"]
+        ])
+      //breadcrumbs end
+      section.section.holders-information-section.page-top__section
+        h1.section__title.holders-information-section__title.animate Информация для владельцев акций
+        .wrapper-s.animate
+          article.article.holders-information-article
+            ol
+              li
+                a(href="./assets/1-o-formirovanii-reestra-vladeltsev-tsennyh-bumag.pdf", target="_blank", rel="noopener noreferrer") О формировании реестра владельцев ценных бумаг
+              li
+                a(href="./assets/2-o-formirovanii-reestra-vladeltsev-tsennyh-bumag.pdf", target="_blank", rel="noopener noreferrer") О формировании реестра владельцев ценных бумаг
+              li
+                a(href="./assets/3-o-formirovanii-reestra-vladeltsev-tsennyh-bumag.PDF", target="_blank", rel="noopener noreferrer") О формировании реестра владельцев ценных бумаг
+              li
+                a(href="./assets/4-o-reorganizatsii-oao-brestskij-myasokombinat.PDF", target="_blank", rel="noopener noreferrer") О реорганизации ОАО «Брестский мясокомбинат»
+              li
+                a(href="./assets/5-o-formirovanii-reestra-vladeltsev-tsennyh-bumag.PDF", target="_blank", rel="noopener noreferrer") О формировании реестра владельцев ценных бумаг
+              li
+                a(href="./assets/6-o-formirovanii-reestra-vladeltsev-tsennyh-bumag.PDF", target="_blank", rel="noopener noreferrer") О формировании реестра владельцев ценных бумаг
+              li
+                a(href="./assets/7-o-reorganizatsii-oao-brestskij-myasokombinat.PDF", target="_blank", rel="noopener noreferrer") О реорганизации ОАО «Брестский мясокомбинат»
+              li
+                a(href="./assets/8-o-formirovanii-reestra-vladeltsev-tsennyh-bumag.pdf", target="_blank", rel="noopener noreferrer") О формировании реестра владельцев ценных бумаг
+              li
+                a(href="./assets/9-o-dopolnitelnoj-ehmissii-akcij.pdf", target="_blank", rel="noopener noreferrer") О дополнительной эмиссии акций
+              li
+                a(href="./assets/10-informacija-o-formirovanii-reestra-akcionerov.pdf", target="_blank", rel="noopener noreferrer") Информация о формировании реестра акционеров
+              li
+                a(href="./assets/11-informacija-o-formirovanii-reestra-akcionerov.pdf", target="_blank", rel="noopener noreferrer") Информация о формировании реестра акционеров
+              li
+                a(href="./assets/12-porjadok-vyplaty-dividendov-za-2018-god.pdf", target="_blank", rel="noopener noreferrer") Порядок выплаты дивидендов за 2018 год
+              li
+                a(href="./assets/13-o-provedenii-ocherednogo-obshchego-sobraniya-akcionerov.pdf", target="_blank", rel="noopener noreferrer") О проведении очередного общего собрания акционеров
+              li
+                a(href="./assets/14-informaciya-o-vyplate-dividendov.pdf", target="_blank", rel="noopener noreferrer") Информация о выплате дивидендов
+              li
+                a(href="./assets/15-informaciya-o-rezultatah-finansovo-hozyajstvennoj-deyatelnosti-za-2019.pdf", target="_blank", rel="noopener noreferrer") Информация о результатах финансово-хозяйственной деятельности за 2019
+              li
+                a(href="./assets/16-uvedomlenie-o-reorganizacii.pdf", target="_blank", rel="noopener noreferrer") Уведомление о реорганизации
+              li
+                a(href="./assets/17-informaciya-o-formirovanii-reestra-vladelcev-cennyh-bumag.pdf", target="_blank", rel="noopener noreferrer") О формировании реестра владельцев ценных бумаг
+              li
+                a(href="./assets/18-informaciya-o-reorganizacii.pdf", target="_blank", rel="noopener noreferrer") Информация о реорганизации
+              li
+                a(href="./assets/19-informaciya-o-formirovanii-reestra-vladelcev-cennyh-bumag.pdf", target="_blank", rel="noopener noreferrer") Информация о формировании реестра владельцев ценных бумаг
+              li
+                a(href="./assets/20-informaciya-o-registracii-akcij.pdf", target="_blank", rel="noopener noreferrer") Информация о регистрации акций
+              li
+                a(href="./assets/21-informaciya-o-reorganizacii.pdf", target="_blank", rel="noopener noreferrer") Информация о реорганизации
+              li
+                a(href="./assets/22-informaciya-o-registracii-akcij.pdf", target="_blank", rel="noopener noreferrer") Информация о регистрации акций
+              li
+                a(href="./assets/informaciya-o-vyplate-dividendov.pdf", target="_blank", rel="noopener noreferrer") Информация о выплате дивидендов
+              li
+                a(href="./assets/informaciya-o-rezultatah-finansovo-hozyajstvennoj-deyatelnosti-za-2020.pdf", target="_blank", rel="noopener noreferrer") Информация о результатах финансово-хозяйственной деятельности за 2020
+    //page-holders-information end
+    
+    //footer start
+    include ./includes/parts/main/footer
+    //footer end
+      
+    include ./includes/parts/other/modal__callback.pug
+    include ./includes/parts/other/modal__review.pug
+    include ./includes/parts/other/modal__thanks.pug
+    include ./includes/parts/other/modal__img.pug
+    include ./includes/parts/other/scripts.pug

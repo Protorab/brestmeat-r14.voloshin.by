@@ -1,0 +1,40 @@
+.holders {
+  // .holders-information {
+  &-information {
+    // .holders-information-section {
+    &-section {
+      // .holders-information-section__title {
+      &__title {
+      }
+    }
+    // .holders-information-article {
+    &-article {
+      .item {
+        &-number {
+          color: $accentColor;
+        }
+      }
+      ol {
+        font-weight: 500;
+        * {
+          @extend .t5;
+          font-weight: 500;
+        }
+        li {
+          a {
+            text-transform: uppercase;
+          }
+        }
+        &:not([class]) {
+          li {
+            @include adaptive(margin-bottom, 20, 15, 0);
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
