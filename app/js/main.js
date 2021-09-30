@@ -83,12 +83,14 @@ document.addEventListener("DOMContentLoaded", () => {
   customSelectFunc();
 
   collapsibleFunc();
+
   if (cvFormSelectWrappers.length > 0) {
     for (let i = 0; i < cvFormSelectWrappers.length; i++) {
       const cvFormSelectWrapper = cvFormSelectWrappers[i];
       cvFormSelectWrapper.style.zIndex = 100 - i;
     }
   }
+
   if (cvPhotoInps.length > 0) {
     cvPhotoInps.forEach((input) => {
       input.onchange = (e) => {
@@ -106,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     });
   }
+
   if (menuItems.length > 0) {
     menuItems.forEach((item) => {
       item.addEventListener("click", (e) => {
@@ -165,6 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
     WinPrint.focus();
     WinPrint.print();
   }
+
   function validateSize(input) {
     const fileSize = input.files[0].size / 1024 / 1024; // in MiB
     let warningText = document.createElement("span");
@@ -194,6 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
       fileName ? (fileName.textContent = input.files[0].name) : "";
     }
   }
+
   if (fileInputs.length > 0) {
     fileInputs.forEach((input) => {
       input.addEventListener("change", (e) => {

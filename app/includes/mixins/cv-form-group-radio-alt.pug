@@ -21,7 +21,7 @@ mixin cv-form-group-radio-alt(title,idSet,inputs,name,addClass,animate,scroll,is
         label(
           for=`${idSet}-${count}`,
           class=`${addClass ? addClass : "" }`).custom-radio__checker.cv-form__radio-checker
-        label(for=`${idSet}-${count}`).custom-radio__label.cv-form__radio-label!=value
+        label(for=`${idSet}-${count}`).custom-radio__label.cv-form__radio-label.form__label!=value
   else
     each input, idx in inputs
       - var count = idx+1
@@ -43,4 +43,4 @@ mixin cv-form-group-radio-alt(title,idSet,inputs,name,addClass,animate,scroll,is
         label(
           for=`${idSet}-${count}`,
           class=`${addClass ? addClass : "" }`).custom-radio__checker.cv-form__radio-checker
-        label(for=`${idSet}-${count}`).custom-radio__label.cv-form__radio-label!=value
+        label(for=`${idSet}-${count}`).custom-radio__label.cv-form__radio-label.form__label.form__label!=value

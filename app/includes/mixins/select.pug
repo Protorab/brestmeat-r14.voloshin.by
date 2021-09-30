@@ -10,15 +10,15 @@ mixin select(addID,addClass,title,checkTriangle,options,selectName,setRequired,c
       div(class=`custom-select__trigger ${addClass}-select__trigger`)
         span(class=`custom-select__title ${addClass}-select__title`)!=title
         if checkTriangle
-          i(class=`custom-select__triangle ${addClass}__triangle`)
+          i(class=`custom-select__triangle ${addClass}-select__triangle`)
         if checkArrow 
-          i(class=`custom-select__arrow ${addClass}__arrow`)
-      div(class=`custom-options ${addClass}__options`)
+          i(class=`custom-select__arrow ${addClass}-select__arrow`)
+      div(class=`custom-options ${addClass}-select__options`)
         each option, index in options
           - var count = index+1
           - var itemTitle = option[0]
           if count==1
-            span(class=`custom-option ${addClass}__option selected`,data-value='def')!=title
+            span(class=`custom-option ${addClass}-select__option selected`,data-value='def')!=title
           else
-            span(class=`custom-option ${addClass}__option`,data-value=`${itemTitle}`)!=itemTitle 
+            span(class=`custom-option ${addClass}-select__option`,data-value=`${itemTitle}`)!=itemTitle 
           

@@ -1,10 +1,10 @@
 mixin cv-form-group(title,idSet,type,name,placeholder,addClass,animate,scroll,maxDate,minDate)
-  label.cv-form__label(
+  label.cv-form__label.form__label(
     for=`${idSet}`,
     class=`${addClass ? addClass : "" } ${animate ? animate : "" }  ${scroll ? scroll : "" }`)  !{title}
     sup.red-color *
   if maxDate
-    input.cv-form__input(
+    input.cv-form__input.form__input(
       id=`${idSet}`,
       type=`${type}`, 
       name=`${name}`,
@@ -14,7 +14,7 @@ mixin cv-form-group(title,idSet,type,name,placeholder,addClass,animate,scroll,ma
       max=`${maxDate}`,
       min=`${minDate}`)
   else
-    input.cv-form__input(
+    input.cv-form__input.form__input(
       id=`${idSet}`,
       type=`${type}`, 
       name=`${name}`,

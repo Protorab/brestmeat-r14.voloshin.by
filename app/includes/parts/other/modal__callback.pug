@@ -1,0 +1,62 @@
+#modal__callback.modal
+  .modal__body.modal__body-callback.modal__body-form
+    a.modal__form-close.close__modal(href="#",role="button") 
+      span
+      span
+    form.modal__content.modal__form.modal__form-callback(
+      action="#", 
+      enctype="multipart/form-data",
+      method="post")
+      include ./../../mixins/form-group
+      include ./../../mixins/select
+      a.modal__close.modal__close-form.close__modal(href="#",role="button") 
+        span
+        span
+      fieldset.modal__form-content.modal__form-callback-content
+        legend.modal__form-title.modal__form-callback-title Обратная связь  
+        h6.modal__form-subtitle.modal__form-callback-subtitle Все поля являются обязательными для заполнения.
+        .modal__form-coll.modal__form-callback-coll
+          +form-group(
+            "ФИО","modal__callback-name","text","name","Написать...","modal__form","","")
+          +form-group(
+            "Страна","modal__callback-country","text","country","Написать...","modal__form","","")
+          +form-group(
+            "Город","modal__callback-city","text","city","Написать...","modal__form","","")
+          +form-group(
+            "Телефон","modal__callback-phone","tel","phone","Написать...","modal__form","","")
+        .modal__form-coll.modal__form-callback-coll
+          label.form__label.modal__form-label(for="modal__callback-subject")
+            | Выберите тему обращения
+            sup.red-color *
+          +select(
+            "modal__callback-subject","modal__form","Выбрать","checkTriangle",
+            [
+              [""],
+              ["Претензия по качеству"],
+              ["Вопрос"],
+              ["Благодарность"],
+              ["Предложение"],
+              ["Сотрудничество по РБ"],
+              ["Сотрудничество за рубежом"]
+            ],"subject","true","","","")
+          +form-group(
+            "Электронная почта","modal__callback-email","email","email","Написать...","modal__form","","")
+          label.modal__form-label.form__label(for="modal__callback-message")
+            | Сообщение
+            sup.red-color *
+          textarea.form__textarea.modal__form-textarea.modal__form-callback-textarea(
+            name="message", 
+            cols="30", 
+            rows="10",
+            id="modal__callback-message",
+            placeholder="Написать...")
+          label.modal__form-file__label(for="modal__callback-file") 
+            input#modal__callback-file.form__file(
+              type="file", 
+              name="callback-file",
+              data-warning-text="Размер файла не должен превышать 2 Мб",
+              multiple="multiple" )
+            span.modal__form-file__title Прикрепить файлы 
+              i.file-label__icon.modal__form-file-label__icon
+            span.modal__form-file__name.file-name Название файла
+        button.btn(type='submit').btn.modal__form-btn.modal__form-callback-btn Отправить 

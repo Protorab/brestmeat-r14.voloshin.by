@@ -16,24 +16,24 @@ section.section.cv-section.__students.page-top__section
     .cv-form__fieldset.__students
       .cv-form__row.__department.__students
         .cv-form__coll.__students.__students 
-          label.cv-form__label.__students.animate.scroll(for="department") Отдел
-          input#department.cv-form__input.animate.scroll(
+          label.cv-form__label.form__label.__students.animate.scroll(for="department") Отдел
+          input#department.cv-form__input.form__input.animate.scroll(
             type="text",
             name="department",
             placeholder="Данное поле заполняет сотрудник отдела")
-          label.cv-form__label.__students.animate.scroll(for="department-phone") Телефон
-          input#department-phone.cv-form__input.__students.animate.scroll(
+          label.cv-form__label.form__label.__students.animate.scroll(for="department-phone") Телефон
+          input#department-phone.cv-form__input.form__input.__students.animate.scroll(
             type="tel",
             name="department-phone",
             placeholder="Данное поле заполняет сотрудник отдела")
         .cv-form__coll.__students 
-          label.cv-form__label.__students.animate.scroll(for="department-position") Должность / профессия
-          input#department-position.cv-form__input.__students.animate.scroll(
+          label.cv-form__label.form__label.__students.animate.scroll(for="department-position") Должность / профессия
+          input#department-position.cv-form__input.form__input.__students.animate.scroll(
             type="text",
             name="department-position",
             placeholder="Данное поле заполняет сотрудник отдела")
-          label.cv-form__label.__students.animate.scroll(for="department-from-whom") От кого
-          input#department-from-whom.cv-form__input.__students.animate.scroll(
+          label.cv-form__label.form__label.__students.animate.scroll(for="department-from-whom") От кого
+          input#department-from-whom.cv-form__input.form__input.__students.animate.scroll(
             type="text",
             name="department-from-whom",
             placeholder="Данное поле заполняет сотрудник отдела")
@@ -53,7 +53,7 @@ section.section.cv-section.__students.page-top__section
             span.cv-form__photo-title 
               | Загрузить фото
               sup.red-color *
-          label.cv-form__label.__students.animate.scroll(for="family-status")
+          label.cv-form__label.form__label.__students.animate.scroll(for="family-status")
             | Семейное положение
             sup.red-color *
           include ./../../mixins/select
@@ -73,7 +73,7 @@ section.section.cv-section.__students.page-top__section
             "Фамилия","cv-surname","text","surname","Написать","__students","animate","scroll")
           +cv-form-group(
             "Отчество","cv-second","text","lname","Написать","__students","animate","scroll")
-          label.cv-form__label.__students.animate.scroll(for="cv-sex")
+          label.cv-form__label.form__label.__students.animate.scroll(for="cv-sex")
             | Пол
             sup.red-color *
           +select(
@@ -93,7 +93,7 @@ section.section.cv-section.__students.page-top__section
             "Имя","cv-name","text","name","Написать","__students","animate","scroll")
           +cv-form-group(
             "Дата рождения","cv-birth-date","date","birth-date","","__students","animate","scroll","2003-12-31","1959-01-01")
-          label.cv-form__label.__students.animate.scroll(for="cv-citizenship")
+          label.cv-form__label.form__label.__students.animate.scroll(for="cv-citizenship")
             | Гражданство
             sup.red-color *
           +select(
@@ -133,7 +133,7 @@ section.section.cv-section.__students.page-top__section
             "№ группы","cv-group-number","text","group-number","Написать","__students","animate","scroll")
       .cv-form__row.rs.__students
         .cv-form__coll.__students
-          label.cv-form__label.__students(
+          label.cv-form__label.form__label.__students(
             for=`cv-start-edc`)  Период обучения
             sup.red-color *
           .cv-form__group.animate.scroll.__students
@@ -157,7 +157,7 @@ section.section.cv-section.__students.page-top__section
             "Предполагается ли распределение после окончания уч. заведения","cv-distribution","text","distribution","Написать...","__students","animate","scroll")
       .cv-form__row.__students
         .cv-form__coll.__students
-          label.cv-form__label.__students.animate.scroll(for="cv-education-form")
+          label.cv-form__label.form__label.__students.animate.scroll(for="cv-education-form")
             | Форма обучения
             sup.red-color *
           +select(
@@ -171,7 +171,7 @@ section.section.cv-section.__students.page-top__section
               ["Другое"]
             ],"education-form","true","","animate","scroll")
         .cv-form__coll.__students
-          label.cv-form__label.__students.animate.scroll(for="cv-education-payment")
+          label.cv-form__label.form__label.__students.animate.scroll(for="cv-education-payment")
             | Форма оплаты
             sup.red-color *
           +select(
@@ -207,7 +207,7 @@ section.section.cv-section.__students.page-top__section
       legend.cv-form__title.__students.animate.scroll  ВЛАДЕНИЕ ИНОСТРАННЫМИ ЯЗЫКАМИ
       .cv-form__row.__students#language
         .cv-form__coll.__students
-          label.cv-form__label.__students.animate.scroll(for="cv-language")
+          label.cv-form__label.form__label.__students.animate.scroll(for="cv-language")
             | Иностранный язык
             sup.red-color *
           +select(
@@ -224,7 +224,7 @@ section.section.cv-section.__students.page-top__section
               ["Польский"]
             ],"language","true","","animate","scroll")
         .cv-form__coll.__students
-          label.cv-form__label.__students.animate.scroll(for="cv-language-level")
+          label.cv-form__label.form__label.__students.animate.scroll(for="cv-language-level")
             | Уровень владения
             sup.red-color *
           +select(
@@ -247,7 +247,7 @@ section.section.cv-section.__students.page-top__section
       legend.cv-form__title.__students.animate.scroll  Знание ПК
       .cv-form__row.__students
         .cv-form__coll.__students
-          label.cv-form__label.__students.animate.scroll(for="cv-word")
+          label.cv-form__label.form__label.__students.animate.scroll(for="cv-word")
             | Word
           +select(
             "cv-word","cv-form","Выбрать","checkTriangle",
@@ -261,7 +261,7 @@ section.section.cv-section.__students.page-top__section
               ["Профессиональный"]
             ],"word","false","","animate","scroll")
         .cv-form__coll.__students
-          label.cv-form__label.__students.animate.scroll(for="cv-excel")
+          label.cv-form__label.form__label.__students.animate.scroll(for="cv-excel")
             | Excel
           +select(
             "cv-excel","cv-form","Выбрать","checkTriangle",
@@ -275,7 +275,7 @@ section.section.cv-section.__students.page-top__section
               ["Профессиональный"]
             ],"excel","false","","animate","scroll")
         .cv-form__coll.__students
-          label.cv-form__label.__students.animate.scroll(for="cv-PowerPoint")
+          label.cv-form__label.form__label.__students.animate.scroll(for="cv-PowerPoint")
             | PowerPoint
           +select(
             "cv-PowerPoint","cv-form","Выбрать","checkTriangle",
@@ -289,7 +289,7 @@ section.section.cv-section.__students.page-top__section
               ["Профессиональный"]
             ],"PowerPoint","false","","animate","scroll")
         .cv-form__coll.__students
-          label.cv-form__label.__students.animate.scroll(for="cv-Outlook")
+          label.cv-form__label.form__label.__students.animate.scroll(for="cv-Outlook")
             | Outlook
           +select(
             "cv-Outlook","cv-form","Выбрать","checkTriangle",
@@ -303,7 +303,7 @@ section.section.cv-section.__students.page-top__section
               ["Профессиональный"]
             ],"Outlook","false","","animate","scroll")
         .cv-form__coll.__students
-          label.cv-form__label.__students.animate.scroll(for="cv-AutoCad")
+          label.cv-form__label.form__label.__students.animate.scroll(for="cv-AutoCad")
             | AutoCad
           +select(
             "cv-AutoCad","cv-form","Выбрать","checkTriangle",
@@ -317,7 +317,7 @@ section.section.cv-section.__students.page-top__section
               ["Профессиональный"]
             ],"AutoCad","false","","animate","scroll")
         .cv-form__coll.__students
-          label.cv-form__label.__students.animate.scroll(for="cv-1С")
+          label.cv-form__label.form__label.__students.animate.scroll(for="cv-1С")
             | 1С
           +select(
             "cv-1С","cv-form","Выбрать","checkTriangle",
@@ -331,7 +331,7 @@ section.section.cv-section.__students.page-top__section
               ["Профессиональный"]
             ],"1С","false","","animate","scroll")
         .cv-form__coll.__students
-          label.cv-form__label.__students.animate.scroll(
+          label.cv-form__label.form__label.__students.animate.scroll(
             for=`cv-other-soft`)  Другое
           input.cv-form__input.__students.animate.scroll(
             id=`cv-other-soft`,
@@ -342,7 +342,7 @@ section.section.cv-section.__students.page-top__section
       legend.cv-form__title.__students.animate.scroll Практика
       .cv-form__row.__students
         .cv-form__coll.__students
-          label.cv-form__label.__students.animate.scroll(for="cv-practice")
+          label.cv-form__label.form__label.__students.animate.scroll(for="cv-practice")
             | Вид практики
             sup.red-color *
           +select(
@@ -357,7 +357,7 @@ section.section.cv-section.__students.page-top__section
               ["Вид 6"]
             ],"practice-type","true","","animate","scroll")
         .cv-form__coll.__students
-          label.cv-form__label.__students.animate.scroll(
+          label.cv-form__label.form__label.__students.animate.scroll(
             for=`cv-start-practice`)  Период практики
             sup.red-color *
           .cv-form__group.animate.scroll.__students
@@ -381,7 +381,7 @@ section.section.cv-section.__students.page-top__section
           +cv-form-group(
             "До какой даты Вам необходимо определиться с базой <br> практики","cv-practice-date","date","practice-date","","__students","animate","scroll","2100-12-31","1959-01-01")
         .cv-form__coll.__students
-          label.cv-form__label.__students.animate.scroll(for="cv-hostel")
+          label.cv-form__label.form__label.__students.animate.scroll(for="cv-hostel")
             | Нуждаетесь ли Вы в предоставлении общежития на время прохождения практики
             sup.red-color *
           +select(
@@ -406,7 +406,7 @@ section.section.cv-section.__students.page-top__section
             ]
             ,"like-specialization","__students","animate","scroll","required","like-specialization-reason")
           .cv-form__input-wrapper#like-specialization-reason(style="display: none;")
-            textarea.cv-form__textarea.__students(
+            textarea.form__textarea.cv-form__textarea.__students(
               name="like-specialization-reason", 
               cols="30", 
               rows="10",
@@ -420,7 +420,7 @@ section.section.cv-section.__students.page-top__section
             ]
             ,"work-specialization","__students","animate","scroll","required","work-specialization-reason")
           .cv-form__input-wrapper#work-specialization-reason(style="display: none;")
-            textarea.visible-state.cv-form__textarea.__students(
+            textarea.form__textarea.cv-form__textarea.__students(
               name="work-specialization-reason", 
               cols="30", 
               rows="10",
@@ -464,10 +464,10 @@ section.section.cv-section.__students.page-top__section
       legend.cv-form__title.__students.animate.scroll Мотивационное письмо
       .cv-form__row.__students
         .cv-form__coll.__students
-          label.cv-form__label.__students.animate.scroll(
+          label.cv-form__label.form__label.__students.animate.scroll(
             for=`cv-motivation`)  Почему ОАО “Брестсткий мясокомбинат” должен именно Вас взять на практику?*
             sup.red-color *
-          textarea.cv-form__textarea.__motivation.__students.animate.scroll(
+          textarea.form__textarea.cv-form__textarea.__motivation.__students.animate.scroll(
             name="motivation-reason", 
             cols="30", 
             rows="10",

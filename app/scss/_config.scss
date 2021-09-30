@@ -1389,3 +1389,65 @@ label {
     overflow: auto;
   }
 }
+.form {
+  // .form__label {
+  &__label {
+    font-weight: 500;
+    color: $textThirdColor;
+
+    @media only screen and (max-width: 1396px) {
+      @include adaptive(font-size, 15, 14, 0);
+    }
+  }
+  // .form__input {
+  &__input {
+    padding: 15px;
+    color: $texEightColor;
+    border: 1px solid #c4c4c4;
+    width: 100%;
+    @include adaptive(max-height, 55, 50, 0);
+    @include adaptive(height, 55, 50, 0);
+    @include _borderRadius(4px);
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    &[type="number"] {
+      -moz-appearance: textfield;
+    }
+    &::placeholder {
+      color: $texEightColor;
+    }
+  }
+  // .form__textarea {
+  &__textarea {
+    padding: 15px;
+    color: $texEightColor;
+    border: 1px solid #c4c4c4;
+    width: 100%;
+    max-width: 100%;
+  }
+  // .form__file {
+  &__file {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+}
+.file {
+  &-label {
+    &__icon {
+      display: inline-flex;
+      width: 15px;
+      height: 15px;
+      justify-content: center;
+      align-items: center;
+      background-image: url("../img/icons/icon-clip.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      margin-left: 5px;
+    }
+  }
+}

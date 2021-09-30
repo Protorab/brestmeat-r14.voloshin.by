@@ -1,0 +1,23 @@
+mixin form-group(title,idSet,type,name,placeholder,addClass,animate,scroll,maxDate,minDate)
+  label.form__label(
+    for=`${idSet}`,
+    class=`${addClass ? `${addClass}-label` : "" } ${animate ? animate : "" }  ${scroll ? scroll : "" }`)  !{title}
+    sup.red-color *
+  if maxDate
+    input.form__input(
+      id=`${idSet}`,
+      type=`${type}`, 
+      name=`${name}`,
+      placeholder=`${placeholder ? placeholder : ""}`,
+      class=`${addClass ? `${addClass}-input` : "" } ${animate ? animate : "" }  ${scroll ? scroll : "" }`,
+      required
+      max=`${maxDate}`,
+      min=`${minDate}`)
+  else
+    input.form__input(
+      id=`${idSet}`,
+      type=`${type}`, 
+      name=`${name}`,
+      placeholder=`${placeholder ? placeholder : ""}`,
+      class=`${addClass ? `${addClass}-input` : "" } ${animate ? animate : "" }  ${scroll ? scroll : "" }`,
+      required)

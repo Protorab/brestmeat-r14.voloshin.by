@@ -1,6 +1,6 @@
 mixin cv-form-group-radio(title,idSet,inputs,name,addClass,animate,scroll,isRequired,dataId)
   if isRequired
-    label.cv-form__label(
+    label.cv-form__label.form__label(
       for=`${idSet}`,
       class=`${addClass ? addClass : "" } ${animate ? animate : "" }  ${scroll ? scroll : "" }`)  !{title}
       sup.red-color *
@@ -25,9 +25,9 @@ mixin cv-form-group-radio(title,idSet,inputs,name,addClass,animate,scroll,isRequ
         label(
           for=`${idSet}-${count}`,
           class=`${addClass ? addClass : "" }`).custom-radio__checker.cv-form__radio-checker
-        label(for=`${idSet}-${count}`).custom-radio__label.cv-form__radio-label!=value
+        label(for=`${idSet}-${count}`).custom-radio__label.cv-form__radio-label.form__label!=value
   else
-    label.cv-form__label(
+    label.cv-form__label.form__label(
     for=`${idSet}`,
     class=`${addClass ? addClass : "" } ${animate ? animate : "" }  ${scroll ? scroll : "" }`)  !{title}
     each input, idx in inputs
@@ -50,4 +50,4 @@ mixin cv-form-group-radio(title,idSet,inputs,name,addClass,animate,scroll,isRequ
         label(
           for=`${idSet}-${count}`,
           class=`${addClass ? addClass : "" }`).custom-radio__checker.cv-form__radio-checker
-        label(for=`${idSet}-${count}`).custom-radio__label.cv-form__radio-label!=value
+        label(for=`${idSet}-${count}`).custom-radio__label.form__label.cv-form__radio-label!=value

@@ -30,35 +30,10 @@
     &__label {
       // @include adaptive(margin-bottom, 10, 10, 0);
       margin-bottom: 10px;
-      font-weight: 500;
-      color: $textThirdColor;
-
-      @media only screen and (max-width: 1396px) {
-        @include adaptive(font-size, 15, 14, 0);
-      }
     }
     // .cv-form__input {
     &__input {
-      padding: 15px;
-      color: $texEightColor;
-      border: 1px solid #c4c4c4;
-      width: 100%;
       // max-height: 50px;
-      @include adaptive(max-height, 55, 50, 0);
-      @include adaptive(height, 55, 50, 0);
-
-      @include _borderRadius(4px);
-      &::-webkit-outer-spin-button,
-      &::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
-      &[type="number"] {
-        -moz-appearance: textfield;
-      }
-      &::placeholder {
-        color: $texEightColor;
-      }
 
       // .cv-form__input-wrapper {
       &-wrapper {
@@ -295,25 +270,25 @@
         overflow: hidden;
         // width: 60%;
       }
-    }
-    // .cv-form__triangle {
-    &__triangle {
-      filter: grayscale(100%);
-    }
-    // .cv-form__options {
-    &__options {
-      border: 1px solid #c4c4c4;
-      max-height: 200px;
-      overflow-x: hidden;
-      overflow-y: auto;
-      @include _transition(all, 0.25s);
-    }
-    // .cv-form__option {
-    &__option {
-      padding: 0 15px;
-      @include adaptive(font-size, 14, 12, 0);
-      text-overflow: ellipsis;
-      overflow: hidden;
+      // .cv-form-select__triangle {
+      &__triangle {
+        filter: grayscale(100%);
+      }
+      // .cv-form-select__options {
+      &__options {
+        border: 1px solid #c4c4c4;
+        max-height: 200px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        @include _transition(all, 0.25s);
+      }
+      // .cv-form-select__option {
+      &__option {
+        padding: 0 15px;
+        @include adaptive(font-size, 14, 12, 0);
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
     }
     // .cv-form__group {
     &__group {
@@ -432,18 +407,11 @@
     &__radio {
       // .cv-form__radio-label {
       &-label {
-        font-weight: 500;
-        color: $textThirdColor;
       }
     }
 
     // .cv-form__textarea {
     &__textarea {
-      padding: 15px;
-      color: $texEightColor;
-      border: 1px solid #c4c4c4;
-      width: 100%;
-      max-width: 100%;
       @include adaptive(max-height, 95, 75, 0);
       &.__motivation {
         @include adaptive(max-height, 210, 145, 0);

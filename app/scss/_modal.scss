@@ -25,12 +25,14 @@
     max-width: 95%;
     max-height: 97%;
     display: flex;
-    // .modal__body.__form {
-    &.__form {
+    // .modal__body-form {
+    &-form {
+      max-width: 825px;
+      background: #f4f4f4;
     }
-
-    // .modal__body.__review {
-    &.__review {
+    // .modal__content-callback {
+    &-callback {
+      // max-height: 695px;
     }
     // .modal__body.__Img {
     &.__img {
@@ -87,14 +89,14 @@
   &__close {
     cursor: pointer;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 15px;
+    right: 15px;
     width: 25px;
     height: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    z-index: 2;
     @include _transition(all, 0.3s);
 
     span {
@@ -104,7 +106,7 @@
       display: block;
       background: $textColor;
       width: 100%;
-      height: 3px;
+      height: 2px;
       bottom: 10px;
       @include _transition(all, 0.3s);
 
@@ -112,7 +114,18 @@
         transform: rotate(-45deg);
       }
     }
-
+    // .modal__close-form {
+    &-form {
+      @media only screen and (min-width: 800px) {
+        display: none;
+      }
+    }
+    // .modal__close-thanks {
+    &-thanks {
+      @media only screen and (min-width: 800px) {
+        display: none;
+      }
+    }
     &.__img {
       width: 35px;
       height: 35px;
@@ -145,75 +158,251 @@
 
   // .modal__form
   &__form {
-    max-width: 450px;
-    margin-left: auto;
-    margin-right: auto;
-    // .modal__form.__review {
-    &.__review {
-      max-width: 550px;
+    width: 100%;
+    height: 100%;
+    background: #f4f4f4;
+    border-style: solid;
+    border-color: $mainColor;
+    @include adaptive(border-width, 20, 15, 0);
+    @include adaptive(padding, 30, 15, 0);
+    @media only screen and (max-width: 800px) {
+      @include adaptive(padding-top, 50, 45, 0);
     }
-    // .modal-form__content
-    &-content {
-      border: none;
-      padding: 100px 20px 50px;
-      @include adaptive(padding-top, 80, 65, 0);
-      @include adaptive(padding-right, 25, 20, 0);
-      @include adaptive(padding-bottom, 25, 15, 0);
-      @include adaptive(padding-left, 25, 20, 0);
 
+    // .modal__form-callback {
+    &-callback {
+      // .modal__form-callback-textarea {
+      &-textarea {
+        max-height: 75px;
+        min-height: 75px;
+        height: 75px;
+        margin-top: 5px;
+        @include adaptive(margin-top, 5, 2, 0);
+      }
+    }
+    // .modal__form-label {
+    &-label {
+      margin-bottom: 10px;
+    }
+    &-select {
+      // .modal__form-select__wrapper {
+      &__wrapper {
+        z-index: 1;
+      }
+      // .modal__form-select__input {
+      &__input {
+      }
+      // .modal__form-select__trigger {
+      &__trigger {
+        height: unset;
+        padding: 15px;
+        // max-height: 50px;
+        @include adaptive(max-height, 55, 50, 0);
+        @include adaptive(height, 55, 50, 0);
+
+        background: $mainColor;
+        border: 1px solid #c4c4c4;
+        @include _borderRadius(4px);
+      }
+      // .modal__form-select__title {
+      &__title {
+        @extend .p;
+        color: $texEightColor;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        // width: 60%;
+      }
+      // .modal__form-select__triangle {
+      &__triangle {
+        // filter: grayscale(100%);
+      }
+      // .modal__form-select__options {
+      &__options {
+        border: 1px solid #c4c4c4;
+        max-height: 200px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        @include _transition(all, 0.25s);
+      }
+      // .modal__form-select__option {
+      &__option {
+        padding: 0 15px;
+        @include adaptive(font-size, 14, 12, 0);
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+    // .modal__form-content {
+    &-content {
+      width: 100%;
+      height: auto;
+      display: grid;
+      justify-content: space-between;
+      align-items: stretch;
+      position: relative;
+      grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+      @include adaptive(grid-column-gap, 30, 20, 0);
+      @include adaptive(grid-row-gap, 30, 20, 0);
+      @media only screen and (max-width: 600px) {
+        grid-template-columns: repeat(1, 100%);
+      }
+    }
+    // .modal__form-title {
+    &-title {
+      display: flex;
+      grid-column: 1/-1;
+      @extend .t3;
+      font-weight: 500;
+      @include adaptive(margin-bottom, 10, 7, 0);
+    }
+    // .modal__callback-subtitle {
+    &-subtitle {
+      display: flex;
+      grid-column: 1/-1;
+    }
+    // .modal__form-btn {
+    &-btn {
+      grid-column: 1/-1;
+      align-self: center;
+      justify-self: center;
+      @include adaptive(max-width, 220, 215, 0);
+    }
+
+    // .modal__form-coll {
+    &-coll {
       display: flex;
       flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
       width: 100%;
-    }
-
-    // .modal__form-title
-    &-title {
-      // position: absolute;
-      display: flex;
-      @extend .t4;
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-left: auto;
-      margin-right: auto;
-      top: 40px;
-      left: 0;
-      width: 100%;
-      padding: 0 25px;
-      margin: 0;
-
-      text-align: center;
-      align-items: center;
-      justify-content: center;
-    }
-
-    // .modal__form-input
-    &-input {
-      @include _borderRadius(0);
-      @include adaptive(padding-top, 15, 10, 0);
-      @include adaptive(padding-bottom, 15, 10, 0);
-      padding-left: 0;
-      border-bottom: 1px solid $textColor;
-      &:last-of-type {
-        @include adaptive(margin-bottom, 20, 15, 0);
+      height: 100%;
+      > *:not(label) {
+        @include adaptive(margin-bottom, 35, 25, 0);
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      .modal__form-textarea {
+        // margin-bottom: 15px;
+        @media only screen and (min-width: 800px) {
+          margin-bottom: 0;
+        }
       }
     }
     // .modal__form-textarea {
     &-textarea {
-      border: 1px solid $textColor;
+      @include _borderRadius(4px);
     }
+    // .modal__form-file {
+    &-file {
+      // .modal__form-file__label {
+      &__label {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        position: relative;
+      }
+      // .modal__form-file__title {
+      &__title {
+        color: $accentColor;
+        font-weight: 500;
+        margin-top: auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      // .modal__form-file__name {
+      &__name {
+        @extend .p;
+        margin-top: auto;
+        padding: 10px 15px;
+        background: $mainColor;
+        @include _borderRadius(4px);
+        border: 1px solid #c4c4c4;
+      }
+      // .modal__form-file__wrapper {
+      &__wrapper {
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    // .modal__form-close {
+    &-close {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: 0;
+      right: unset;
+      left: 100%;
+      background: $accentColor;
+      @include _transition(all, 0.35s);
+      opacity: 0;
+      transform: translate(-100%, 0%);
+      transition-delay: 0.2s;
+      @media only screen and (max-width: 800px) {
+        display: none;
+      }
 
-    // .modal__form-checkbox {
-    &-checkbox {
+      span {
+        width: 15px;
+        height: 2px;
+        background: $mainColor;
+        position: absolute;
+        &:nth-child(1) {
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          transform: rotate(-45deg);
+        }
+      }
+      &:hover {
+        background: $accentSecondColor;
+      }
     }
-    // .modal__form-btn {
-    &-btn {
-      @include adaptive(margin-top, 40, 30, 0);
+    // .modal__form-question {
+    &-question {
+      // .modal__form-question-textarea {
+      &-textarea {
+        min-height: 135px;
+        height: 135px;
+        max-height: 135px;
+      }
 
-      max-width: 100%;
+      // .modal__form-question-coll {
+      &-coll {
+        // display: none;
+
+        &:first-of-type,
+        &:last-of-type {
+          grid-column: 1/-1;
+        }
+      }
     }
-    // .modal__form-textarea
-    &-textarea {
-      margin-bottom: 15px;
+    // .modal__form-review {
+    &-review {
+      // .modal__form-review-textarea {
+      &-textarea {
+        min-height: 135px;
+        height: 135px;
+        max-height: 135px;
+      }
+
+      // .modal__form-review-coll {
+      &-coll {
+        // display: none;
+
+        &:first-of-type,
+        &:last-of-type {
+          grid-column: 1/-1;
+        }
+      }
     }
   }
 
@@ -381,10 +570,40 @@
       @include adaptive(width, 60, 55, 0);
     }
   }
+  // .modal__thanks {
+  &__thanks {
+    max-width: 675px;
+    // .modal__thanks-content {
+    &-content {
+      @extend .t4;
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      background: #f4f4f4;
+      border-style: solid;
+      border-color: $mainColor;
+      @include adaptive(border-width, 20, 15, 0);
+      @include adaptive(padding, 30, 15, 0);
+      * {
+        @extend .t4;
+      }
+    }
+    // .modal__thanks-close {
+    &-close {
+      @extend .modal__form-close;
+    }
+  }
   &.--open {
     opacity: 1;
     visibility: visible;
     // backdrop-filter: blur(10px);
+    @media only screen and (min-width: 800px) {
+      .modal__form-close {
+        opacity: 1;
+
+        transform: translate(0%, 0%);
+      }
+    }
   }
 }
 

@@ -24,7 +24,7 @@ section.section.cv-section.page-top__section
                 value=`ОАО "Брестский мясокомбинат" `
                 required)
             label(for=`cv-company-1`).custom-radio__checker.cv-form__radio-checker
-            label(for=`cv-company-1`).custom-radio__label.cv-form__radio-label ОАО "Брестский мясокомбинат" 
+            label(for=`cv-company-1`).custom-radio__label.cv-form__radio-label.form__label ОАО "Брестский мясокомбинат" 
         .cv-form__coll 
           span.custom-radio.cv-form__radio.animate.scroll 
             input.custom-radio__input.cv-form__radio-input(
@@ -35,7 +35,7 @@ section.section.cv-section.page-top__section
                 value=`ПУП "Брестские традиции" `
                 required)
             label(for=`cv-company-2`).custom-radio__checker.cv-form__radio-checker
-            label(for=`cv-company-2`).custom-radio__label.cv-form__radio-label ПУП "Брестские традиции" 
+            label(for=`cv-company-2`).custom-radio__label.cv-form__radio-label.form__label ПУП "Брестские традиции" 
         .cv-form__coll
           span.custom-radio.cv-form__radio.animate.scroll 
             input.custom-radio__input.cv-form__radio-input(
@@ -46,7 +46,7 @@ section.section.cv-section.page-top__section
                 value=`ТУП "Брестские угощения" `
                 required)
             label(for=`cv-company-3`).custom-radio__checker.cv-form__radio-checker
-            label(for=`cv-company-3`).custom-radio__label.cv-form__radio-label ТУП "Брестские угощения" 
+            label(for=`cv-company-3`).custom-radio__label.cv-form__radio-label.form__label ТУП "Брестские угощения" 
       .cv-form__row
         .cv-form__coll
           +cv-form-group(
@@ -59,7 +59,7 @@ section.section.cv-section.page-top__section
             "Фамилия","cv-surname","text","surname","Написать....","","animate","scroll")
           +cv-form-group(
             "Дата рождения","cv-birth-date","date","birth-date","","","animate","scroll","2003-12-31","1959-01-01")
-          label.cv-form__label.animate.scroll(for="cv-sex")
+          label.cv-form__label.form__label.animate.scroll(for="cv-sex")
             | Пол
             sup.red-color *
           +select(
@@ -73,7 +73,7 @@ section.section.cv-section.page-top__section
         .cv-form__coll
           +cv-form-group(
             "Имя","cv-name","text","name","Написать","","animate","scroll")
-          label.cv-form__label.animate.scroll(for="cv-citizenship")
+          label.cv-form__label.form__label.animate.scroll(for="cv-citizenship")
             | Гражданство
             sup.red-color *
           +select(
@@ -90,7 +90,7 @@ section.section.cv-section.page-top__section
           +cv-form-group(
             "Отчество","cv-second","text","lname","Написать","","animate","scroll")
           .cv-form__photo-wrapper.animate.scroll
-            label.cv-form__label.file-name(for="cv-personal__photo") Прикрепить Ваше фото (размер до 2 Мб)
+            label.cv-form__label.form__label.file-name(for="cv-personal__photo") Прикрепить Ваше фото (размер до 2 Мб)
             input#cv-personal__photo.cv-form__photo-input(
                 type="file", 
                 name="personal photo",
@@ -112,7 +112,7 @@ section.section.cv-section.page-top__section
       legend.cv-form__title.animate.scroll  Образование
       .cv-form__row
         .cv-form__coll
-          label.cv-form__label.animate.scroll(for="cv-level-education")
+          label.cv-form__label.form__label.animate.scroll(for="cv-level-education")
             | Уровень образования
             sup.red-color *
           +select(
@@ -163,20 +163,20 @@ section.section.cv-section.page-top__section
             ,"family-status","","animate","scroll","required","family-status")
       .cv-form__row.cv-form__input-wrapper#family-status(style="display: none;")
         .cv-form__coll
-          label.cv-form__label(for="cv-spouse-info")
+          label.cv-form__label.form__label(for="cv-spouse-info")
             | ФИО и место работы супруги(а)
             sup.red-color *
-          textarea.cv-form__textarea.__students(
+          textarea.form__textarea.cv-form__textarea.__students(
             name="spouse-info", 
             cols="30", 
             rows="10",
             id="cv-spouse-info",
             placeholder="Написать...")
         .cv-form__coll
-          label.cv-form__label(for="cv-childe-info")
+          label.cv-form__label.form__label(for="cv-childe-info")
             | Дети (Ф.И.О., возраст, место учёбы/работы)
             sup.red-color *
-          textarea.cv-form__textarea.__students(
+          textarea.form__textarea.cv-form__textarea.__students(
             name="childe-info", 
             cols="30", 
             rows="10",

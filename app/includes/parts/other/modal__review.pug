@@ -1,0 +1,37 @@
+#modal__review.modal
+  .modal__body.modal__body-review.modal__body-form
+    a.modal__form-close.close__modal(href="#",role="button") 
+      span
+      span
+    form.modal__content.modal__form.modal__form-review(
+      action="#", 
+      enctype="multipart/form-data",
+      method="post")
+      include ./../../mixins/form-group
+      include ./../../mixins/select
+      a.modal__close.modal__close-form.close__modal(href="#",role="button") 
+        span
+        span
+      fieldset.modal__form-content.modal__form-review-content
+        legend.modal__form-title.modal__form-review-title Оставить отзыв
+        h6.modal__form-subtitle.modal__form-review-subtitle Все поля являются обязательными для заполнения.
+        .modal__form-coll.modal__form-review-coll
+          +form-group(
+            "ФИО","modal__review-name","text","name","Написать...","modal__form","","")
+        .modal__form-coll.modal__form-review-coll
+          +form-group(
+            "Дата","modal__review-date","date","date","","modal__form","","")
+        .modal__form-coll.modal__form-review-coll
+          +form-group(
+            "Город","modal__review-phone","text","city","Написать...","modal__form","","")
+        .modal__form-coll.modal__form-review-coll
+          label.modal__form-label.form__label(for="modal__review-message")
+            | Отзыв
+            sup.red-color *
+          textarea.form__textarea.modal__form-textarea.modal__form-review-textarea(
+            name="message", 
+            cols="30", 
+            rows="10",
+            id="modal__review-message",
+            placeholder="Написать...")
+        button.btn(type='submit').btn.modal__form-btn.modal__form-review-btn Отправить 
