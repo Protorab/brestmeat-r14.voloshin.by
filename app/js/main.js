@@ -60,7 +60,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "#country .partner__option "
   );
   const regionOptions = document.querySelectorAll("#region .partner__option");
-
+  const cvFormSelectWrappers = document.querySelectorAll(
+    ".cv-form-select__wrapper"
+  );
   const region = document.getElementById("region");
   const contacts = document.querySelectorAll("*[data-contacts-id]");
 
@@ -76,11 +78,17 @@ document.addEventListener("DOMContentLoaded", () => {
   numberList();
   listStyle();
   // menuDropdown();
-  customSelectFunc();
   cvFormAdd();
 
-  collapsibleFunc();
+  customSelectFunc();
 
+  collapsibleFunc();
+  if (cvFormSelectWrappers.length > 0) {
+    for (let i = 0; i < cvFormSelectWrappers.length; i++) {
+      const cvFormSelectWrapper = cvFormSelectWrappers[i];
+      cvFormSelectWrapper.style.zIndex = 100 - i;
+    }
+  }
   if (cvPhotoInps.length > 0) {
     cvPhotoInps.forEach((input) => {
       input.onchange = (e) => {
