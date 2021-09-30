@@ -3,6 +3,8 @@
   &-information {
     // .holders-information-section {
     &-section {
+      @include adaptive(padding-bottom, 120, 100, 0);
+
       // .holders-information-section__title {
       &__title {
       }
