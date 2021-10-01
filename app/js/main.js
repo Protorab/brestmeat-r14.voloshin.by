@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   const region = document.getElementById("region");
   const contacts = document.querySelectorAll("*[data-contacts-id]");
+  const contactShopsCard = document.querySelectorAll(".contact-shops__card");
 
   // variable end
 
@@ -126,6 +127,16 @@ document.addEventListener("DOMContentLoaded", () => {
       "Скрыть",
       3,
       7
+    );
+  }
+  if (contactShopsCard.length > 0) {
+    itemCountCheck(
+      "#show-more",
+      ".contact-shops__card",
+      "Показать ещё",
+      "Скрыть",
+      3,
+      6
     );
   }
   if (articlesCard.length > 0) {
@@ -479,6 +490,16 @@ document.addEventListener("DOMContentLoaded", () => {
         3,
         7
       );
+      if (contactShopsCard.length > 0) {
+        itemCountCheck(
+          "#show-more",
+          ".contact-shops__card",
+          "Показать ещё",
+          "Скрыть",
+          3,
+          6
+        );
+      }
     }, 1000);
   };
 

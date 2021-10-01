@@ -1045,6 +1045,49 @@ label {
       @include adaptive(padding-top, 40, 35, 0);
     }
   }
+  // .page-brand {
+  &-brand {
+    // .page-brand-trade {
+    &-trade {
+      .gm {
+        &-style {
+          // .gm-style-iw{
+          &-iw {
+            @include adaptive(height, 450, 330, 5);
+            max-height: unset !important;
+          }
+
+          .gm-style-iw-d {
+            padding: 0;
+            overflow: hidden !important;
+            @include adaptive(height, 450, 330, 5);
+            max-height: unset !important;
+          }
+        }
+      }
+    }
+  }
+  // .page-contact {
+  &-contact {
+    .gm {
+      &-style {
+        // .gm-style-iw{
+        &-iw {
+          @include adaptive(min-height, 270, 200, 5);
+
+          max-height: unset !important;
+        }
+
+        .gm-style-iw-d {
+          padding: 0;
+          overflow: hidden !important;
+          @include adaptive(min-height, 270, 200, 5);
+
+          max-height: unset !important;
+        }
+      }
+    }
+  }
 }
 
 .print {
@@ -1182,8 +1225,6 @@ label {
     }
     // .gm-style-iw{
     &-iw {
-      @include adaptive(height, 450, 330, 5);
-
       // @include adaptive(max-height, 500, 450, 5);
       max-height: unset !important;
 
@@ -1202,15 +1243,6 @@ label {
     }
     .gm-style-iw-d {
       padding: 0;
-      overflow: hidden !important;
-      @include adaptive(height, 450, 330, 5);
-      max-height: unset !important;
-
-      // @include adaptive(max-height, 500, 500, 5);
-
-      & > div {
-        // height: 100%;
-      }
     }
     .gm-style-iw-t {
       button {
@@ -1223,7 +1255,7 @@ label {
         @include adaptive(right, 22, 15, 4);
         opacity: 1 !important;
         overflow: hidden;
-
+        z-index: 3;
         &::before,
         &:after {
           content: "";
@@ -1288,17 +1320,26 @@ label {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    @include adaptive(min-height, 500, 450, 5);
 
     overflow-x: hidden;
     overflow-y: auto;
     position: relative;
-    @include adaptive(padding-top, 40, 30, 0);
     @include adaptive(padding-right, 25, 15, 0);
-    @include adaptive(padding-bottom, 25, 15, 0);
     @include adaptive(padding-left, 25, 15, 0);
     font-weight: 500;
-
+    &.__page {
+      &-brand {
+        @include adaptive(min-height, 500, 450, 5);
+        @include adaptive(padding-top, 40, 30, 0);
+        @include adaptive(padding-bottom, 25, 15, 0);
+      }
+      // __page-contact {
+      &-contact {
+        @include adaptive(min-height, 270, 200, 0);
+        @include adaptive(padding-top, 20, 15, 0);
+        @include adaptive(padding-bottom, 20, 20, 0);
+      }
+    }
     a {
       @include _transition(all, 0.35s);
       @media only screen and (min-width: 1152px) {
@@ -1325,7 +1366,14 @@ label {
       @extend .t6;
       font-weight: 600;
       color: $accentColor;
-      @include adaptive(margin-bottom, 10, 5, 0);
+      &.__page {
+        &-brand {
+          @include adaptive(margin-bottom, 10, 5, 0);
+        }
+        &-contact {
+          @include adaptive(margin-bottom, 15, 10, 0);
+        }
+      }
     }
     // .map-popup__address {
     &__address {
@@ -1351,10 +1399,14 @@ label {
       // map-popup__list-item {
       &-item {
         @include adaptive(font-size, 14, 10, 0);
+        * {
+          @include adaptive(font-size, 14, 10, 0);
+        }
       }
     }
   }
 }
+
 .red-color {
   color: $accentColor;
 }

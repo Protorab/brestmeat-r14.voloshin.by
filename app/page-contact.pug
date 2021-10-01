@@ -1,0 +1,61 @@
+doctype html
+html(lang="ru")
+
+  //head start
+  include ./includes/mixins/head
+  +head("Контакты")
+  //head end
+
+  body.--fixed.__loading.__white-page
+    //preloader start
+    include ./includes/parts/other/preloader
+    //preloader end
+    
+    //modal__search start
+    include ./includes/parts/other/modal__search.pug
+    //modal__search end
+
+    //header start
+    include ./includes/parts/main/header
+    //header end
+
+    //scrollToTopBtn start
+    include ./includes/elements/scrollToTopBtn
+    //scrollToTopBtn end
+
+    //page-contact start
+    main.main.page-contact.page-card
+      
+      //breadcrumbs start
+      include ./includes/mixins/breadcrumbs
+      +breadcrumbs([
+        [
+          "Главная",
+          "index.html"
+        ],
+        [
+          "Контакты",
+          "#"]
+        ])
+      //breadcrumbs end
+
+      //contact section start
+      include ./includes/parts/sections/section-contact
+      //contact section end
+
+      //callback-section start
+      include ./includes/parts/sections/section-callback
+      //callback-section end
+    //page-contact end
+    
+    //footer start
+    include ./includes/parts/main/footer
+    //footer end
+      
+    include ./includes/parts/other/modal__callback.pug
+    include ./includes/parts/other/modal__review.pug
+    include ./includes/parts/other/modal__thanks.pug
+    include ./includes/parts/other/modal__img.pug
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwTc3Us1I54oPA-VyekF1PATy_eIu7iA0")
+    include ./includes/parts/other/contactMapScript
+    include ./includes/parts/other/scripts.pug

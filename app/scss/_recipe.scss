@@ -43,6 +43,7 @@
       z-index: -1;
       content: "";
       display: inline-block;
+      pointer-events: none;
       // background: #000b24;
       opacity: 1;
       // @include _borderRadius(228px);

@@ -1,0 +1,25 @@
+mixin contact-shops__card(title,address,workModes,phones,lat,lng,animate,scroll)
+  article.contact-shops__card(class=`${animate ? animate : "" } ${scroll ? scroll : ""}`)
+    h6.contact-shops__card-title!=title
+    p.contact-shops__card-subtitle Адрес:
+    p.contact-shops__card-address !{address}
+    p.contact-shops__card-subtitle Режим работы:
+    ul.contact-shops__card-list
+      each workMode, idx in workModes
+        - var count = idx+1
+        - var workTitle = workMode[0] || null
+          li.contact-shops__card-list__item!=workTitle
+    p.contact-shops__card-subtitle Телефоны:
+    ul.contact-shops__card-list
+      each phone, idx in phones
+        - var count = idx+1
+        - var phoneLink = phone[0]
+        - var phoneTitle = phone[1]
+          li.contact-shops__card-list__item   
+            a.contact-shops__card-list__link(href=`tel:${phoneLink ? phoneLink : "#"}`)!=phoneTitle
+    a.btn.contact-shops__card-btn.map-object(
+      href="#contactMap",
+      data-lat=`${lat}`,
+      data-lng=`${lng}`,
+      role="button")    Показать на карте
+

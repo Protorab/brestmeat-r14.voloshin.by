@@ -1,0 +1,316 @@
+script(type='text/javascript').
+  // When the window has finished loading create our google map below
+  var map;
+  var coordinate = [53.907116, 27.561822];  //Minsk
+  var lat = coordinate[0];
+  var lng = coordinate[1];
+  var center = {lat:lat,lng:lng} 
+  var defIcon = "./img/icons/icon-pin.svg"
+  var mapElement = document.getElementById("contactMap");
+  var mapOptions = {
+      zoom: 9.35,
+      center: center,
+      disableDefaultUI: true, 
+      styles: [
+        {
+          featureType: "all",
+          elementType: "labels.text.fill",
+          stylers: [
+            { saturation: 36 },
+            { color: "#333333" },
+            { lightness: 40 },
+          ],
+        },
+            {
+          featureType: "all",
+          elementType: "labels.text.stroke",
+          stylers: [
+            { visibility: "on" },
+            { color: "#ffffff" },
+            { lightness: 16 },
+          ],
+        },
+        {
+          featureType: "all",
+          elementType: "labels.icon",
+          stylers: [{ visibility: "off" }],
+        },
+        {
+          featureType: "administrative",
+          elementType: "geometry.fill",
+          stylers: [{ color: "#fefefe" }, { lightness: 20 }],
+        },
+        {
+          featureType: "administrative",
+          elementType: "geometry.stroke",
+          stylers: [
+            { color: "#fefefe" },
+            { lightness: 17 },
+            { weight: 1.2 },
+          ],
+        },
+        {
+          featureType: "administrative",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#000000" }],
+        },
+        {
+          featureType: "administrative.province",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#eeeeee" }],
+        },
+        {
+          featureType: "administrative.locality",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#000000" }],
+        },
+        {
+          featureType: "administrative.neighborhood",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#a3a3a3" }],
+        },
+        {
+          featureType: "administrative.land_parcel",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#a3a3a3" }],
+        },
+        {
+          featureType: "landscape",
+          elementType: "geometry",
+          stylers: [{ color: "#f5f5f5" }, { lightness: 20 }],
+        },
+        {
+          featureType: "landscape",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#000000" }],
+        },
+        {
+          featureType: "poi",
+          elementType: "geometry",
+          stylers: [{ color: "#dddddd" }, { lightness: 21 }],
+        },
+        {
+          featureType: "poi",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#000000" }],
+        },
+        {
+          featureType: "poi.park",
+          elementType: "geometry",
+          stylers: [{ color: "#eeeeee" }, { lightness: 21 }],
+        },
+        {
+          featureType: "poi.school",
+          elementType: "labels.text",
+          stylers: [
+            { weight: "0.68" },
+            { visibility: "on" },
+            { color: "#ff0000" },
+          ],
+        },
+        {
+          featureType: "poi.school",
+          elementType: "labels.text.fill",
+          stylers: [
+            { color: "#000000" },
+            { weight: "0.92" },
+            { visibility: "simplified" },
+          ],
+        },
+        {
+          featureType: "road.highway",
+          elementType: "geometry.fill",
+          stylers: [{ color: "#dddddd" }, { lightness: 17 }],
+        },
+        {
+          featureType: "road.highway",
+          elementType: "geometry.stroke",
+          stylers: [
+            { color: "#dddddd" },
+            { lightness: 29 },
+            { weight: 0.2 },
+          ],
+        },
+        {
+          featureType: "road.highway",
+          elementType: "labels.text",
+          stylers: [{ color: "#000000" }],
+        },
+        {
+          featureType: "road.arterial",
+          elementType: "geometry",
+          stylers: [{ color: "#dddddd" }, { lightness: 18 }],
+        },
+        {
+          featureType: "road.arterial",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#000000" }],
+        },
+        {
+          featureType: "road.local",
+          elementType: "geometry",
+          stylers: [{ color: "#eeeeee" }, { lightness: 16 }],
+        },
+        {
+          featureType: "road.local",
+          elementType: "geometry.stroke",
+          stylers: [{ color: "#cd282b" }],
+        },
+        {
+          featureType: "road.local",
+          elementType: "labels.text",
+          stylers: [{ hue: "#ff0000" }],
+        },
+        {
+          featureType: "road.local",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#000000" }],
+        },
+        {
+          featureType: "road.local",
+          elementType: "labels.text.stroke",
+          stylers: [{ visibility: "on" }],
+        },
+        {
+          featureType: "transit",
+          elementType: "geometry",
+          stylers: [{ color: "#f2f2f2" }, { lightness: 19 }],
+        },
+        {
+          featureType: "transit",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#000000" }],
+        },
+        {
+          featureType: "water",
+          elementType: "geometry",
+          stylers: [{ color: "#eeeeee" }, { lightness: 17 }],
+        },
+      ],
+    };
+  var markers = [
+      {
+        'title': 'Брестский мясокомбинат',
+        'address': 'г. Брест, ул. Писателя Смирнова, 4',
+        'lat': '52.095170',
+        'lng': '23.645024',
+        'wekDaysTime':'Понедельник: пятница 10:00-19:00',
+        'weekendTime':'Суббота 10:00-19:00, Воскресенье 10:00-17:00',
+        'washDay':'',
+        'phone1': '+375 (212) 61-45-98',
+        'phone2': '+375 17 343-49-00'
+      },
+      {
+        'title': 'Брестский мясокомбинат',
+        'address': 'Брестская область, Кобринский район',
+        'lat': '52.214552',
+        'lng': '24.451214',
+        'wekDaysTime':'Понедельник: пятница 10:00-19:00',
+        'weekendTime':'Суббота 10:00-19:00, Воскресенье 10:00-17:00',
+        'washDay':'',
+        'phone1': '+375 (212) 61-45-98',
+        'phone2': '+375 17 343-49-00'
+      },
+      {
+        'title': 'Брестское угощение',
+        'address': 'г. Брест, ул. Волгоградская, 11',
+        'lat': '52.075336',
+        'lng': '23.755783',
+        'wekDaysTime':'Понедельник: пятница 10:00-19:00',
+        'weekendTime':'Суббота 10:00-19:00, Воскресенье 10:00-17:00',
+        'washDay':'',
+        'phone1': '+375 (212) 61-45-98',
+        'phone2': '+375 17 343-49-00'
+      }
+    ]; 
+  function changeCenter(getCenter) {
+    map.setCenter(getCenter);
+  }
+
+  function getMapObjects() {
+    setTimeout(() => {
+      var mapObjects = document.querySelectorAll('.map-object');
+      mapObjects.forEach((obj) => {
+        obj.addEventListener("click", (e) => {
+          var setLat = parseFloat(obj.dataset.lat);
+          var setLng = parseFloat(obj.dataset.lng);
+          var setCenter = {lat:setLat,lng:setLng}
+          changeCenter(setCenter);
+        });
+      });
+    }, 1000);
+  }
+
+  function init() {
+    var infoWindow = new google.maps.InfoWindow({
+      maxWidth: 440,
+    });
+    map = new google.maps.Map(mapElement, mapOptions);
+    for (var i = 0; i < markers.length; i++) {
+      var data = markers[i];
+      var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+      var gMarker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: data.title,
+          icon: defIcon,
+          address:  data.address,
+          wekDaysTime: data.wekDaysTime,
+          weekendTime: data.weekendTime,
+          washDay: data.washDay,
+          phone1: data.phone1,
+          phone2: data.phone2,
+      });    
+        
+        (function (gMarker, data) {
+          google.maps.event.addListener(gMarker, "click", function (e) {
+            infoWindow.setContent(`<article  class="map-popup __page-contact">
+              <h6 class="map-popup__title __page-contact">${gMarker.title}</h6>
+              <p class="map-popup__address  __page-contact">${gMarker.address}</p>
+              <p class="map-popup__subtitle __page-contact">Режим работы:</p>
+              <ul class="map-popup__list  __page-contact">
+                
+                ${gMarker.wekDaysTime 
+                  ? `<li class="map-popup__list-item  __page-contact">
+                        ${gMarker.wekDaysTime}
+                    </li>`
+                  : ""}
+                ${gMarker.weekendTime 
+                  ? `<li class="map-popup__list-item">
+                        ${gMarker.weekendTime}
+                    </li>`
+                  : ""}
+                ${gMarker.washDay 
+                  ? `<li class="map-popup__list-item">
+                        ${gMarker.washDay}
+                    </li>`
+                  : ""}
+              </ul>
+              <p class="map-popup__subtitle">Телефоны:</p>
+              <ul class="map-popup__list">
+                <li class="map-popup__list-item">
+                  ${gMarker.phone1 
+                  ? `<a href="tel:${gMarker.phone1}">
+                      ${gMarker.phone1}
+                    </a>`
+                  : ""}
+                  ${gMarker.phone2 
+                  ? `<a href="tel:${gMarker.phone2}">
+                          ${gMarker.phone2}
+                    </a>`
+                  : ""}
+                </li>
+              </ul>
+            </article>`);
+            
+            infoWindow.open(map, gMarker);
+          });
+        })(gMarker, data);
+
+    }
+  }
+
+  getMapObjects();
+  
+  google.maps.event.addDomListener(window, "load", init);
+

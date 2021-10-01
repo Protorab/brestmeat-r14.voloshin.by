@@ -6,18 +6,6 @@ script(type='text/javascript').
   var lng = coordinate[1];
   var center = {lat:lat,lng:lng} 
   var defIcon = "./img/icons/icon-pin.svg"
-  var windowXPosition = 220;
-  var windowYPosition = 550;
-      window.innerWidth <= 1600 ? windowYPosition = 550 : windowYPosition = 620;
-      window.onresize = function () {
-        setInterval(() => {
-        window.innerWidth <= 1600 ? windowYPosition = 550 : windowYPosition = 620;
-        
-        }, 500);
-      };
-
-      
-  var maxWindowWidth= 440;
   var mapElement = document.getElementById("shopMap");
   var mapOptions = {
       zoom: 5.35,
@@ -348,34 +336,34 @@ script(type='text/javascript').
             (function (gMarker, data) {
                 google.maps.event.addListener(gMarker, "click", function (e) {
                     //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
-                    infoWindow.setContent(`<article  class="map-popup">
-                      <div class="map-popup__image">
+                    infoWindow.setContent(`<article  class="map-popup __page-brand">
+                      <div class="map-popup__image __page-brand">
                         <img class="img--full img--center" loading="lazy" draggable="false" src="${gMarker.image}">
                       </div>
-                      <h6 class="map-popup__title">${gMarker.title}</h6>
-                      <p class="map-popup__address">${gMarker.address}</p>
-                      <p class="map-popup__subtitle">Режим работы:</p>
-                      <ul class="map-popup__list">
+                      <h6 class="map-popup__title __page-brand">${gMarker.title}</h6>
+                      <p class="map-popup__address  __page-brand">${gMarker.address}</p>
+                      <p class="map-popup__subtitle __page-brand">Режим работы:</p>
+                      <ul class="map-popup__list  __page-brand">
                         
                         ${gMarker.wekDaysTime 
-                          ? `<li class="map-popup__list-item">
+                          ? `<li class="map-popup__list-item  __page-brand">
                                 ${gMarker.wekDaysTime}
                             </li>`
                           : ""}
                         ${gMarker.weekendTime 
-                          ? `<li class="map-popup__list-item">
+                          ? `<li class="map-popup__list-item  __page-brand">
                                 ${gMarker.weekendTime}
                             </li>`
                           : ""}
                         ${gMarker.washDay 
-                          ? `<li class="map-popup__list-item">
+                          ? `<li class="map-popup__list-item  __page-brand">
                                 ${gMarker.washDay}
                             </li>`
                           : ""}
                       </ul>
-                      <p class="map-popup__subtitle">Телефоны:</p>
-                      <ul class="map-popup__list">
-                        <li class="map-popup__list-item">
+                      <p class="map-popup__subtitle __page-brand">Телефоны:</p>
+                      <ul class="map-popup__list __page-brand">
+                        <li class="map-popup__list-item __page-brand">
                           ${gMarker.phone1 
                           ? `<a href="tel:${gMarker.phone1}">
                               ${gMarker.phone1}
