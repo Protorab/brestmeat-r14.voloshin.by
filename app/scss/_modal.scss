@@ -572,6 +572,7 @@
   }
   // .modal__thanks {
   &__thanks {
+    width: 80%;
     max-width: 675px;
     // .modal__thanks-content {
     &-content {
@@ -584,6 +585,10 @@
       border-color: $mainColor;
       @include adaptive(border-width, 20, 15, 0);
       @include adaptive(padding, 30, 15, 0);
+      @media only screen and (max-width: 800px) {
+        @include adaptive(padding-top, 80, 75, 0);
+        @include adaptive(padding-bottom, 80, 75, 0);
+      }
       * {
         @extend .t4;
       }
