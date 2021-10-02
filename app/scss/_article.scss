@@ -43,11 +43,13 @@
   h {
     @for $i from 1 through 6 {
       &#{$i} {
-        font-family: Raleway, sans-serif;
+        &:not([class]) {
+          font-family: Raleway, sans-serif;
 
-        @include adaptive(margin-bottom, 25, 20, 0);
+          @include adaptive(margin-bottom, 25, 20, 0);
 
-        // max-width: 50%;
+          // max-width: 50%;
+        }
       }
     }
   }

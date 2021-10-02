@@ -192,5 +192,48 @@ const swiperJsSliders = () => {
       nextSlideMessage: "Следующий слайд",
     },
   });
+  let historySlider = new Swiper(".history-slider", {
+    slidesPerView: 1,
+    spaceBetween: 15,
+    speed: 1200,
+    resizeObserver: true,
+    allowTouchMove: false,
+    parallax: true,
+    a11y: {
+      paginationBulletMessage: "Перейти к слайду {{index}}",
+      prevSlideMessage: "Предыдущий слайд",
+      nextSlideMessage: "Следующий слайд",
+    },
+    pagination: {
+      el: ".history-slider__pagination",
+      type: "bullets",
+      clickable: true,
+      bulletClass: "history-slider__pagination-bullet",
+      bulletActiveClass: "history-slider__pagination-bullet_active",
+    },
+  });
+  let awardsSlider = new Swiper(".awards-slider", {
+    slidesPerView: "auto",
+    spaceBetween: 15,
+    speed: 1200,
+    breakpoints: {
+      320: {
+        spaceBetween: 10,
+      },
+      640: {
+        spaceBetween: 15,
+      },
+    },
+    navigation: {
+      nextEl: ".awards-slider__next",
+      prevEl: ".awards-slider__prev",
+    },
+    resizeObserver: true,
+    a11y: {
+      paginationBulletMessage: "Перейти к слайду {{index}}",
+      prevSlideMessage: "Предыдущий слайд",
+      nextSlideMessage: "Следующий слайд",
+    },
+  });
 };
 export default swiperJsSliders;

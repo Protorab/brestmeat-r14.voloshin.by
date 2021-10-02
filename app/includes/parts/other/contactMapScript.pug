@@ -154,7 +154,7 @@ script(type='text/javascript').
         {
           featureType: "road.local",
           elementType: "geometry.stroke",
-          stylers: [{ color: "#cd282b" }],
+          stylers: [{ color: "#000000" }],
         },
         {
           featureType: "road.local",
@@ -225,6 +225,7 @@ script(type='text/javascript').
     ]; 
   function changeCenter(getCenter) {
     map.setCenter(getCenter);
+    map.setZoom(15);
   }
 
   function getMapObjects() {

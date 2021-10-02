@@ -1,0 +1,359 @@
+.about {
+  // .about-section {
+  &-section {
+    @include adaptive(padding-bottom, 110, 80, 0);
+    // .about-section__title {
+    &__title {
+    }
+  }
+  // .about-wrapper {
+  &-wrapper {
+  }
+  // .about__title {
+  &__title {
+    @extend .t3;
+    font-weight: 600;
+    color: $texSevenColor;
+    text-transform: uppercase;
+    @include adaptive(margin-bottom, 15, 10, 0);
+
+    @media only screen and (max-width: 800px) {
+      @include adaptive(margin-bottom, 30, 25, 0);
+    }
+  }
+  // .about-article {
+  &-article {
+    @include adaptive(margin-bottom, 60, 50, 0);
+
+    &:last-child {
+      @include adaptive(margin-bottom, 100, 60, 0);
+    }
+    font-weight: 500;
+    strong {
+      font-weight: 600;
+    }
+    mark {
+      background: transparent;
+      color: $accentColor;
+    }
+  }
+  // .about-principles {
+  &-principles {
+    width: 100%;
+    @include adaptive(margin-bottom, 80, 80, 0);
+
+    // .about-principles__list {
+    &__list {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      @include adaptive(grid-column-gap, 20, 20, 0);
+      @include adaptive(grid-row-gap, 30, 25, 0);
+
+      @media only screen and (max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media only screen and (max-width: 600px) {
+        grid-template-columns: repeat(1, 100%);
+      }
+    }
+    // .about-principles__item {
+    &__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+      height: 100%;
+      background: $textFifthColor;
+      color: $mainColor;
+      position: relative;
+      @include adaptive(padding-top, 30, 25, 0);
+      @include adaptive(padding-right, 30, 20, 0);
+      @include adaptive(padding-bottom, 25, 20, 0);
+      @include adaptive(padding-left, 30, 20, 0);
+
+      &::before {
+        content: "";
+        display: block;
+        width: 0%;
+        height: 8px;
+        background: $accentColor;
+        @include _transition(all, 0.45s);
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        right: 0%;
+        transition-delay: 0.45s;
+      }
+      &.__animated {
+        &::before {
+          width: 100%;
+        }
+      }
+      // .about-principles__item-numb {
+      &-numb {
+        @extend .t2;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $accentColor;
+        @include adaptive(width, 45, 40, 0);
+        @include adaptive(min-width, 45, 40, 0);
+        @include adaptive(height, 45, 40, 0);
+        @include _borderRadius(100%);
+        @include adaptive(margin-bottom, 25, 25, 0);
+      }
+    }
+  }
+  // .about-values {
+  &-values {
+    width: 100%;
+    @include adaptive(margin-bottom, 120, 80, 0);
+
+    // .about-values__title {
+    &__title {
+      @include adaptive(margin-bottom, 45, 40, 0);
+    }
+  }
+  // .about-awards {
+  &-awards {
+    width: 100%;
+    // .about-awards__title{
+    &__title {
+      &.about__title {
+        @include adaptive(margin-bottom, 25, 20, 0);
+      }
+    }
+  }
+}
+.values {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  @include adaptive(grid-column-gap, 150, 80, 0);
+  @include adaptive(grid-row-gap, 70, 60, 0);
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: repeat(1, 100%);
+  }
+  // .values-item {
+  &-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    color: $textThirdColor;
+
+    // .values-item__picture {
+    &__picture {
+      @include adaptive(width, 100, 90, 0);
+      @include adaptive(min-width, 100, 90, 0);
+      @include adaptive(height, 100, 90, 0);
+      background: $accentColor;
+      @include _borderRadius(100%);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include adaptive(margin-bottom, 20, 15, 0);
+    }
+    // .values-item__title {
+    &__title {
+      @extend .t6;
+      font-weight: 600;
+      text-transform: uppercase;
+      @include adaptive(margin-bottom, 25, 15, 0);
+    }
+    // .values-item__text {
+    &__text {
+      p {
+        @include adaptive(margin-bottom, 10, 5, 0);
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+.history {
+  // .history-slider {
+  &-slider {
+    width: 100%;
+    @include adaptive(margin-bottom, 100, 80, 0);
+    // .history-slider__pagination {
+    &__pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 0;
+      min-height: 45px;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 1px;
+        right: 1px;
+        z-index: 0;
+        width: 99%;
+        height: 6px;
+        background: $texSixColor;
+      }
+      // ."history-slider__pagination-bullet {
+      &-bullet {
+        min-width: 15px;
+        width: 15px;
+        max-width: 15px;
+        min-height: 15px;
+        height: 15px;
+        max-height: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        background: $mainColor;
+        border: 1.5px solid $accentColor;
+        cursor: pointer;
+        position: relative;
+        padding: 0;
+        margin: 0;
+        @include _transition(all, 0.15s);
+        @include _borderRadius(100%);
+
+        // .history-slider__pagination-bullet_active {
+
+        &_active {
+          min-width: 25px;
+          width: 25px;
+          max-width: 25px;
+          min-height: 25px;
+          height: 25px;
+          max-height: 25px;
+          border-width: 7px;
+        }
+      }
+    }
+  }
+  // .history-slides {
+  &-slides {
+    width: 100%;
+
+    @include adaptive(margin-bottom, 35, 30, 0);
+  }
+  // .history-slide {
+  &-slide {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    @media only screen and (max-width: 800px) {
+      flex-direction: column;
+    }
+    // .history-slide__content {
+    &__content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+
+      @include adaptive(margin-bottom, 35, 30, 0);
+
+      @media only screen and (min-width: 800px) {
+        width: 53%;
+        margin-right: 20px;
+        margin-right: 0;
+      }
+    }
+    // .history-slide__picture {
+    &__picture {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+
+      img {
+        @include _transition(all, 0.35s);
+      }
+      @media only screen and (min-width: 1152px) {
+        &:hover {
+          img {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+    // .history-slide__title {
+    &__title {
+      @include adaptive(margin-bottom, 25, 20, 0);
+    }
+    // .history-slide__subtitle {
+    &__subtitle {
+      @extend .t4;
+      color: $accentColor;
+      font-weight: 600;
+      @include adaptive(margin-bottom, 26, 25, 0);
+    }
+    // .history-slide__text {
+    &__text {
+      color: $texSevenColor;
+      p {
+        @include adaptive(margin-bottom, 20, 15, 0);
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    // .history-slider__pagination {
+    &__pagination {
+      width: 45%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      // .history-slider-pagination__bullet {
+      &__bullet {
+        // .history-slider-pagination__bullet_active {
+        &_active {
+        }
+      }
+    }
+  }
+}
+.awards {
+  // .awards-slider {
+  &-slider {
+    width: 100%;
+  }
+  // .awards-slides {
+  &-slides {
+    width: 100%;
+  }
+  // .awards-slide {
+  &-slide {
+    @include adaptive(width, 230, 170, 0);
+    @include adaptive(height, 335, 250, 0);
+    overflow: hidden;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    img {
+      @include _transition(all, 0.35s);
+    }
+    @media only screen and (min-width: 1152px) {
+      &:hover {
+        img {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}

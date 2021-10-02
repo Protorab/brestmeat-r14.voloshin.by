@@ -1,0 +1,36 @@
+mixin history-slide(title,year,content,image)
+  .history-slide.swiper-slide(
+    data-swiper-parallax-y="-3%",
+    data-swiper-parallax-opacity="0",
+    data-swiper-parallax-duration="0")
+    article.history-slide__content(
+      data-swiper-parallax="-50%",
+      data-swiper-parallax-duration="1",
+      data-swiper-parallax-opacity="0")
+      h3.about__title.history-slide__title(
+        data-swiper-parallax="10%",
+        data-swiper-parallax-duration="0",
+        data-swiper-parallax-opacity="0")!=title
+      h4.history-slide__subtitle(
+        data-swiper-parallax="10%",
+        data-swiper-parallax-duration="0",
+        data-swiper-parallax-opacity="0")!=year
+      .history-slide__text !{content}
+    picture(
+      data-swiper-parallax="80%",
+      data-swiper-parallax-duration="0",
+      data-swiper-parallax-opacity="0"
+      itemscope,
+      itemtype='http://schema.org/ImageObject',
+      class=`history-slide__picture`)
+      source(
+        srcset!=`${image}`,
+        itemprop='contentUrl')
+      img.img--full.img--center(
+        src!=`${image}`, 
+        alt!=`${title}`,
+        title!=`${title}`,
+        draggable="false",
+        loading="lazy",
+        class!=`history-slide__image show-modal` ,
+        itemprop='contentUrl')

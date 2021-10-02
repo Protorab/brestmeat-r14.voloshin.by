@@ -1,0 +1,115 @@
+section.section.about-section.page-top__section
+  h1.section__title.about-section__title.animate О компании
+  .wrapper.about-wrapper
+    //history-slider start
+    include ./../other/history-slider
+    //history-slider end
+    article.article.about-article.about-mission.animate.scroll
+      h3.about__title.about-mission__title.animate.scroll Миссия и принципы компании
+      p Мы создаём 
+        strong
+          mark ЛЮБИМЫЕ ПРОДУКТЫ ДЛЯ ЛЮДЕЙ.
+    article.article.about-article.about-purpose.animate.scroll
+      h3.about__title.about-purpose__title.animate.scroll Наша цель
+      p Быть
+        strong
+          mark НОМЕРОМ 1 
+        | в отрасли – другого настоящего и будущего мы для себя не видим.
+    article.article.about-article.about-vision.animate.scroll
+      h3.about__title.about-vision__title.animate.scroll Наше видение
+      p Наша компания состоит из профессионалов, влюбленных в свое дело. Благодаря этому  нам удается производить вкусную и качественную мясную продукцию. Мы представляем бренд, который ценит добрые намерения и относится с уважением к каждому сотруднику, партнеру, потребителю.
+      p Мы видим себя компанией – 
+        mark лидером на рынке мясных изделий: лидером по доле рынка, маржинальной прибыли, показателям лояльности и удовлетворенности покупателей.
+    article.about-principles.animate.scroll
+      h3.about__title.about-principles__title.animate.scroll Наши Принципы
+      .about-principles__list
+        .about-principles__item.animate.scroll 
+          span.about-principles__item-numb 1
+          p Гордиться результатами своего труда
+        .about-principles__item.animate.scroll 
+          span.about-principles__item-numb 2
+          p Производить только вкусные мясные продукты
+        .about-principles__item.animate.scroll 
+          span.about-principles__item-numb 3
+          p Использование только передовых технологий и способов производства
+        .about-principles__item.animate.scroll 
+          span.about-principles__item-numb 4
+          p Использование экологически безопасных технологий – это ответственность перед нашими детьми
+    article.about-values.animate.scroll
+      h3.about__title.about-values__title.animate.scroll Наши ценности
+      .values.animate.scroll
+        article.values-item
+          include ./../../mixins/picture-NL
+          +picture("./img/icons/icon-responsibility.svg","Ответственность","values-item")
+          h6.values-item__title Ответственность
+          .values-item__text
+            p  Мы в полной мере осознаем свою ответственность перед потребителем и обществом в целом, поэтому на предприятии внедрены самые современные системы менеджмента качества, безопасности пищевых продуктов и охраны окружающей среды, обеспечивающие выпуск продукции соответствующей требованиям потребителей законодательства.
+        article.values-item
+          +picture("./img/icons/icon-trophy.svg","Лидерство","values-item")
+          h6.values-item__title Лидерство
+          .values-item__text
+            p  Стремление быть лучшими во всем, что мы делаем: лучшая продукция, лучшие показатели реализации и экономические показатели в отрасли, лучший коллектив высококвалифицированных специалистов.
+        article.values-item
+          +picture("./img/icons/icon-leadership.svg","Постоянное стремление к развитию","values-item")
+          h6.values-item__title Постоянное стремление к развитию
+          .values-item__text
+            p Мы не стоим на месте, мы постепенно стремимся стать лучше во всех аспектах нашей деятельности. Развитие для нас – это хобби по достижению лучших результатов.
+        article.values-item
+          +picture("./img/icons/icon-love.svg","Любовь","values-item")
+          h6.values-item__title Любовь
+          .values-item__text
+            p Всё, что сделано с любовью, по праву считается самым лучшим. Любовь – наш секретный ингредиент и основа любого рецепта.
+    article.about-awards.animate.scroll
+      h3.about__title.about-awards__title.animate.scroll Наши награды
+      .awards-slider.swiper-container.animate.scroll
+        .awards-slides.swiper-wrapper
+          .awards-slide.swiper-slide 
+            img.img--full.img--center.show-modal(
+              src="img/preloader.gif",
+              data-lazy-src=`./img/awards/awards-slide__image-1.jpg`, 
+              alt!=`Благотворительное письмо`,
+              title!=`Благотворительное письмо`,
+              draggable="false",
+              loading="lazy")
+          .awards-slide.swiper-slide 
+            img.img--full.img--center.show-modal(
+              src="img/preloader.gif",
+              data-lazy-src=`./img/awards/awards-slide__image-1.jpg`, 
+              alt!=`Благотворительное письмо`,
+              title!=`Благотворительное письмо`,
+              draggable="false",
+              loading="lazy")
+          .awards-slide.swiper-slide 
+            img.img--full.img--center.show-modal(
+              src="img/preloader.gif",
+              data-lazy-src=`./img/awards/awards-slide__image-1.jpg`, 
+              alt!=`Благотворительное письмо`,
+              title!=`Благотворительное письмо`,
+              draggable="false",
+              loading="lazy")
+          .awards-slide.swiper-slide 
+            img.img--full.img--center.show-modal(
+              src="img/preloader.gif",
+              data-lazy-src=`./img/awards/awards-slide__image-1.jpg`, 
+              alt!=`Благотворительное письмо`,
+              title!=`Благотворительное письмо`,
+              draggable="false",
+              loading="lazy")
+          .awards-slide.swiper-slide 
+            img.img--full.img--center.show-modal(
+              src="img/preloader.gif",
+              data-lazy-src=`./img/awards/awards-slide__image-1.jpg`, 
+              alt!=`Благотворительное письмо`,
+              title!=`Благотворительное письмо`,
+              draggable="false",
+              loading="lazy")
+        //awards-slider__control start
+        .slider-control.awards-slider__control
+          button.slider-control__btn.slider-control__btn--prev.awards-slider__prev
+          button.slider-control__btn.slider-control__btn--next.awards-slider__next
+        //awards-slider__control end
+
+
+
+
+
