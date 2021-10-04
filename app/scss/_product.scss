@@ -7,7 +7,6 @@
 
     // .product-card-section {
     &-section {
-      @include adaptive(padding-top, 60, 35, 0);
       @include adaptive(padding-bottom, 20, 30, 0);
     }
     // .product-card__title {

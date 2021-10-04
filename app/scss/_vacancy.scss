@@ -253,11 +253,29 @@
     text-align: center;
     background: $accentFourthColor;
     position: relative;
-    border-top: 8px solid $accentColor;
     margin-top: auto;
     @include _transition(all, 0.25s);
     @include adaptive(padding, 15, 10, 0);
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
 
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      width: 0%;
+      height: 8px;
+      background: $accentColor;
+      @include _transition(all, 0.35s);
+      transition-delay: 0.45s;
+    }
+    &.__animated {
+      &::before {
+        width: 100%;
+      }
+    }
     // .vacancies__card-title {
     &-title {
       @extend .t5;

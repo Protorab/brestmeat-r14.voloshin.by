@@ -874,7 +874,7 @@ label {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    @include adaptive(margin-bottom, 60, 40, 0);
+    @include adaptive(margin-bottom, 40, 35, 0);
 
     &::before,
     &::after {
@@ -1019,7 +1019,7 @@ label {
     }
     // .page-top__section {
     &__section {
-      @include adaptive(padding-top, 30, 20, 0);
+      @include adaptive(padding-top, 20, 15, 0);
       @media only screen and (max-width: 800px) {
         padding-top: 20px;
       }
@@ -1032,7 +1032,15 @@ label {
     @media only screen and (max-width: 800px) {
       @include adaptive(padding-top, 40, 35, 0);
     }
+    // .page-card-top {
+    &-top {
+      @include adaptive(padding-top, 60, 35, 0);
 
+      // .page-card-top__section {
+
+      &__section {
+      }
+    }
     // .page-card__product {
     &__product {
     }
@@ -1500,6 +1508,14 @@ label {
       background-size: cover;
       background-position: center;
       margin-left: 5px;
+    }
+  }
+}
+.text {
+  &-top {
+    // .text-top__section
+    &__section {
+      @include adaptive(padding-top, 45, 35, 0);
     }
   }
 }

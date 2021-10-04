@@ -455,7 +455,7 @@
         align-items: center;
         color: #525252;
         @extend .t6;
-        @include adaptive(margin-right, 25, 15, 0);
+        @include adaptive(margin-right, 65, 15, 0);
       }
       // recipe-card__stats-icon {
       &-icon {

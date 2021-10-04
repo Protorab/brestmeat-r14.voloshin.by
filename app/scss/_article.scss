@@ -100,7 +100,7 @@
   // .article-wrapper {
   &-wrapper {
     @extend .wrapper;
-    @include adaptive(padding-top, 60, 35, 0);
+    @extend .text-top__section;
     @include adaptive(margin-bottom, 100, 50, 0);
   }
   // .article-control Х

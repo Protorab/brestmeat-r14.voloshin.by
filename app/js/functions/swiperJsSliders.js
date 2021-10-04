@@ -27,7 +27,7 @@ const swiperJsSliders = () => {
       nextEl: ".novelty-slider__next",
       prevEl: ".novelty-slider__prev",
     },
-    loop: true,
+    loop: false,
     autoplay: {
       delay: 3500,
     },
@@ -98,7 +98,7 @@ const swiperJsSliders = () => {
     slidesPerView: 4,
     spaceBetween: 65,
     speed: 1200,
-    loop: true,
+    loop: false,
     autoplay: {
       delay: 3500,
     },

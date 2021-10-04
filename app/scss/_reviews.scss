@@ -42,6 +42,13 @@
     margin-right: -30px;
     margin-left: -30px;
     @include adaptive(margin-bottom, 85, 50, 0);
+    &.__animated {
+      .reviews-slide {
+        &::before {
+          width: 100%;
+        }
+      }
+    }
     @media only screen and (max-width: 600px) {
       margin-top: -0px;
       margin-right: -0px;
@@ -75,18 +82,36 @@
     @include _transition(all, 0.35s);
     background: $mainColor;
     box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      width: 0%;
+      height: 4px;
+      background: $accentColor;
+      @include _transition(all, 0.35s);
+      transition-delay: 0.45s;
+    }
     // .reviews-slide__text {
     &__text {
       @include adaptive(max-height, 210, 200, 0);
       overflow-x: hidden;
       overflow-y: auto;
     }
+
     // .reviews-slide__info {
     &__info {
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+
       // .reviews-slide__info-item {
       &-item {
         display: flex;
@@ -132,6 +157,13 @@
     grid-template-columns: repeat(3, 1fr);
     @include adaptive(grid-column-gap, 35, 20, 0);
     @include adaptive(grid-row-gap, 40, 30, 0);
+    &.__animated {
+      .reviews-card {
+        &::before {
+          width: 100%;
+        }
+      }
+    }
     // .reviews-cards-section
     &-section {
       @include adaptive(padding-bottom, 150, 105, 0);
@@ -158,13 +190,26 @@
     position: relative;
     background: #ffffff;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-    border-top: 4px solid $accentColor;
     @include adaptive(padding-top, 25, 20, 0);
     @include adaptive(padding-right, 20, 15, 0);
     @include adaptive(padding-bottom, 15, 10, 0);
     @include adaptive(padding-left, 20, 15, 0);
     @include _transition(all, 0.35s);
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
 
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      width: 0%;
+      height: 4px;
+      background: $accentColor;
+      @include _transition(all, 0.35s);
+      transition-delay: 0.45s;
+    }
     @media only screen and (min-width: 1152px) {
       &:hover {
         box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.26);

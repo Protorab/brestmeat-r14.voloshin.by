@@ -2,7 +2,7 @@
   // .breadcrumb__item {
   @extend .wrapper;
   overflow: hidden;
-  @include adaptive(margin-bottom, 20, 10, 0);
+  @include adaptive(margin-top, 25, 15, 0);
 
   // .breadcrumbs__list {
   &__list {

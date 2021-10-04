@@ -7,6 +7,9 @@ script(type='text/javascript').
   var center = {lat:lat,lng:lng} 
   var defIcon = "./img/icons/icon-pin.svg"
   var mapElement = document.getElementById("contactMap");
+  var infoWindow = new google.maps.InfoWindow({
+      maxWidth: 440,
+    });
   var mapOptions = {
       zoom: 9.35,
       center: center,
@@ -243,9 +246,7 @@ script(type='text/javascript').
   }
 
   function init() {
-    var infoWindow = new google.maps.InfoWindow({
-      maxWidth: 440,
-    });
+    
     map = new google.maps.Map(mapElement, mapOptions);
     for (var i = 0; i < markers.length; i++) {
       var data = markers[i];
