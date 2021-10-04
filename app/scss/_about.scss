@@ -25,9 +25,6 @@
   &-article {
     @include adaptive(margin-bottom, 60, 50, 0);
 
-    &:last-child {
-      @include adaptive(margin-bottom, 100, 60, 0);
-    }
     font-weight: 500;
     strong {
       font-weight: 600;
@@ -36,6 +33,10 @@
       background: transparent;
       color: $accentColor;
     }
+  }
+  // .about-vision {
+  &-vision {
+    @include adaptive(margin-bottom, 115, 85, 0);
   }
   // .about-principles {
   &-principles {
@@ -133,7 +134,7 @@
   width: 100%;
   grid-template-columns: repeat(2, 1fr);
   justify-content: space-between;
-  @include adaptive(grid-column-gap, 150, 80, 0);
+  @include adaptive(grid-column-gap, 200, 150, 0);
   @include adaptive(grid-row-gap, 70, 60, 0);
 
   @media only screen and (max-width: 600px) {
@@ -341,8 +342,10 @@
   }
   // .awards-slide {
   &-slide {
-    @include adaptive(width, 230, 170, 0);
-    @include adaptive(height, 335, 250, 0);
+    width: 100%;
+    height: 100%;
+    // @include adaptive(width, 230, 170, 0);
+    // @include adaptive(height, 335, 250, 0);
     overflow: hidden;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     img {

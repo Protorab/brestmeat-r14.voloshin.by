@@ -213,15 +213,24 @@ const swiperJsSliders = () => {
     },
   });
   let awardsSlider = new Swiper(".awards-slider", {
-    slidesPerView: "auto",
+    slidesPerView: 5,
     spaceBetween: 15,
     speed: 1200,
     breakpoints: {
       320: {
-        spaceBetween: 10,
+        spaceBetween: 15,
+        slidesPerView: 1.8,
       },
       640: {
+        spaceBetween: 10,
+        slidesPerView: 2.8,
+      },
+      1024: {
+        slidesPerView: 4,
+      },
+      1280: {
         spaceBetween: 15,
+        slidesPerView: 5,
       },
     },
     navigation: {
