@@ -186,6 +186,9 @@
   // .history-slider {
   &-slider {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+
     @include adaptive(margin-bottom, 100, 80, 0);
     // .history-slider__pagination {
     &__pagination {
