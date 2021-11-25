@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
   btnsFunc();
   showVisible();
   swiperJsSliders();
-  numberList();
+  // numberList();
   listStyle();
   // menuDropdown();
   cvFormAdd();

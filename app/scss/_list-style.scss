@@ -1,8 +1,13 @@
-ul,
-ol {
+ul {
   list-style: none;
 }
-
+ol {
+  li {
+    &::marker {
+      color: $accentColor;
+    }
+  }
+}
 ul {
   &:not([class]),
   &[class^="list__type"] {

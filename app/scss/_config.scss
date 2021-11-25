@@ -910,6 +910,11 @@ label {
       white-space: normal;
     }
   }
+  .section__subtitle {
+    @extend .t2;
+    font-weight: 500;
+    @include adaptive(margin-bottom, 60, 35, 0);
+  }
 }
 
 .label {

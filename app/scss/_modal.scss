@@ -586,6 +586,8 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
+      border-bottom: 2px solid $textColor;
+      background-color: #fff;
       @include adaptive(width, 60, 55, 0);
     }
   }
