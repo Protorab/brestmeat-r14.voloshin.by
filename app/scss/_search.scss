@@ -101,7 +101,13 @@
         &:last-child {
           margin-bottom: 0;
         }
-
+        // .search-result-list__item-number {
+        &-number {
+          display: flex;
+          @extend .t4;
+          margin-right: 5px;
+          font-weight: 700;
+        }
         // .search-result-list__item-content {
         &-content {
           display: flex;
