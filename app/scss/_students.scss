@@ -1,23 +1,31 @@
 .students {
+
   // .students-sections {
   &-sections {
     @include adaptive(padding-bottom, 120, 100, 0);
+
     @media only screen and (max-width: 800px) {
       @include adaptive(padding-bottom, 130, 100, 0);
     }
 
     // .students-sections__title {
-    &__title {
-    }
+    &__title {}
   }
+
   // .students-article {
   &-article {
     ul {
+
       &:not([class]),
       &[class^="list__type"] {
         li {
           &::before {
             background: $accentColor;
+
+            .bvi-body & {
+              background: $textColor;
+
+            }
           }
         }
       }

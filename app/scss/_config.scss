@@ -201,6 +201,7 @@ body {
   &.bvi-active {
     padding: 0;
     align-items: stretch;
+    filter: grayscale(1);
 
     img {
       filter: grayscale(1);

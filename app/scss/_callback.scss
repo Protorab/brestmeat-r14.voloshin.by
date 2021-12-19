@@ -30,16 +30,22 @@
         font-weight: 600;
       }
 
-      h {
-        @for $i from 1 through 6 {
-          &#{$i} {
-            @include adaptive(margin-bottom, 15, 10, 0);
-          }
+      h3 {
+        @include adaptive(margin-bottom, 15, 10, 0);
+        @extend .t3;
+
+        * {
+          @extend .t3;
         }
       }
 
       h5 {
         color: $textFourthColor;
+        @extend .t5;
+
+        * {
+          @extend .t5;
+        }
       }
 
       a {

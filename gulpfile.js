@@ -213,11 +213,16 @@ exports.html = html;
 exports.pugFunc = pugFunc;
 exports.fonts = fonts;
 exports.cleanimg = cleanimg;
-exports.dev = series(
+exports.prod = series(
   clean,
   scripts,
   styles,
   parallel(browsersync, startwatch, assets, fonts, pugFunc) //buildhtml,
+);
+exports.prod_s = series(
+  clean,
+  styles,
+  parallel(startwatch) //buildhtml,
 );
 exports.default = series(
   clean,

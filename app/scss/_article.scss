@@ -4,6 +4,10 @@
   * {
     &:not([class]) {
       overflow: hidden;
+
+      .bvi-body & {
+        color: $textColor !important;
+      }
     }
   }
 
@@ -40,16 +44,19 @@
     * {
       @extend .p;
 
-      .bvi-body & {
-        color: $textColor !important;
-
+      &:not([class]) {
+        .bvi-body & {
+          color: $textColor !important;
+        }
       }
     }
 
-    .bvi-body & {
-      color: $textColor !important;
-
+    &:not([class]) {
+      .bvi-body & {
+        color: $textColor !important;
+      }
     }
+
   }
 
   strong {

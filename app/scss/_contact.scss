@@ -170,6 +170,11 @@
     @include adaptive(margin-bottom, 65, 45, 0);
     background: #ececec;
 
+    .bvi-body & {
+      margin-bottom: 0;
+
+    }
+
     // .contact-info__title {
     &__title {
       @extend .t6;
@@ -238,5 +243,10 @@
   &-map {
     width: 100%;
     @include adaptive(height, 445, 425, 0);
+
+    .bvi-body & {
+      display: none;
+
+    }
   }
 }

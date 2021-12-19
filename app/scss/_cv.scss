@@ -221,6 +221,11 @@
       font-weight: 600;
       text-transform: uppercase;
       @include adaptive(margin-bottom, 45, 35, 0);
+
+      .bvi-body & {
+        color: $textColor;
+
+      }
     }
 
     // .cv-form__photo {
