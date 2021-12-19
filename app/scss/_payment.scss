@@ -1,10 +1,12 @@
 .payment {
+
   // .payment-section {
   &-section {
+
     // .payment-section__title {
-    &__title {
-    }
+    &__title {}
   }
+
   // .payment__title {
   &__title {
     @extend .t4;
@@ -12,9 +14,11 @@
     text-transform: uppercase;
     @include adaptive(margin-bottom, 35, 30, 0);
   }
+
   // .payment-info {
 
   &-info {
+
     // .payment-info__list {
     &__list {
       display: grid;
@@ -23,10 +27,12 @@
       @include adaptive(grid-column-gap, 25, 15, 0);
       @include adaptive(grid-row-gap, 20, 15, 0);
       @include adaptive(margin-bottom, 80, 75, 0);
+
       @media only screen and (max-width: 800px) {
         grid-template-columns: repeat(2, 1fr);
       }
     }
+
     // .payment-info__item {
     &__item {
       display: flex;
@@ -57,16 +63,25 @@
           max-height: 100%;
         }
       }
+
       // .payment-info__item-title {
       &-title {
         text-transform: uppercase;
         @include adaptive(font-size, 14, 10, 0);
         font-weight: 600;
+
+        @for $i from 1 through 40 {
+          body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+            @include adaptive(font-size, 1.4 * $i, 1 * $i, 5);
+          }
+        }
       }
     }
   }
+
   // .payment-use {
   &-use {
+
     // .payment-use__list {
     &__list {
       width: 100%;
@@ -79,10 +94,12 @@
       @media only screen and (max-width: 800px) {
         grid-template-columns: repeat(2, 1fr);
       }
+
       @media only screen and (max-width: 800px) {
         grid-template-columns: repeat(1, 100%);
       }
     }
+
     // .payment-use__item {
     &__item {
       display: flex;
@@ -111,6 +128,7 @@
         @include adaptive(margin-right, 15, 15, 0);
         @include adaptive(min-width, 65, 50, 0);
       }
+
       // .payment-use__item-title {
       &-title {
         color: $mainColor;
@@ -119,14 +137,17 @@
       }
     }
   }
+
   // .payment-need {
   &-need {
     * {
       font-weight: 500;
     }
+
     @include adaptive(padding-bottom, 60, 45, 0);
 
     ul {
+
       &:not([class]),
       &[class^="list__type"] {
         li {

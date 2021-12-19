@@ -9,6 +9,7 @@
 
   // .vacancy-section {
   &-section {
+
     // .vacancy-section__title {
     &__title {
       // @include adaptive(margin-bottom, 35, 20, 0);
@@ -120,6 +121,7 @@
       img {
         @include _transition(all, 0.35s);
       }
+
       @media only screen and (min-width: 1152px) {
         &:hover {
           img {
@@ -128,12 +130,14 @@
         }
       }
     }
+
     // vacancy-hr__content {
     &__content {
       display: flex;
       flex-direction: column;
       width: 100%;
     }
+
     // .vacancy-hr__title {
     &__title {
       @extend .t5;
@@ -146,17 +150,20 @@
         @include adaptive(margin-bottom, 25, 20, 0);
       }
     }
+
     // .vacancy-hr__text {
     &__text {
       @extend .t6;
       @include adaptive(margin-bottom, 5, 5, 0);
     }
+
     // .vacancy-hr__link {
     &__link {
       @extend .t6;
       font-weight: 500;
       display: inline-block;
       @include _transition(all, 0.35s);
+
       @media only screen and (min-width: 1152px) {
         &:hover {
           color: $accentColor;
@@ -220,6 +227,7 @@
     }
   }
 }
+
 .vacancies {
   @extend .wrapper;
   display: grid;
@@ -230,6 +238,7 @@
   @media only screen and (max-width: 1152px) {
     grid-template-columns: repeat(2, 1fr);
   }
+
   @media only screen and (max-width: 600px) {
     grid-template-columns: repeat(1, 100%);
   }
@@ -237,10 +246,11 @@
   // .vacancies-section
   &-section {
     @include adaptive(padding-bottom, 150, 100, 0);
+
     // .vacancies-section__title {
-    &__title {
-    }
+    &__title {}
   }
+
   // vacancies__card {
   &__card {
     width: 100%;
@@ -256,6 +266,7 @@
     margin-top: auto;
     @include _transition(all, 0.25s);
     @include adaptive(padding, 15, 10, 0);
+
     &:before {
       content: "";
       display: block;
@@ -270,18 +281,26 @@
       background: $accentColor;
       @include _transition(all, 0.35s);
       transition-delay: 0.45s;
+
+      .bvi-body & {
+        background: $bviBg;
+      }
+
     }
+
     &.__animated {
       &::before {
         width: 100%;
       }
     }
+
     // .vacancies__card-title {
     &-title {
       @extend .t5;
       text-transform: uppercase;
       font-weight: 600;
     }
+
     // .vacancies__card-city {
     &-city {
       position: absolute;
@@ -289,6 +308,12 @@
       font-weight: 500;
       text-transform: uppercase;
       @include adaptive(font-size, 15, 14, 0);
+
+      @for $i from 1 through 40 {
+        body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+          @include adaptive(font-size, 1.5 * $i, 1.4 * $i, 5);
+        }
+      }
     }
 
     // .vacancies__card-link {
@@ -302,6 +327,7 @@
       height: 100%;
       z-index: 3;
     }
+
     @media only screen and (min-width: 1152px) {
       &:hover {
         box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.26);
@@ -309,7 +335,9 @@
     }
   }
 }
+
 .career {
+
   // .career-wrapper {
   &-wrapper {
     @extend .wrapper;
@@ -321,6 +349,7 @@
       flex-wrap: wrap;
     }
   }
+
   // .career-category {
   &-category {
     display: flex;
@@ -329,6 +358,12 @@
     align-items: flex-start;
     width: 13%;
     height: auto;
+
+    .bvi-body & {
+      width: 25%;
+
+    }
+
     // .career-category__link {
     &__link {
       @extend .t5;
@@ -353,21 +388,34 @@
         @include _transition(all, 0.35s);
         transform-origin: left;
         transform: scale(0, 1);
+
+        .bvi-body & {
+          background: $textColor;
+        }
+
       }
+
       @media only screen and (min-width: 1152px) {
         &:hover {
           color: $accentColor;
+
           &::before {
             transform: scale(1, 1);
+          }
+
+          .bvi-body & {
+            color: $textColor;
           }
         }
       }
     }
+
     @media only screen and (max-width: 800px) {
       width: 100%;
       @include adaptive(margin-bottom, 40, 35, 0);
     }
   }
+
   // .career-content {
   &-content {
     display: flex;
@@ -376,14 +424,22 @@
     align-items: flex-start;
     width: 85%;
     height: auto;
+
+    .bvi-body & {
+      width: 72%;
+
+    }
+
     // @include adaptive(padding-bottom, 30, 20, 0);
     @media only screen and (max-width: 800px) {
       width: 100%;
     }
   }
+
   // .career-section
   &-section {
     @include adaptive(padding-bottom, 100, 80, 0);
+
     // .career-section__title {
     &__title {
       @extend .t3;
@@ -391,6 +447,7 @@
       @include adaptive(margin-bottom, 35, 25, 0);
     }
   }
+
   // .career-work {
   &-work {
     width: 100%;
@@ -399,6 +456,18 @@
     @include adaptive(grid-row-gap, 55, 50, 0);
     @include adaptive(grid-column-gap, 45, 20, 0);
 
+    .bvi-body & {
+      grid-template-columns: repeat(2, 1fr);
+
+      @media only screen and (max-width: 800px) {
+        @include adaptive(grid-row-gap, 65, 60, 0);
+      }
+
+      @media only screen and (max-width: 600px) {
+        grid-template-columns: repeat(1, 100%);
+      }
+    }
+
     @media only screen and (max-width: 1024px) {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -406,6 +475,7 @@
     @media only screen and (max-width: 800px) {
       @include adaptive(grid-row-gap, 65, 60, 0);
     }
+
     @media only screen and (max-width: 600px) {
       grid-template-columns: repeat(1, 100%);
     }
@@ -437,6 +507,7 @@
           @include adaptive(margin-bottom, 30, 25, 0);
         }
       }
+
       // .career-work-card__title {
       &__title {
         @extend .t6;
@@ -444,10 +515,12 @@
         text-transform: uppercase;
         width: 100%;
         @include adaptive(margin-bottom, 25, 15, 0);
+
         @media only screen and (max-width: 600px) {
           text-align: center;
         }
       }
+
       // .career-work-card__content {
       &__content {
         display: flex;
@@ -456,6 +529,7 @@
         align-items: flex-start;
         height: 100%;
       }
+
       @media only screen and (max-width: 600px) {
         flex-direction: column;
         align-items: center;
@@ -464,9 +538,9 @@
     }
 
     // .career-work-section {
-    &-section {
-    }
+    &-section {}
   }
+
   // .career-steps {
   &-steps {
     background: $accentThirdColor;
@@ -481,6 +555,16 @@
     @include adaptive(padding-bottom, 30, 25, 0);
     @include adaptive(padding-left, 25, 25, 0);
 
+    .bvi-body & {
+
+      border-top: 8px solid $bviBg;
+      grid-template-columns: repeat(2, 1fr);
+
+      @media only screen and (max-width: 600px) {
+        grid-template-columns: repeat(1, 100%);
+      }
+    }
+
     @media only screen and (max-width: 1152px) {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -491,6 +575,7 @@
 
     // .career-steps-section {
     &-section {
+
       // .career-steps-section__title {
       &__title {
         text-transform: uppercase;
@@ -514,6 +599,7 @@
         color: $mainColor;
         @include adaptive(margin-bottom, 25, 20, 0);
       }
+
       // .career-steps__card-number {
       &-number {
         display: inline-flex;
@@ -526,7 +612,13 @@
         @include _borderRadius(50%);
         @include adaptive(margin-right, 10, 10, 0);
         background: $accentColor;
+
+        .bvi-body & {
+          background: $bviBg;
+
+        }
       }
+
       // .career-steps__card-content {
       &-content {
         display: flex;
@@ -546,14 +638,17 @@
             margin-bottom: 0;
           }
         }
+
         @media only screen and (max-width: 800px) {
           @include adaptive(padding, 30, 25, 0);
         }
       }
     }
   }
+
   // .career-questions {
   &-questions {
+
     // .career-questions-section {
     &-section {
       @include adaptive(padding-bottom, 150, 110, 0);
@@ -564,6 +659,7 @@
       }
     }
   }
+
   // .career-collapsible {
   &-collapsible {
     background: $accentFourthColor;
@@ -582,15 +678,19 @@
     &__title {
       @extend .t6;
     }
+
     // .career-collapsible__content {
     &__content {
+
       // .career-collapsible__content-wrapper {
       &-wrapper {
         background: $accentFourthColor;
         @include adaptive(padding, 15, 10, 0);
+
         @media only screen and (max-width: 800px) {
           @include adaptive(padding, 25, 20, 0);
         }
+
         p {
           @include adaptive(margin-bottom, 10, 5, 0);
 
@@ -601,6 +701,7 @@
       }
     }
   }
+
   // career__btn {
   &__btn {
     align-self: center;

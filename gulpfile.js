@@ -1,4 +1,10 @@
-const { src, dest, parallel, series, watch } = require("gulp");
+const {
+  src,
+  dest,
+  parallel,
+  series,
+  watch
+} = require("gulp");
 const browserSync = require("browser-sync").create();
 const webpack = require("webpack-stream");
 const sass = require("gulp-sass");
@@ -16,7 +22,7 @@ const cleanCss = require("gulp-clean-css");
 const pug = require("gulp-pug");
 const bssi = require("browsersync-ssi");
 const ssi = require("ssi");
-const distFolder = "brestmeat-r14.voloshin.by"; //project folder name
+const distFolder = "brestmeat"; //project folder name
 const appFolder = "app"; //work folder name
 
 // path to folder
@@ -66,16 +72,14 @@ function scripts() {
       webpack({
         mode: "production",
         module: {
-          rules: [
-            {
-              test: /\.(js)$/,
-              exclude: /(node_modules)/,
-              loader: "babel-loader",
-              query: {
-                presets: ["@babel/env"],
-              },
+          rules: [{
+            test: /\.(js)$/,
+            exclude: /(node_modules)/,
+            loader: "babel-loader",
+            query: {
+              presets: ["@babel/env"],
             },
-          ],
+          }, ],
         },
       })
     )
@@ -89,9 +93,14 @@ function scripts() {
 
 function styles() {
   return src(path.src.css)
-    .pipe(sass({ outputStyle: "compressed" }))
+    .pipe(sass({
+      outputStyle: "compressed"
+    }))
     .pipe(
-      autoprefixer({ overrideBrowserslist: ["last 10 versions"], grid: true })
+      autoprefixer({
+        overrideBrowserslist: ["last 10 versions"],
+        grid: true
+      })
     )
     .pipe(groupMedia())
     .pipe(dest(path.build.css))
@@ -119,11 +128,9 @@ function images() {
     .pipe(
       imagemin({
         progressive: true,
-        svgPlugins: [
-          {
-            removeViewBox: false,
-          },
-        ],
+        svgPlugins: [{
+          removeViewBox: false,
+        }, ],
         interlaced: true,
         optimizationLevel: 3, //0 to 7,
       })
@@ -163,16 +170,18 @@ function buildhtml() {
 }
 
 function cleanimg() {
-  return del("app/img/dest/**/*", { force: true });
+  return del("app/img/dest/**/*", {
+    force: true
+  });
 }
 
 function fonts() {
   return (
     src(path.src.fonts)
-      // .pipe(ttf2woff())
-      // .pipe(dest(path.build.fonts))
-      .pipe(ttf2woff2())
-      .pipe(dest(path.build.fonts))
+    // .pipe(ttf2woff())
+    // .pipe(dest(path.build.fonts))
+    .pipe(ttf2woff2())
+    .pipe(dest(path.build.fonts))
   );
 }
 
@@ -195,6 +204,7 @@ function browsersync() {
   });
 }
 
+exports.clean = clean;
 exports.scripts = scripts;
 exports.styles = styles;
 exports.images = images;
@@ -203,6 +213,12 @@ exports.html = html;
 exports.pugFunc = pugFunc;
 exports.fonts = fonts;
 exports.cleanimg = cleanimg;
+exports.dev = series(
+  clean,
+  scripts,
+  styles,
+  parallel(browsersync, startwatch, assets, fonts, pugFunc) //buildhtml,
+);
 exports.default = series(
   clean,
   scripts,

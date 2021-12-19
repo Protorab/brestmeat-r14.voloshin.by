@@ -1,17 +1,20 @@
 .novelty {
+
   // .novelty-section {
   &-section {
+
     // .novelty-section__title {
-    &__title {
-    }
+    &__title {}
   }
+
   // .novelty-slider {
   &-slider {
     @extend .wrapper;
   }
+
   // .novelty-slides {
-  &-slides {
-  }
+  &-slides {}
+
   // novelty-slide {
   &-slide {
     display: flex;
@@ -20,13 +23,16 @@
     align-items: flex-start;
     @include adaptive(width, 330, 310, 0);
     position: relative;
+
     // @include adaptive(height, 340, 210, 0);
     // .novelty-slide__label {
     &__label {
       position: absolute;
       top: 0;
+      z-index: 5;
       @include adaptive(left, 0, 0, 0);
     }
+
     // .novelty-slide__picture {
     &__picture {
       display: flex;
@@ -45,6 +51,7 @@
         @include _transition(all, 0.35s);
       }
     }
+
     // .novelty-slide__title {
     &__title {
       @extend .t6;
@@ -55,6 +62,7 @@
       @include adaptive(padding-bottom, 15, 10, 0);
       @include adaptive(margin-bottom, 15, 10, 0);
     }
+
     //  .novelty-slide__info {
     &__info {
       display: flex;
@@ -68,6 +76,12 @@
         display: flex;
         @include adaptive(font-size, 10, 9, 0);
 
+        @for $i from 1 through 40 {
+          body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+            @include adaptive(font-size, 1 * $i, 0.9 * $i, 5);
+          }
+        }
+
         // .novelty-slide__info-item__icon {
         &__icon {
           display: inline-flex;
@@ -78,25 +92,47 @@
           @include adaptive(height, 25, 25, 0);
           @include adaptive(margin-right, 5, 5, 0);
         }
+
         // .novelty-slide__info-item__group {
         &__group {
           display: inline-flex;
           flex-direction: column;
           justify-content: space-between;
           align-items: stretch;
+
+          @for $i from 1 through 40 {
+            body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+              @include adaptive(font-size, 1 * $i, 0.9 * $i, 5);
+            }
+          }
         }
+
         // .novelty-slide__info-item__title {
         &__title {
           color: #5b0000;
           text-transform: uppercase;
           font-weight: 500;
+
+          @for $i from 1 through 40 {
+            body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+              @include adaptive(font-size, 1 * $i, 0.9 * $i, 5);
+            }
+          }
         }
+
         // .novelty-slide__info-item__text {
         &__text {
           color: #505050;
+
+          @for $i from 1 through 40 {
+            body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+              @include adaptive(font-size, 1 * $i, 0.9 * $i, 5);
+            }
+          }
         }
       }
     }
+
     // .novelty-slide__link {
     &__link {
       position: absolute;
@@ -107,7 +143,10 @@
       bottom: 0;
       left: 0;
       z-index: 2;
+
+
     }
+
     @media only screen and (min-width: 1152px) {
       &:hover {
         .novelty {

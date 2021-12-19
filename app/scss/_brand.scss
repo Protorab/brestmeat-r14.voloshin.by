@@ -1,21 +1,26 @@
 .brand {
   &-trade {
+
     // .brand-trade-section {
     &-section {
       // .brand-trade-section__title {
       padding-bottom: 0;
-      &__title {
-      }
+
+      &__title {}
     }
+
     // .brand-trade__article {
     &__article {
+
       p,
       a {
         font-weight: 500;
       }
     }
+
     // .brand-trade-wrapper
   }
+
   // .brand-shops {
   &-shops {
     width: 100%;
@@ -34,6 +39,7 @@
     &:nth-last-child(3) {
       @include adaptive(margin-bottom, 110, 80, 0);
     }
+
     @media only screen and (max-width: 1152px) {
       display: none;
     }
@@ -60,8 +66,9 @@
       justify-content: flex-start;
       align-items: flex-start;
       flex-direction: column;
-      * {
-      }
+
+      * {}
+
       // .brand-shops__card-title {
       &-title {
         @include adaptive(font-size, 15, 15, 0);
@@ -70,22 +77,43 @@
         color: $accentColor;
         text-transform: uppercase;
         @include adaptive(margin-bottom, 15, 10, 0);
+
+        @for $i from 1 through 40 {
+          body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+            @include adaptive(font-size, 1.5 * $i, 1.5 * $i, 5);
+          }
+        }
       }
+
       // .brand-shops__card-subtitle {
       &-subtitle {
         @include adaptive(font-size, 15, 15, 0);
         @include adaptive(margin-bottom, 10, 7, 0);
         font-weight: 600;
         color: #272727;
+
+        @for $i from 1 through 40 {
+          body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+            @include adaptive(font-size, 1.5 * $i, 1.5 * $i, 5);
+          }
+        }
       }
+
       // .brand-shops__card-address {
       &-address {
         @include adaptive(font-size, 15, 15, 0);
         @include adaptive(margin-bottom, 20, 15, 0);
+
         mark {
           color: $accentColor;
           background: transparent;
           font-weight: 500;
+        }
+
+        @for $i from 1 through 40 {
+          body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+            @include adaptive(font-size, 1.5 * $i, 1.5 * $i, 5);
+          }
         }
       }
 
@@ -99,11 +127,12 @@
         }
 
         // .brand-shops__card-list__item {
-        &__item {
-        }
+        &__item {}
+
         // .brand-shops__card-list__link {
         &__link {
           @include _transition(all, 0.35s);
+
           @media only screen and (min-width: 1152px) {
             &:hover {
               color: $accentColor;
@@ -112,6 +141,7 @@
         }
       }
     }
+
     // .brand-shops-mobile {
     &-mobile {
       display: none;
@@ -142,10 +172,18 @@
         font-weight: 700;
         color: $accentColor;
         text-transform: uppercase;
+
+        @for $i from 1 through 40 {
+          body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+            @include adaptive(font-size, 1.5 * $i, 1.5 * $i, 5);
+          }
+        }
       }
+
       // .brand-shops__collapsible-content {
       &-content {
         border-bottom: 1px solid #9a9a9a;
+
         // .brand-shops__collapsible-content__wrapper {
         &__wrapper {
           // padding-top: 0;
@@ -157,11 +195,13 @@
           &:not(&:first-of-type) {
             padding-top: 0;
           }
+
           &:last-of-type {
             margin-bottom: 0;
             border-bottom: none;
           }
         }
+
         // .brand-shops__collapsible-content__title {
         &__title {
           @include adaptive(font-size, 14, 13, 0);
@@ -169,23 +209,44 @@
           text-transform: uppercase;
           color: $accentColor;
           @include adaptive(margin-bottom, 15, 10, 0);
+
+          @for $i from 1 through 40 {
+            body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+              @include adaptive(font-size, 1.5 * $i, 1.5 * $i, 5);
+            }
+          }
         }
       }
+
       // .brand-shops__collapsible-subtitle {
       &-subtitle {
         @include adaptive(font-size, 15, 15, 0);
         @include adaptive(margin-bottom, 10, 7, 0);
         font-weight: 600;
         color: #272727;
+
+        @for $i from 1 through 40 {
+          body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+            @include adaptive(font-size, 1.5 * $i, 1.5 * $i, 5);
+          }
+        }
       }
+
       // .brand-shops__collapsible-address {
       &-address {
         @include adaptive(font-size, 15, 15, 0);
         @include adaptive(margin-bottom, 20, 15, 0);
+
         mark {
           color: $accentColor;
           background: transparent;
           font-weight: 500;
+        }
+
+        @for $i from 1 through 40 {
+          body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+            @include adaptive(font-size, 1.5 * $i, 1.5 * $i, 5);
+          }
         }
       }
 
@@ -199,11 +260,12 @@
         }
 
         // .brand-shops__collapsible-list__item {
-        &__item {
-        }
+        &__item {}
+
         // .brand-shops__collapsible-list__link {
         &__link {
           @include _transition(all, 0.35s);
+
           @media only screen and (min-width: 1152px) {
             &:hover {
               color: $accentColor;
@@ -214,6 +276,7 @@
     }
   }
 }
+
 .shops-map {
   width: 100%;
   @include adaptive(height, 565, 420, 0);

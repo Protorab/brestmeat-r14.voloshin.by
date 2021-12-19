@@ -1,4 +1,5 @@
 .product {
+
   // .product-card {
   &-card {
     @extend .wrapper;
@@ -9,6 +10,7 @@
     &-section {
       @include adaptive(padding-bottom, 20, 30, 0);
     }
+
     // .product-card__title {
     &__title {
       @extend .t4;
@@ -17,19 +19,23 @@
       color: $texSixColor;
 
       @include adaptive(margin-bottom, 30, 25, 0);
+
       &:not(&.__mobile) {
         @media only screen and (max-width: 800px) {
           display: none;
         }
       }
+
       &.__mobile {
         align-self: center;
         text-align: center;
+
         @media only screen and (min-width: 800px) {
           display: none;
         }
       }
     }
+
     // product-card__image {
     &__image {
       display: flex;
@@ -57,10 +63,11 @@
           max-height: 100%;
           @include _transition(all, 0.35s);
         }
+
         @media only screen and (min-width: 1152px) {
           &:hover {
             img {
-              transform: scale(1.2);
+              // transform: scale(1.2);
             }
           }
         }
@@ -76,11 +83,13 @@
         // @include adaptive(height, 115, 85, 0);
         padding: 20px;
         margin: -20px;
+
         @media only screen and (max-width: 800px) {
           padding: 0px;
           margin: 0px;
         }
       }
+
       // .product-card__image-slides {
       &-slides {
         width: 100%;
@@ -88,6 +97,7 @@
         align-items: stretch;
         margin-bottom: 0;
       }
+
       // .product-card__image-slide {
       &-slide {
         display: flex;
@@ -97,18 +107,21 @@
         cursor: pointer;
         background: $mainColor;
         @include _transition(all, 0.35s);
+
         img {
           width: auto;
           max-width: 100%;
           height: auto;
           max-height: 100%;
         }
+
         @media only screen and (min-width: 1152px) {
           &:hover {
             filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.25));
           }
         }
       }
+
       @media only screen and (max-width: 800px) {
         flex: 1 1 100%;
         width: 100%;
@@ -126,6 +139,7 @@
       width: 50%;
       flex: 1 1 calc((100% / 2) - 30px);
       margin-left: 30px;
+
       @media only screen and (max-width: 800px) {
         margin-left: 0;
         flex: 1 1 100%;
@@ -154,6 +168,13 @@
       &-item {
         display: flex;
         @include adaptive(font-size, 14, 9, 0);
+
+        @for $i from 1 through 40 {
+          body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+            @include adaptive(font-size, 1.4 * $i, 0.9 * $i, 5);
+          }
+        }
+
         // .product-slide__info-item__icon {
         &__icon {
           display: inline-flex;
@@ -164,6 +185,7 @@
           @include adaptive(height, 37, 30, 0);
           @include adaptive(margin-right, 10, 5, 0);
         }
+
         // .product-slide__info-item__group {
         &__group {
           display: inline-flex;
@@ -171,12 +193,14 @@
           justify-content: space-between;
           align-items: stretch;
         }
+
         // .product-slide__info-item__title {
         &__title {
           color: #5b0000;
           text-transform: uppercase;
           font-weight: 500;
         }
+
         // .product-slide__info-item__text {
         &__text {
           color: #505050;
@@ -192,6 +216,7 @@
       width: 100%;
       height: auto;
       flex-wrap: wrap;
+
       // .product-card__awards-item {
       &-item {
         display: flex;
@@ -216,6 +241,7 @@
           @include adaptive(margin-bottom, 15, 15, 0);
           overflow: hidden;
         }
+
         // .product-card__awards-item__title {
         &__title {
           text-align: center;
@@ -225,6 +251,7 @@
         }
       }
     }
+
     // .product-card__composition {
     &__composition {
       display: flex;
@@ -241,6 +268,7 @@
         color: $texSevenColor;
         font-weight: 600;
       }
+
       // .product-card__composition-icon {
       &-icon {
         display: inline-flex;
@@ -248,14 +276,17 @@
         @include adaptive(min-width, 32, 28, 0);
         @include adaptive(height, 32, 28, 0);
         @include adaptive(margin-bottom, 20, 18, 0);
+
         img {
           object-fit: contain;
         }
       }
+
       // .product-card__composition-text {
       &-text {
         color: #000;
         width: 100%;
+
         h {
           @for $i from 1 through 6 {
             &#{$i} {
@@ -266,6 +297,7 @@
 
         p {
           @include adaptive(margin-bottom, 10, 8, 0);
+
           &:last-child {
             margin-bottom: 0;
           }

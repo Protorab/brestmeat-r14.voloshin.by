@@ -1,9 +1,10 @@
 .cv {
   &-section {
+
     // .cv-section__title {
-    &__title {
-    }
+    &__title {}
   }
+
   // .cv-form {
   &-form {
     @extend .wrapper;
@@ -12,10 +13,12 @@
     @include adaptive(padding-right, 60, 20, 0);
     @include adaptive(padding-bottom, 45, 40, 0);
     @include adaptive(padding-left, 60, 20, 0);
+
     sup {
       top: 0;
       @extend .t6;
     }
+
     // .cv-form__warning {
     &__warning {
       @extend .p;
@@ -26,11 +29,13 @@
         @include adaptive(margin-bottom, 50, 40, 0);
       }
     }
+
     // .cv-form__label {
     &__label {
       // @include adaptive(margin-bottom, 10, 10, 0);
       margin-bottom: 10px;
     }
+
     // .cv-form__input {
     &__input {
       // max-height: 50px;
@@ -42,9 +47,10 @@
         overflow-y: auto;
         width: 100%;
         max-width: 100%;
-        @media only screen and (max-width: 600px) {
-        }
+
+        @media only screen and (max-width: 600px) {}
       }
+
       // .cv-form__input-btn {
       &-btn {
         @include adaptive(max-height, 55, 50, 0);
@@ -54,6 +60,7 @@
         // @include adaptive(margin-bottom, 35, 25, 0);
       }
     }
+
     // .cv-form__row {
     &__row {
       width: 100%;
@@ -66,31 +73,39 @@
       @include adaptive(grid-row-gap, 40, 30, 0);
       @include adaptive(grid-column-gap, 40, 30, 0);
       @include adaptive(margin-bottom, 40, 30, 0);
+
       @media only screen and (max-width: 800px) {
         grid-template-columns: repeat(1, 100%);
       }
 
       &.rs {
         grid-template-columns: 0.55fr 1fr;
+
         @media only screen and (max-width: 800px) {
           grid-template-columns: repeat(1, 100%);
         }
       }
+
       &.ls {
         grid-template-columns: 1fr 0.55fr;
+
         @media only screen and (max-width: 800px) {
           grid-template-columns: repeat(1, 100%);
         }
       }
+
       &.__three-coll {
         grid-template-columns: repeat(3, 1fr);
+
         @media only screen and (max-width: 800px) {
           grid-template-columns: repeat(1, 100%);
         }
       }
+
       &:last-child {
         margin-bottom: 0;
       }
+
       // .cv-form__row-remove {
       &-remove {
         display: flex;
@@ -121,14 +136,17 @@
           background-position: bottom center;
           @include _transition(all, 0.35s);
         }
+
         &::before {
           background-image: url("../img/icons/icon-close.svg");
         }
+
         &::after {
           background-image: url("../img/icons/icon-close-red.svg");
           opacity: 0;
           transform: rotate(-180deg) translateY(100%);
         }
+
         @media only screen and (min-width: 1152px) {
           left: 101%;
 
@@ -137,6 +155,7 @@
               transform: rotate(-180deg) translateY(100%);
               opacity: 0;
             }
+
             &::after {
               transform: rotate(0deg) translateY(-0%);
               opacity: 1;
@@ -145,6 +164,7 @@
         }
       }
     }
+
     // .cv-form__coll {
     &__coll {
       display: flex;
@@ -153,22 +173,28 @@
       align-items: flex-start;
       width: 100%;
       height: 100%;
-      > *:not(label) {
+
+      >*:not(label) {
         @include adaptive(margin-bottom, 35, 25, 0);
+
         &:last-child {
           margin-bottom: 0;
         }
       }
+
       .cv-form {
         &__radio {
           @include adaptive(margin-bottom, 15, 10, 0);
+
           &:last-of-type {
             margin-bottom: 0;
           }
+
           @media only screen and (max-width: 800px) {
             @include adaptive(margin-bottom, 25, 20, 0);
           }
         }
+
         &__textarea {
           &.__motivation {
             @include adaptive(margin-bottom, 25, 20, 0);
@@ -182,10 +208,12 @@
       width: 100%;
       height: auto;
       @include adaptive(margin-bottom, 100, 70, 0);
+
       &:last-of-type {
         @include adaptive(margin-bottom, 65, 50, 0);
       }
     }
+
     // .cv-form__title {
     &__title {
       @extend .t4;
@@ -194,6 +222,7 @@
       text-transform: uppercase;
       @include adaptive(margin-bottom, 45, 35, 0);
     }
+
     // .cv-form__photo {
     &__photo {
       display: flex;
@@ -210,11 +239,13 @@
       @media only screen and (min-width: 800px) {
         margin-bottom: auto;
       }
+
       // .cv-form__photo-input  {
       &-input {
         position: absolute;
         opacity: 0;
       }
+
       // .cv-form__photo-image {
       &-image {
         position: absolute;
@@ -228,11 +259,13 @@
         object-fit: cover;
         z-index: 2;
       }
+
       // .cv-form__photo-title {
       &-title {
         position: relative;
         z-index: 1;
       }
+
       // .cv-form__photo-wrapper {
       &-wrapper {
         display: flex;
@@ -241,15 +274,18 @@
         position: relative;
       }
     }
+
     // .cv-form-select {
     &-select {
+
       // .cv-form-select__wrapper {
       &__wrapper {
         z-index: 1;
       }
+
       // .cv-form-select__input {
-      &__input {
-      }
+      &__input {}
+
       // .cv-form-select__trigger {
       &__trigger {
         height: unset;
@@ -262,6 +298,7 @@
         border: 1px solid #c4c4c4;
         @include _borderRadius(4px);
       }
+
       // .cv-form-select__title {
       &__title {
         @extend .p;
@@ -270,10 +307,12 @@
         overflow: hidden;
         // width: 60%;
       }
+
       // .cv-form-select__triangle {
       &__triangle {
         filter: grayscale(100%);
       }
+
       // .cv-form-select__options {
       &__options {
         border: 1px solid #c4c4c4;
@@ -282,20 +321,29 @@
         overflow-y: auto;
         @include _transition(all, 0.25s);
       }
+
       // .cv-form-select__option {
       &__option {
         padding: 0 15px;
         @include adaptive(font-size, 14, 12, 0);
         text-overflow: ellipsis;
         overflow: hidden;
+
+        @for $i from 1 through 40 {
+          body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+            @include adaptive(font-size, 1.4 * $i, 1.2 * $i, 5);
+          }
+        }
       }
     }
+
     // .cv-form__group {
     &__group {
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       @media only screen and (max-width: 600px) {
         .cv-form {
           &__input {
@@ -303,8 +351,10 @@
           }
         }
       }
+
       @media only screen and (max-width: 360px) {
         flex-direction: column;
+
         .cv-form {
           &__input {
             width: 100%;
@@ -312,6 +362,7 @@
         }
       }
     }
+
     // .cv-form__hr {
     &__hr {
       @include adaptive(width, 15, 10, 0);
@@ -322,6 +373,7 @@
       height: 1px;
       border: none;
       background: #000;
+
       @media only screen and (max-width: 360px) {
         @include adaptive(margin-top, 8, 8, 0);
         margin-right: 0;
@@ -330,6 +382,7 @@
         align-self: flex-start;
       }
     }
+
     // .cv-form__add {
     &__add {
       display: flex;
@@ -356,10 +409,12 @@
           background: $accentColor;
           position: absolute;
         }
+
         &::after {
           transform: rotate(90deg);
         }
       }
+
       // .cv-form__add-title {
       &-title {
         font-weight: 500;
@@ -378,16 +433,19 @@
           height: 1px;
           @include _transition(all, 0.35s);
         }
+
         &::before {
           background: #000;
           transform-origin: right center;
         }
+
         &::after {
           transform-origin: left center;
           background: $accentColor;
           transform: scale(0, 1);
         }
       }
+
       @media only screen and (min-width: 1152px) {
         &:hover {
           .cv-form__add-title {
@@ -396,6 +454,7 @@
             &::before {
               transform: scale(0, 1);
             }
+
             &::after {
               transform: scale(1, 1);
             }
@@ -403,20 +462,23 @@
         }
       }
     }
+
     // .cv-form__radio {
     &__radio {
+
       // .cv-form__radio-label {
-      &-label {
-      }
+      &-label {}
     }
 
     // .cv-form__textarea {
     &__textarea {
       @include adaptive(max-height, 95, 75, 0);
+
       &.__motivation {
         @include adaptive(max-height, 210, 145, 0);
       }
     }
+
     // .cv-form__table {
     &__table {
       width: 100%;
@@ -428,6 +490,7 @@
       tr {
         width: 100%;
       }
+
       th {
         @extend .p;
         font-weight: 500;
@@ -439,11 +502,13 @@
         @include adaptive(height, 55, 50, 0);
         text-align: center;
         min-width: 115px;
+
         &:nth-child(1),
         &:nth-child(2) {
           width: 15%;
         }
       }
+
       td {
         border: 1px solid #c4c4c4;
         min-width: 115px;
@@ -453,6 +518,7 @@
           width: 15%;
         }
       }
+
       input {
         width: 100%;
         color: $texEightColor;
@@ -461,10 +527,12 @@
         @include adaptive(height, 55, 50, 0);
       }
     }
+
     // .cv-form__btn {
     &__btn {
       width: fit-content;
       @include adaptive(min-width, 215, 215, 0);
+
       @media only screen and (max-width: 600px) {
         align-self: center;
       }

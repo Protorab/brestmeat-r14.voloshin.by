@@ -13,16 +13,22 @@ $textFifthColor: #343434; // Text fifth Color
 $texSixColor: #4a4852; // Text Six Color
 $texSevenColor: #2e2e2e; // Text seven Color
 $texEightColor: #585858; // Text Eight Color
-
+$bviBg: #484848;
 $lineHeight: 1.65; // Document Line Height
-$userFont: Montserrat, sans-serif; // User Font Family
-$userFontAlt: Circe, sans-serif; // User alt Font Family
+$userFont: Montserrat,
+sans-serif; // User Font Family
+$userFontAlt: Circe,
+sans-serif; // User alt Font Family
 
-$systemFont: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
+$systemFont: -apple-system,
+BlinkMacSystemFont,
+Arial,
+sans-serif; // System Font Family
 // $maxWidth: 1920;
 // $maxWidthContainer: 1300;
 $maxWidth: 1366;
 $maxWidthContainer: 1200;
+
 // ZEROING SECTION
 * {
   margin: 0;
@@ -102,6 +108,7 @@ $maxWidthContainer: 1200;
   // opacity: 0.5;
   // @include _transition(all, 0.5s);
 }
+
 ::placeholder {
   color: $textColor;
 }
@@ -111,12 +118,14 @@ $maxWidthContainer: 1200;
   color: $mainColor;
   -webkit-text-stroke-color: $mainColor;
 }
+
 ::-webkit-calendar-picker-indicator {
   color: transparent;
   opacity: 1;
   background: url(../img/icons/icon-calendar.svg) no-repeat center;
   background-size: contain;
 }
+
 // GENERAL DOCUMENT STYLES
 html {
   font-size: $fontSize;
@@ -178,6 +187,36 @@ body {
     width: 100%;
     overflow: hidden;
   }
+
+  html & .bvi-panel {
+    width: 100%;
+    position: relative !important;
+  }
+
+  .bvi-body {
+    padding: 0;
+
+  }
+
+  &.bvi-active {
+    padding: 0;
+    align-items: stretch;
+
+    img {
+      filter: grayscale(1);
+    }
+
+
+    // padding-top: 103px;
+    .bvi-body[data-bvi-theme=white] *:not(.bvi-no-styles) {
+      // background-color: unset !important;
+
+
+
+    }
+  }
+
+
 }
 
 input,
@@ -293,6 +332,7 @@ a {
   &:focus,
   &:hover {
     text-decoration: none;
+    color: inherit;
   }
 }
 
@@ -335,6 +375,7 @@ section,
   @media only screen and (max-width: 600px) {
     width: calc(100% - 44px);
   }
+
   // .wrapper-s {
   &-s {
     display: flex;
@@ -365,11 +406,13 @@ section,
 }
 
 .img {
+
   //.img--full
   &--fullW {
     width: 100%;
     height: auto;
   }
+
   // .img--center
   &--center {
     width: 100%;
@@ -411,7 +454,7 @@ section,
     @include _transition(all, 0.35s);
     transform: translate(0, -100%);
 
-    .--active > & {
+    .--active>& {
       opacity: 1;
       transform: translate(0, 0%);
     }
@@ -480,11 +523,15 @@ section,
 
 .main {
   width: 100%;
-  min-height: 100%;
+  // min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+
+  body.bvi-active & {
+    margin-top: 180px;
+  }
 }
 
 .row {
@@ -547,6 +594,10 @@ section,
     z-index: -1;
     width: 100%;
     top: 0;
+
+    body.bvi-active & {
+      background: $bviBg;
+    }
   }
 
   &::after {
@@ -563,19 +614,51 @@ section,
   &.__active {
     border: 2px solid $accentColor;
     color: $accentColor;
+
+    body.bvi-active & {
+      border: 2px solid $bviBg;
+      color: $bviBg;
+
+      &::before {
+        background: $mainColor;
+      }
+    }
+
     &::before {
       background: $mainColor;
     }
+
     .blink {
       // background: $mainColor;
       background: $accentColor;
+
+      body.bvi-active & {
+        background: $bviBg;
+      }
     }
+
+    @media only screen and (min-width: 1152px) {
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: $accentColor;
+
+      }
+
+    }
+
   }
 
   // .btn__title {
   &__title {
     display: inline-flex;
     @include adaptive(margin-right, 10, 10, 0);
+    @extend .p;
+
+    body.bvi-active & {
+      color: $mainColor;
+    }
   }
 
   // .btn__icon {
@@ -614,18 +697,32 @@ section,
   }
 
   @media only screen and (min-width: 1152px) {
-    &:hover {
+
+    &:hover,
+    &:active,
+    &:focus {
       // background: $accentSecondColor;
+      color: $mainColor;
 
       &::after {
         // width: 400px;
         // height: 400px;
         // opacity: 1;
       }
+
       .btn__icon {
-        transform: translateX(10px);
+        // transform: translateX(10px);
       }
     }
+
+    body.bvi-active & {
+      background: $bviBg;
+    }
+
+  }
+
+  body.bvi-active & {
+    color: $mainColor;
   }
 }
 
@@ -643,6 +740,7 @@ section,
 }
 
 .slider {
+
   // .slider-pagination {
   &-pagination {
     display: flex;
@@ -693,6 +791,7 @@ section,
     justify-content: flex-end;
     align-items: center;
     width: 100%;
+
     // .slider-control__btn {
     &__btn {
       display: flex;
@@ -704,6 +803,7 @@ section,
       @include adaptive(width, 25, 25, 0);
       @include adaptive(min-width, 25, 25, 0);
       @include adaptive(height, 25, 25, 0);
+
       &::before {
         content: "";
         display: inline-block;
@@ -714,8 +814,9 @@ section,
         background-repeat: no-repeat;
         background-position: right center;
         position: relative;
-        @include _transition(all, 0.35s);
+        // @include _transition(all, 0.35s);
       }
+
       // .slider-control__btn--prev {
       &--prev {
         @include adaptive(margin-right, 20, 15, 0);
@@ -727,6 +828,7 @@ section,
           margin-bottom: 2px;
         }
       }
+
       &.swiper {
         &-button {
           &-disabled {
@@ -736,11 +838,22 @@ section,
           }
         }
       }
+
       @media only screen and (min-width: 1152px) {
+
         &:hover {
           &::before {
             background-position: left center;
           }
+        }
+
+        body.bvi-active & {
+          &:hover {
+            &::before {
+              background-position: right center;
+            }
+          }
+
         }
       }
     }
@@ -748,6 +861,7 @@ section,
 }
 
 .developer {
+
   // developer-link {
   &-link {
     display: flex;
@@ -756,10 +870,10 @@ section,
 
     // .developer-link__title {
     &__title {
-      display: inline-flex;
-      height: 100%;
       @include adaptive(margin-right, 10, 5, 0);
+      @extend .p;
     }
+
     // .developer-link__image {
     &__image {
       display: inline-flex;
@@ -767,25 +881,30 @@ section,
       align-items: center;
       @include adaptive(width, 110, 80, 0);
       height: 100%;
+
       svg {
         & * {
           @include _transition(all, 0.35s);
         }
+
         @media only screen and (min-width: 1152px) {
           .cls-3 {
             fill: #b0b1b1;
           }
         }
+
         .cls-2,
         .csl-4,
         .cls-5 {
           fill: #b0b1b1;
         }
+
         .cls-3 {
           fill: $accentColor;
         }
       }
     }
+
     @media only screen and (min-width: 1152px) {
       &:hover {
         svg {
@@ -824,26 +943,64 @@ h {
 
   &1 {
     @include adaptive(font-size, 40, 23, 0);
+
+    @for $i from 1 through 40 {
+      body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+        @include adaptive(font-size, 4 * $i, 2.3 * $i, 5);
+      }
+    }
   }
 
   &2 {
     @include adaptive(font-size, 30, 19, 0);
+
+    @for $i from 1 through 40 {
+      body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+        @include adaptive(font-size, 3 * $i, 1.9 * $i, 5);
+      }
+    }
   }
 
   &3 {
     @include adaptive(font-size, 27, 17, 0);
+
+    @for $i from 1 through 40 {
+      body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+        @include adaptive(font-size, 2.7 * $i, 1.7 * $i, 5);
+      }
+    }
   }
 
   &4 {
     @include adaptive(font-size, 23, 17, 0);
+
+    @for $i from 1 through 40 {
+      body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+        @include adaptive(font-size, 2.3 * $i, 1.7 * $i, 5);
+      }
+    }
+
   }
 
   &5 {
     @include adaptive(font-size, 20, 15, 0);
+
+    @for $i from 1 through 40 {
+      body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+        @include adaptive(font-size, 2 * $i, 1.5 * $i, 5);
+      }
+    }
+
   }
 
   &6 {
     @include adaptive(font-size, 18, 14, 0);
+
+    @for $i from 1 through 40 {
+      body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+        @include adaptive(font-size, 1.8 * $i, 1.4 * $i, 5);
+      }
+    }
   }
 }
 
@@ -854,6 +1011,12 @@ li,
 label {
   line-height: 1.35;
   @include adaptive(font-size, 16, 15, 0);
+
+  @for $i from 1 through 40 {
+    body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+      @include adaptive(font-size, 1.6 * $i, 1.5 * $i, 5);
+    }
+  }
 }
 
 .section {
@@ -901,15 +1064,18 @@ label {
     }
 
     &.__animated {
+
       &::before,
       &::after {
         transform: scaleX(1);
       }
     }
+
     @media only screen and (max-width: 600px) {
       white-space: normal;
     }
   }
+
   .section__subtitle {
     @extend .t2;
     font-weight: 500;
@@ -927,8 +1093,26 @@ label {
   @include _borderRadius(15px);
   @include adaptive(font-size, 13, 13, 0);
 
+  @for $i from 1 through 40 {
+    body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+      @include adaptive(font-size, 1.3 * $i, 1.3 * $i, 5);
+    }
+  }
+
   &--new {
-    background: $accentColor;
+    background-color: $accentColor;
+
+    body .bvi-body[data-bvi-theme=white] *:not(.bvi-no-styles) & {
+
+
+      background-color: $bviBg !important;
+
+    }
+  }
+
+  body .bvi-body[data-bvi-theme=white] *:not(.bvi-no-styles) & {
+    color: $mainColor !important;
+
   }
 }
 
@@ -939,21 +1123,25 @@ label {
 }
 
 .social {
+
   // .social-links {
   &-links {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+
     // .social-links--footer
     &--footer {
       // margin-top: auto;
     }
+
     // .social-links--menu {
     &--menu {
       transform: translate(0px, 100px);
       opacity: 0;
       @include _transition(all, 0.35s);
+
       .--show & {
         // transition-delay: 0.45s;
         // opacity: 1;
@@ -961,6 +1149,7 @@ label {
       }
     }
   }
+
   // .social-item {
   &-item {
     @include adaptive(width, 29, 29, 0);
@@ -983,12 +1172,14 @@ label {
       }
     }
   }
+
   // .social-link {
   &-link {
     width: 100%;
     height: 100%;
     display: inline-flex;
   }
+
   // .social-icon {
   &-icon {
     object-position: bottom center;
@@ -997,8 +1188,10 @@ label {
 }
 
 .page {
+
   // .page-top {
   &-top {
+
     // .page-top__banner {
     &__banner {
       display: flex;
@@ -1021,15 +1214,22 @@ label {
         background: #131313;
         opacity: 0.45;
       }
+
+      body.bvi-active .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) & {
+        display: none;
+      }
     }
+
     // .page-top__section {
     &__section {
       @include adaptive(padding-top, 20, 15, 0);
+
       @media only screen and (max-width: 800px) {
         padding-top: 20px;
       }
     }
   }
+
   // .page-card {
   &-card {
     @include adaptive(padding-top, 25, 20, 0);
@@ -1037,19 +1237,20 @@ label {
     @media only screen and (max-width: 800px) {
       @include adaptive(padding-top, 40, 35, 0);
     }
+
     // .page-card-top {
     &-top {
       @include adaptive(padding-top, 60, 35, 0);
 
       // .page-card-top__section {
 
-      &__section {
-      }
+      &__section {}
     }
+
     // .page-card__product {
-    &__product {
-    }
+    &__product {}
   }
+
   // .page-article {
   &-article {
     @include adaptive(padding-top, 25, 20, 0);
@@ -1058,12 +1259,15 @@ label {
       @include adaptive(padding-top, 40, 35, 0);
     }
   }
+
   // .page-brand {
   &-brand {
+
     // .page-brand-trade {
     &-trade {
       .gm {
         &-style {
+
           // .gm-style-iw{
           &-iw {
             @include adaptive(height, 450, 330, 5);
@@ -1080,10 +1284,12 @@ label {
       }
     }
   }
+
   // .page-contact {
   &-contact {
     .gm {
       &-style {
+
         // .gm-style-iw{
         &-iw {
           @include adaptive(min-height, 270, 200, 5);
@@ -1108,6 +1314,7 @@ label {
   justify-content: flex-start;
   align-items: center;
   width: fit-content;
+
   // .print__icon {
   &__icon {
     display: inline-flex;
@@ -1132,6 +1339,7 @@ label {
     @include _transition(all, 0.35s);
     font-weight: 500;
     -webkit-text-stroke: 1px transparent;
+    @extend .p;
   }
 
   @media only screen and (min-width: 1152px) {
@@ -1142,9 +1350,17 @@ label {
             object-position: top center;
           }
         }
+
         &__title {
           color: $accentColor;
           -webkit-text-stroke-color: $accentColor;
+
+          .bvi-body & {
+            color: $textColor;
+            -webkit-text-stroke-color: $textColor;
+
+
+          }
         }
       }
     }
@@ -1152,11 +1368,13 @@ label {
 }
 
 .download {
+
   // .download__link {
   &__link {
     display: inline-flex;
     justify-content: flex-start;
     align-items: center;
+
     // .download__link-icon {
     &-icon {
       display: inline-flex;
@@ -1171,6 +1389,7 @@ label {
       background-size: contain;
       background-position: center;
     }
+
     // .download__link-title Х
     &-title {
       @extend .t5;
@@ -1189,11 +1408,13 @@ label {
         bottom: 0;
         @include _transition(all, 0.35s);
       }
+
       &::before {
         left: 0;
         transform-origin: left center;
         background: $textColor;
       }
+
       &::after {
         right: 0;
         transform-origin: right center;
@@ -1204,6 +1425,7 @@ label {
 
     &.__policy {
       display: none;
+
       @media only screen and (max-width: 800px) {
         display: inline-flex;
       }
@@ -1213,9 +1435,11 @@ label {
       &:hover {
         .download__link-title {
           color: $accentColor;
+
           &::before {
             transform: scale(0, 1);
           }
+
           &::after {
             transform: scale(1, 1);
           }
@@ -1236,15 +1460,16 @@ label {
     * {
       font-family: $userFont;
     }
+
     // .gm-style-iw{
     &-iw {
       // @include adaptive(max-height, 500, 450, 5);
       max-height: unset !important;
 
       // .gm-style-iw-a {
-      &-a {
-      }
+      &-a {}
     }
+
     .gm-style-iw-c {
       background: $mainColor;
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
@@ -1254,9 +1479,11 @@ label {
 
       padding: 0;
     }
+
     .gm-style-iw-d {
       padding: 0;
     }
+
     .gm-style-iw-t {
       button {
         @include adaptive(width, 15, 10, 4);
@@ -1269,6 +1496,7 @@ label {
         opacity: 1 !important;
         overflow: hidden;
         z-index: 3;
+
         &::before,
         &:after {
           content: "";
@@ -1287,26 +1515,31 @@ label {
           background-position: bottom center;
           @include _transition(all, 0.35s);
         }
+
         &::before {
           background-image: url("../img/icons/icon-close.svg");
         }
+
         &::after {
           background-image: url("../img/icons/icon-close-red.svg");
           opacity: 0;
           transform: rotate(-180deg) translateY(100%);
         }
+
         img {
           display: none !important;
           width: 100% !important;
           height: 100% !important;
           margin: 0 !important;
         }
+
         @media only screen and (min-width: 1152px) {
           &:hover {
             &::before {
               transform: rotate(-180deg) translateY(100%);
               opacity: 0;
             }
+
             &::after {
               transform: rotate(0deg) translateY(-0%);
               opacity: 1;
@@ -1314,10 +1547,12 @@ label {
           }
         }
       }
+
       &::after {
         // display: none;
       }
     }
+
     &.gm-style-iw-t {
       &::after {
         // display: none;
@@ -1327,6 +1562,7 @@ label {
 }
 
 .map {
+
   // .map-popup {
   &-popup {
     display: flex;
@@ -1340,12 +1576,14 @@ label {
     @include adaptive(padding-right, 25, 15, 0);
     @include adaptive(padding-left, 25, 15, 0);
     font-weight: 500;
+
     &.__page {
       &-brand {
         @include adaptive(min-height, 500, 450, 5);
         @include adaptive(padding-top, 40, 30, 0);
         @include adaptive(padding-bottom, 25, 15, 0);
       }
+
       // __page-contact {
       &-contact {
         @include adaptive(min-height, 270, 200, 0);
@@ -1353,14 +1591,17 @@ label {
         @include adaptive(padding-bottom, 20, 20, 0);
       }
     }
+
     a {
       @include _transition(all, 0.35s);
+
       @media only screen and (min-width: 1152px) {
         &:hover {
           color: $accentColor;
         }
       }
     }
+
     // map-popup__image {
     &__image {
       display: flex;
@@ -1374,33 +1615,51 @@ label {
         object-position: top center;
       }
     }
+
     // .map-popup__title {
     &__title {
       @extend .t6;
       font-weight: 600;
       color: $accentColor;
+
       &.__page {
         &-brand {
           @include adaptive(margin-bottom, 10, 5, 0);
         }
+
         &-contact {
           @include adaptive(margin-bottom, 15, 10, 0);
         }
       }
     }
+
     // .map-popup__address {
     &__address {
       color: #000;
       @include adaptive(font-size, 14, 10, 0);
 
       @include adaptive(margin-bottom, 15, 10, 0);
+
+      @for $i from 1 through 40 {
+        body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+          @include adaptive(font-size, 1.4 * $i, 1 * $i, 5);
+        }
+      }
     }
+
     // map-popup__subtitle {
     &__subtitle {
       font-weight: 600;
       @include adaptive(font-size, 14, 10, 0);
       @include adaptive(margin-bottom, 10, 5, 0);
+
+      @for $i from 1 through 40 {
+        body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+          @include adaptive(font-size, 1.4 * $i, 1 * $i, 5);
+        }
+      }
     }
+
     // map-popup__list {
     &__list {
       @include adaptive(margin-bottom, 15, 10, 0);
@@ -1412,8 +1671,21 @@ label {
       // map-popup__list-item {
       &-item {
         @include adaptive(font-size, 14, 10, 0);
+
+        @for $i from 1 through 40 {
+          body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+            @include adaptive(font-size, 1.4 * $i, 1 * $i, 5);
+          }
+        }
+
         * {
           @include adaptive(font-size, 14, 10, 0);
+
+          @for $i from 1 through 40 {
+            body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+              @include adaptive(font-size, 1.4 * $i, 1 * $i, 5);
+            }
+          }
         }
       }
     }
@@ -1423,6 +1695,7 @@ label {
 .red-color {
   color: $accentColor;
 }
+
 .warning {
   border: 2px solid $accentColor;
   position: relative;
@@ -1439,22 +1712,27 @@ label {
 
 .__overflow {
   overflow: hidden;
+
   // .__overflow-y {
   &-y {
     overflow-x: hidden;
     overflow-y: auto;
   }
+
   // .__overflow-x {
   &-x {
     overflow-x: auto;
     overflow-y: hidden;
   }
+
   // .__overflow-auto {
   &-auto {
     overflow: auto;
   }
 }
+
 .form {
+
   // .form__label {
   &__label {
     font-weight: 500;
@@ -1462,8 +1740,15 @@ label {
 
     @media only screen and (max-width: 1396px) {
       @include adaptive(font-size, 15, 14, 0);
+
+      @for $i from 1 through 40 {
+        body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+          @include adaptive(font-size, 1.5 * $i, 1.4 * $i, 5);
+        }
+      }
     }
   }
+
   // .form__input {
   &__input {
     padding: 15px;
@@ -1473,18 +1758,22 @@ label {
     @include adaptive(max-height, 55, 50, 0);
     @include adaptive(height, 55, 50, 0);
     @include _borderRadius(4px);
+
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
       -webkit-appearance: none;
       margin: 0;
     }
+
     &[type="number"] {
       -moz-appearance: textfield;
     }
+
     &::placeholder {
       color: $texEightColor;
     }
   }
+
   // .form__textarea {
   &__textarea {
     padding: 15px;
@@ -1493,6 +1782,7 @@ label {
     width: 100%;
     max-width: 100%;
   }
+
   // .form__file {
   &__file {
     position: absolute;
@@ -1500,6 +1790,7 @@ label {
     z-index: -1;
   }
 }
+
 .file {
   &-label {
     &__icon {
@@ -1516,8 +1807,10 @@ label {
     }
   }
 }
+
 .text {
   &-top {
+
     // .text-top__section
     &__section {
       @include adaptive(padding-top, 45, 35, 0);

@@ -48,6 +48,10 @@
         @media only screen and (min-width: 1152px) {
           &:hover {
             color: $accentColor;
+
+            .bvi-body & {
+              color: $textColor;
+            }
           }
         }
       }
@@ -75,6 +79,7 @@
 
       @media only screen and (max-width: 600px) {
         width: 100%;
+
         &:not(&.__vacancy-page) {
           &:nth-child(1) {
             @include adaptive(margin-bottom, 45, 40, 0);

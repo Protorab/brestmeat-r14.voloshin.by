@@ -1,4 +1,5 @@
 .recipe {
+
   // .recipe-section {
   &-section {
     &.__page {
@@ -7,10 +8,11 @@
         // padding-top: 20px;
       }
     }
+
     // .recipe-section__title {
-    &__title {
-    }
+    &__title {}
   }
+
   // recipe-daily {
   &-daily {
     @extend .wrapper;
@@ -24,6 +26,7 @@
     @include _transition(all, 0.35s);
     position: relative;
     z-index: 2;
+
     &::before {
       position: absolute;
       content: "";
@@ -37,6 +40,7 @@
       background: $mainColor;
       z-index: 1;
     }
+
     // recipe-daily__bg {
     &__bg {
       position: absolute;
@@ -59,6 +63,7 @@
       // transform: translate(-50%, 0%) scale(0);
       @include _transition(all, 0.35s);
       transform: translate(-50%, 0%) scale(1);
+
       svg {
         // width: 100%;
         // height: 100%;
@@ -68,6 +73,7 @@
         display: none;
       }
     }
+
     &::after {
       // position: absolute;
       // z-index: -1;
@@ -89,7 +95,8 @@
       // transform: translate(-50%, 0%) scale(1);
       // filter: blur(173.928px);
     }
-    // recipe-daily__picture {
+
+    // .recipe-daily__picture {
     &__picture {
       display: flex;
       justify-content: center;
@@ -103,10 +110,11 @@
       img {
         @include _transition(all, 0.35s);
       }
+
       @media only screen and (min-width: 1152px) {
         &:hover {
           img {
-            transform: scale(1.2);
+            // transform: scale(1.2);
           }
         }
       }
@@ -115,6 +123,7 @@
         width: 62%;
       }
     }
+
     // recipe-daily__content {
     &__content {
       display: flex;
@@ -134,6 +143,7 @@
         width: 38%;
       }
     }
+
     // recipe-daily__title {
     &__title {
       @extend .t2;
@@ -142,7 +152,12 @@
       color: $accentColor;
       text-transform: uppercase;
       @include adaptive(margin-bottom, 30, 20, 0);
+
+      body .bvi-body & {
+        color: $bviBg;
+      }
     }
+
     // recipe-daily__info {
     &__info {
       width: 100%;
@@ -158,10 +173,12 @@
         justify-content: flex-start;
         align-items: center;
         @include adaptive(margin-right, 45, 25, 0);
+
         &:last-child {
           margin-right: 0;
         }
       }
+
       // recipe-daily__info-icon {
       &-icon {
         @include adaptive(margin-right, 15, 10, 0);
@@ -173,12 +190,14 @@
           margin-right: 0;
         }
       }
+
       // recipe-daily__info-title {
       &-title {
         @extend .t5;
         white-space: nowrap;
       }
     }
+
     // recipe-daily__subtitle {
     &__subtitle {
       @extend .t5;
@@ -188,6 +207,7 @@
       color: $textThirdColor;
       @include adaptive(margin-bottom, 15, 20, 0);
     }
+
     // recipe-daily__list {
     &__list {
       width: 100%;
@@ -218,9 +238,15 @@
           display: inline-flex;
           justify-content: center;
           align-items: center;
+
+          body.bvi-active & {
+            @extend .p;
+
+          }
         }
       }
     }
+
     // recipe-daily__btn {
     &__btn {
       @include adaptive(width, 180, 170, 0);
@@ -233,53 +259,61 @@
         @include adaptive(margin-bottom, 45, 40, 0);
       }
     }
+
     // recipe-daily__share {
     &__share {
       margin-top: auto;
+
       // recipe-daily__share-title {
       &-title {
         @media only screen and (max-width: 600px) {
           @include adaptive(margin-bottom, 25, 20, 0);
         }
       }
+
       // recipe-daily__share-list {
-      &-list {
-      }
+      &-list {}
+
       // recipe-daily__share-item {
-      &-item {
-      }
+      &-item {}
+
       // recipe-daily__share-link {
-      &-link {
-      }
+      &-link {}
+
       @media only screen and (max-width: 600px) {
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
       }
     }
+
     &.__show {
       &::after {
         // transform: translate(-50%, 0%) scale(1);
         // filter: blur(173.928px);
       }
     }
+
     @media only screen and (max-width: 1024px) {
       flex-direction: column;
     }
   }
+
   // .recipe-slider {
   &-slider {
     @extend .wrapper;
   }
+
   // .recipe-slides {
-  &-slides {
-  }
+  &-slides {}
+
   // .recipe-slide {
   &-slide {
     display: flex;
     width: 100%;
     flex-direction: column;
     position: relative;
+
     // .recipe-slide__picture {
     &__picture {
       display: flex;
@@ -293,20 +327,30 @@
       img {
         @include _transition(all, 0.35s);
       }
+
       @media only screen and (max-width: 600px) {
         @include adaptive(height, 270, 250, 0);
       }
+
       @media only screen and (max-width: 360px) {
         @include adaptive(height, 200, 210, 0);
       }
     }
+
     // .recipe-slide__title {
     &__title {
       // @extend .t5;
       @include adaptive(font-size, 20, 20, 0);
       font-weight: 500;
       @include adaptive(margin-bottom, 20, 20, 0);
+
+      @for $i from 1 through 40 {
+        body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+          @include adaptive(font-size, 2 * $i, 2 * $i, 5);
+        }
+      }
     }
+
     // .recipe-slide__info {
     &__info {
       display: flex;
@@ -315,6 +359,7 @@
       justify-content: flex-start;
 
       align-items: center;
+
       // .recipe-slide__info-item {
       &-item {
         display: flex;
@@ -324,7 +369,14 @@
         @include adaptive(margin-right, 35, 25, 0);
 
         @include adaptive(font-size, 12, 12, 0);
+
+        @for $i from 1 through 40 {
+          body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+            @include adaptive(font-size, 1.2 * $i, 1.2 * $i, 5);
+          }
+        }
       }
+
       // .recipe-slide__info-icon {
       &-icon {
         @include adaptive(margin-right, 10, 10, 0);
@@ -332,13 +384,21 @@
         @include adaptive(min-width, 20, 20, 0);
         @include adaptive(height, 20, 20, 0);
       }
+
       // .recipe-slide__info-title {
       &-title {
         color: $textFourthColor;
         white-space: nowrap;
         @include adaptive(margin-left, 10, 9, 0);
+
+        @for $i from 1 through 40 {
+          body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+            @include adaptive(font-size, 1.2 * $i, 1.2 * $i, 5);
+          }
+        }
       }
     }
+
     // .recipe-slide__link {
     &__link {
       display: inline-flex;
@@ -366,6 +426,7 @@
       }
     }
   }
+
   // .recipe-card {
   &-card {
     @extend .wrapper;
@@ -380,8 +441,7 @@
     }
 
     // .recipe-card-section {
-    &-section {
-    }
+    &-section {}
 
     // .recipe-card__media {
     &__media {
@@ -401,7 +461,7 @@
       }
     }
 
-    // recipe-card__picture {
+    // .recipe-card__picture {
     &__picture {
       display: flex;
       justify-content: center;
@@ -418,7 +478,7 @@
       @media only screen and (min-width: 1152px) {
         &:hover {
           img {
-            transform: scale(1.2);
+            // transform: scale(1.2);
           }
         }
       }
@@ -448,6 +508,7 @@
         @include adaptive(padding-top, 25, 20, 0);
         @include adaptive(padding-bottom, 25, 20, 0);
       }
+
       // .recipe-card__stats-item {
       &-item {
         display: flex;
@@ -457,6 +518,7 @@
         @extend .t6;
         @include adaptive(margin-right, 65, 15, 0);
       }
+
       // recipe-card__stats-icon {
       &-icon {
         display: inline-flex;
@@ -478,6 +540,10 @@
 
           object-fit: contain;
         }
+
+        .bvi-body & {
+          background: $bviBg;
+        }
       }
     }
 
@@ -491,6 +557,7 @@
       @include coll(2, 30);
       height: auto;
       margin-left: 30px;
+
       @media only screen and (max-width: 800px) {
         margin-left: 0;
         flex: 1 1 100%;
@@ -518,6 +585,11 @@
         font-weight: 600;
         text-transform: uppercase;
         @include adaptive(margin-bottom, 24, 17, 0);
+
+        .bvi-body & {
+          color: $textColor;
+
+        }
       }
 
       // .recipe-card__ingredients-list {
@@ -539,6 +611,7 @@
         border-bottom: 1px solid #b5b5b5;
         @include adaptive(padding-top, 16, 8, 0);
         @include adaptive(padding-bottom, 12, 6, 0);
+
         @media only screen and (max-width: 600px) {
           @include adaptive(padding-bottom, 16, 14, 0);
         }
@@ -547,6 +620,10 @@
         &__content {
           display: inline-block;
           width: fit-content;
+
+          .bvi-body & {
+            @extend .p;
+          }
         }
       }
     }
@@ -567,8 +644,14 @@
         font-weight: 600;
         text-transform: uppercase;
         @include adaptive(margin-bottom, 20, 15, 0);
+
+        .bvi-body & {
+          color: $textColor;
+
+        }
       }
     }
+
     // .recipe-card__step {
     &__step {
       display: flex;
@@ -598,17 +681,25 @@
         @include adaptive(min-width, 65, 35, 0);
         @include adaptive(height, 50, 30, 0);
         @include adaptive(margin-right, 15, 15, 0);
+
+        .bvi-body & {
+          background: $bviBg;
+
+        }
       }
 
       &:last-of-type {
         border-bottom: 1px solid #b5b5b5;
       }
+
       p {
         @include adaptive(margin-bottom, 10, 5, 0);
+
         &:last-child {
           margin-bottom: 0;
         }
       }
+
       h {
         @for $i from 1 through 6 {
           &#{$i} {
@@ -617,6 +708,7 @@
         }
       }
     }
+
     // .recipe-card__more {
     &__more {
       max-width: fit-content;
@@ -637,6 +729,7 @@
         }
       }
     }
+
     // recipe-card__share {
     &__share {
       justify-content: flex-start;
@@ -663,6 +756,7 @@
             }
           }
         }
+
         @media only screen and (max-width: 600px) {
           @for $i from 1 to 7 {
             &:nth-child(#{$i}) {
@@ -692,9 +786,11 @@
     @media only screen and (max-width: 1024px) {
       grid-template-columns: 0.3fr 0.7fr;
     }
+
     @media only screen and (max-width: 800px) {
       grid-template-columns: 0.4fr 0.6fr;
     }
+
     @media only screen and (max-width: 600px) {
       grid-template-columns: repeat(1, 100%);
     }
@@ -722,9 +818,11 @@
       img {
         @include _transition(all, 0.35s);
       }
+
       @media only screen and (max-width: 600px) {
         @include adaptive(height, 270, 250, 0);
       }
+
       @media only screen and (max-width: 360px) {
         @include adaptive(height, 200, 210, 0);
       }
@@ -736,6 +834,12 @@
       @include adaptive(font-size, 20, 20, 0);
       font-weight: 500;
       @include adaptive(margin-bottom, 20, 20, 0);
+
+      @for $i from 1 through 40 {
+        body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+          @include adaptive(font-size, 2 * $i, 2 * $i, 5);
+        }
+      }
     }
 
     // .recipes-card__info {
@@ -746,6 +850,7 @@
       justify-content: flex-start;
 
       align-items: center;
+
       // recipe-daily__info-item {
       &-item {
         display: flex;
@@ -755,7 +860,14 @@
         @include adaptive(margin-right, 35, 25, 0);
 
         @include adaptive(font-size, 12, 12, 0);
+
+        @for $i from 1 through 40 {
+          body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+            @include adaptive(font-size, 1.2 * $i, 1.2 * $i, 5);
+          }
+        }
       }
+
       // recipe-daily__info-icon {
       &-icon {
         @include adaptive(margin-right, 10, 10, 0);
@@ -763,6 +875,7 @@
         @include adaptive(min-width, 20, 20, 0);
         @include adaptive(height, 20, 20, 0);
       }
+
       // recipe-daily__info-title {
       &-title {
         color: $textFourthColor;
@@ -820,6 +933,7 @@
       text-transform: uppercase;
       font-weight: 700;
       @include adaptive(margin-bottom, 20, 15, 0);
+
       &:not(&:first-child) {
         @include adaptive(margin-top, 50, 25, 0);
       }
@@ -846,6 +960,7 @@
           color: $accentColor;
         }
       }
+
       @media only screen and (max-width: 600px) {
         margin-top: 0;
         @include adaptive(margin-bottom, 10, 10, 0);
@@ -853,6 +968,12 @@
         margin-right: 10px;
         font-weight: 700;
         text-transform: uppercase;
+
+        @for $i from 1 through 40 {
+          body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+            @include adaptive(font-size, 1.4 * $i, 1.2 * $i, 5);
+          }
+        }
       }
     }
 
@@ -885,6 +1006,7 @@
         background-position: bottom center;
         background-size: cover;
         @include _transition(all, 0.15s);
+
         .active & {
           background-position: top center;
         }
@@ -911,6 +1033,7 @@
           display: flex;
           width: 100%;
           @include adaptive(margin-bottom, 10, 10, 0);
+
           &:last-child {
             margin-bottom: 0;
           }
@@ -936,41 +1059,50 @@
             @include adaptive(height, 8, 8, 0);
             @include adaptive(margin-right, 10, 10, 0);
           }
+
           @media only screen and (min-width: 1152px) {
             &:hover {
               color: $accentColor;
             }
           }
+
           &.__active {
             color: $accentColor;
           }
         }
       }
+
       // .recipes__filter-btn {
     }
+
     // .recipes__filter-row {
     &-row {
       @include adaptive(margin-bottom, 20, 15, 0);
     }
 
     // .cards__filter-form-select {
-    &-select {
-    }
-    // .cards__filter-arrow {
-    &-arrow {
-    }
+    &-select {}
 
-    &-options {
-    }
+    // .cards__filter-arrow {
+    &-arrow {}
+
+    &-options {}
+
     // .cards__filter-option {
-    &-option {
-    }
+    &-option {}
+
     &-label {
       width: 80%;
       @include adaptive(font-size, 14, 12, 0);
       margin-right: 10px;
       font-weight: 700;
       text-transform: uppercase;
+
+      @for $i from 1 through 40 {
+        body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+          @include adaptive(font-size, 1.4 * $i, 1.2 * $i, 5);
+        }
+      }
     }
 
     &-btn {

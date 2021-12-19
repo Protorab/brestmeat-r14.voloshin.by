@@ -1,8 +1,11 @@
 /node_modules/
 /dist/
 /brestmeat-r14.voloshin.by/
+/brestmeat/
 /.git/
 /**/**.pdf
+/**/**.css
+/**/**.html
 /**/.git
 /**/**.zip
 /**/**.7z

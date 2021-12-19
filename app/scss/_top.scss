@@ -1,9 +1,15 @@
 .top {
+
   // .top-slider {
   &-slider {
     width: 100%;
     height: 100vh;
     position: relative;
+
+    .bvi-body & {
+      display: none;
+    }
+
     // .top-slider__pagination {
     &__pagination {
       position: absolute;
@@ -13,6 +19,7 @@
       height: auto;
     }
   }
+
   // .top-slides {
   &-slides {
     display: flex;
@@ -20,6 +27,7 @@
     height: 100%;
     margin-bottom: 0;
   }
+
   // .top-slide {
   &-slide {
     display: flex;
@@ -40,6 +48,7 @@
       background: #131313;
       opacity: 0.45;
     }
+
     // .top-slide__picture
     &__picture {
       display: flex;
@@ -48,6 +57,7 @@
       position: relative;
       z-index: 1;
     }
+
     // .top-slide__image {
     &__image {
       z-index: 1;

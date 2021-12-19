@@ -2,6 +2,9 @@
   @include _transition(all, 0.5s);
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 12;
   background: transparent;
   user-select: none;
@@ -20,6 +23,10 @@
     transform: translate(0, -100%);
     background: rgba($accentThirdColor, 0.7);
     z-index: 0;
+
+    .bvi-active & {
+      display: none;
+    }
   }
 
   // .header-logo {
@@ -92,12 +99,54 @@
       }
     }
 
+    body .bvi-body[data-bvi-theme=white] *:not(.bvi-no-styles) & {
+      background-color: $bviBg !important;
+
+      &::before {
+        background-color: $bviBg !important;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        &:not(.bvi-no-styles) {
+          background-color: $bviBg !important;
+
+          &::before {
+            background-color: $bviBg !important;
+          }
+        }
+
+        background-color: $bviBg !important;
+
+        &::before {
+          background-color: $bviBg !important;
+        }
+      }
+    }
+
     // .header-icon__image {
     &__image {
       display: inline-flex;
       @include adaptive(width, 17, 14, 0);
       @include adaptive(height, 17, 14, 0);
       position: relative;
+      background-color: unset !important;
+      color: $mainColor !important;
+
+      body .bvi-body[data-bvi-theme=white] *:not(.bvi-no-styles) & {
+        background-color: unset !important;
+
+        img {
+          background-color: unset !important;
+          color: $mainColor !important;
+        }
+      }
+
+      img {
+        background-color: unset !important;
+        color: $mainColor !important;
+      }
     }
   }
 
@@ -110,9 +159,22 @@
     }
   }
 
+  body.bvi-active .bvi-body & {
+    background-color: $mainColor !important;
+
+
+    &:not(.--show) {
+      top: unset;
+    }
+  }
+
+
+
+
   &.--show {
     padding-top: 12px;
     padding-bottom: 12px;
+    top: 0;
 
     &::before {
       transform: translate(0, 0%);
@@ -135,17 +197,34 @@
 }
 
 .lang {
+
   // .lang-selector
   &-selector {
+
     // .lang-selector-select
     &-select {
       height: 100%;
+
+      body .bvi-body[data-bvi-theme=white] *:not(.bvi-no-styles) & {
+        background-color: unset !important;
+        color: $mainColor !important;
+
+
+      }
 
       // .lang-selector-select__wrapper
       &__wrapper {
         @extend .header-icon;
         padding: 0;
+
+        span {
+          body .bvi-body[data-bvi-theme=white] *:not(.bvi-no-styles) & {
+            background-color: $bviBg !important;
+          }
+
+        }
       }
+
       // .lang-selector-select__trigger
       &__trigger {
         padding: 0 5px;
@@ -155,29 +234,55 @@
         height: 100%;
         border: none;
         @include adaptive(font-size, 11, 10, 0);
-        & > span {
+
+        @for $i from 1 through 40 {
+          body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+            @include adaptive(font-size, 1.1 * $i, 1 * $i, 5);
+          }
+        }
+
+        body .bvi-body[data-bvi-theme=white] *:not(.bvi-no-styles) & {
+          background-color: unset !important;
+          color: $mainColor !important;
+
+
+        }
+
+        &>span {
           margin-right: 3.5px;
+
+          body .bvi-body[data-bvi-theme=white] *:not(.bvi-no-styles) & {
+            background-color: unset !important;
+            color: $mainColor !important;
+
+
+          }
         }
       }
     }
+
     // .lang-selector__arrow {
     &__arrow {
       width: 6px;
       min-width: 6px;
       height: 6px;
       margin-right: 0;
+
       &::before,
       &::after {
         // height: 120%;
         background: $mainColor;
       }
+
       &::before {
         left: -2px;
       }
+
       &::after {
         left: 2px;
       }
     }
+
     // .lang-selector__options {
     &__options {
       border: none;
@@ -185,7 +290,13 @@
       background: $accentColor;
       padding-top: 15px;
       @include adaptive(padding-top, 10, 7, 0);
+
+      body .bvi-body[data-bvi-theme=white] *:not(.bvi-no-styles) & {
+        background-color: $bviBg !important;
+
+      }
     }
+
     // .lang-selector__option {
     &__option {
       padding: 0;
@@ -193,7 +304,22 @@
       @include adaptive(padding-left, 5, 5, 0);
       @include adaptive(font-size, 14, 12, 0);
 
+      @for $i from 1 through 40 {
+        body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+          @include adaptive(font-size, 1.4 * $i, 1.2 * $i, 5);
+        }
+      }
+
       background: $mainColor;
+
+      body .bvi-body[data-bvi-theme=white] *:not(.bvi-no-styles) & {
+        color: $mainColor !important;
+
+        a {
+          color: $mainColor !important;
+
+        }
+      }
     }
   }
 }

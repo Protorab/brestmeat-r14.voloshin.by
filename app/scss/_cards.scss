@@ -41,9 +41,11 @@
     @media only screen and (max-width: 1024px) {
       grid-template-columns: 0.3fr 0.7fr;
     }
+
     @media only screen and (max-width: 800px) {
       grid-template-columns: 0.4fr 0.6fr;
     }
+
     @media only screen and (max-width: 600px) {
       grid-template-columns: repeat(1, 100%);
     }
@@ -65,6 +67,11 @@
       color: $accentColor;
       text-transform: uppercase;
       font-weight: 700;
+
+      .bvi-body & {
+        color: $textColor;
+
+      }
     }
 
     // .cards__filter-link {
@@ -76,12 +83,29 @@
       &:nth-of-type(1) {
         padding-top: 0;
       }
+
+      .bvi-body & {
+        color: $textColor !important;
+
+      }
+
       &.__active {
         color: $accentColor;
+
+        .bvi-body & {
+          color: $textColor !important;
+
+        }
       }
+
       @media only screen and (min-width: 1152px) {
         &:hover {
           color: $accentColor;
+
+          .bvi-body & {
+            color: $textColor;
+
+          }
         }
       }
     }
@@ -89,11 +113,13 @@
     // .cards__filter-group {
     &-group {
       padding: 0;
+
       // .cards__filter-group__title {
       &__title {
         color: #000;
         font-weight: 500;
       }
+
       // .cards__filter-group__icon {
       &__icon {
         display: inline-flex;
@@ -112,10 +138,12 @@
           background-position: top center;
         }
       }
+
       // .cards__filter-group-wrapper {
       &-wrapper {
         padding: 0;
       }
+
       // .cards__filter-group__list {
       &__list {
         display: flex;
@@ -133,6 +161,7 @@
             margin-bottom: 0;
           }
         }
+
         // .cards__filter-group__list-link {
         &-link {
           display: flex;
@@ -152,27 +181,47 @@
             @include adaptive(min-width, 8, 8, 0);
             @include adaptive(height, 8, 8, 0);
             @include adaptive(margin-right, 10, 10, 0);
+
+            .bvi-body & {
+              background: $textColor;
+
+            }
           }
+
           @media only screen and (min-width: 1152px) {
             &:hover {
               color: $accentColor;
+
+              .bvi-body & {
+                color: $textColor;
+
+              }
             }
           }
+
           &.__active {
             color: $accentColor;
+
+            .bvi-body & {
+              color: $textColor;
+
+            }
           }
         }
       }
+
       @media only screen and (max-width: 600px) {
         display: none;
       }
     }
+
     // .cards__filter-row {
     &-row {
       display: flex;
       width: 100%;
       justify-content: space-between;
       align-items: center;
+
       @media only screen and (min-width: 600px) {
         display: none;
       }
@@ -180,6 +229,7 @@
 
     // .cards__filter-form-select {
     &-select {
+
       // .cards__filter-form-select__wrapper {
       &-wrapper {
         @media only screen and (max-width: 360px) {
@@ -194,6 +244,13 @@
         @include adaptive(font-size, 12, 10, 0);
         background: $mainColor;
         border: none;
+
+        @for $i from 1 through 40 {
+          body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+            @include adaptive(font-size, 1.2 * $i, 1 * $i, 5);
+          }
+        }
+
         span {
           &:not([class]) {
             white-space: nowrap;
@@ -207,14 +264,17 @@
 
     // .cards__filter-arrow {
     &-arrow {
+
       &::before,
       &::after {
         background: #505050;
         width: 0.1rem;
       }
+
       &::before {
         left: -3.5px;
       }
+
       &::after {
         left: 3.5px;
       }
@@ -231,7 +291,14 @@
     &-option {
       padding: 5px 5px 5px 7px;
       @include adaptive(font-size, 12, 10, 0);
+
+      @for $i from 1 through 40 {
+        body .bvi-body[data-bvi-fontsize="#{$i}"] * & {
+          @include adaptive(font-size, 1.2 * $i, 1 * $i, 5);
+        }
+      }
     }
+
     // .cards__filter-label {
     &-label {
       display: inline-flex;
@@ -239,9 +306,11 @@
       align-items: center;
     }
   }
+
   @media only screen and (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
   }
+
   @media only screen and (max-width: 800px) {
     grid-template-columns: repeat(1, 100%);
     // grid-template-columns: repeat(2, 1fr);

@@ -3,11 +3,11 @@ const swiperJsSliders = () => {
   let topSwiper = new Swiper(".top-slider", {
     slidesPerView: 1,
     autoplay: {
-      delay: 5000,
+      delay: 2600,
     },
     parallax: true,
     loop: true,
-    speed: 2500,
+    speed: 1500,
     pagination: {
       el: ".top-slider__pagination",
       type: "bullets",
